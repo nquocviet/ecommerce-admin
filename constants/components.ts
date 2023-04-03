@@ -31,7 +31,7 @@ export const components: any = {
 			},
 		}),
 	},
-	Input: {
+	TextInput: {
 		styles: (theme) => ({
 			label: {
 				marginBottom: '0.25rem',

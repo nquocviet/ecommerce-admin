@@ -16,7 +16,7 @@ const RadioGroup = <T extends FieldValues>({
 		<Controller
 			control={control}
 			name={name}
-			render={({ field }) => <MantineRadio.Group {...rest} {...field} />}
+			render={({ field }) => <MantineRadio.Group {...field} {...rest} />}
 		/>
 	)
 }

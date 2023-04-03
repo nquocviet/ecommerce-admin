@@ -34,8 +34,8 @@ const InputSearch = <T extends FieldValues>({
 							},
 						},
 					}}
-					{...rest}
 					{...field}
+					{...rest}
 				/>
 			)}
 		/>

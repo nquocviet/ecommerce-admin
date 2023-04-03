@@ -3,6 +3,9 @@
 
 echo '🏗️👷 Styling, testing and building your project before committing'
 
+# Run prettier format with all files changed
+npm run precommit
+
 # Check Prettier standards
 npm run check-format ||
 (
