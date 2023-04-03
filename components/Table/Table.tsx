@@ -10,7 +10,7 @@ const Table = <T,>({
 }: DataTableProps<T>) => {
 	return (
 		<DataTable
-			minHeight={125}
+			minHeight={rest.minHeight || 125}
 			records={records}
 			columns={columns}
 			fetching={fetching}
