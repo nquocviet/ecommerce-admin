@@ -37,7 +37,7 @@ const Regions = () => {
 					</Menu>
 				}
 			/>
-			<form>
+			<form className="pt-6">
 				<RadioGroup control={control} name="region">
 					<Flex direction="column" gap={16}>
 						<RadioBox

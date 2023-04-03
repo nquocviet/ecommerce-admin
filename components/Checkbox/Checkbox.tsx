@@ -19,7 +19,7 @@ const Checkbox = <T extends FieldValues>({
 			<Controller
 				control={control}
 				name={name}
-				render={({ field }) => <MantineCheckbox {...rest} {...field} />}
+				render={({ field }) => <MantineCheckbox {...field} {...rest} />}
 			/>
 			{rightIcon && rightIcon}
 		</Flex>

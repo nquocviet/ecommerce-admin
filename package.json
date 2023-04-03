@@ -10,7 +10,14 @@
 		"check-lint": "eslint . --ext ts --ext tsx --ext js",
 		"format": "prettier --write .",
 		"test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"precommit": "lint-staged"
+	},
+	"lint-staged": {
+		"*.{js,ts,json}": [
+			"prettier --write",
+			"git add"
+		]
 	},
 	"sideEffects": false,
 	"dependencies": {
@@ -45,6 +52,7 @@
 		"eslint-plugin-react": "^7.32.2",
 		"eslint-plugin-simple-import-sort": "^10.0.0",
 		"husky": "^8.0.0",
+		"lint-staged": "^13.2.0",
 		"postcss": "^8.4.14",
 		"prettier": "^2.7.1",
 		"prettier-plugin-tailwindcss": "^0.2.4",
