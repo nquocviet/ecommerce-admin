@@ -1,0 +1,28 @@
+{
+	"data": [
+		{
+			"id": "rr_01GWPWW9FV24CARYD5JD9WCRRK",
+			"created_at": "2023-03-29T14:38:17.000Z",
+			"updated_at": "2023-03-29T14:38:17.000Z",
+			"deleted_at": null,
+			"value": "wrong_size",
+			"label": "Wrong size",
+			"description": null,
+			"parent_return_reason_id": null,
+			"parent_return_reason": null,
+			"return_reason_children": []
+		},
+		{
+			"id": "rr_01GWPWXGS3JB7SG96QX57CGSBC",
+			"created_at": "2023-03-29T14:38:57.000Z",
+			"updated_at": "2023-03-29T14:38:57.000Z",
+			"deleted_at": null,
+			"value": "broken",
+			"label": "Broken",
+			"description": "Product broken",
+			"parent_return_reason_id": null,
+			"parent_return_reason": null,
+			"return_reason_children": []
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"data": [
+		{
+			"id": "usr_01GWHGNJDC9NKDX5VQQWNBK34V",
+			"created_at": "2023-03-27T12:28:42.000Z",
+			"updated_at": "2023-03-27T12:28:42.000Z",
+			"deleted_at": null,
+			"role": "member",
+			"email": "admin@medusa-test.com",
+			"first_name": null,
+			"last_name": null,
+			"api_token": null,
+			"metadata": null
+		},
+		{
+			"id": "usr_01GWHHE1G287ZKVE8P8YXH3N6R",
+			"created_at": "2023-03-27T12:42:04.000Z",
+			"updated_at": "2023-03-27T12:42:04.000Z",
+			"deleted_at": null,
+			"role": "member",
+			"email": "example@email.com",
+			"first_name": null,
+			"last_name": null,
+			"api_token": null,
+			"metadata": null
+		}
+	]
+}

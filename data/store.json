@@ -1,0 +1,83 @@
+{
+	"data": {
+		"id": "store_01GWHGNJ7825E476ETDTZ1SGXC",
+		"created_at": "2023-03-27T12:28:42.000Z",
+		"updated_at": "2023-03-27T12:28:42.000Z",
+		"name": "Medusa Store",
+		"default_currency_code": "usd",
+		"swap_link_template": null,
+		"payment_link_template": null,
+		"invite_link_template": null,
+		"default_location_id": null,
+		"metadata": null,
+		"default_sales_channel_id": "sc_01GWHGNJ9CT0JCCANN63PWK14V",
+		"currencies": [
+			{
+				"code": "eur",
+				"symbol": "€",
+				"symbol_native": "€",
+				"name": "Euro"
+			},
+			{
+				"code": "usd",
+				"symbol": "$",
+				"symbol_native": "$",
+				"name": "US Dollar"
+			}
+		],
+		"default_currency": {
+			"code": "usd",
+			"symbol": "$",
+			"symbol_native": "$",
+			"name": "US Dollar"
+		},
+		"default_sales_channel": {
+			"id": "sc_01GWHGNJ9CT0JCCANN63PWK14V",
+			"created_at": "2023-03-27T12:28:42.000Z",
+			"updated_at": "2023-03-27T12:28:42.000Z",
+			"deleted_at": null,
+			"name": "Default Sales Channel",
+			"description": "Created by Medusa",
+			"is_disabled": false
+		},
+		"feature_flags": [
+			{
+				"key": "analytics",
+				"value": true
+			},
+			{
+				"key": "order_editing",
+				"value": true
+			},
+			{
+				"key": "product_categories",
+				"value": false
+			},
+			{
+				"key": "publishable_api_keys",
+				"value": true
+			},
+			{
+				"key": "sales_channels",
+				"value": true
+			},
+			{
+				"key": "tax_inclusive_pricing",
+				"value": false
+			}
+		],
+		"modules": [],
+		"payment_providers": [
+			{
+				"id": "manual",
+				"is_installed": true
+			}
+		],
+		"fulfillment_providers": [
+			{
+				"id": "manual",
+				"is_installed": true
+			}
+		]
+	}
+}

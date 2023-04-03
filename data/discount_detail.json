@@ -1,0 +1,107 @@
+{
+	"data": {
+		"id": "disc_01GWPWJ1EG5EFY1Q60TE2C1S7B",
+		"created_at": "2023-03-29T14:32:41.000Z",
+		"updated_at": "2023-03-29T14:32:41.000Z",
+		"deleted_at": null,
+		"code": "SALE",
+		"is_dynamic": false,
+		"rule_id": "dru_01GWPWJ1E6WPP4F6PRZJEXTKMC",
+		"is_disabled": true,
+		"parent_discount_id": null,
+		"starts_at": "2023-03-29T14:32:41.000Z",
+		"ends_at": null,
+		"valid_duration": null,
+		"usage_limit": 10,
+		"usage_count": 0,
+		"metadata": null,
+		"rule": {
+			"id": "dru_01GWPWJ1E6WPP4F6PRZJEXTKMC",
+			"created_at": "2023-03-29T14:32:41.000Z",
+			"updated_at": "2023-03-29T14:32:41.000Z",
+			"deleted_at": null,
+			"description": "Optio accusamus perspiciatis tempora ratione accusamus fugit",
+			"type": "percentage",
+			"value": 10,
+			"allocation": "total",
+			"metadata": null,
+			"conditions": [
+				{
+					"id": "discon_01GWPWJ1EMET82FE6F7WSHKSX8",
+					"created_at": "2023-03-29T14:32:41.000Z",
+					"updated_at": "2023-03-29T14:32:41.000Z",
+					"deleted_at": null,
+					"type": "products",
+					"operator": "in",
+					"discount_rule_id": "dru_01GWPWJ1E6WPP4F6PRZJEXTKMC",
+					"metadata": null
+				},
+				{
+					"id": "discon_01GWPWJ1EMN6YK1ESWMG37ZGJP",
+					"created_at": "2023-03-29T14:32:41.000Z",
+					"updated_at": "2023-03-29T14:32:41.000Z",
+					"deleted_at": null,
+					"type": "product_collections",
+					"operator": "in",
+					"discount_rule_id": "dru_01GWPWJ1E6WPP4F6PRZJEXTKMC",
+					"metadata": null
+				}
+			]
+		},
+		"parent_discount": null,
+		"regions": [
+			{
+				"id": "reg_01GWHGNJEFXQEXPHSGM0PTXYSJ",
+				"created_at": "2023-03-27T12:28:42.000Z",
+				"updated_at": "2023-03-27T12:28:42.000Z",
+				"deleted_at": null,
+				"name": "EU",
+				"currency_code": "eur",
+				"tax_rate": 0,
+				"tax_code": null,
+				"gift_cards_taxable": true,
+				"automatic_taxes": true,
+				"tax_provider_id": null,
+				"metadata": null,
+				"payment_providers": [
+					{
+						"id": "manual",
+						"is_installed": true
+					}
+				],
+				"fulfillment_providers": [
+					{
+						"id": "manual",
+						"is_installed": true
+					}
+				]
+			},
+			{
+				"id": "reg_01GWHGNJFM9VFC59J3RZ6G1N8G",
+				"created_at": "2023-03-27T12:28:42.000Z",
+				"updated_at": "2023-03-27T12:28:42.000Z",
+				"deleted_at": null,
+				"name": "NA",
+				"currency_code": "usd",
+				"tax_rate": 0,
+				"tax_code": null,
+				"gift_cards_taxable": true,
+				"automatic_taxes": true,
+				"tax_provider_id": null,
+				"metadata": null,
+				"payment_providers": [
+					{
+						"id": "manual",
+						"is_installed": true
+					}
+				],
+				"fulfillment_providers": [
+					{
+						"id": "manual",
+						"is_installed": true
+					}
+				]
+			}
+		]
+	}
+}

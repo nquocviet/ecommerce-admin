@@ -1,0 +1,107 @@
+{
+	"data": {
+		"id": "cgrp_01GWPVBMR4H5FA7RZZXTCC5H7Y",
+		"created_at": "2023-03-29T14:11:43.000Z",
+		"updated_at": "2023-03-29T14:11:43.000Z",
+		"deleted_at": null,
+		"name": "Saepe dolor",
+		"metadata": {},
+		"customers": [
+			{
+				"id": "cus_01GWPVHG6XNF24323RK72X760Z",
+				"created_at": "2023-03-29T14:14:55.000Z",
+				"updated_at": "2023-03-29T14:14:55.000Z",
+				"deleted_at": null,
+				"email": "xander42@gmail.com",
+				"first_name": "Dewey",
+				"last_name": "Blick",
+				"billing_address_id": null,
+				"phone": "0874915687",
+				"has_account": true,
+				"metadata": null,
+				"groups": [
+					{
+						"id": "cgrp_01GWPV9TC395YM5DZA3D57R40M",
+						"created_at": "2023-03-29T14:10:43.000Z",
+						"updated_at": "2023-03-29T14:10:43.000Z",
+						"deleted_at": null,
+						"name": "Deserunt necess",
+						"metadata": {}
+					},
+					{
+						"id": "cgrp_01GWPVBMR4H5FA7RZZXTCC5H7Y",
+						"created_at": "2023-03-29T14:11:43.000Z",
+						"updated_at": "2023-03-29T14:11:43.000Z",
+						"deleted_at": null,
+						"name": "Saepe dolor",
+						"metadata": {}
+					}
+				]
+			},
+			{
+				"id": "cus_01GWPVMD4Q3756GMSM63TQ18HX",
+				"created_at": "2023-03-29T14:16:30.000Z",
+				"updated_at": "2023-03-29T14:16:30.000Z",
+				"deleted_at": null,
+				"email": "layne_rice@gmail.com",
+				"first_name": null,
+				"last_name": null,
+				"billing_address_id": null,
+				"phone": null,
+				"has_account": false,
+				"metadata": null,
+				"groups": [
+					{
+						"id": "cgrp_01GWPV9TC395YM5DZA3D57R40M",
+						"created_at": "2023-03-29T14:10:43.000Z",
+						"updated_at": "2023-03-29T14:10:43.000Z",
+						"deleted_at": null,
+						"name": "Deserunt necess",
+						"metadata": {}
+					},
+					{
+						"id": "cgrp_01GWPVBMR4H5FA7RZZXTCC5H7Y",
+						"created_at": "2023-03-29T14:11:43.000Z",
+						"updated_at": "2023-03-29T14:11:43.000Z",
+						"deleted_at": null,
+						"name": "Saepe dolor",
+						"metadata": {}
+					}
+				]
+			},
+			{
+				"id": "cus_01GWPVQ0KC7W4XPNZ34AB20KE1",
+				"created_at": "2023-03-29T14:17:56.000Z",
+				"updated_at": "2023-03-29T14:17:56.000Z",
+				"deleted_at": null,
+				"email": "danielle_mayer69@gmail.com",
+				"first_name": "Max",
+				"last_name": "Hand",
+				"billing_address_id": null,
+				"phone": "09875641",
+				"has_account": true,
+				"metadata": null,
+				"groups": [
+					{
+						"id": "cgrp_01GWHKFEYZHMZF1F3PFZGZRQE3",
+						"created_at": "2023-03-27T13:17:47.000Z",
+						"updated_at": "2023-03-27T13:17:47.000Z",
+						"deleted_at": null,
+						"name": "Gold mine",
+						"metadata": {
+							"money": "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+						}
+					},
+					{
+						"id": "cgrp_01GWPVBMR4H5FA7RZZXTCC5H7Y",
+						"created_at": "2023-03-29T14:11:43.000Z",
+						"updated_at": "2023-03-29T14:11:43.000Z",
+						"deleted_at": null,
+						"name": "Saepe dolor",
+						"metadata": {}
+					}
+				]
+			}
+		]
+	}
+}

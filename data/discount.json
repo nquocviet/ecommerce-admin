@@ -1,0 +1,305 @@
+{
+	"data": [
+		{
+			"id": "disc_01GWPWJ1EG5EFY1Q60TE2C1S7B",
+			"created_at": "2023-03-29T14:32:41.000Z",
+			"updated_at": "2023-03-29T14:32:41.000Z",
+			"deleted_at": null,
+			"code": "SALE",
+			"is_dynamic": false,
+			"rule_id": "dru_01GWPWJ1E6WPP4F6PRZJEXTKMC",
+			"is_disabled": true,
+			"parent_discount_id": null,
+			"starts_at": "2023-03-29T14:32:41.000Z",
+			"ends_at": null,
+			"valid_duration": null,
+			"usage_limit": 10,
+			"usage_count": 0,
+			"metadata": null,
+			"rule": {
+				"id": "dru_01GWPWJ1E6WPP4F6PRZJEXTKMC",
+				"created_at": "2023-03-29T14:32:41.000Z",
+				"updated_at": "2023-03-29T14:32:41.000Z",
+				"deleted_at": null,
+				"description": "Optio accusamus perspiciatis tempora ratione accusamus fugit",
+				"type": "percentage",
+				"value": 10,
+				"allocation": "total",
+				"metadata": null,
+				"conditions": [
+					{
+						"id": "discon_01GWPWJ1EMET82FE6F7WSHKSX8",
+						"created_at": "2023-03-29T14:32:41.000Z",
+						"updated_at": "2023-03-29T14:32:41.000Z",
+						"deleted_at": null,
+						"type": "products",
+						"operator": "in",
+						"discount_rule_id": "dru_01GWPWJ1E6WPP4F6PRZJEXTKMC",
+						"metadata": null,
+						"products": [
+							{
+								"id": "prod_01GWHGNKFAX387GBXZHF2XB7CP",
+								"created_at": "2023-03-27T12:28:43.000Z",
+								"updated_at": "2023-03-27T12:28:43.000Z",
+								"deleted_at": null,
+								"title": "Medusa Coffee Mug",
+								"subtitle": null,
+								"description": "Every programmer's best friend.",
+								"handle": "coffee-mug",
+								"is_giftcard": false,
+								"status": "published",
+								"thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/coffee-mug.png",
+								"profile_id": "sp_01GWHGNJ8H2SX932BAB64JFHBA",
+								"weight": 400,
+								"length": null,
+								"height": null,
+								"width": null,
+								"hs_code": null,
+								"origin_country": null,
+								"mid_code": null,
+								"material": null,
+								"collection_id": null,
+								"type_id": null,
+								"discountable": true,
+								"external_id": null,
+								"metadata": null
+							},
+							{
+								"id": "prod_01GWHGNK91ADKPN20W023MJKN5",
+								"created_at": "2023-03-27T12:28:43.000Z",
+								"updated_at": "2023-03-29T14:08:17.000Z",
+								"deleted_at": null,
+								"title": "Medusa Hoodie",
+								"subtitle": null,
+								"description": "Reimagine the feeling of a classic hoodie. With our cotton hoodie, everyday essentials no longer have to be ordinary.",
+								"handle": "hoodie",
+								"is_giftcard": false,
+								"status": "published",
+								"thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/black_hoodie_front.png",
+								"profile_id": "sp_01GWHGNJ8H2SX932BAB64JFHBA",
+								"weight": 400,
+								"length": null,
+								"height": null,
+								"width": null,
+								"hs_code": null,
+								"origin_country": null,
+								"mid_code": null,
+								"material": null,
+								"collection_id": "pcol_01GWHHHY5RA6YQE86PF63ZPN15",
+								"type_id": null,
+								"discountable": true,
+								"external_id": null,
+								"metadata": null
+							}
+						]
+					},
+					{
+						"id": "discon_01GWPWJ1EMN6YK1ESWMG37ZGJP",
+						"created_at": "2023-03-29T14:32:41.000Z",
+						"updated_at": "2023-03-29T14:32:41.000Z",
+						"deleted_at": null,
+						"type": "product_collections",
+						"operator": "in",
+						"discount_rule_id": "dru_01GWPWJ1E6WPP4F6PRZJEXTKMC",
+						"metadata": null,
+						"products": []
+					}
+				]
+			},
+			"regions": [
+				{
+					"id": "reg_01GWHGNJEFXQEXPHSGM0PTXYSJ",
+					"created_at": "2023-03-27T12:28:42.000Z",
+					"updated_at": "2023-03-27T12:28:42.000Z",
+					"deleted_at": null,
+					"name": "EU",
+					"currency_code": "eur",
+					"tax_rate": 0,
+					"tax_code": null,
+					"gift_cards_taxable": true,
+					"automatic_taxes": true,
+					"tax_provider_id": null,
+					"metadata": null,
+					"payment_providers": [
+						{
+							"id": "manual",
+							"is_installed": true
+						}
+					],
+					"fulfillment_providers": [
+						{
+							"id": "manual",
+							"is_installed": true
+						}
+					]
+				},
+				{
+					"id": "reg_01GWHGNJFM9VFC59J3RZ6G1N8G",
+					"created_at": "2023-03-27T12:28:42.000Z",
+					"updated_at": "2023-03-27T12:28:42.000Z",
+					"deleted_at": null,
+					"name": "NA",
+					"currency_code": "usd",
+					"tax_rate": 0,
+					"tax_code": null,
+					"gift_cards_taxable": true,
+					"automatic_taxes": true,
+					"tax_provider_id": null,
+					"metadata": null,
+					"payment_providers": [
+						{
+							"id": "manual",
+							"is_installed": true
+						}
+					],
+					"fulfillment_providers": [
+						{
+							"id": "manual",
+							"is_installed": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "disc_01GWPWCYEEHHMG8AWG3MM4TSH4",
+			"created_at": "2023-03-29T14:29:54.000Z",
+			"updated_at": "2023-03-29T14:29:54.000Z",
+			"deleted_at": null,
+			"code": "FREESHIP",
+			"is_dynamic": false,
+			"rule_id": "dru_01GWPWCYDY6J7BN6TDSN1EJZDC",
+			"is_disabled": false,
+			"parent_discount_id": null,
+			"starts_at": "2023-03-29T14:29:54.000Z",
+			"ends_at": null,
+			"valid_duration": null,
+			"usage_limit": null,
+			"usage_count": 0,
+			"metadata": null,
+			"rule": {
+				"id": "dru_01GWPWCYDY6J7BN6TDSN1EJZDC",
+				"created_at": "2023-03-29T14:29:54.000Z",
+				"updated_at": "2023-03-29T14:29:54.000Z",
+				"deleted_at": null,
+				"description": "Freeship for all products",
+				"type": "free_shipping",
+				"value": 0,
+				"allocation": "total",
+				"metadata": null,
+				"conditions": []
+			},
+			"regions": [
+				{
+					"id": "reg_01GWHGNJEFXQEXPHSGM0PTXYSJ",
+					"created_at": "2023-03-27T12:28:42.000Z",
+					"updated_at": "2023-03-27T12:28:42.000Z",
+					"deleted_at": null,
+					"name": "EU",
+					"currency_code": "eur",
+					"tax_rate": 0,
+					"tax_code": null,
+					"gift_cards_taxable": true,
+					"automatic_taxes": true,
+					"tax_provider_id": null,
+					"metadata": null,
+					"payment_providers": [
+						{
+							"id": "manual",
+							"is_installed": true
+						}
+					],
+					"fulfillment_providers": [
+						{
+							"id": "manual",
+							"is_installed": true
+						}
+					]
+				},
+				{
+					"id": "reg_01GWHGNJFM9VFC59J3RZ6G1N8G",
+					"created_at": "2023-03-27T12:28:42.000Z",
+					"updated_at": "2023-03-27T12:28:42.000Z",
+					"deleted_at": null,
+					"name": "NA",
+					"currency_code": "usd",
+					"tax_rate": 0,
+					"tax_code": null,
+					"gift_cards_taxable": true,
+					"automatic_taxes": true,
+					"tax_provider_id": null,
+					"metadata": null,
+					"payment_providers": [
+						{
+							"id": "manual",
+							"is_installed": true
+						}
+					],
+					"fulfillment_providers": [
+						{
+							"id": "manual",
+							"is_installed": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "disc_01GWHKQN7P9N7XJYXCGT2D4AS0",
+			"created_at": "2023-03-27T13:22:16.000Z",
+			"updated_at": "2023-03-27T13:22:16.000Z",
+			"deleted_at": null,
+			"code": "SUMMERSALE",
+			"is_dynamic": false,
+			"rule_id": "dru_01GWHKQN7BBABMXNX698DJHKME",
+			"is_disabled": false,
+			"parent_discount_id": null,
+			"starts_at": "2023-03-27T13:21:39.039Z",
+			"ends_at": "2023-04-03T13:21:39.038Z",
+			"valid_duration": null,
+			"usage_limit": 10,
+			"usage_count": 0,
+			"metadata": null,
+			"rule": {
+				"id": "dru_01GWHKQN7BBABMXNX698DJHKME",
+				"created_at": "2023-03-27T13:22:16.000Z",
+				"updated_at": "2023-03-27T13:22:16.000Z",
+				"deleted_at": null,
+				"description": "Summer Sale 2023",
+				"type": "percentage",
+				"value": 15,
+				"allocation": "total",
+				"metadata": null,
+				"conditions": []
+			},
+			"regions": [
+				{
+					"id": "reg_01GWHGNJEFXQEXPHSGM0PTXYSJ",
+					"created_at": "2023-03-27T12:28:42.000Z",
+					"updated_at": "2023-03-27T12:28:42.000Z",
+					"deleted_at": null,
+					"name": "EU",
+					"currency_code": "eur",
+					"tax_rate": 0,
+					"tax_code": null,
+					"gift_cards_taxable": true,
+					"automatic_taxes": true,
+					"tax_provider_id": null,
+					"metadata": null,
+					"payment_providers": [
+						{
+							"id": "manual",
+							"is_installed": true
+						}
+					],
+					"fulfillment_providers": [
+						{
+							"id": "manual",
+							"is_installed": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

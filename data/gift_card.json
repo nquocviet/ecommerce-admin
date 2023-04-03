@@ -1,0 +1,92 @@
+{
+	"data": [
+		{
+			"id": "gift_01GWHM358KSPQKMB82VCBW16BF",
+			"region": {
+				"id": "reg_01GWHGNJEFXQEXPHSGM0PTXYSJ",
+				"created_at": "2023-03-27T12:28:42.000Z",
+				"updated_at": "2023-03-27T12:28:42.000Z",
+				"deleted_at": null,
+				"name": "EU",
+				"currency_code": "eur",
+				"tax_rate": 0,
+				"tax_code": null,
+				"gift_cards_taxable": true,
+				"automatic_taxes": true,
+				"tax_provider_id": null,
+				"metadata": null,
+				"payment_providers": [
+					{
+						"id": "manual",
+						"is_installed": true
+					}
+				],
+				"fulfillment_providers": [
+					{
+						"id": "manual",
+						"is_installed": true
+					}
+				]
+			},
+			"order": null,
+			"created_at": "2023-03-27T13:28:33.000Z",
+			"updated_at": "2023-03-27T13:28:33.000Z",
+			"deleted_at": null,
+			"code": "PETE-495E-NJF1-39XC",
+			"value": 500,
+			"balance": 500,
+			"region_id": "reg_01GWHGNJEFXQEXPHSGM0PTXYSJ",
+			"is_disabled": false,
+			"ends_at": null,
+			"tax_rate": null,
+			"metadata": {
+				"email": "johndoe@gmal.com",
+				"personal_message": ""
+			}
+		},
+		{
+			"id": "gift_01GWPWPH5HE0KPXXKRGG9FAX6A",
+			"region": {
+				"id": "reg_01GWHGNJFM9VFC59J3RZ6G1N8G",
+				"created_at": "2023-03-27T12:28:42.000Z",
+				"updated_at": "2023-03-27T12:28:42.000Z",
+				"deleted_at": null,
+				"name": "NA",
+				"currency_code": "usd",
+				"tax_rate": 0,
+				"tax_code": null,
+				"gift_cards_taxable": true,
+				"automatic_taxes": true,
+				"tax_provider_id": null,
+				"metadata": null,
+				"payment_providers": [
+					{
+						"id": "manual",
+						"is_installed": true
+					}
+				],
+				"fulfillment_providers": [
+					{
+						"id": "manual",
+						"is_installed": true
+					}
+				]
+			},
+			"order": null,
+			"created_at": "2023-03-29T14:35:08.000Z",
+			"updated_at": "2023-03-29T14:35:08.000Z",
+			"deleted_at": null,
+			"code": "158I-ZD6Q-Z7W6-U32I",
+			"value": 500,
+			"balance": 500,
+			"region_id": "reg_01GWHGNJFM9VFC59J3RZ6G1N8G",
+			"is_disabled": false,
+			"ends_at": null,
+			"tax_rate": null,
+			"metadata": {
+				"email": "albert93@gmail.com",
+				"personal_message": "Hic tempora illum optio alias aliquam rerum sint. Rerum id iure beatae excepturi consectetur repelle"
+			}
+		}
+	]
+}

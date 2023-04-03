@@ -1,14 +1,14 @@
 export const formatDate = (
-  date: Date | number,
-  opts?: Intl.DateTimeFormatOptions,
-  locales: string | string[] = 'en-US'
+	date: ConstructorParameters<typeof Date>[0],
+	opts?: Intl.DateTimeFormatOptions,
+	locales: string | string[] = 'en-UK'
 ): string => {
-  const defaultOptions: Intl.DateTimeFormatOptions = {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  }
-  const options = opts || defaultOptions
+	const defaultOptions: Intl.DateTimeFormatOptions = {
+		day: 'numeric',
+		month: 'short',
+		year: 'numeric',
+	}
+	const options = opts || defaultOptions
 
-  return new Intl.DateTimeFormat(locales, options).format(date)
+	return new Intl.DateTimeFormat(locales, options).format(new Date(date))
 }

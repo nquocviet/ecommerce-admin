@@ -1,11 +1,14 @@
 import React from 'react'
-import Home from '@/page-components/Home'
+
+import { ROLES } from '@/constants/roles'
 import { withAuth } from '@/hocs'
+import Home from '@/page-components/home'
 
 const HomePage = () => {
-  return <Home />
+	return <Home />
 }
 
 export default withAuth({
-  Component: HomePage,
+	Component: HomePage,
+	allowedRoles: [ROLES.ADMIN],
 })

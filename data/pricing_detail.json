@@ -1,0 +1,52 @@
+{
+	"data": {
+		"id": "pl_01GWPWTE4Z55YMRWN96TQP53T7",
+		"created_at": "2023-03-29T14:37:16.000Z",
+		"updated_at": "2023-03-29T14:37:16.000Z",
+		"deleted_at": null,
+		"name": "Aliquid soluta",
+		"description": "aliquid velit. Deleniti incidunt cumque deleniti minima voluptatibus. Ipsum error et ",
+		"type": "sale",
+		"status": "draft",
+		"starts_at": "2023-03-29T14:37:14.525Z",
+		"ends_at": "2023-04-05T14:37:14.527Z",
+		"prices": [
+			{
+				"id": "ma_01GWPWTE560C0FXEVA96JX8Q2Z",
+				"created_at": "2023-03-29T14:37:16.000Z",
+				"updated_at": "2023-03-29T14:37:16.000Z",
+				"deleted_at": null,
+				"currency_code": "eur",
+				"amount": 5000,
+				"min_quantity": null,
+				"max_quantity": null,
+				"price_list_id": "pl_01GWPWTE4Z55YMRWN96TQP53T7",
+				"variant_id": "variant_01GWHGNK6CTG1C4KXHP4BSJA1Q",
+				"region_id": null
+			},
+			{
+				"id": "ma_01GWPWTE573T6GXV6QEEZ35D3J",
+				"created_at": "2023-03-29T14:37:16.000Z",
+				"updated_at": "2023-03-29T14:37:16.000Z",
+				"deleted_at": null,
+				"currency_code": "usd",
+				"amount": 5000,
+				"min_quantity": null,
+				"max_quantity": null,
+				"price_list_id": "pl_01GWPWTE4Z55YMRWN96TQP53T7",
+				"variant_id": "variant_01GWHGNK6CTG1C4KXHP4BSJA1Q",
+				"region_id": null
+			}
+		],
+		"customer_groups": [
+			{
+				"id": "cgrp_01GWPVBZ8SSSJVHRT8Q9N6N5C2",
+				"created_at": "2023-03-29T14:11:54.000Z",
+				"updated_at": "2023-03-29T14:11:54.000Z",
+				"deleted_at": null,
+				"name": "Enim natus",
+				"metadata": {}
+			}
+		]
+	}
+}

@@ -1,53 +1,54 @@
-import React, { useEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { routeConfig } from '@/routes'
+
 import { ROLES } from '@/constants/roles'
+import { routeConfig } from '@/routes'
 
 interface withAuthProps {
-  Component: React.FC
-  allowedRoles?: Array<keyof typeof ROLES>
+	Component: React.FC
+	allowedRoles?: Array<keyof typeof ROLES>
 }
 
 // TODO: replace when implement in real-life
-const isAuthenticated = false
-const role = ROLES.USER
+const isAuthenticated = true
+const role = ROLES.ADMIN
 
 const withAuth = ({
-  Component,
-  allowedRoles = [ROLES.USER],
+	Component,
+	allowedRoles = [ROLES.USER],
 }: withAuthProps) => {
-  const Authenticated: React.FC = (): JSX.Element | null => {
-    const [isValid, setIsValid] = useState<boolean>(false)
-    const router = useRouter()
+	const Authenticated: React.FC = (): JSX.Element | null => {
+		const [isValid, setIsValid] = useState<boolean>(false)
+		const router = useRouter()
 
-    useEffect(() => {
-      if (routeConfig.PUBLIC[router.pathname]) {
-        setIsValid(true)
-        return
-      }
+		useLayoutEffect(() => {
+			if (routeConfig.PUBLIC?.[router.pathname]) {
+				setIsValid(true)
+				return
+			}
 
-      if (
-        isAuthenticated &&
-        (!allowedRoles.includes(role) || !routeConfig[role][router.pathname])
-      ) {
-        setIsValid(false)
-        router.push(routeConfig[role].default)
-        return
-      }
+			if (
+				isAuthenticated &&
+				(!allowedRoles.includes(role) || !routeConfig[role][router.pathname])
+			) {
+				setIsValid(false)
+				router.push(routeConfig[role].default)
+				return
+			}
 
-      if (!isAuthenticated && !routeConfig.AUTH[router.pathname]) {
-        setIsValid(false)
-        router.push(routeConfig.AUTH.default)
-        return
-      }
+			if (!isAuthenticated && !routeConfig.AUTH[router.pathname]) {
+				setIsValid(false)
+				router.push(routeConfig.AUTH.default)
+				return
+			}
 
-      setIsValid(true)
-    }, [router])
+			setIsValid(true)
+		}, [router])
 
-    return isValid ? <Component /> : null
-  }
+		return isValid ? <Component /> : null
+	}
 
-  return Authenticated
+	return Authenticated
 }
 
 export default withAuth

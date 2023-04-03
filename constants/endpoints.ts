@@ -1,3 +1,3 @@
 export const AUTH_URL = {
-  LOGIN: '/login',
+	LOGIN: '/login',
 } as const

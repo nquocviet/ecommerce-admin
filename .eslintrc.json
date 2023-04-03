@@ -1,31 +1,59 @@
 {
-  "env": {
-    "node": true,
-    "commonjs": true,
-    "browser": true,
-    "es6": true,
-    "jest": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
-  "overrides": [],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true,
-      "useJSXTextNode": true
-    },
-    "ecmaVersion": 2018,
-    "sourceType": "module",
-    "project": ["./tsconfig.json"]
-  },
-  "plugins": ["react", "react-hooks", "prettier", "@typescript-eslint"],
-  "rules": {
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
-  }
+	"env": {
+		"node": true,
+		"commonjs": true,
+		"browser": true,
+		"es6": true,
+		"jest": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"prettier"
+	],
+	"overrides": [
+		{
+			"files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+			"rules": {
+				"simple-import-sort/imports": [
+					"error",
+					{
+						"groups": [
+							["^react", "^@?\\w"],
+							["^(@|components)(/.*|$)"],
+							["^\\u0000"],
+							["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+							["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+							["^.+\\.?(css)$"]
+						]
+					}
+				]
+			}
+		}
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true,
+			"useJSXTextNode": true
+		},
+		"ecmaVersion": 2018,
+		"sourceType": "module",
+		"project": ["./tsconfig.json"]
+	},
+	"plugins": [
+		"react",
+		"react-hooks",
+		"prettier",
+		"@typescript-eslint",
+		"simple-import-sort"
+	],
+	"rules": {
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+		"react/prop-types": "off",
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error"
+	}
 }
