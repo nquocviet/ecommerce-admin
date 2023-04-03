@@ -33,11 +33,21 @@ export const components: any = {
 	},
 	Input: {
 		styles: (theme) => ({
+			label: {
+				marginBottom: '0.25rem',
+			},
 			input: {
 				borderColor: theme.colors.gray[3],
 				'&:focus': {
 					boxShadow: '0 0 0 4px var(--primary-100)',
 				},
+			},
+		}),
+	},
+	Select: {
+		styles: () => ({
+			label: {
+				marginBottom: '0.25rem',
 			},
 		}),
 	},
@@ -111,6 +121,33 @@ export const components: any = {
 				'&:active': {
 					transform: 'unset !important',
 				},
+			},
+		}),
+	},
+	Checkbox: {
+		styles: () => ({
+			input: {
+				cursor: 'pointer',
+			},
+			label: {
+				cursor: 'pointer',
+			},
+		}),
+	},
+	Radio: {
+		styles: () => ({
+			radio: {
+				cursor: 'pointer',
+			},
+			label: {
+				cursor: 'pointer',
+			},
+		}),
+	},
+	Tooltip: {
+		styles: () => ({
+			tooltip: {
+				fontSize: 'var(--fs-text-sm)',
 			},
 		}),
 	},
