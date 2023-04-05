@@ -9,9 +9,10 @@ import {
 } from '@mantine/core'
 import { DotsThree, NotePencil, UserCircle } from '@phosphor-icons/react'
 
+import { TDataTableColumn } from '@/types/datatable'
 import { formatDate } from '@/utils'
 
-export const columns: any = [
+export const columns: TDataTableColumn = [
 	{
 		accessor: 'created_at',
 		title: 'Date added',

@@ -19,7 +19,7 @@ const SettingsCard = ({
 				</Box>
 				<Flex direction="column" className="grow pl-5 pr-2" gap={4}>
 					<Text className="font-semibold">{title}</Text>
-					<Text className="text-sm text-gray-600">{description}</Text>
+					<Text className="text-sm text-gray-500">{description}</Text>
 				</Flex>
 				<CaretRight size={20} className="shrink-0 text-gray-700" />
 			</Flex>

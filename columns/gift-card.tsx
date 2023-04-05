@@ -1,8 +1,7 @@
-import React from 'react'
-
+import { TDataTableColumn } from '@/types/datatable'
 import { formatDate, formatMoney } from '@/utils'
 
-export const columns: any = [
+export const columns: TDataTableColumn = [
 	{
 		accessor: 'code',
 		title: 'Code',

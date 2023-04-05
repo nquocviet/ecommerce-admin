@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { Box, clsx, Flex, Text, Title, TitleOrder } from '@mantine/core'
 
 type TPageTitleProps = {
@@ -33,7 +33,7 @@ const PageTitle = ({
 					{title}
 				</Title>
 				{description && (
-					<Text className="text-sm text-gray-600" sx={{ marginTop: spacing }}>
+					<Text className="text-sm text-gray-500" sx={{ marginTop: spacing }}>
 						{description}
 					</Text>
 				)}

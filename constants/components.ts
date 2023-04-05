@@ -45,7 +45,13 @@ export const components: any = {
 		}),
 	},
 	Select: {
-		styles: () => ({
+		styles: (theme) => ({
+			input: {
+				borderColor: theme.colors.gray[3],
+				'&:focus': {
+					boxShadow: '0 0 0 4px var(--primary-100)',
+				},
+			},
 			label: {
 				marginBottom: '0.25rem',
 			},

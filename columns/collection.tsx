@@ -2,9 +2,10 @@ import React from 'react'
 import { ActionIcon, Menu } from '@mantine/core'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 
+import { TDataTableColumn } from '@/types/datatable'
 import { formatDate } from '@/utils'
 
-export const columns: any = [
+export const columns: TDataTableColumn = [
 	{
 		accessor: 'title',
 		title: 'Title',

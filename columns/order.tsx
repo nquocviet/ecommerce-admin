@@ -2,6 +2,7 @@ import React from 'react'
 import { Avatar, Flex, MANTINE_COLORS, Text } from '@mantine/core'
 
 import { Dots } from '@/components'
+import { TDataTableColumn } from '@/types/datatable'
 import { formatDate, formatMoney, toCapitalize } from '@/utils'
 
 const paymentStatuses = {
@@ -23,7 +24,7 @@ const paymentStatuses = {
 	},
 }
 
-export const columns: any = [
+export const columns: TDataTableColumn = [
 	{
 		accessor: 'id',
 		title: 'Order',
