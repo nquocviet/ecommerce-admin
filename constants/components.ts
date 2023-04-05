@@ -151,4 +151,11 @@ export const components: any = {
 			},
 		}),
 	},
+	Divider: {
+		styles: (theme) => ({
+			root: {
+				borderTopColor: `${theme.colors.gray[2]} !important`,
+			},
+		}),
+	},
 }
