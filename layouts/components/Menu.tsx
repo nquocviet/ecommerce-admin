@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import { MENU_LIST, MenuItemType } from '@/constants/menu'
+import ROUTES from '@/routes'
 import { hasChildren } from '@/utils'
 
 type TSingleMenuProps = MenuItemType & {
@@ -25,11 +26,16 @@ const SingleMenu = ({
 	const domain = pathname.split('/')[1]
 
 	useEffect(() => {
+		if (href === ROUTES.HOME && domain === '') {
+			setActive(true)
+			return
+		}
+
 		if (domain && href.includes(domain)) {
 			setActive(true)
 			toggle?.()
 		}
-	}, [pathname])
+	}, [pathname, domain, href, setActive, toggle])
 
 	return (
 		<NavLink

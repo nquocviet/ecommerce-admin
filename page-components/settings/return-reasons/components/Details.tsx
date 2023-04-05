@@ -1,6 +1,14 @@
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { ActionIcon, Button, Flex, Menu, Paper } from '@mantine/core'
+import {
+	ActionIcon,
+	Box,
+	Button,
+	Divider,
+	Flex,
+	Menu,
+	Paper,
+} from '@mantine/core'
 import { Copy, DotsThree, Trash } from '@phosphor-icons/react'
 
 import { PageTitle, TextInput } from '@/components'
@@ -32,7 +40,7 @@ const Details = ({ reasonSelected }: TDetailsProps) => {
 				title="Details"
 				description={reasonSelected?.value}
 				size="sm"
-				className="mb-6"
+				className="mb-8"
 				action={
 					<Menu shadow="md" width={200}>
 						<Menu.Target>
@@ -55,7 +63,7 @@ const Details = ({ reasonSelected }: TDetailsProps) => {
 				}
 			/>
 			<form>
-				<Flex direction="column" gap={16}>
+				<Flex direction="column" gap={16} className="mb-6">
 					<TextInput
 						control={control}
 						name="label"
@@ -68,13 +76,16 @@ const Details = ({ reasonSelected }: TDetailsProps) => {
 						label="Description"
 						placeholder="Reason description"
 					/>
-					<Flex justify="flex-end" gap={12} className="mt-6">
+				</Flex>
+				<Box>
+					<Divider className="mb-4" />
+					<Flex justify="flex-end" gap={12}>
 						<Button variant="outline" color="gray">
 							Cancel changes
 						</Button>
 						<Button type="submit">Save</Button>
 					</Flex>
-				</Flex>
+				</Box>
 			</form>
 		</Paper>
 	)

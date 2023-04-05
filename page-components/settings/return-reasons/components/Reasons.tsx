@@ -34,7 +34,7 @@ const Reasons = ({ reasonSelected, setReasonSelected }: TReasonsProps) => {
 				title="Return Reasons"
 				description="Manage reasons for returned items"
 				size="sm"
-				className="mb-6"
+				className="mb-8"
 				action={
 					<Button
 						variant="outline"
@@ -46,7 +46,7 @@ const Reasons = ({ reasonSelected, setReasonSelected }: TReasonsProps) => {
 					</Button>
 				}
 			/>
-			<form className="pt-6">
+			<form>
 				<RadioGroup control={control} name="reason" onChange={onChange}>
 					<Flex direction="column" gap={16}>
 						{data?.map(({ id, value, label, description }) => (

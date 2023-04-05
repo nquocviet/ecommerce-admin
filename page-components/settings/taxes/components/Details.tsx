@@ -15,7 +15,7 @@ const Details = () => {
 			<PageTitle
 				title="Details"
 				size="sm"
-				className="mb-6"
+				className="mb-8"
 				action={
 					<Button
 						variant="outline"
@@ -29,7 +29,7 @@ const Details = () => {
 			/>
 			<Table
 				minHeight={82}
-				records={[{ name: 'Default', code: null, rate: 0 }]}
+				records={[{ id: 1, name: 'Default', code: null, rate: 0 }]}
 				columns={columns}
 				className="mb-6"
 			/>
