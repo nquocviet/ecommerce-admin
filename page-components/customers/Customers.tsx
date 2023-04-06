@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Paper, Tabs } from '@mantine/core'
 
 import { CUSTOMER_TABS } from '@/constants/tabs'

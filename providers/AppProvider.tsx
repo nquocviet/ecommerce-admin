@@ -1,10 +1,10 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { MantineProvider } from '@mantine/core'
-import { ThemeProvider } from 'context/theme'
 
 import { ErrorBoundary } from '@/components'
 import { COLORS_THEME } from '@/constants/colors'
 import { components } from '@/constants/components'
+import { ThemeProvider } from '@/context'
 
 type AppProviderProps = {
 	children: ReactNode

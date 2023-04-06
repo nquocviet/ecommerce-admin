@@ -1,7 +1,6 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { Box } from '@mantine/core'
 import { ArrowLeft } from '@phosphor-icons/react'
-import Link from 'next/link'
 import ROUTES from 'routes'
 
 import { CustomLink } from '@/components'

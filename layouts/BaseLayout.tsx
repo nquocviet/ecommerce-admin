@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { AppShell, Container, useMantineTheme } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 

@@ -44,7 +44,7 @@ const PersonalForm = () => {
 								Active
 							</Badge>
 						</Flex>
-						<Text className="text-sm text-gray-600">
+						<Text className="text-sm text-gray-500">
 							Share usage insights and help us improve Medusa
 						</Text>
 					</Flex>

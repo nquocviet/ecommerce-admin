@@ -20,6 +20,7 @@
 			"@/public/*": ["public/*"],
 			"@/routes": ["routes/"],
 			"@/styles/*": ["styles/*"],
+			"@/types/*": ["types/*"],
 			"@/utils": ["utils/"],
 			"@/validators/*": ["validators/*"]
 		},

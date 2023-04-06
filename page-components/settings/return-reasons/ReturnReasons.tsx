@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Grid } from '@mantine/core'
 
 import { SettingsLayout } from '@/layouts'

@@ -3,9 +3,10 @@ import { ActionIcon, Badge, Flex, Menu } from '@mantine/core'
 import { Copy, DotsThree, Lock, NotePencil, Trash } from '@phosphor-icons/react'
 
 import { Dots } from '@/components'
+import { TDataTableColumn } from '@/types/datatable'
 import { toCapitalize } from '@/utils'
 
-export const columns: any = [
+export const columns: TDataTableColumn = [
 	{
 		accessor: 'code',
 		title: 'Code',

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { Control, Controller, FieldValues, Path } from 'react-hook-form'
 import { Checkbox as MantineCheckbox, CheckboxProps, Flex } from '@mantine/core'
 
