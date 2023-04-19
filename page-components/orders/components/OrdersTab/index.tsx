@@ -12,8 +12,6 @@ const OrdersTab = () => {
 	const { data, isLoading } = useOrders()
 	const { control } = useForm()
 
-	console.log(data)
-
 	return (
 		<>
 			<form>

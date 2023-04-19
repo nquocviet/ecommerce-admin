@@ -3,7 +3,7 @@ import { Grid } from '@mantine/core'
 
 import { SettingsLayout } from '@/layouts'
 
-import { Details, Reasons } from './components'
+import { ReasonDetails, Reasons } from './components'
 
 const ReturnReasons = () => {
 	const [reasonSelected, setReasonSelected] = useState<Record<
@@ -21,7 +21,7 @@ const ReturnReasons = () => {
 					/>
 				</Grid.Col>
 				<Grid.Col span={6}>
-					<Details reasonSelected={reasonSelected} />
+					<ReasonDetails reasonSelected={reasonSelected} />
 				</Grid.Col>
 			</Grid>
 		</SettingsLayout>

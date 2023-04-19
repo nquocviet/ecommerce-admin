@@ -1,0 +1,6 @@
+export { default as Attributes } from './Attributes'
+export { default as GeneralInformation } from './GeneralInformation'
+export { default as Media } from './Media'
+export { default as Organize } from './Organize'
+export { default as Thumbnail } from './Thumbnail'
+export { default as Variants } from './Variants'
