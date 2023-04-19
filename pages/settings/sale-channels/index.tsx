@@ -2,13 +2,13 @@ import React from 'react'
 
 import { ROLES } from '@/constants/roles'
 import { withAuth } from '@/hocs'
-import Shipping from '@/page-components/settings/shipping/'
+import SaleChannels from '@/page-components/settings/sale-channels'
 
-const ShippingPage = () => {
-	return <Shipping />
+const SaleChannelsPage = () => {
+	return <SaleChannels />
 }
 
 export default withAuth({
-	Component: ShippingPage,
+	Component: SaleChannelsPage,
 	allowedRoles: [ROLES.ADMIN],
 })

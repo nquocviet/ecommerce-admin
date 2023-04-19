@@ -6,7 +6,7 @@ import {
 	Icon,
 	MapPin,
 	Smiley,
-	Truck,
+	TreeStructure,
 	Users,
 } from '@phosphor-icons/react'
 
@@ -40,10 +40,10 @@ export const SETTINGS: SettingsType[] = [
 		icon: CrosshairSimple,
 	},
 	{
-		title: 'Shipping',
-		description: 'Manage shipping profiles',
-		href: ROUTES.SETTINGS.SHIPPING,
-		icon: Truck,
+		title: 'Sale channels',
+		description: 'Control which products are available in which channels',
+		href: ROUTES.SETTINGS.SALE_CHANNELS,
+		icon: TreeStructure,
 	},
 	{
 		title: 'Return Reasons',
