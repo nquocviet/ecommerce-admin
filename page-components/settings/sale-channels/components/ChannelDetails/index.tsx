@@ -12,7 +12,7 @@ import { Dots, PageTitle, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useProducts } from '@/lib/product'
 
-const Details = () => {
+const ChannelDetails = () => {
 	const { data, isLoading } = useProducts()
 
 	return (
@@ -75,4 +75,4 @@ const Details = () => {
 	)
 }
 
-export default Details
+export default ChannelDetails

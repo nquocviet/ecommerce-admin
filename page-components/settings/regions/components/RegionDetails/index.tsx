@@ -12,7 +12,7 @@ import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 
 import { PageTitle, ShippingOption } from '@/components'
 
-const Details = () => {
+const RegionDetails = () => {
 	return (
 		<Flex direction="column" align="stretch" gap={16} className="h-full">
 			<Paper shadow="xs" p="xl">
@@ -116,4 +116,4 @@ const Details = () => {
 	)
 }
 
-export default Details
+export default RegionDetails

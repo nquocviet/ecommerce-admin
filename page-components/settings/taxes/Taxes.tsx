@@ -3,7 +3,7 @@ import { Grid } from '@mantine/core'
 
 import { SettingsLayout } from '@/layouts'
 
-import { Details, Regions } from './components'
+import { Regions, TaxDetails } from './components'
 
 const Taxes = () => {
 	return (
@@ -13,7 +13,7 @@ const Taxes = () => {
 					<Regions />
 				</Grid.Col>
 				<Grid.Col span={8}>
-					<Details />
+					<TaxDetails />
 				</Grid.Col>
 			</Grid>
 		</SettingsLayout>

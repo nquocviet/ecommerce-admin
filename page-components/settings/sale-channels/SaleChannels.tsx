@@ -3,7 +3,7 @@ import { Grid } from '@mantine/core'
 
 import { SettingsLayout } from '@/layouts'
 
-import { Channels, Details } from './components'
+import { ChannelDetails, Channels } from './components'
 
 const SaleChannels = () => {
 	return (
@@ -13,7 +13,7 @@ const SaleChannels = () => {
 					<Channels />
 				</Grid.Col>
 				<Grid.Col span={8}>
-					<Details />
+					<ChannelDetails />
 				</Grid.Col>
 			</Grid>
 		</SettingsLayout>

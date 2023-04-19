@@ -3,7 +3,7 @@ import { Grid } from '@mantine/core'
 
 import { SettingsLayout } from '@/layouts'
 
-import { Details, Markets } from './components'
+import { Markets, RegionDetails } from './components'
 
 const Regions = () => {
 	return (
@@ -13,7 +13,7 @@ const Regions = () => {
 					<Markets />
 				</Grid.Col>
 				<Grid.Col span={8}>
-					<Details />
+					<RegionDetails />
 				</Grid.Col>
 			</Grid>
 		</SettingsLayout>

@@ -1,12 +1,26 @@
 import { ButtonStylesParams } from '@mantine/core'
 
 export const components: any = {
-	Container: {
-		styles: (theme) => ({
+	Accordion: {
+		styles: () => ({
+			control: {
+				paddingLeft: 0,
+				paddingRight: 0,
+				'&:hover': {
+					backgroundColor: 'transparent',
+				},
+			},
+			content: {
+				paddingLeft: 0,
+				paddingRight: 0,
+			},
+		}),
+	},
+	ActionIcon: {
+		styles: () => ({
 			root: {
-				[`@media (max-width: ${theme.breakpoints.sm})`]: {
-					paddingLeft: 0,
-					paddingRight: 0,
+				'&:active': {
+					transform: 'unset',
 				},
 			},
 		}),
@@ -31,16 +45,71 @@ export const components: any = {
 			},
 		}),
 	},
-	TextInput: {
-		styles: (theme) => ({
-			label: {
-				marginBottom: '0.25rem',
-			},
+	Checkbox: {
+		styles: () => ({
 			input: {
-				borderColor: theme.colors.gray[3],
-				'&:focus': {
-					boxShadow: '0 0 0 4px var(--primary-100)',
+				cursor: 'pointer',
+			},
+			label: {
+				cursor: 'pointer',
+			},
+		}),
+	},
+	Container: {
+		styles: (theme) => ({
+			root: {
+				[`@media (max-width: ${theme.breakpoints.sm})`]: {
+					paddingLeft: 0,
+					paddingRight: 0,
 				},
+			},
+		}),
+	},
+	Divider: {
+		styles: (theme) => ({
+			root: {
+				borderTopColor: `${theme.colors.gray[2]} !important`,
+			},
+		}),
+	},
+	Dropzone: {
+		styles: (theme) => ({
+			root: {
+				border: `1px dashed ${theme.colors.gray[3]}`,
+			},
+		}),
+	},
+	Modal: {
+		styles: () => ({
+			header: {
+				padding: '1.5rem',
+			},
+			body: {
+				padding: '1.5rem',
+			},
+			title: {
+				fontSize: 'var(--fs-text-xl)',
+				fontWeight: 'var(--fw-semibold)',
+			},
+		}),
+	},
+	Pagination: {
+		styles: (theme) => ({
+			control: {
+				borderColor: theme.colors.gray[3],
+				'&:active': {
+					transform: 'unset !important',
+				},
+			},
+		}),
+	},
+	Radio: {
+		styles: () => ({
+			radio: {
+				cursor: 'pointer',
+			},
+			label: {
+				cursor: 'pointer',
 			},
 		}),
 	},
@@ -57,11 +126,21 @@ export const components: any = {
 			},
 		}),
 	},
-	ActionIcon: {
+	Table: {
 		styles: () => ({
 			root: {
-				'&:active': {
-					transform: 'unset',
+				minWidth: 750,
+				'& tr th:first-of-type': {
+					paddingLeft: 0,
+				},
+				'& tr td:first-of-type': {
+					paddingLeft: 0,
+				},
+				'& tr th:last-of-type': {
+					paddingRight: 0,
+				},
+				'& tr td:last-of-type': {
+					paddingRight: 0,
 				},
 			},
 		}),
@@ -101,52 +180,16 @@ export const components: any = {
 			},
 		}),
 	},
-	Table: {
-		styles: () => ({
-			root: {
-				minWidth: 750,
-				'& tr th:first-of-type': {
-					paddingLeft: 0,
-				},
-				'& tr td:first-of-type': {
-					paddingLeft: 0,
-				},
-				'& tr th:last-of-type': {
-					paddingRight: 0,
-				},
-				'& tr td:last-of-type': {
-					paddingRight: 0,
-				},
-			},
-		}),
-	},
-	Pagination: {
+	TextInput: {
 		styles: (theme) => ({
-			control: {
-				borderColor: theme.colors.gray[3],
-				'&:active': {
-					transform: 'unset !important',
-				},
+			label: {
+				marginBottom: '0.25rem',
 			},
-		}),
-	},
-	Checkbox: {
-		styles: () => ({
 			input: {
-				cursor: 'pointer',
-			},
-			label: {
-				cursor: 'pointer',
-			},
-		}),
-	},
-	Radio: {
-		styles: () => ({
-			radio: {
-				cursor: 'pointer',
-			},
-			label: {
-				cursor: 'pointer',
+				borderColor: theme.colors.gray[3],
+				'&:focus': {
+					boxShadow: '0 0 0 4px var(--primary-100)',
+				},
 			},
 		}),
 	},
@@ -154,13 +197,6 @@ export const components: any = {
 		styles: () => ({
 			tooltip: {
 				fontSize: 'var(--fs-text-sm)',
-			},
-		}),
-	},
-	Divider: {
-		styles: (theme) => ({
-			root: {
-				borderTopColor: `${theme.colors.gray[2]} !important`,
 			},
 		}),
 	},

@@ -7,7 +7,7 @@ import { columns } from '@/columns/tax-details'
 import { Checkbox, PageTitle, Select, Table } from '@/components'
 import { APP_NAME } from '@/constants/common'
 
-const Details = () => {
+const TaxDetails = () => {
 	const { control } = useForm()
 
 	return (
@@ -83,4 +83,4 @@ const Details = () => {
 	)
 }
 
-export default Details
+export default TaxDetails

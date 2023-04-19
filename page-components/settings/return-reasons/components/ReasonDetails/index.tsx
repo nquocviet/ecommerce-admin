@@ -22,7 +22,7 @@ const defaultValues = {
 	description: '',
 }
 
-const Details = ({ reasonSelected }: TDetailsProps) => {
+const ReasonDetails = ({ reasonSelected }: TDetailsProps) => {
 	const { control, setValue } = useForm({
 		defaultValues,
 	})
@@ -91,4 +91,4 @@ const Details = ({ reasonSelected }: TDetailsProps) => {
 	)
 }
 
-export default Details
+export default ReasonDetails
