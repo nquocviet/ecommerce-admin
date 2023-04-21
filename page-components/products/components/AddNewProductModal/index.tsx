@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
+import { FormProvider, useForm } from 'react-hook-form'
 import { Accordion, Button, Flex, Text } from '@mantine/core'
 
 import { CloseIcon, ModalFullscreen } from '@/components'
 
 import {
-	Attributes,
-	GeneralInformation,
-	Media,
-	Organize,
-	Thumbnail,
-	Variants,
+	ProductAttributes,
+	ProductGeneralInformation,
+	ProductMedia,
+	ProductOrganize,
+	ProductThumbnail,
+	ProductVariants,
 } from './components'
 
 type AddNewProductModalProps = {
@@ -22,32 +23,32 @@ const sections = [
 		value: 'general-information',
 		label: 'General information',
 		required: true,
-		content: GeneralInformation,
+		content: ProductGeneralInformation,
 	},
 	{
 		value: 'organize',
 		label: 'Organize',
-		content: Organize,
+		content: ProductOrganize,
 	},
 	{
 		value: 'variants',
 		label: 'Variants',
-		content: Variants,
+		content: ProductVariants,
 	},
 	{
 		value: 'attributes',
 		label: 'Attributes',
-		content: Attributes,
+		content: ProductAttributes,
 	},
 	{
 		value: 'thumbnail',
 		label: 'Thumbnail',
-		content: Thumbnail,
+		content: ProductThumbnail,
 	},
 	{
 		value: 'media',
 		label: 'Media',
-		content: Media,
+		content: ProductMedia,
 	},
 ]
 
@@ -55,6 +56,7 @@ const AddNewProductModal = ({ opened, onClose }: AddNewProductModalProps) => {
 	const [tabsOpened, setTabsOpened] = useState<string[]>([
 		'general-information',
 	])
+	const methods = useForm()
 
 	const isTabOpened = (tab: string) => {
 		return tabsOpened.includes(tab)
@@ -66,47 +68,49 @@ const AddNewProductModal = ({ opened, onClose }: AddNewProductModalProps) => {
 			onClose={onClose}
 			action={
 				<Flex align="stretch" gap={16}>
-					<Button color="gray" variant="outline">
+					<Button size="sm" color="gray" variant="outline">
 						Save as draft
 					</Button>
-					<Button>Publish product</Button>
+					<Button size="sm">Publish product</Button>
 				</Flex>
 			}
 		>
-			<div className="mx-auto mt-10 max-w-[600px]">
-				<Accordion
-					value={tabsOpened}
-					onChange={setTabsOpened}
-					styles={() => ({
-						chevron: {
-							'&[data-rotate]': {
-								transform: 'unset',
+			<FormProvider {...methods}>
+				<form className="mx-auto mt-10 max-w-[680px]">
+					<Accordion
+						value={tabsOpened}
+						onChange={setTabsOpened}
+						styles={() => ({
+							chevron: {
+								'&[data-rotate]': {
+									transform: 'unset',
+								},
 							},
-						},
-					})}
-					multiple
-				>
-					{sections.map(({ value, label, required, content: Content }) => (
-						<Accordion.Item key={value} value={value}>
-							<Accordion.Control
-								chevron={<CloseIcon open={isTabOpened(value)} />}
-							>
-								<Text className="text-lg font-semibold">
-									{label}
-									{required && (
-										<Text component="span" className="ml-0.5 text-red-600">
-											*
-										</Text>
-									)}
-								</Text>
-							</Accordion.Control>
-							<Accordion.Panel>
-								<Content />
-							</Accordion.Panel>
-						</Accordion.Item>
-					))}
-				</Accordion>
-			</div>
+						})}
+						multiple
+					>
+						{sections.map(({ value, label, required, content: Content }) => (
+							<Accordion.Item key={value} value={value} className="py-1">
+								<Accordion.Control
+									chevron={<CloseIcon open={isTabOpened(value)} />}
+								>
+									<Text className="text-lg font-semibold">
+										{label}
+										{required && (
+											<Text component="span" className="ml-0.5 text-red-600">
+												*
+											</Text>
+										)}
+									</Text>
+								</Accordion.Control>
+								<Accordion.Panel>
+									<Content />
+								</Accordion.Panel>
+							</Accordion.Item>
+						))}
+					</Accordion>
+				</form>
+			</FormProvider>
 		</ModalFullscreen>
 	)
 }

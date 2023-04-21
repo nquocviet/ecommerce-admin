@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button, Modal, Text } from '@mantine/core'
+import { Button, Text } from '@mantine/core'
 
-import { ModalAction } from '@/components'
+import { Modal, ModalAction } from '@/components'
 
 type ExportProductModalProps = {
 	opened: boolean
@@ -15,15 +15,22 @@ const ExportProductModal = ({ opened, onClose }: ExportProductModalProps) => {
 			onClose={onClose}
 			title="Export Products"
 			size="md"
+			action={
+				<ModalAction>
+					<Button
+						size="sm"
+						color="gray"
+						variant="outline"
+						onClick={() => onClose()}
+					>
+						Cancel
+					</Button>
+					<Button size="sm">Export</Button>
+				</ModalAction>
+			}
 			centered
 		>
 			<Text className="text-gray-600">Initialize an export of your data</Text>
-			<ModalAction>
-				<Button color="gray" variant="outline" onClick={() => onClose()}>
-					Cancel
-				</Button>
-				<Button>Export</Button>
-			</ModalAction>
 		</Modal>
 	)
 }
