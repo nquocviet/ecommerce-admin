@@ -96,7 +96,8 @@
 	--lh-display-xl: 4.625rem;
 	--lh-display-2xl: 5.625rem;
 
-	--ff-inter: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Ubuntu, sans-serif';
+	--ff-inter: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Ubuntu, sans-serif;
 
 	--fw-light: 300;
 	--fw-regular: 400;

@@ -1,4 +1,4 @@
-import { ButtonStylesParams } from '@mantine/core'
+import { ActionIconStylesParams, ButtonStylesParams } from '@mantine/core'
 
 export const components: any = {
 	Accordion: {
@@ -17,8 +17,13 @@ export const components: any = {
 		}),
 	},
 	ActionIcon: {
-		styles: () => ({
+		styles: (theme, params: ActionIconStylesParams, { variant, size }) => ({
 			root: {
+				...(size === 'lg' && { width: '2.25rem', height: '2.25rem' }),
+				borderColor:
+					params.color === 'gray' && variant === 'outline'
+						? theme.colors.gray[3]
+						: undefined,
 				'&:active': {
 					transform: 'unset',
 				},
@@ -87,9 +92,29 @@ export const components: any = {
 			body: {
 				padding: '1.5rem',
 			},
+			overlay: {
+				backgroundColor: 'rgb(17, 24, 39, 0.4)',
+			},
 			title: {
 				fontSize: 'var(--fs-text-xl)',
 				fontWeight: 'var(--fw-semibold)',
+			},
+		}),
+	},
+	NumberInput: {
+		styles: (theme) => ({
+			label: {
+				fontSize: 'var(--fs-text-sm)',
+				marginBottom: '0.375rem',
+			},
+			input: {
+				borderColor: theme.colors.gray[3],
+				'&:focus': {
+					boxShadow: '0 0 0 4px var(--primary-100)',
+				},
+				'&::placeholder': {
+					color: theme.colors.gray[4],
+				},
 			},
 		}),
 	},
@@ -115,14 +140,25 @@ export const components: any = {
 	},
 	Select: {
 		styles: (theme) => ({
+			label: {
+				fontSize: 'var(--fs-text-sm)',
+				marginBottom: '0.375rem',
+			},
 			input: {
 				borderColor: theme.colors.gray[3],
 				'&:focus': {
 					boxShadow: '0 0 0 4px var(--primary-100)',
 				},
 			},
+		}),
+	},
+	Switch: {
+		styles: () => ({
+			track: {
+				cursor: 'pointer',
+			},
 			label: {
-				marginBottom: '0.25rem',
+				cursor: 'pointer',
 			},
 		}),
 	},
@@ -180,15 +216,36 @@ export const components: any = {
 			},
 		}),
 	},
-	TextInput: {
+	Textarea: {
 		styles: (theme) => ({
 			label: {
-				marginBottom: '0.25rem',
+				fontSize: 'var(--fs-text-sm)',
+				marginBottom: '0.375rem',
 			},
 			input: {
 				borderColor: theme.colors.gray[3],
 				'&:focus': {
 					boxShadow: '0 0 0 4px var(--primary-100)',
+				},
+				'&::placeholder': {
+					color: theme.colors.gray[4],
+				},
+			},
+		}),
+	},
+	TextInput: {
+		styles: (theme) => ({
+			label: {
+				fontSize: 'var(--fs-text-sm)',
+				marginBottom: '0.375rem',
+			},
+			input: {
+				borderColor: theme.colors.gray[3],
+				'&:focus': {
+					boxShadow: '0 0 0 4px var(--primary-100)',
+				},
+				'&::placeholder': {
+					color: theme.colors.gray[4],
 				},
 			},
 		}),

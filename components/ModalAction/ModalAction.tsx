@@ -13,7 +13,7 @@ const ModalAction = ({ children, className }: ModalActionProps) => {
 			align="stretch"
 			gap={12}
 			className={clsx(
-				'-mx-6 -mb-2 mt-6 border-0 border-t border-solid border-gray-200 px-6 pt-4',
+				'-mb-2 w-full border-0 border-t border-solid border-gray-200 px-6 pt-4',
 				className
 			)}
 		>

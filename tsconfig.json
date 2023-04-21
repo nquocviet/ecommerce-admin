@@ -23,7 +23,6 @@
 			"@/utils": ["utils/"],
 			"@/validators/*": ["validators/*"]
 		},
-		"allowJs": true,
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,
 		"declaration": true,
@@ -44,7 +43,8 @@
 		"strict": true,
 		"target": "es2018",
 		"incremental": true,
-		"noImplicitAny": false
+		"noImplicitAny": false,
+		"allowJs": true
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.config.js"],
 	"exclude": ["node_modules"]
