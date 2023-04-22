@@ -1,10 +1,10 @@
 import React from 'react'
-import { ActionIcon, Button, Menu, Text } from '@mantine/core'
+import { ActionIcon, Menu } from '@mantine/core'
 import { useToggle } from '@mantine/hooks'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 import Link from 'next/link'
 
-import { Modal, ModalAction } from '@/components'
+import { ModalConfirm } from '@/components'
 import ROUTES from '@/routes'
 import { CollectionEntity } from '@/types/collection'
 import { MantineDataTableColumn } from '@/types/datatable'
@@ -15,7 +15,7 @@ type ActionsProps = {
 }
 
 const Actions = ({ id }: ActionsProps) => {
-	const [deleteModalOpened, setDeleteModalOpened] = useToggle()
+	const [deleteOpened, setDeleteOpened] = useToggle()
 
 	return (
 		<>
@@ -41,38 +41,18 @@ const Actions = ({ id }: ActionsProps) => {
 						sx={{
 							color: 'var(--red-600)',
 						}}
-						onClick={() => setDeleteModalOpened(true)}
+						onClick={() => setDeleteOpened(true)}
 					>
 						Delete
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<Modal
+			<ModalConfirm
 				title="Delete Collection"
-				opened={deleteModalOpened}
-				onClose={setDeleteModalOpened}
-				size="lg"
-				action={
-					<ModalAction>
-						<Button
-							size="sm"
-							color="gray"
-							variant="outline"
-							onClick={() => setDeleteModalOpened(false)}
-						>
-							Cancel
-						</Button>
-						<Button color="red" size="sm">
-							Yes, confirm
-						</Button>
-					</ModalAction>
-				}
-				centered
-			>
-				<Text className="text-gray-600">
-					Are you sure you want to delete this collection?
-				</Text>
-			</Modal>
+				opened={deleteOpened}
+				onClose={setDeleteOpened}
+				message="Are you sure you want to delete this collection?"
+			/>
 		</>
 	)
 }

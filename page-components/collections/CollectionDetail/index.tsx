@@ -5,17 +5,26 @@ import { useToggle } from '@mantine/hooks'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 
 import { COLLECTION_DETAIL_COLUMNS } from '@/columns/collection-detail'
-import { InputSearch, JSONView, Loader, PageTitle, Table } from '@/components'
+import {
+	InputSearch,
+	JSONView,
+	Loader,
+	ModalConfirm,
+	PageTitle,
+	Table,
+} from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { PRODUCT_TABS } from '@/constants/tabs'
 import { DetailLayout } from '@/layouts'
 import { useCollectionDetail } from '@/lib/collection'
 import ROUTES from '@/routes'
 
-import { EditProductsModal } from './components'
+import { EditCollectionModal, EditProductsModal } from './components'
 
 const CollectionDetail = () => {
-	const [editProductsModalOpened, setEditProductsModalOpened] = useToggle()
+	const [editCollectionOpened, setEditCollectionOpened] = useToggle()
+	const [deleteCollectionOpened, setDeleteCollectionOpened] = useToggle()
+	const [editProductsOpened, setEditProductsOpened] = useToggle()
 	const { control } = useForm()
 	const { data, isLoading } = useCollectionDetail()
 
@@ -45,7 +54,10 @@ const CollectionDetail = () => {
 								</ActionIcon>
 							</Menu.Target>
 							<Menu.Dropdown>
-								<Menu.Item icon={<NotePencil size={18} />}>
+								<Menu.Item
+									icon={<NotePencil size={18} />}
+									onClick={() => setEditCollectionOpened(true)}
+								>
 									Edit collection
 								</Menu.Item>
 								<Menu.Item
@@ -53,6 +65,7 @@ const CollectionDetail = () => {
 									sx={{
 										color: 'var(--red-600)',
 									}}
+									onClick={() => setDeleteCollectionOpened(true)}
 								>
 									Delete
 								</Menu.Item>
@@ -75,7 +88,7 @@ const CollectionDetail = () => {
 								variant="outline"
 								size="xs"
 								leftIcon={<NotePencil size={18} />}
-								onClick={() => setEditProductsModalOpened(true)}
+								onClick={() => setEditProductsOpened(true)}
 							>
 								Edit products
 							</Button>
@@ -97,9 +110,19 @@ const CollectionDetail = () => {
 					/>
 				</Flex>
 			</Paper>
+			<ModalConfirm
+				title="Delete Collection"
+				opened={deleteCollectionOpened}
+				onClose={setDeleteCollectionOpened}
+				message="Are you sure you want to delete this collection?"
+			/>
+			<EditCollectionModal
+				opened={editCollectionOpened}
+				onClose={setEditCollectionOpened}
+			/>
 			<EditProductsModal
-				opened={editProductsModalOpened}
-				onClose={setEditProductsModalOpened}
+				opened={editProductsOpened}
+				onClose={setEditProductsOpened}
 			/>
 		</DetailLayout>
 	)

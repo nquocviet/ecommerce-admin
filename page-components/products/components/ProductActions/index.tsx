@@ -8,9 +8,9 @@ import ExportProductModal from '../ExportProductModal'
 import ImportProductModal from '../ImportProductModal'
 
 const ProductActions = () => {
-	const [importProductModalOpened, setImportProductModalOpened] = useToggle()
-	const [exportProductModalOpened, setExportProductModalOpened] = useToggle()
-	const [newProductModalOpened, setNewProductModalOpened] = useToggle()
+	const [importProductOpened, setImportProductOpened] = useToggle()
+	const [exportProductOpened, setExportProductOpened] = useToggle()
+	const [newProductOpened, setNewProductOpened] = useToggle()
 
 	return (
 		<>
@@ -20,7 +20,7 @@ const ProductActions = () => {
 					color="gray"
 					size="xs"
 					leftIcon={<UploadSimple size={16} />}
-					onClick={() => setImportProductModalOpened(true)}
+					onClick={() => setImportProductOpened(true)}
 				>
 					Import Products
 				</Button>
@@ -29,7 +29,7 @@ const ProductActions = () => {
 					color="gray"
 					size="xs"
 					leftIcon={<DownloadSimple size={16} />}
-					onClick={() => setExportProductModalOpened(true)}
+					onClick={() => setExportProductOpened(true)}
 				>
 					Export Products
 				</Button>
@@ -38,22 +38,22 @@ const ProductActions = () => {
 					color="gray"
 					size="xs"
 					leftIcon={<Plus size={16} />}
-					onClick={() => setNewProductModalOpened(true)}
+					onClick={() => setNewProductOpened(true)}
 				>
 					New Product
 				</Button>
 			</Flex>
 			<ImportProductModal
-				opened={importProductModalOpened}
-				onClose={setImportProductModalOpened}
+				opened={importProductOpened}
+				onClose={setImportProductOpened}
 			/>
 			<ExportProductModal
-				opened={exportProductModalOpened}
-				onClose={setExportProductModalOpened}
+				opened={exportProductOpened}
+				onClose={setExportProductOpened}
 			/>
 			<AddNewProductModal
-				opened={newProductModalOpened}
-				onClose={setNewProductModalOpened}
+				opened={newProductOpened}
+				onClose={setNewProductOpened}
 			/>
 		</>
 	)

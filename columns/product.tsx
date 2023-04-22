@@ -1,15 +1,15 @@
 import React from 'react'
-import { ActionIcon, Button, Flex, Image, Menu, Text } from '@mantine/core'
+import { ActionIcon, Flex, Image, Menu, Text } from '@mantine/core'
 import { useToggle } from '@mantine/hooks'
 import { Copy, DotsThree, Lock, NotePencil, Trash } from '@phosphor-icons/react'
 
-import { Dots, Modal, ModalAction } from '@/components'
+import { Dots, ModalConfirm } from '@/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { ProductEntity } from '@/types/product'
 import { getStockOfVariants, toCapitalize } from '@/utils'
 
 const Actions = () => {
-	const [deleteModalOpened, setDeleteModalOpened] = useToggle()
+	const [deleteOpened, setDeleteOpened] = useToggle()
 
 	return (
 		<>
@@ -28,38 +28,18 @@ const Actions = () => {
 						sx={{
 							color: 'var(--red-600)',
 						}}
-						onClick={() => setDeleteModalOpened(true)}
+						onClick={() => setDeleteOpened(true)}
 					>
 						Delete
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<Modal
+			<ModalConfirm
 				title="Delete Product"
-				opened={deleteModalOpened}
-				onClose={setDeleteModalOpened}
-				size="lg"
-				action={
-					<ModalAction>
-						<Button
-							size="sm"
-							color="gray"
-							variant="outline"
-							onClick={() => setDeleteModalOpened(false)}
-						>
-							Cancel
-						</Button>
-						<Button color="red" size="sm">
-							Yes, confirm
-						</Button>
-					</ModalAction>
-				}
-				centered
-			>
-				<Text className="text-gray-600">
-					Are you sure you want to delete this product?
-				</Text>
-			</Modal>
+				opened={deleteOpened}
+				onClose={setDeleteOpened}
+				message="Are you sure you want to delete this product?"
+			/>
 		</>
 	)
 }
