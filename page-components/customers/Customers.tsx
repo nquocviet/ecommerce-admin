@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Paper, Tabs } from '@mantine/core'
 
 import { CUSTOMER_TABS } from '@/constants/tabs'
+import { useActiveTab } from '@/hooks'
 import { BaseLayout } from '@/layouts'
 
 import { CustomersTab, GroupActions, GroupsTab } from './components'
@@ -10,6 +11,8 @@ const { CUSTOMERS, GROUPS } = CUSTOMER_TABS
 
 const Customers = () => {
 	const [activeTab, setActiveTab] = useState<string | null>(CUSTOMERS)
+
+	useActiveTab(activeTab, setActiveTab)
 
 	return (
 		<BaseLayout>

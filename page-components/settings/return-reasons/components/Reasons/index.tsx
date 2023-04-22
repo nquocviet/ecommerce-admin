@@ -5,10 +5,11 @@ import { Plus } from '@phosphor-icons/react'
 
 import { PageTitle, RadioBox, RadioGroup } from '@/components'
 import { useReturnReasons } from '@/lib/return-reasons'
+import { ReturnReasonEntity } from '@/types/return-reason'
 
 type TReasonsProps = {
-	reasonSelected: Record<string, any> | null
-	setReasonSelected: Dispatch<SetStateAction<Record<string, any> | null>>
+	reasonSelected: ReturnReasonEntity | null
+	setReasonSelected: Dispatch<SetStateAction<ReturnReasonEntity | null>>
 }
 
 const Reasons = ({ reasonSelected, setReasonSelected }: TReasonsProps) => {

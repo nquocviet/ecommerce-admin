@@ -9,7 +9,7 @@ import { TextInput } from '@/components'
 import CreateVariantModal from './CreateVariantModal'
 
 const ProductVariants = () => {
-	const [variantModalOpened, setVariantModalOpened] = useToggle()
+	const [newVariantModalOpened, setNewVariantModalOpened] = useToggle()
 	const { control } = useFormContext()
 	const {
 		fields: options,
@@ -92,15 +92,15 @@ const ProductVariants = () => {
 						color="gray"
 						variant="outline"
 						leftIcon={<Plus size={16} />}
-						onClick={() => setVariantModalOpened(true)}
+						onClick={() => setNewVariantModalOpened(true)}
 					>
 						Add a variant
 					</Button>
 				</Flex>
 			</Flex>
 			<CreateVariantModal
-				opened={variantModalOpened}
-				onClose={setVariantModalOpened}
+				opened={newVariantModalOpened}
+				onClose={setNewVariantModalOpened}
 			/>
 		</div>
 	)

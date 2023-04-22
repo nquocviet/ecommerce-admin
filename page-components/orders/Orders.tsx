@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Paper, Tabs } from '@mantine/core'
 
 import { ORDER_TABS } from '@/constants/tabs'
+import { useActiveTab } from '@/hooks'
 import { BaseLayout } from '@/layouts'
 
 import { DraftActions, DraftsTab, OrderActions, OrdersTab } from './components'
@@ -10,6 +11,8 @@ const { ORDERS, DRAFTS } = ORDER_TABS
 
 const Orders = () => {
 	const [activeTab, setActiveTab] = useState<string | null>(ORDERS)
+
+	useActiveTab(activeTab, setActiveTab)
 
 	return (
 		<BaseLayout>

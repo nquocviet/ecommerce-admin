@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import { Modal as MantineModal, ModalBaseProps } from '@mantine/core'
 
 type TModalProps = Omit<ModalBaseProps, '__staticSelector'> & {
-	action: ReactNode
+	action?: ReactNode
 	centered: boolean
 }
 
@@ -34,6 +34,7 @@ const Modal = ({
 						sx={{
 							top: 'unset',
 							bottom: 0,
+							paddingTop: 0,
 							paddingLeft: 0,
 							paddingRight: 0,
 						}}
