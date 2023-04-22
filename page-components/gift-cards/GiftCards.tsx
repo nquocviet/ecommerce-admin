@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Paper, Tabs } from '@mantine/core'
 
 import { GIFT_CARD_TABS } from '@/constants/tabs'
+import { useActiveTab } from '@/hooks'
 import { BaseLayout } from '@/layouts'
 
 import { GiftCardActions, GiftCardsTab, ProductGiftCard } from './components'
@@ -10,6 +11,8 @@ const { GIFT_CARDS } = GIFT_CARD_TABS
 
 const GiftCards = () => {
 	const [activeTab, setActiveTab] = useState<string | null>(GIFT_CARDS)
+
+	useActiveTab(activeTab, setActiveTab)
 
 	return (
 		<BaseLayout>

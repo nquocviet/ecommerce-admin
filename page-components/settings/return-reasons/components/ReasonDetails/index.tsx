@@ -12,9 +12,10 @@ import {
 import { Copy, DotsThree, Trash } from '@phosphor-icons/react'
 
 import { PageTitle, TextInput } from '@/components'
+import { ReturnReasonEntity } from '@/types/return-reason'
 
 type TDetailsProps = {
-	reasonSelected: Record<string, any> | null
+	reasonSelected: ReturnReasonEntity | null
 }
 
 const defaultValues = {

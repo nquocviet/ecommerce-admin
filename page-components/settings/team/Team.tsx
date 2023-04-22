@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Paper, Tabs } from '@mantine/core'
 
 import { TEAM_TABS } from '@/constants/tabs'
+import { useActiveTab } from '@/hooks'
 import { SettingsLayout } from '@/layouts'
 
 import { TeamActions, TeamsTab } from './components'
@@ -10,6 +11,8 @@ const { TEAM } = TEAM_TABS
 
 const Team = () => {
 	const [activeTab, setActiveTab] = useState<string | null>(TEAM)
+
+	useActiveTab(activeTab, setActiveTab)
 
 	return (
 		<SettingsLayout>

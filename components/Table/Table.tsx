@@ -34,9 +34,11 @@ const Table = <T,>({
 			{...rest}
 			withBorder={false}
 			customLoader={
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 				(<Loader size="sm" className="absolute top-[15%]" />) as any
 			}
 			emptyState={
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 				(<Text className="-translate-y-2.5">No data to display</Text>) as any
 			}
 			noRecordsText=""

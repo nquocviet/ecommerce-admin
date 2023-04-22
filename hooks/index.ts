@@ -1,3 +1,5 @@
+export { default as useActiveTab } from './useActiveTab'
+export { default as useDidMountEffect } from './useDidMountEffect'
 export { default as useLocalStorage } from './useLocalStorage'
 export { default as useOnClickOutside } from './useOnClickOutside'
 export { default as useYupValidationResolver } from './useYupValidationResolver'

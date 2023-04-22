@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Paper, Tabs } from '@mantine/core'
 
 import { PRODUCT_TABS } from '@/constants/tabs'
+import { useActiveTab } from '@/hooks'
 import { BaseLayout } from '@/layouts'
 
 import {
@@ -15,6 +16,8 @@ const { PRODUCTS, COLLECTIONS } = PRODUCT_TABS
 
 const Products = () => {
 	const [activeTab, setActiveTab] = useState<string | null>(PRODUCTS)
+
+	useActiveTab(activeTab, setActiveTab)
 
 	return (
 		<BaseLayout>

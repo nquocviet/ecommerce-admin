@@ -1,10 +1,67 @@
 import React from 'react'
-import { ActionIcon, Flex, Image, Menu, Text } from '@mantine/core'
+import { ActionIcon, Button, Flex, Image, Menu, Text } from '@mantine/core'
+import { useToggle } from '@mantine/hooks'
 import { Copy, DotsThree, Lock, NotePencil, Trash } from '@phosphor-icons/react'
 
-import { Dots } from '@/components'
+import { Dots, Modal, ModalAction } from '@/components'
 import { TDataTableColumn } from '@/types/datatable'
 import { getStockOfVariants, toCapitalize } from '@/utils'
+
+const Actions = () => {
+	const [deleteModalOpened, setDeleteModalOpened] = useToggle()
+
+	return (
+		<>
+			<Menu shadow="md" width={200}>
+				<Menu.Target>
+					<ActionIcon>
+						<DotsThree size={20} weight="bold" />
+					</ActionIcon>
+				</Menu.Target>
+				<Menu.Dropdown>
+					<Menu.Item icon={<NotePencil size={18} />}>Edit</Menu.Item>
+					<Menu.Item icon={<Lock size={18} />}>Unpublish</Menu.Item>
+					<Menu.Item icon={<Copy size={18} />}>Duplicate</Menu.Item>
+					<Menu.Item
+						icon={<Trash size={18} />}
+						sx={{
+							color: 'var(--red-600)',
+						}}
+						onClick={() => setDeleteModalOpened(true)}
+					>
+						Delete
+					</Menu.Item>
+				</Menu.Dropdown>
+			</Menu>
+			<Modal
+				title="Delete Product"
+				opened={deleteModalOpened}
+				onClose={setDeleteModalOpened}
+				size="lg"
+				action={
+					<ModalAction>
+						<Button
+							size="sm"
+							color="gray"
+							variant="outline"
+							onClick={() => setDeleteModalOpened(false)}
+						>
+							Cancel
+						</Button>
+						<Button color="red" size="sm">
+							Yes, confirm
+						</Button>
+					</ModalAction>
+				}
+				centered
+			>
+				<Text className="text-gray-600">
+					Are you sure you want to delete this product?
+				</Text>
+			</Modal>
+		</>
+	)
+}
 
 export const columns: TDataTableColumn = [
 	{
@@ -70,28 +127,7 @@ export const columns: TDataTableColumn = [
 		title: '',
 		width: '5%',
 		render: () => {
-			return (
-				<Menu shadow="md" width={200}>
-					<Menu.Target>
-						<ActionIcon>
-							<DotsThree size={20} weight="bold" />
-						</ActionIcon>
-					</Menu.Target>
-					<Menu.Dropdown>
-						<Menu.Item icon={<NotePencil size={18} />}>Edit</Menu.Item>
-						<Menu.Item icon={<Lock size={18} />}>Unpublish</Menu.Item>
-						<Menu.Item icon={<Copy size={18} />}>Duplicate</Menu.Item>
-						<Menu.Item
-							icon={<Trash size={18} />}
-							sx={{
-								color: 'var(--red-600)',
-							}}
-						>
-							Delete
-						</Menu.Item>
-					</Menu.Dropdown>
-				</Menu>
-			)
+			return <Actions />
 		},
 	},
 ]

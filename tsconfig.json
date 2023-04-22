@@ -1,7 +1,8 @@
 {
 	"compilerOptions": {
-		"baseUrl": ".",
+		"baseUrl": "./",
 		"paths": {
+			"@/*": ["*"],
 			"@/api": ["api/"],
 			"@/columns/*": ["columns/*"],
 			"@/components": ["components/"],
@@ -27,7 +28,7 @@
 		"allowUnusedLabels": false,
 		"declaration": true,
 		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
+		"forceConsistentCasingInFileNames": false,
 		"isolatedModules": true,
 		"jsx": "preserve",
 		"lib": ["dom", "dom.iterable", "esnext"],
