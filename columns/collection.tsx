@@ -4,7 +4,8 @@ import { useToggle } from '@mantine/hooks'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 
 import { Modal, ModalAction } from '@/components'
-import { TDataTableColumn } from '@/types/datatable'
+import { CollectionEntity } from '@/types/collection'
+import { MantineDataTableColumn } from '@/types/datatable'
 import { formatDate } from '@/utils'
 
 const Actions = () => {
@@ -61,7 +62,7 @@ const Actions = () => {
 	)
 }
 
-export const columns: TDataTableColumn = [
+export const columns: MantineDataTableColumn<CollectionEntity> = [
 	{
 		accessor: 'title',
 		title: 'Title',

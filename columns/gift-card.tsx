@@ -1,7 +1,8 @@
-import { TDataTableColumn } from '@/types/datatable'
+import { MantineDataTableColumn } from '@/types/datatable'
+import { GiftCardEntity } from '@/types/gift-card'
 import { formatDate, formatMoney } from '@/utils'
 
-export const columns: TDataTableColumn = [
+export const columns: MantineDataTableColumn<GiftCardEntity> = [
 	{
 		accessor: 'code',
 		title: 'Code',
