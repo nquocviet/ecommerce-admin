@@ -3,13 +3,9 @@ import { Button, Flex, Text } from '@mantine/core'
 import { DownloadSimple, File } from '@phosphor-icons/react'
 
 import { DropzoneCSV, Modal, ModalAction } from '@/components'
+import { ModalOpenedProps } from '@/components/Modal'
 
-type ImportProductModalProps = {
-	opened: boolean
-	onClose: (value?: React.SetStateAction<boolean>) => void
-}
-
-const ImportProductModal = ({ opened, onClose }: ImportProductModalProps) => {
+const ImportProductModal = ({ opened, onClose }: ModalOpenedProps) => {
 	return (
 		<Modal
 			opened={opened}

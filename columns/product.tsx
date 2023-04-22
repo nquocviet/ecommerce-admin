@@ -64,7 +64,7 @@ const Actions = () => {
 	)
 }
 
-export const columns: MantineDataTableColumn<ProductEntity> = [
+export const PRODUCT_COLUMNS: MantineDataTableColumn<ProductEntity> = [
 	{
 		accessor: 'title',
 		title: 'Name',

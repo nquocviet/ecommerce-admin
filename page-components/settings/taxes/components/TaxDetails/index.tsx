@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { Button, Flex, Paper, Title, Tooltip } from '@mantine/core'
 import { Info, Plus } from '@phosphor-icons/react'
 
-import { columns } from '@/columns/tax-details'
+import { TAX_DETAIL_COLUMNS } from '@/columns/tax-details'
 import { Checkbox, PageTitle, Select, Table } from '@/components'
 import { APP_NAME } from '@/constants/common'
 
@@ -30,7 +30,7 @@ const TaxDetails = () => {
 			<Table
 				minHeight={82}
 				records={[{ id: 1, name: 'Default', code: null, rate: 0 }]}
-				columns={columns}
+				columns={TAX_DETAIL_COLUMNS}
 				className="mb-6"
 			/>
 			<Title order={2} className="mb-4 text-lg font-semibold">

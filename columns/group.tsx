@@ -5,7 +5,7 @@ import { DotsThree, NotePencil, UserCircle } from '@phosphor-icons/react'
 import { CustomerGroupEntity } from '@/types/customer-group'
 import { MantineDataTableColumn } from '@/types/datatable'
 
-export const columns: MantineDataTableColumn<CustomerGroupEntity> = [
+export const GROUP_COLUMNS: MantineDataTableColumn<CustomerGroupEntity> = [
 	{
 		accessor: 'name',
 		title: 'Title',

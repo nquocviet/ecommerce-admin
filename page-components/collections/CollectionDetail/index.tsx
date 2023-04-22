@@ -1,9 +1,10 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { ActionIcon, Button, Flex, Menu, Paper } from '@mantine/core'
+import { useToggle } from '@mantine/hooks'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 
-import { columns } from '@/columns/collection-detail'
+import { COLLECTION_DETAIL_COLUMNS } from '@/columns/collection-detail'
 import { InputSearch, JSONView, Loader, PageTitle, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { PRODUCT_TABS } from '@/constants/tabs'
@@ -11,7 +12,10 @@ import { DetailLayout } from '@/layouts'
 import { useCollectionDetail } from '@/lib/collection'
 import ROUTES from '@/routes'
 
+import { EditProductsModal } from './components'
+
 const CollectionDetail = () => {
+	const [editProductsModalOpened, setEditProductsModalOpened] = useToggle()
 	const { control } = useForm()
 	const { data, isLoading } = useCollectionDetail()
 
@@ -71,6 +75,7 @@ const CollectionDetail = () => {
 								variant="outline"
 								size="xs"
 								leftIcon={<NotePencil size={18} />}
+								onClick={() => setEditProductsModalOpened(true)}
 							>
 								Edit products
 							</Button>
@@ -83,7 +88,7 @@ const CollectionDetail = () => {
 					</form>
 					<Table
 						records={data?.products}
-						columns={columns}
+						columns={COLLECTION_DETAIL_COLUMNS}
 						fetching={isLoading}
 						totalRecords={data?.products?.length}
 						recordsPerPage={PAGE_SIZE}
@@ -92,6 +97,10 @@ const CollectionDetail = () => {
 					/>
 				</Flex>
 			</Paper>
+			<EditProductsModal
+				opened={editProductsModalOpened}
+				onClose={setEditProductsModalOpened}
+			/>
 		</DetailLayout>
 	)
 }

@@ -5,7 +5,7 @@ import { DotsThree, LockSimple, NotePencil } from '@phosphor-icons/react'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { TaxDetailEntity } from '@/types/tax'
 
-export const columns: MantineDataTableColumn<TaxDetailEntity> = [
+export const TAX_DETAIL_COLUMNS: MantineDataTableColumn<TaxDetailEntity> = [
 	{
 		accessor: 'name',
 		title: 'Name',

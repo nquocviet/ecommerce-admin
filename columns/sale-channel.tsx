@@ -5,7 +5,7 @@ import { DotsThree, Trash, TShirt } from '@phosphor-icons/react'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { ProductEntity } from '@/types/product'
 
-export const columns: MantineDataTableColumn<ProductEntity> = [
+export const SALE_CHANNEL_COLUMNS: MantineDataTableColumn<ProductEntity> = [
 	{
 		accessor: 'title',
 		title: 'Name',

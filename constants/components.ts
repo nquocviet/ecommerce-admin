@@ -166,7 +166,7 @@ export const components: any = {
 	Table: {
 		styles: () => ({
 			root: {
-				minWidth: 750,
+				paddingBottom: 8,
 				'& tr th:first-of-type': {
 					paddingLeft: 0,
 				},

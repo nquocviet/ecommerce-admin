@@ -4,16 +4,9 @@ import { ActionIcon, Button, Flex, Grid, Text, Tooltip } from '@mantine/core'
 import { Info, Plus, Trash } from '@phosphor-icons/react'
 
 import { Modal, ModalAction, TextInput } from '@/components'
+import { ModalOpenedProps } from '@/components/Modal'
 
-type AddNewCollectionModalProps = {
-	opened: boolean
-	onClose: (value?: React.SetStateAction<boolean>) => void
-}
-
-const AddNewCollectionModal = ({
-	opened,
-	onClose,
-}: AddNewCollectionModalProps) => {
+const AddNewCollectionModal = ({ opened, onClose }: ModalOpenedProps) => {
 	const { control } = useForm()
 	const {
 		fields: metadata,

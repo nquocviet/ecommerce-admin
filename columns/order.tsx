@@ -25,7 +25,7 @@ const paymentStatuses = {
 	},
 }
 
-export const columns: MantineDataTableColumn<OrderEntity> = [
+export const ORDER_COLUMNS: MantineDataTableColumn<OrderEntity> = [
 	{
 		accessor: 'id',
 		title: 'Order',

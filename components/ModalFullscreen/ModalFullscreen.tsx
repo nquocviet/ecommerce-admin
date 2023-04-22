@@ -1,12 +1,12 @@
 import React, { ReactNode } from 'react'
 import { Divider, Modal } from '@mantine/core'
 
-type ModalFullscreenProps = {
+import { ModalOpenedProps } from '@/components/Modal'
+
+type ModalFullscreenProps = ModalOpenedProps & {
 	action: ReactNode
 	children: ReactNode
 	className?: string
-	opened: boolean
-	onClose: (value?: React.SetStateAction<boolean>) => void
 }
 
 const ModalFullscreen = ({

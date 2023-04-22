@@ -77,7 +77,7 @@ const Actions = ({ id }: ActionsProps) => {
 	)
 }
 
-export const columns: MantineDataTableColumn<CollectionEntity> = [
+export const COLLECTION_COLUMNS: MantineDataTableColumn<CollectionEntity> = [
 	{
 		accessor: 'title',
 		title: 'Title',

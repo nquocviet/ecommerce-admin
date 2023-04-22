@@ -13,7 +13,7 @@ import { CustomerEntity } from '@/types/customer'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { formatDate } from '@/utils'
 
-export const columns: MantineDataTableColumn<CustomerEntity> = [
+export const CUSTOMER_COLUMNS: MantineDataTableColumn<CustomerEntity> = [
 	{
 		accessor: 'created_at',
 		title: 'Date added',

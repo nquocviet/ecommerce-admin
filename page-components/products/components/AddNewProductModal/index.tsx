@@ -3,6 +3,7 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { Accordion, Button, Flex, Text } from '@mantine/core'
 
 import { CloseIcon, ModalFullscreen } from '@/components'
+import { ModalOpenedProps } from '@/components/Modal'
 
 import {
 	ProductAttributes,
@@ -12,11 +13,6 @@ import {
 	ProductThumbnail,
 	ProductVariants,
 } from './components'
-
-type AddNewProductModalProps = {
-	opened: boolean
-	onClose: (value?: React.SetStateAction<boolean>) => void
-}
 
 const sections = [
 	{
@@ -52,7 +48,7 @@ const sections = [
 	},
 ]
 
-const AddNewProductModal = ({ opened, onClose }: AddNewProductModalProps) => {
+const AddNewProductModal = ({ opened, onClose }: ModalOpenedProps) => {
 	const [tabsOpened, setTabsOpened] = useState<string[]>([
 		'general-information',
 	])

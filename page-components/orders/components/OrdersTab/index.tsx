@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { Button, Flex } from '@mantine/core'
 import { FunnelSimple } from '@phosphor-icons/react'
 
-import { columns } from '@/columns/order'
+import { ORDER_COLUMNS } from '@/columns/order'
 import { InputSearch, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useOrders } from '@/lib/order'
@@ -29,7 +29,7 @@ const OrdersTab = () => {
 			</form>
 			<Table
 				records={data}
-				columns={columns}
+				columns={ORDER_COLUMNS}
 				fetching={isLoading}
 				totalRecords={data?.length}
 				recordsPerPage={PAGE_SIZE}

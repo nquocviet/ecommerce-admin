@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { Button, Flex } from '@mantine/core'
 import { FunnelSimple } from '@phosphor-icons/react'
 
-import { columns } from '@/columns/gift-card'
+import { GIFT_CARD_COLUMNS } from '@/columns/gift-card'
 import { InputSearch, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useGiftCards } from '@/lib/gift-card'
@@ -29,7 +29,7 @@ const GiftCardsTab = () => {
 			</form>
 			<Table
 				records={data}
-				columns={columns}
+				columns={GIFT_CARD_COLUMNS}
 				fetching={isLoading}
 				totalRecords={data?.length}
 				recordsPerPage={PAGE_SIZE}
