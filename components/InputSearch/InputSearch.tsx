@@ -27,10 +27,11 @@ const InputSearch = <T extends FieldValues>({
 					styles={{
 						input: {
 							width: 120,
-							borderColor: 'transparent',
+							borderColor: 'var(--gray-300)',
 							transition: 'width 0.15s cubic-bezier(0.4, 0, 0.2, 1)',
 							'&:focus': {
 								width: 240,
+								boxShadow: '0 0 0 4px var(--primary-100)',
 							},
 						},
 					}}

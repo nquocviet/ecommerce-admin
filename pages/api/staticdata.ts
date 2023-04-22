@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 	const type = req.query?.type
 	const loading = req.query?.loading !== 'false'
 
-	await sleep(loading ? 500 : 0)
+	await sleep(loading ? 1000 : 0)
 
 	const jsonDirectory = path.join(process.cwd(), 'data')
 	const response = await fs.readFile(jsonDirectory + `/${type}.json`, 'utf8')

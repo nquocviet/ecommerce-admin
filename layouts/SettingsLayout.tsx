@@ -1,29 +1,18 @@
-import { ReactNode } from 'react'
-import { Box } from '@mantine/core'
-import { ArrowLeft } from '@phosphor-icons/react'
-import ROUTES from 'routes'
+import React, { ReactNode } from 'react'
 
-import { CustomLink } from '@/components'
+import ROUTES from '@/routes'
 
-import BaseLayout from './BaseLayout'
+import DetailLayout from './DetailLayout'
 
-type TSettingsLayoutProps = {
+type SettingsLayoutProps = {
 	children: ReactNode
 }
 
-const SettingsLayout = ({ children }: TSettingsLayoutProps) => {
+const SettingsLayout = ({ children }: SettingsLayoutProps) => {
 	return (
-		<BaseLayout>
-			<Box className="-mb-3">
-				<CustomLink
-					href={ROUTES.SETTINGS.DEFAULT}
-					leading={<ArrowLeft size={18} />}
-				>
-					Back to settings
-				</CustomLink>
-			</Box>
+		<DetailLayout label="Back to settings" href={ROUTES.SETTINGS.DEFAULT}>
 			{children}
-		</BaseLayout>
+		</DetailLayout>
 	)
 }
 
