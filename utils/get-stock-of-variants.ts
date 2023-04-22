@@ -1,4 +1,6 @@
-export const getStockOfVariants = (variants: any[]) => {
+import { ProductVariantEntity } from '@/types/product'
+
+export const getStockOfVariants = (variants: ProductVariantEntity[]) => {
 	const totalVariants: number = variants?.length || 0
 	const totalQuantity: number =
 		variants?.reduce((prev, curr) => {

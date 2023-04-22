@@ -4,7 +4,8 @@ import { useToggle } from '@mantine/hooks'
 import { Copy, DotsThree, Lock, NotePencil, Trash } from '@phosphor-icons/react'
 
 import { Dots, Modal, ModalAction } from '@/components'
-import { TDataTableColumn } from '@/types/datatable'
+import { MantineDataTableColumn } from '@/types/datatable'
+import { ProductEntity } from '@/types/product'
 import { getStockOfVariants, toCapitalize } from '@/utils'
 
 const Actions = () => {
@@ -63,7 +64,7 @@ const Actions = () => {
 	)
 }
 
-export const columns: TDataTableColumn = [
+export const columns: MantineDataTableColumn<ProductEntity> = [
 	{
 		accessor: 'title',
 		title: 'Name',

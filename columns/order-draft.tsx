@@ -2,10 +2,11 @@ import React from 'react'
 import { Avatar, Flex, MANTINE_COLORS, Text } from '@mantine/core'
 
 import { Dots } from '@/components'
-import { TDataTableColumn } from '@/types/datatable'
+import { MantineDataTableColumn } from '@/types/datatable'
+import { OrderDraftEntity } from '@/types/order'
 import { formatDate, toCapitalize } from '@/utils'
 
-export const columns: TDataTableColumn = [
+export const columns: MantineDataTableColumn<OrderDraftEntity> = [
 	{
 		accessor: 'id',
 		title: 'Draft',

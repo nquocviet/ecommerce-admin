@@ -2,7 +2,8 @@ import React from 'react'
 import { Avatar, Flex, MANTINE_COLORS, Text } from '@mantine/core'
 
 import { Dots } from '@/components'
-import { TDataTableColumn } from '@/types/datatable'
+import { MantineDataTableColumn } from '@/types/datatable'
+import { OrderEntity } from '@/types/order'
 import { formatDate, formatMoney, toCapitalize } from '@/utils'
 
 const paymentStatuses = {
@@ -24,7 +25,7 @@ const paymentStatuses = {
 	},
 }
 
-export const columns: TDataTableColumn = [
+export const columns: MantineDataTableColumn<OrderEntity> = [
 	{
 		accessor: 'id',
 		title: 'Order',

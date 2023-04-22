@@ -9,10 +9,11 @@ import {
 } from '@mantine/core'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 
-import { TDataTableColumn } from '@/types/datatable'
+import { MantineDataTableColumn } from '@/types/datatable'
+import { TeamEntity } from '@/types/team'
 import { toCapitalize } from '@/utils'
 
-export const columns: TDataTableColumn = [
+export const columns: MantineDataTableColumn<TeamEntity> = [
 	{
 		accessor: 'name',
 		title: 'Name',

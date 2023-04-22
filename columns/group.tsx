@@ -2,9 +2,10 @@ import React from 'react'
 import { ActionIcon, Menu } from '@mantine/core'
 import { DotsThree, NotePencil, UserCircle } from '@phosphor-icons/react'
 
-import { TDataTableColumn } from '@/types/datatable'
+import { CustomerGroupEntity } from '@/types/customer-group'
+import { MantineDataTableColumn } from '@/types/datatable'
 
-export const columns: TDataTableColumn = [
+export const columns: MantineDataTableColumn<CustomerGroupEntity> = [
 	{
 		accessor: 'name',
 		title: 'Title',
