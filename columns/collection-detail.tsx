@@ -1,12 +1,35 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { ActionIcon, Flex, Image, Text } from '@mantine/core'
+import { useToggle } from '@mantine/hooks'
 import { Trash } from '@phosphor-icons/react'
 
-import { Checkbox, Dots } from '@/components'
+import { Checkbox, Dots, ModalConfirm } from '@/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { ProductCollectionEntity, ProductEntity } from '@/types/product'
 import { toCapitalize } from '@/utils'
+
+const CollectionDetailActions = () => {
+	const [deleteProductOpened, setDeleteProductOpened] = useToggle()
+
+	return (
+		<>
+			<ActionIcon
+				color="gray"
+				variant="outline"
+				onClick={() => setDeleteProductOpened(true)}
+			>
+				<Trash size={18} />
+			</ActionIcon>
+			<ModalConfirm
+				title="Delete Product"
+				opened={deleteProductOpened}
+				onClose={setDeleteProductOpened}
+				message="Are you sure you want to delete this product?"
+			/>
+		</>
+	)
+}
 
 export const COLLECTION_DETAIL_COLUMNS: MantineDataTableColumn<ProductCollectionEntity> =
 	[
@@ -51,11 +74,7 @@ export const COLLECTION_DETAIL_COLUMNS: MantineDataTableColumn<ProductCollection
 			title: '',
 			width: '5%',
 			render: () => {
-				return (
-					<ActionIcon color="gray" variant="outline">
-						<Trash size={18} />
-					</ActionIcon>
-				)
+				return <CollectionDetailActions />
 			},
 		},
 	]

@@ -10,7 +10,12 @@ type TFooterProps = {
 
 const Footer = ({ opened }: TFooterProps) => {
 	return (
-		<MantineFooter height={FOOTER_HEIGHT} hidden={opened}>
+		<MantineFooter
+			height={FOOTER_HEIGHT}
+			hidden={opened}
+			fixed={false}
+			sx={{ position: 'static' }}
+		>
 			<Flex justify="center" align="center" className="h-full text-gray-500">
 				<Text align="center">
 					<div className="w-full"></div>

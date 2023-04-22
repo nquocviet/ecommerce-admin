@@ -6,7 +6,7 @@ import { Plus } from '@phosphor-icons/react'
 import AddNewCollectionModal from '../AddNewCollectionModal'
 
 const CollectionActions = () => {
-	const [newCollectionModalOpened, setNewCollectionModalOpened] = useToggle()
+	const [newCollectionOpened, setNewCollectionOpened] = useToggle()
 
 	return (
 		<>
@@ -16,14 +16,14 @@ const CollectionActions = () => {
 					color="gray"
 					size="xs"
 					leftIcon={<Plus size={16} />}
-					onClick={() => setNewCollectionModalOpened(true)}
+					onClick={() => setNewCollectionOpened(true)}
 				>
 					New Collection
 				</Button>
 			</Flex>
 			<AddNewCollectionModal
-				opened={newCollectionModalOpened}
-				onClose={setNewCollectionModalOpened}
+				opened={newCollectionOpened}
+				onClose={setNewCollectionOpened}
 			/>
 		</>
 	)

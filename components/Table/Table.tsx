@@ -22,17 +22,22 @@ const Table = <T extends Record<string, unknown>>({
 			borderColor="var(--gray-200)"
 			rowBorderColor="var(--gray-200)"
 			rowClassName="h-10"
-			styles={() => ({
-				root: {
-					height: 'auto',
-					flexGrow: 1,
+			sx={{
+				height: '100%',
+				'& > div': {
+					flex: 'unset',
+				},
+				'& table': {
 					minWidth,
 				},
+			}}
+			styles={() => ({
 				header: {
 					height: 40,
 				},
 				pagination: {
 					borderTopColor: 'transparent',
+					marginTop: 'auto',
 					paddingLeft: 0,
 					paddingRight: 0,
 				},
