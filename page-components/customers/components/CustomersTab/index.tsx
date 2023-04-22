@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Flex } from '@mantine/core'
 
-import { columns } from '@/columns/customer'
+import { CUSTOMER_COLUMNS } from '@/columns/customer'
 import { InputSearch, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useCustomers } from '@/lib/customer'
@@ -20,7 +20,7 @@ const CustomersTab = () => {
 			</Flex>
 			<Table
 				records={data}
-				columns={columns}
+				columns={CUSTOMER_COLUMNS}
 				fetching={isLoading}
 				totalRecords={data?.length}
 				recordsPerPage={PAGE_SIZE}

@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Flex } from '@mantine/core'
 
-import { columns } from '@/columns/collection'
+import { COLLECTION_COLUMNS } from '@/columns/collection'
 import { InputSearch, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useCollections } from '@/lib/collection'
@@ -26,7 +26,7 @@ const CollectionsTab = () => {
 			</form>
 			<Table
 				records={data}
-				columns={columns}
+				columns={COLLECTION_COLUMNS}
 				fetching={isLoading}
 				totalRecords={data?.length}
 				recordsPerPage={PAGE_SIZE}

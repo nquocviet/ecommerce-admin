@@ -7,7 +7,7 @@ import { MantineDataTableColumn } from '@/types/datatable'
 import { PricingEntity } from '@/types/pricing'
 import { toCapitalize } from '@/utils'
 
-export const columns: MantineDataTableColumn<PricingEntity> = [
+export const PRICING_COLUMNS: MantineDataTableColumn<PricingEntity> = [
 	{
 		accessor: 'name',
 		title: 'Name',

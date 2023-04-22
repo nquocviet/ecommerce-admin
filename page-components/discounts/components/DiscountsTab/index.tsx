@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { Button, Flex } from '@mantine/core'
 import { FunnelSimple } from '@phosphor-icons/react'
 
-import { columns } from '@/columns/discount'
+import { DISCOUNT_COLUMNS } from '@/columns/discount'
 import { InputSearch, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useDiscounts } from '@/lib/discount'
@@ -29,7 +29,7 @@ const DiscountsTab = () => {
 			</form>
 			<Table
 				records={data}
-				columns={columns}
+				columns={DISCOUNT_COLUMNS}
 				fetching={isLoading}
 				totalRecords={data?.length}
 				recordsPerPage={PAGE_SIZE}

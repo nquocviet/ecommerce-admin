@@ -2,13 +2,9 @@ import React from 'react'
 import { Button, Text } from '@mantine/core'
 
 import { Modal, ModalAction } from '@/components'
+import { ModalOpenedProps } from '@/components/Modal'
 
-type ExportProductModalProps = {
-	opened: boolean
-	onClose: (value?: React.SetStateAction<boolean>) => void
-}
-
-const ExportProductModal = ({ opened, onClose }: ExportProductModalProps) => {
+const ExportProductModal = ({ opened, onClose }: ModalOpenedProps) => {
 	return (
 		<Modal
 			opened={opened}

@@ -1,9 +1,14 @@
 import React, { ReactNode } from 'react'
 import { Modal as MantineModal, ModalBaseProps } from '@mantine/core'
 
-type TModalProps = Omit<ModalBaseProps, '__staticSelector'> & {
+export type ModalOpenedProps = {
+	opened: boolean
+	onClose: (value?: React.SetStateAction<boolean>) => void
+}
+
+type ModalProps = Omit<ModalBaseProps, '__staticSelector'> & {
 	action?: ReactNode
-	centered: boolean
+	centered?: boolean
 }
 
 const Modal = ({
@@ -14,7 +19,7 @@ const Modal = ({
 	centered,
 	onClose,
 	...rest
-}: TModalProps) => {
+}: ModalProps) => {
 	return (
 		<MantineModal.Root
 			opened={opened}

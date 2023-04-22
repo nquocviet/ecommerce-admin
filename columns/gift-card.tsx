@@ -2,7 +2,7 @@ import { MantineDataTableColumn } from '@/types/datatable'
 import { GiftCardEntity } from '@/types/gift-card'
 import { formatDate, formatMoney } from '@/utils'
 
-export const columns: MantineDataTableColumn<GiftCardEntity> = [
+export const GIFT_CARD_COLUMNS: MantineDataTableColumn<GiftCardEntity> = [
 	{
 		accessor: 'code',
 		title: 'Code',

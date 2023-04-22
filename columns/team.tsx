@@ -13,7 +13,7 @@ import { MantineDataTableColumn } from '@/types/datatable'
 import { TeamEntity } from '@/types/team'
 import { toCapitalize } from '@/utils'
 
-export const columns: MantineDataTableColumn<TeamEntity> = [
+export const TEAM_COLUMNS: MantineDataTableColumn<TeamEntity> = [
 	{
 		accessor: 'name',
 		title: 'Name',

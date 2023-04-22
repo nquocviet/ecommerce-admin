@@ -2,15 +2,11 @@ import React, { useState } from 'react'
 import { Accordion, Button, Text } from '@mantine/core'
 
 import { CloseIcon, Modal, ModalAction } from '@/components'
+import { ModalOpenedProps } from '@/components/Modal'
 
 import VariantGeneral from './VariantGeneral'
 import VariantShipping from './VariantShipping'
 import VariantStock from './VariantStock'
-
-type CreateVariantModalProps = {
-	opened: boolean
-	onClose: (value?: React.SetStateAction<boolean>) => void
-}
 
 const sections = [
 	{
@@ -31,7 +27,7 @@ const sections = [
 	},
 ]
 
-const CreateVariantModal = ({ opened, onClose }: CreateVariantModalProps) => {
+const CreateVariantModal = ({ opened, onClose }: ModalOpenedProps) => {
 	const [tabsOpened, setTabsOpened] = useState<string[]>(['general'])
 
 	const isTabOpened = (tab: string) => {

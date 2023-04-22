@@ -2,12 +2,17 @@ import React from 'react'
 import { Loader, Text } from '@mantine/core'
 import { DataTable, DataTableProps } from 'mantine-datatable'
 
-const Table = <T,>({
+type TableProps<T extends Record<string, unknown>> = DataTableProps<T> & {
+	minWidth?: number | string
+}
+
+const Table = <T extends Record<string, unknown>>({
 	records,
 	columns,
 	fetching,
+	minWidth = 750,
 	...rest
-}: DataTableProps<T>) => {
+}: TableProps<T>) => {
 	return (
 		<DataTable
 			minHeight={rest.minHeight || 125}
@@ -21,6 +26,7 @@ const Table = <T,>({
 				root: {
 					height: 'auto',
 					flexGrow: 1,
+					minWidth,
 				},
 				header: {
 					height: 40,

@@ -6,7 +6,7 @@ import { MantineDataTableColumn } from '@/types/datatable'
 import { OrderDraftEntity } from '@/types/order'
 import { formatDate, toCapitalize } from '@/utils'
 
-export const columns: MantineDataTableColumn<OrderDraftEntity> = [
+export const ORDER_DRAFT_COLUMNS: MantineDataTableColumn<OrderDraftEntity> = [
 	{
 		accessor: 'id',
 		title: 'Draft',

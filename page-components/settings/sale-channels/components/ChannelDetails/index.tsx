@@ -7,7 +7,7 @@ import {
 	Plus,
 } from '@phosphor-icons/react'
 
-import { columns } from '@/columns/sale-channel'
+import { SALE_CHANNEL_COLUMNS } from '@/columns/sale-channel'
 import { Dots, PageTitle, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useProducts } from '@/lib/product'
@@ -64,7 +64,7 @@ const ChannelDetails = () => {
 			</Button>
 			<Table
 				records={data}
-				columns={columns}
+				columns={SALE_CHANNEL_COLUMNS}
 				fetching={isLoading}
 				totalRecords={data?.length}
 				recordsPerPage={PAGE_SIZE}
