@@ -2,13 +2,19 @@ import React from 'react'
 import { ActionIcon, Button, Menu, Text } from '@mantine/core'
 import { useToggle } from '@mantine/hooks'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
+import Link from 'next/link'
 
 import { Modal, ModalAction } from '@/components'
+import ROUTES from '@/routes'
 import { CollectionEntity } from '@/types/collection'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { formatDate } from '@/utils'
 
-const Actions = () => {
+type ActionsProps = {
+	id: string
+}
+
+const Actions = ({ id }: ActionsProps) => {
 	const [deleteModalOpened, setDeleteModalOpened] = useToggle()
 
 	return (
@@ -20,7 +26,16 @@ const Actions = () => {
 					</ActionIcon>
 				</Menu.Target>
 				<Menu.Dropdown>
-					<Menu.Item icon={<NotePencil size={18} />}>Edit</Menu.Item>
+					<Menu.Item
+						component={Link}
+						href={{
+							pathname: ROUTES.COLLECTION_DETAIL,
+							query: { id },
+						}}
+						icon={<NotePencil size={18} />}
+					>
+						Edit
+					</Menu.Item>
 					<Menu.Item
 						icon={<Trash size={18} />}
 						sx={{
@@ -104,8 +119,8 @@ export const columns: MantineDataTableColumn<CollectionEntity> = [
 		accessor: '',
 		title: '',
 		width: '5%',
-		render: () => {
-			return <Actions />
+		render: ({ id }) => {
+			return <Actions id={id} />
 		},
 	},
 ]
