@@ -1,5 +1,6 @@
 import React from 'react'
 import { ActionIcon, Button, Flex, Menu, Paper, Text } from '@mantine/core'
+import { useToggle } from '@mantine/hooks'
 import {
 	DotsThree,
 	NotePencil,
@@ -12,7 +13,10 @@ import { useProductDetail } from '@/lib/product'
 import { useSalesChannels } from '@/lib/sales-channel'
 import { getValue } from '@/utils'
 
+import EditProductGeneralnformationModal from '../EditProductGeneralnformationModal'
+
 const ProductGeneralInformation = () => {
+	const [editProductOpened, setEditProductOpened] = useToggle()
 	const { data } = useProductDetail()
 	const { data: salesChannels } = useSalesChannels()
 
@@ -50,7 +54,10 @@ const ProductGeneralInformation = () => {
 								</ActionIcon>
 							</Menu.Target>
 							<Menu.Dropdown>
-								<Menu.Item icon={<NotePencil size={18} />}>
+								<Menu.Item
+									icon={<NotePencil size={18} />}
+									onClick={() => setEditProductOpened(true)}
+								>
 									Edit General Information
 								</Menu.Item>
 								<Menu.Item icon={<TreeStructure size={18} />}>
@@ -117,6 +124,10 @@ const ProductGeneralInformation = () => {
 					Sales Channels
 				</Text>
 			</Flex>
+			<EditProductGeneralnformationModal
+				opened={editProductOpened}
+				onClose={setEditProductOpened}
+			/>
 		</Paper>
 	)
 }

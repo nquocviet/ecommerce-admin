@@ -69,6 +69,7 @@ const AddNewCollectionModal = ({ opened, onClose }: ModalOpenedProps) => {
 							</Flex>
 						}
 						placeholder="/sunglasses"
+						withSlash
 					/>
 				</Grid.Col>
 			</Grid>

@@ -12,30 +12,32 @@ const ProductGeneralInformation = () => {
 		<div className="mb-8 text-sm text-gray-600">
 			<Text>To start selling, all you need is a name and a price.</Text>
 			<Flex direction="column" align="stretch" gap={24} className="mt-6">
-				<Grid>
-					<Grid.Col span={6}>
-						<TextInput
-							name="title"
-							control={control}
-							label="Title"
-							placeholder="Winter Jacket"
-							required
-						/>
-					</Grid.Col>
-					<Grid.Col span={6}>
-						<TextInput
-							name="sub_title"
-							control={control}
-							label="Subtitle"
-							placeholder="Warm and cozy"
-						/>
-					</Grid.Col>
-				</Grid>
-				<div className="mt-3">
-					<Text>Give your product a short and clear title.</Text>
-					<Text>
-						50-60 characters is the recommended length for search engines.
-					</Text>
+				<div>
+					<Grid>
+						<Grid.Col span={6}>
+							<TextInput
+								name="title"
+								control={control}
+								label="Title"
+								placeholder="Winter Jacket"
+								required
+							/>
+						</Grid.Col>
+						<Grid.Col span={6}>
+							<TextInput
+								name="subtitle"
+								control={control}
+								label="Subtitle"
+								placeholder="Warm and cozy"
+							/>
+						</Grid.Col>
+					</Grid>
+					<div className="mt-3">
+						<Text>Give your product a short and clear title.</Text>
+						<Text>
+							50-60 characters is the recommended length for search engines.
+						</Text>
+					</div>
 				</div>
 				<Grid>
 					<Grid.Col span={6}>
@@ -55,6 +57,7 @@ const ProductGeneralInformation = () => {
 								</Flex>
 							}
 							placeholder="/winter-jacket"
+							withSlash
 						/>
 					</Grid.Col>
 					<Grid.Col span={6}>
