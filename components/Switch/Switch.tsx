@@ -16,7 +16,9 @@ const Switch = <T extends FieldValues>({
 		<Controller
 			control={control}
 			name={name}
-			render={({ field }) => <MantineSwitch {...field} {...rest} />}
+			render={({ field }) => (
+				<MantineSwitch {...field} {...rest} checked={field.value ?? false} />
+			)}
 		/>
 	)
 }

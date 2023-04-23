@@ -30,6 +30,7 @@ const NumberInput = <T extends FieldValues>({
 				<MantineNumberInput
 					{...field}
 					{...rest}
+					value={field.value ?? 0}
 					type="number"
 					styles={() => ({
 						input: {

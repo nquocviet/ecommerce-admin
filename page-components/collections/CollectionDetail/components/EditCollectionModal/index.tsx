@@ -75,8 +75,6 @@ const EditCollectionModal = ({ opened, onClose }: ModalOpenedProps) => {
 					<TextInput
 						name="handle"
 						control={control}
-						icon="/"
-						iconWidth={18}
 						label={
 							<Flex align="center" gap={6}>
 								Handle
@@ -90,12 +88,7 @@ const EditCollectionModal = ({ opened, onClose }: ModalOpenedProps) => {
 							</Flex>
 						}
 						placeholder="/sunglasses"
-						styles={{
-							icon: {
-								left: 4,
-								color: 'var(--gray-400)',
-							},
-						}}
+						withSlash
 					/>
 				</Grid.Col>
 			</Grid>
