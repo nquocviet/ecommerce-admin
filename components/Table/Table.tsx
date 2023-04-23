@@ -5,6 +5,7 @@ import { DataTable, DataTableProps } from 'mantine-datatable'
 type TableProps<T extends Record<string, unknown>> = DataTableProps<T> & {
 	minWidth?: number | string
 	size?: 'sm' | 'md'
+	disableHead?: boolean
 }
 
 const Table = <T extends Record<string, unknown>>({
@@ -13,6 +14,7 @@ const Table = <T extends Record<string, unknown>>({
 	fetching,
 	size = 'md',
 	minWidth = 750,
+	disableHead,
 	...rest
 }: TableProps<T>) => {
 	return (
@@ -40,7 +42,7 @@ const Table = <T extends Record<string, unknown>>({
 			}}
 			styles={() => ({
 				header: {
-					height: 40,
+					height: disableHead ? 0 : 40,
 				},
 				pagination: {
 					borderTopColor: 'transparent',

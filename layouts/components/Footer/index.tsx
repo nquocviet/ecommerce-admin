@@ -14,7 +14,10 @@ const Footer = ({ opened }: TFooterProps) => {
 			height={FOOTER_HEIGHT}
 			hidden={opened}
 			fixed={false}
-			sx={{ position: 'static' }}
+			sx={{
+				position: 'static',
+				height: 'var(--footer-height)',
+			}}
 		>
 			<Flex justify="center" align="center" className="h-full text-gray-500">
 				<Text align="center">

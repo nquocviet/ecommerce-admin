@@ -177,12 +177,7 @@ export const PRODUCT_VARIANT_COLUMNS: MantineDataTableColumn<ProductVariantEntit
 			accessor: 'inventory_quantity',
 			title: 'Inventory',
 			width: '15%',
-			titleStyle: {
-				textAlign: 'right',
-			},
-			cellsStyle: {
-				textAlign: 'right',
-			},
+			textAlignment: 'right',
 			render: ({ inventory_quantity }) => {
 				return getValue(inventory_quantity)
 			},

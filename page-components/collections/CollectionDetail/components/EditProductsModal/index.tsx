@@ -47,6 +47,7 @@ const EditProductsModal = ({ opened, onClose }: ModalOpenedProps) => {
 				page={1}
 				recordsPerPage={PAGE_SIZE}
 				onPageChange={() => null}
+				disableHead
 			/>
 		</Modal>
 	)

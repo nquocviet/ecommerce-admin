@@ -22,10 +22,11 @@ const Modal = ({
 }: ModalProps) => {
 	return (
 		<MantineModal.Root
+			{...rest}
 			opened={opened}
 			onClose={onClose}
 			centered={centered}
-			{...rest}
+			lockScroll
 		>
 			<MantineModal.Overlay />
 			<MantineModal.Content>

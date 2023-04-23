@@ -5,7 +5,7 @@ import { ReturnReasonEntity } from '@/types/return-reason'
 
 export const useReturnReasons = () => {
 	return useSWR<ReturnReasonEntity[]>(
-		'/api/staticdata?type=return_reasons&loading=false',
+		'/api/staticdata?type=return_reasons',
 		fetcher
 	)
 }
