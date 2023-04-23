@@ -6,7 +6,7 @@ import { Info, Plus, Trash } from '@phosphor-icons/react'
 
 import { TextInput } from '@/components'
 
-import CreateVariantModal from './CreateVariantModal'
+import CreateVariantModal from '../CreateVariantModal'
 
 const ProductVariants = () => {
 	const [newVariantOpened, setNewVariantOpened] = useToggle()

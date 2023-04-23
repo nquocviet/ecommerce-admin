@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { Box, Button, Divider, Flex, Paper, Title } from '@mantine/core'
 
 import { PageTitle, TextInput } from '@/components'
-import { APP_NAME } from '@/constants/common'
+import { APP_NAME, STORE_NAME } from '@/constants/common'
 
 const defaultValues = {
 	storeName: APP_NAME,
@@ -23,9 +23,8 @@ const StoreForm = () => {
 				title="Store Details"
 				description="Manage your business details"
 				size="sm"
-				className="mb-8"
 			/>
-			<form>
+			<form className="mt-8">
 				<Title order={2} className="mb-2 text-lg font-semibold">
 					General
 				</Title>
@@ -45,19 +44,19 @@ const StoreForm = () => {
 						control={control}
 						name="swapLink"
 						label="Swap link template"
-						placeholder="https://hercules.inc/swap={swap_id}"
+						placeholder={`https://${STORE_NAME.toLowerCase()}.inc/swap={swap_id}`}
 					/>
 					<TextInput
 						control={control}
 						name="draftOrder"
 						label="Draft order link template"
-						placeholder="https://hercules.inc/payment={payment_id}"
+						placeholder={`https://${STORE_NAME.toLowerCase()}.inc/payment={payment_id}`}
 					/>
 					<TextInput
 						control={control}
 						name="inviteLink"
 						label="Invite link template"
-						placeholder="https://hercules-admin.inc/invite?token={invite_token}"
+						placeholder={`https://${STORE_NAME.toLowerCase()}-admin.inc/invite?token={invite_token}`}
 					/>
 				</Flex>
 				<Box>

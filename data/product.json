@@ -3,7 +3,7 @@
 		{
 			"id": "prod_01GWHGNKFAX387GBXZHF2XB7CP",
 			"created_at": "2023-03-27T12:28:43.000Z",
-			"title": "Medusa Coffee Mug",
+			"title": "Hercules Coffee Mug",
 			"handle": "coffee-mug",
 			"status": "published",
 			"thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/coffee-mug.png",
@@ -114,7 +114,7 @@
 					"updated_at": "2023-03-27T12:28:42.000Z",
 					"deleted_at": null,
 					"name": "Default Sales Channel",
-					"description": "Created by Medusa",
+					"description": "Created by Hercules",
 					"is_disabled": false
 				}
 			]
@@ -122,7 +122,7 @@
 		{
 			"id": "prod_01GWHGNK91ADKPN20W023MJKN5",
 			"created_at": "2023-03-27T12:28:43.000Z",
-			"title": "Medusa Hoodie",
+			"title": "Hercules Hoodie",
 			"handle": "hoodie",
 			"status": "published",
 			"thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/black_hoodie_front.png",
@@ -468,7 +468,7 @@
 					"updated_at": "2023-03-27T12:28:42.000Z",
 					"deleted_at": null,
 					"name": "Default Sales Channel",
-					"description": "Created by Medusa",
+					"description": "Created by Hercules",
 					"is_disabled": false
 				}
 			]
@@ -476,7 +476,7 @@
 		{
 			"id": "prod_01GWHGNKC013TSQ87YEF2GDSCE",
 			"created_at": "2023-03-27T12:28:43.000Z",
-			"title": "Medusa Longsleeve",
+			"title": "Hercules Longsleeve",
 			"handle": "longsleeve",
 			"status": "draft",
 			"thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/ls-black-front.png",
@@ -814,7 +814,7 @@
 					"updated_at": "2023-03-27T12:28:42.000Z",
 					"deleted_at": null,
 					"name": "Default Sales Channel",
-					"description": "Created by Medusa",
+					"description": "Created by Hercules",
 					"is_disabled": false
 				}
 			]
@@ -822,7 +822,7 @@
 		{
 			"id": "prod_01GWHGNK5QSZBE9Y01M9YQ2849",
 			"created_at": "2023-03-27T12:28:43.000Z",
-			"title": "Medusa Shorts",
+			"title": "Hercules Shorts",
 			"handle": "shorts",
 			"status": "published",
 			"thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/shorts-vintage-front.png",
@@ -1160,7 +1160,7 @@
 					"updated_at": "2023-03-27T12:28:42.000Z",
 					"deleted_at": null,
 					"name": "Default Sales Channel",
-					"description": "Created by Medusa",
+					"description": "Created by Hercules",
 					"is_disabled": false
 				}
 			]
@@ -1168,7 +1168,7 @@
 		{
 			"id": "prod_01GWHGNK29TT80BYWJCMB8JXWF",
 			"created_at": "2023-03-27T12:28:42.000Z",
-			"title": "Medusa Sweatpants",
+			"title": "Hercules Sweatpants",
 			"handle": "sweatpants",
 			"status": "published",
 			"thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-front.png",
@@ -1506,7 +1506,7 @@
 					"updated_at": "2023-03-27T12:28:42.000Z",
 					"deleted_at": null,
 					"name": "Default Sales Channel",
-					"description": "Created by Medusa",
+					"description": "Created by Hercules",
 					"is_disabled": false
 				}
 			]
@@ -1514,7 +1514,7 @@
 		{
 			"id": "prod_01GWHGNJYF1QBJN4K73JJYM0T7",
 			"created_at": "2023-03-27T12:28:42.000Z",
-			"title": "Medusa Sweatshirt",
+			"title": "Hercules Sweatshirt",
 			"handle": "sweatshirt",
 			"status": "published",
 			"thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
@@ -1860,7 +1860,7 @@
 					"updated_at": "2023-03-27T12:28:42.000Z",
 					"deleted_at": null,
 					"name": "Default Sales Channel",
-					"description": "Created by Medusa",
+					"description": "Created by Hercules",
 					"is_disabled": false
 				}
 			]
@@ -1868,7 +1868,7 @@
 		{
 			"id": "prod_01GWHGNJKHT4B490M34N5Q5DGH",
 			"created_at": "2023-03-27T12:28:42.000Z",
-			"title": "Medusa T-Shirt",
+			"title": "Hercules T-Shirt",
 			"handle": "t-shirt",
 			"status": "published",
 			"thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-black-front.png",
@@ -2614,7 +2614,7 @@
 					"updated_at": "2023-03-27T12:28:42.000Z",
 					"deleted_at": null,
 					"name": "Default Sales Channel",
-					"description": "Created by Medusa",
+					"description": "Created by Hercules",
 					"is_disabled": false
 				}
 			]

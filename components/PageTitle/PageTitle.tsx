@@ -23,23 +23,21 @@ const PageTitle = ({
 	const spacing = largerSize ? 12 : 4
 
 	return (
-		<Flex
-			justify="space-between"
-			gap={8}
-			className={clsx(largerSize && 'mb-2', className)}
-		>
-			<Box>
-				<Title order={order} size={fontSize} className="font-semibold">
-					{title}
-				</Title>
-				{description && (
-					<Text className="text-sm text-gray-500" sx={{ marginTop: spacing }}>
-						{description}
-					</Text>
-				)}
-			</Box>
-			{action && action}
-		</Flex>
+		<Box className={clsx('mb-2', className)}>
+			<Flex justify="space-between" gap={8} className="mb-2">
+				<Box>
+					<Title order={order} size={fontSize} className="font-semibold">
+						{title}
+					</Title>
+				</Box>
+				{action && action}
+			</Flex>
+			{description && (
+				<Text className="text-sm text-gray-500" sx={{ marginTop: spacing }}>
+					{description}
+				</Text>
+			)}
+		</Box>
 	)
 }
 

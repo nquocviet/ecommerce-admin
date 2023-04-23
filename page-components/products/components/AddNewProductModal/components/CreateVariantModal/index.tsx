@@ -4,9 +4,9 @@ import { Accordion, Button, Text } from '@mantine/core'
 import { CloseIcon, Modal, ModalAction } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
 
-import VariantGeneral from './VariantGeneral'
-import VariantShipping from './VariantShipping'
-import VariantStock from './VariantStock'
+import VariantGeneral from '../VariantGeneral'
+import VariantShipping from '../VariantShipping'
+import VariantStock from '../VariantStock'
 
 const sections = [
 	{

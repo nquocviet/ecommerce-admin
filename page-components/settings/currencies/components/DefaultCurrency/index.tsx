@@ -19,11 +19,11 @@ const DefaultCurrency = () => {
 				title="Default store currency"
 				description="This is the currency your prices are shown in."
 				size="sm"
-				className="mb-8"
 			/>
 			<Select
 				control={control}
 				name="currency"
+				className="mt-8"
 				data={[
 					{ value: 'EUR', label: 'EUR (Euro)' },
 					{ value: 'USD', label: 'USD (US Dollar)' },

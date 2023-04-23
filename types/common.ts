@@ -5,4 +5,4 @@ export type BaseEntity = {
 	deleted_at: Date | null
 }
 
-export type MetaDataEntity = Record<string, string>
+export type MetaDataEntity = Record<string, string> | null

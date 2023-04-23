@@ -24,7 +24,7 @@ const Reasons = ({ reasonSelected, setReasonSelected }: TReasonsProps) => {
 	}, [data, setReasonSelected, setValue])
 
 	const onChange = (value: string) => {
-		const reason = data?.find((item) => item.value === value)
+		const reason = data?.find((item) => item.value === value) || null
 		setReasonSelected(reason)
 		setValue('reason', value)
 	}
@@ -35,7 +35,6 @@ const Reasons = ({ reasonSelected, setReasonSelected }: TReasonsProps) => {
 				title="Return Reasons"
 				description="Manage reasons for returned items"
 				size="sm"
-				className="mb-8"
 				action={
 					<Button
 						variant="outline"
@@ -47,7 +46,7 @@ const Reasons = ({ reasonSelected, setReasonSelected }: TReasonsProps) => {
 					</Button>
 				}
 			/>
-			<form>
+			<form className="mt-8">
 				<RadioGroup control={control} name="reason" onChange={onChange}>
 					<Flex direction="column" gap={16}>
 						{data?.map(({ id, value, label, description }) => (

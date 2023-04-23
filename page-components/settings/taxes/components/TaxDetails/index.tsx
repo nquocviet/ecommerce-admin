@@ -15,7 +15,6 @@ const TaxDetails = () => {
 			<PageTitle
 				title="Details"
 				size="sm"
-				className="mb-8"
 				action={
 					<Button
 						variant="outline"
@@ -31,7 +30,7 @@ const TaxDetails = () => {
 				minHeight={82}
 				records={[{ id: 1, name: 'Default', code: null, rate: 0 }]}
 				columns={TAX_DETAIL_COLUMNS}
-				className="mb-6"
+				className="mb-6 mt-8"
 			/>
 			<Title order={2} className="mb-4 text-lg font-semibold">
 				Tax Calculation Settings

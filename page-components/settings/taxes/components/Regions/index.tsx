@@ -21,7 +21,6 @@ const Regions = () => {
 				title="Regions"
 				description="Select the region you wish to manage taxes for"
 				size="sm"
-				className="mb-8"
 				action={
 					<Menu shadow="md" width={200}>
 						<Menu.Target>
@@ -37,7 +36,7 @@ const Regions = () => {
 					</Menu>
 				}
 			/>
-			<form>
+			<form className="mt-8">
 				<RadioGroup control={control} name="region">
 					<Flex direction="column" gap={16}>
 						<RadioBox

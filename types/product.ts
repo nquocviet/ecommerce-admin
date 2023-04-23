@@ -7,7 +7,10 @@ import { SaleChannelEntity } from './sale-channel'
 export type ProductOptionEntity = BaseEntity & {
 	title: string
 	product_id: string
+	option_id: string
+	variant_id: string
 	metadata: MetaDataEntity
+	value: string
 }
 
 export type ProductSizeEntity = {
@@ -53,7 +56,7 @@ export type ProductEntity = BaseEntity & {
 	variants: ProductVariantEntity[]
 	options: ProductOptionEntity[]
 	collection: CollectionEntity
-	tags: []
+	tags: Record<string, string>[]
 	type: string | null
 	images: ImageEntity[]
 	sales_channels: SaleChannelEntity[]
@@ -78,4 +81,21 @@ export type ProductCollectionEntity = BaseEntity &
 		discountable: boolean
 		external_id: string | null
 		metadata: MetaDataEntity
+	}
+
+export type ProductDetailEntity = ProductEntity &
+	ProductSizeEntity & {
+		subtitle: string | null
+		description: string
+		is_giftcard: boolean
+		profile_id: string
+		hs_code: string | null
+		origin_country: string | null
+		mid_code: string | null
+		material: string | null
+		type_id: string | null
+		discountable: boolean
+		external_id: string | null
+		metadata: MetaDataEntity
+		categories: Record<string, string>[]
 	}

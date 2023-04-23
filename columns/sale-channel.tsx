@@ -4,6 +4,7 @@ import { DotsThree, Trash, TShirt } from '@phosphor-icons/react'
 
 import { MantineDataTableColumn } from '@/types/datatable'
 import { ProductEntity } from '@/types/product'
+import { getValue } from '@/utils'
 
 export const SALE_CHANNEL_COLUMNS: MantineDataTableColumn<ProductEntity> = [
 	{
@@ -24,7 +25,7 @@ export const SALE_CHANNEL_COLUMNS: MantineDataTableColumn<ProductEntity> = [
 		title: 'Collection',
 		width: '35%',
 		render: ({ collection }) => {
-			return collection?.title || '-'
+			return getValue(collection?.title)
 		},
 	},
 	{

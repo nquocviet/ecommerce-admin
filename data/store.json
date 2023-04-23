@@ -3,7 +3,7 @@
 		"id": "store_01GWHGNJ7825E476ETDTZ1SGXC",
 		"created_at": "2023-03-27T12:28:42.000Z",
 		"updated_at": "2023-03-27T12:28:42.000Z",
-		"name": "Medusa Store",
+		"name": "Hercules Store",
 		"default_currency_code": "usd",
 		"swap_link_template": null,
 		"payment_link_template": null,
@@ -37,7 +37,7 @@
 			"updated_at": "2023-03-27T12:28:42.000Z",
 			"deleted_at": null,
 			"name": "Default Sales Channel",
-			"description": "Created by Medusa",
+			"description": "Created by Hercules",
 			"is_disabled": false
 		},
 		"feature_flags": [

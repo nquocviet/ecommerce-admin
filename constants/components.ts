@@ -85,6 +85,13 @@ export const components: any = {
 			},
 		}),
 	},
+	Menu: {
+		styles: () => ({
+			item: {
+				textTransform: 'capitalize',
+			},
+		}),
+	},
 	Modal: {
 		styles: () => ({
 			header: {

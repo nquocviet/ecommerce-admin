@@ -1,4 +1,5 @@
 export { default as Checkbox } from './Checkbox'
+export { default as Chip } from './Chip'
 export { default as CloseIcon } from './CloseIcon'
 export { default as CustomLink } from './CustomLink'
 export { default as Dots } from './Dots'

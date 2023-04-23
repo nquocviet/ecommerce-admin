@@ -1,3 +1,4 @@
+export { default as CreateVariantModal } from './CreateVariantModal'
 export { default as ProductAttributes } from './ProductAttributes'
 export { default as ProductGeneralInformation } from './ProductGeneralInformation'
 export { default as ProductMedia } from './ProductMedia'

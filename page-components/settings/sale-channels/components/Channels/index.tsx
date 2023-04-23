@@ -4,6 +4,7 @@ import { ActionIcon, Flex, Paper } from '@mantine/core'
 import { Plus } from '@phosphor-icons/react'
 
 import { PageTitle, RadioBox, RadioGroup } from '@/components'
+import { STORE_NAME } from '@/constants/common'
 
 const defaultValues = {
 	channel: 'default',
@@ -21,21 +22,20 @@ const Channels = () => {
 				title="Sales channels"
 				description="Control which products are available in which channels"
 				size="sm"
-				className="mb-8"
 				action={
 					<ActionIcon>
 						<Plus size={20} weight="bold" />
 					</ActionIcon>
 				}
 			/>
-			<form>
+			<form className="mt-8">
 				<RadioGroup control={control} name="channel">
 					<Flex direction="column" gap={16}>
 						<RadioBox
 							value="default"
 							valueSelected={channelSelected}
 							label="Default Sales Channel"
-							description="Created by Medusa"
+							description={`Created by ${STORE_NAME}`}
 							truncate
 						/>
 						<RadioBox

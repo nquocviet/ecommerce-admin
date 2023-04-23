@@ -41,7 +41,6 @@ const ReasonDetails = ({ reasonSelected }: TDetailsProps) => {
 				title="Details"
 				description={reasonSelected?.value}
 				size="sm"
-				className="mb-8"
 				action={
 					<Menu shadow="md" width={200}>
 						<Menu.Target>
@@ -63,8 +62,8 @@ const ReasonDetails = ({ reasonSelected }: TDetailsProps) => {
 					</Menu>
 				}
 			/>
-			<form>
-				<Flex direction="column" gap={16} className="mb-6">
+			<form className="mt-8">
+				<Flex direction="column" gap={16}>
 					<TextInput
 						control={control}
 						name="label"
