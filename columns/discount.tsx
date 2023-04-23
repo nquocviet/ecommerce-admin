@@ -5,7 +5,7 @@ import { Copy, DotsThree, Lock, NotePencil, Trash } from '@phosphor-icons/react'
 import { Dots } from '@/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { DiscountEntity } from '@/types/discount'
-import { toCapitalize } from '@/utils'
+import { getValue, toCapitalize } from '@/utils'
 
 export const DISCOUNT_COLUMNS: MantineDataTableColumn<DiscountEntity> = [
 	{
@@ -32,7 +32,7 @@ export const DISCOUNT_COLUMNS: MantineDataTableColumn<DiscountEntity> = [
 		title: 'Description',
 		width: '45%',
 		render: ({ rule }) => {
-			return rule?.description || '-'
+			return getValue(rule?.description)
 		},
 	},
 	{

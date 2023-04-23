@@ -8,7 +8,7 @@ import { ModalConfirm } from '@/components'
 import ROUTES from '@/routes'
 import { CollectionEntity } from '@/types/collection'
 import { MantineDataTableColumn } from '@/types/datatable'
-import { formatDate } from '@/utils'
+import { formatDate, getValue } from '@/utils'
 
 type ActionsProps = {
 	id: string
@@ -92,7 +92,7 @@ export const COLLECTION_COLUMNS: MantineDataTableColumn<CollectionEntity> = [
 		title: 'Products',
 		width: '15%',
 		render: ({ products }) => {
-			return products?.length || '-'
+			return getValue(products?.length)
 		},
 	},
 	{

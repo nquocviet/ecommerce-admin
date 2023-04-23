@@ -21,14 +21,13 @@ const Markets = () => {
 				title="Regions"
 				description="Manage the markets that you will operate within."
 				size="sm"
-				className="mb-8"
 				action={
 					<ActionIcon>
 						<Plus size={20} weight="bold" />
 					</ActionIcon>
 				}
 			/>
-			<form>
+			<form className="mt-8">
 				<RadioGroup control={control} name="market">
 					<Flex direction="column" gap={16}>
 						<RadioBox

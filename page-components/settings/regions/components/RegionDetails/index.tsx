@@ -19,7 +19,6 @@ const RegionDetails = () => {
 				<PageTitle
 					title="EU"
 					size="sm"
-					className="mb-8"
 					action={
 						<Menu shadow="md" width={200}>
 							<Menu.Target>
@@ -41,7 +40,7 @@ const RegionDetails = () => {
 						</Menu>
 					}
 				/>
-				<Flex direction="column" gap={8} className="text-sm text-gray-500">
+				<Flex direction="column" gap={8} className="mt-8 text-sm text-gray-500">
 					<Flex justify="space-between">
 						<Title order={2} className="text-lg font-semibold text-black">
 							Details
@@ -75,14 +74,13 @@ const RegionDetails = () => {
 					title="Shipping Options"
 					description="Enter specifics about available regional shipment methods."
 					size="sm"
-					className="mb-8"
 					action={
 						<Button color="gray" variant="outline" size="xs">
 							Add option
 						</Button>
 					}
 				/>
-				<Flex direction="column" align="stretch" gap={16}>
+				<Flex direction="column" align="stretch" gap={16} className="mt-8">
 					<ShippingOption
 						title="PostFake Express"
 						description="Flat Rate: 15.00 EUR - Min. subtotal: N/A - Max. subtotal: N/A"
@@ -94,14 +92,13 @@ const RegionDetails = () => {
 					title="Return Shipping Options"
 					description="Enter specifics about available regional return shipment methods."
 					size="sm"
-					className="mb-8"
 					action={
 						<Button color="gray" variant="outline" size="xs">
 							Add option
 						</Button>
 					}
 				/>
-				<Flex direction="column" align="stretch" gap={16}>
+				<Flex direction="column" align="stretch" gap={16} className="mt-8">
 					<ShippingOption
 						title="PostFake Return"
 						description="Flat Rate: 10.00 EUR - Min. subtotal: N/A - Max. subtotal: N/A"

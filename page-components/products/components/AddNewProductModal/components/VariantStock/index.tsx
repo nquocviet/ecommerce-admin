@@ -3,6 +3,7 @@ import { useFormContext } from 'react-hook-form'
 import { Grid, Text } from '@mantine/core'
 
 import { NumberInput, SwitchGroup, TextInput } from '@/components'
+import { STORE_NAME } from '@/constants/common'
 
 const VariantStock = () => {
 	const { control } = useFormContext()
@@ -12,7 +13,7 @@ const VariantStock = () => {
 			<Text>Configure the inventory and stock for this variant.</Text>
 			<SwitchGroup
 				title="Manage inventory"
-				description="When checked Medusa will regulate the inventory when orders and returns are made."
+				description={`When checked ${STORE_NAME} will regulate the inventory when orders and returns are made."`}
 				name="manage-inventory"
 				control={control}
 				className="mt-6"

@@ -45,10 +45,12 @@ const ProductGiftCard = () => {
 					fontWeight: 600,
 				}}
 			>
-				{formatMoney(
-					data?.variants?.[0].prices?.[0]?.amount / 100,
-					data?.variants?.[0].prices?.[0]?.currency_code
-				)}
+				{data
+					? formatMoney(
+							data?.variants?.[0].prices?.[0]?.amount / 100,
+							data?.variants?.[0].prices?.[0]?.currency_code
+					  )
+					: 0}
 			</Badge>
 		</Flex>
 	)

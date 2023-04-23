@@ -4,15 +4,17 @@ import { ActionIcon, clsx, Collapse, Text } from '@mantine/core'
 import { useClipboard, useToggle } from '@mantine/hooks'
 import { CaretDown, ClipboardText } from '@phosphor-icons/react'
 
-import { MetaDataEntity } from '@/types/common'
-
-type JSONViewProps = {
+type JSONViewProps<T extends Record<string, unknown>> = {
 	title?: string
-	data?: MetaDataEntity
+	data?: T | null
 	className?: string
 }
 
-const JSONView = ({ title, data = {}, className }: JSONViewProps) => {
+const JSONView = <T extends Record<string, unknown>>({
+	title,
+	data = {} as T,
+	className,
+}: JSONViewProps<T>) => {
 	const [expanded, setExpanded] = useToggle()
 	const { copied, copy } = useClipboard()
 

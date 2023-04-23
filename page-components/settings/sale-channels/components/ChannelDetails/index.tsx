@@ -20,7 +20,6 @@ const ChannelDetails = () => {
 			<PageTitle
 				title="Default Sales Channel"
 				size="sm"
-				className="mb-4"
 				action={
 					<Flex gap={16}>
 						<Menu shadow="md" width={200}>
@@ -58,7 +57,7 @@ const ChannelDetails = () => {
 				variant="outline"
 				size="xs"
 				rightIcon={<FunnelSimple size={16} />}
-				className="mb-4"
+				className="my-4"
 			>
 				Filters
 			</Button>

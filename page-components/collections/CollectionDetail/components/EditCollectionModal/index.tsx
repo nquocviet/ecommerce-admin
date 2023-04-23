@@ -27,10 +27,12 @@ const EditCollectionModal = ({ opened, onClose }: ModalOpenedProps) => {
 		reset({
 			title,
 			handle,
-			metadata: Object.entries(metadata).map(([key, value]) => ({
-				key,
-				value,
-			})),
+			metadata: metadata
+				? Object.entries(metadata).map(([key, value]) => ({
+						key,
+						value,
+				  }))
+				: {},
 		})
 	}, [data, reset])
 

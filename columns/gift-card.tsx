@@ -1,6 +1,6 @@
 import { MantineDataTableColumn } from '@/types/datatable'
 import { GiftCardEntity } from '@/types/gift-card'
-import { formatDate, formatMoney } from '@/utils'
+import { formatDate, formatMoney, getValue } from '@/utils'
 
 export const GIFT_CARD_COLUMNS: MantineDataTableColumn<GiftCardEntity> = [
 	{
@@ -13,7 +13,7 @@ export const GIFT_CARD_COLUMNS: MantineDataTableColumn<GiftCardEntity> = [
 		title: 'Order',
 		width: '10%',
 		render: ({ order }) => {
-			return order?.length || '-'
+			return getValue(order?.length)
 		},
 	},
 	{

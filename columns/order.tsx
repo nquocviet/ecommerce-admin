@@ -4,7 +4,7 @@ import { Avatar, Flex, MANTINE_COLORS, Text } from '@mantine/core'
 import { Dots } from '@/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { OrderEntity } from '@/types/order'
-import { formatDate, formatMoney, toCapitalize } from '@/utils'
+import { formatDate, formatMoney, getValue, toCapitalize } from '@/utils'
 
 const paymentStatuses = {
 	awaiting: {
@@ -66,7 +66,7 @@ export const ORDER_COLUMNS: MantineDataTableColumn<OrderEntity> = [
 		title: 'Fulfillment',
 		width: '10%',
 		render: ({ fulfillment_status }) => {
-			return fulfillment_status || '-'
+			return getValue(fulfillment_status)
 		},
 	},
 	{
@@ -89,7 +89,7 @@ export const ORDER_COLUMNS: MantineDataTableColumn<OrderEntity> = [
 		title: 'Sales channel',
 		width: '20%',
 		render: ({ sales_channel }) => {
-			return sales_channel?.name || '-'
+			return getValue(sales_channel?.name)
 		},
 	},
 	{

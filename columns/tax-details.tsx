@@ -4,6 +4,7 @@ import { DotsThree, LockSimple, NotePencil } from '@phosphor-icons/react'
 
 import { MantineDataTableColumn } from '@/types/datatable'
 import { TaxDetailEntity } from '@/types/tax'
+import { getValue } from '@/utils'
 
 export const TAX_DETAIL_COLUMNS: MantineDataTableColumn<TaxDetailEntity> = [
 	{
@@ -24,7 +25,7 @@ export const TAX_DETAIL_COLUMNS: MantineDataTableColumn<TaxDetailEntity> = [
 		title: 'Code',
 		width: '20%',
 		render: ({ code }) => {
-			return code || '-'
+			return getValue(code)
 		},
 	},
 	{

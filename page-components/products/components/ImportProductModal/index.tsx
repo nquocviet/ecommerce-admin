@@ -4,6 +4,7 @@ import { DownloadSimple, File } from '@phosphor-icons/react'
 
 import { DropzoneCSV, Modal, ModalAction } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
+import { STORE_NAME } from '@/constants/common'
 
 const ImportProductModal = ({ opened, onClose }: ModalOpenedProps) => {
 	return (
@@ -49,7 +50,9 @@ const ImportProductModal = ({ opened, onClose }: ModalOpenedProps) => {
 				<Flex align="center" gap={12}>
 					<File size={28} className="text-primary-700" />
 					<div className="text-sm text-gray-600">
-						<Text className="font-medium">medusa-template.csv</Text>
+						<Text className="font-medium">
+							{STORE_NAME.toLowerCase()}-template.csv
+						</Text>
 						<Text>2.90 KiB</Text>
 					</div>
 				</Flex>

@@ -10,6 +10,7 @@ import {
 } from '@mantine/core'
 
 import { PageTitle } from '@/components'
+import { STORE_NAME } from '@/constants/common'
 
 const PersonalForm = () => {
 	return (
@@ -17,7 +18,7 @@ const PersonalForm = () => {
 			<Flex direction="column" align="stretch" gap={32}>
 				<PageTitle
 					title="Personal information"
-					description="Manage your Medusa profile"
+					description={`Manage your ${STORE_NAME} profile`}
 					size="sm"
 				/>
 				<Divider />
@@ -45,7 +46,7 @@ const PersonalForm = () => {
 							</Badge>
 						</Flex>
 						<Text className="text-sm text-gray-500">
-							Share usage insights and help us improve Medusa
+							Share usage insights and help us improve {STORE_NAME}
 						</Text>
 					</Flex>
 					<Button color="gray" variant="outline" size="xs">

@@ -4,12 +4,14 @@ import { DataTable, DataTableProps } from 'mantine-datatable'
 
 type TableProps<T extends Record<string, unknown>> = DataTableProps<T> & {
 	minWidth?: number | string
+	size?: 'sm' | 'md'
 }
 
 const Table = <T extends Record<string, unknown>>({
 	records,
 	columns,
 	fetching,
+	size = 'md',
 	minWidth = 750,
 	...rest
 }: TableProps<T>) => {
@@ -30,6 +32,11 @@ const Table = <T extends Record<string, unknown>>({
 				'& table': {
 					minWidth,
 				},
+				...(size === 'sm' && {
+					'& th, & td': {
+						fontSize: 'var(--fs-text-xs) !important',
+					},
+				}),
 			}}
 			styles={() => ({
 				header: {
