@@ -23,6 +23,7 @@ const BaseLayout = ({ children, fluid }: TBaseLayoutProps) => {
 						theme.colorScheme === 'dark'
 							? theme.colors.dark[8]
 							: theme.colors.gray[0],
+					minHeight: 'calc(100vh - var(--footer-height))',
 					paddingBottom: '1rem',
 				},
 				body: {

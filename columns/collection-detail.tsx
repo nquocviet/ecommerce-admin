@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { ActionIcon, Flex, Image, Text } from '@mantine/core'
 import { useToggle } from '@mantine/hooks'
 import { Trash } from '@phosphor-icons/react'
 
 import { Checkbox, Dots, ModalConfirm } from '@/components'
+import { useCollectionDetail } from '@/lib/collection'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { ProductCollectionEntity, ProductEntity } from '@/types/product'
 import { toCapitalize } from '@/utils'
@@ -79,8 +80,24 @@ export const COLLECTION_DETAIL_COLUMNS: MantineDataTableColumn<ProductCollection
 		},
 	]
 
-const ProductCheckbox = ({ index }) => {
-	const { control } = useForm()
+type ProductCheckboxProps = {
+	id: string
+	index: number
+}
+
+const ProductCheckbox = ({ id, index }: ProductCheckboxProps) => {
+	const { control, reset } = useForm()
+	const { data } = useCollectionDetail()
+	const isChecked = data?.products.some((product) => product.id === id)
+
+	useEffect(() => {
+		if (!data) return
+
+		reset({
+			[`product-${index}`]: isChecked,
+		})
+	}, [index, isChecked, data, reset])
+
 	return <Checkbox name={`product-${index}`} control={control} />
 }
 
@@ -90,10 +107,10 @@ export const COLLECTION_PRODUCTS_COLUMNS: MantineDataTableColumn<ProductEntity> 
 			accessor: 'no',
 			title: '',
 			width: '5%',
-			render: (_, index) => {
+			render: ({ id }, index) => {
 				return (
 					<Flex justify="center">
-						<ProductCheckbox index={index} />
+						<ProductCheckbox id={id} index={index} />
 					</Flex>
 				)
 			},

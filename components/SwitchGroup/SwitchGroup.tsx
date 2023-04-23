@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import { FieldValues } from 'react-hook-form'
-import { Flex, Text } from '@mantine/core'
+import { clsx, Flex, Text } from '@mantine/core'
 
 import Switch, { TSwitchProps } from '../Switch'
 
@@ -18,8 +18,8 @@ const SwitchGroup = <T extends FieldValues>({
 	...rest
 }: TSwitchGroupProps<T>) => {
 	return (
-		<div className={className}>
-			<Flex justify="space-between" align="center" className="mb-2">
+		<div className={clsx('text-sm text-gray-600', className)}>
+			<Flex justify="space-between" align="center" className="mb-1.5">
 				<Text className="font-semibold text-black">{title}</Text>
 				<Switch name={name} control={control} {...rest} />
 			</Flex>

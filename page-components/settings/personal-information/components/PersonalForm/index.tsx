@@ -8,11 +8,18 @@ import {
 	Paper,
 	Text,
 } from '@mantine/core'
+import { useToggle } from '@mantine/hooks'
 
 import { PageTitle } from '@/components'
 import { STORE_NAME } from '@/constants/common'
 
+import EditInformationModal from '../EditInformationModal'
+import EditPreferencesModal from '../EditPreferencesModal'
+
 const PersonalForm = () => {
+	const [editInformationOpened, setEditInformationOpened] = useToggle()
+	const [editPreferencesOpened, setEditPreferencesOpened] = useToggle()
+
 	return (
 		<Paper shadow="xs" p="xl">
 			<Flex direction="column" align="stretch" gap={32}>
@@ -29,7 +36,12 @@ const PersonalForm = () => {
 						</Avatar>
 						<Text className="font-semibold">example@email.com</Text>
 					</Flex>
-					<Button color="gray" variant="outline" size="xs">
+					<Button
+						color="gray"
+						variant="outline"
+						size="xs"
+						onClick={() => setEditInformationOpened(true)}
+					>
 						Edit information
 					</Button>
 				</Flex>
@@ -49,11 +61,24 @@ const PersonalForm = () => {
 							Share usage insights and help us improve {STORE_NAME}
 						</Text>
 					</Flex>
-					<Button color="gray" variant="outline" size="xs">
+					<Button
+						color="gray"
+						variant="outline"
+						size="xs"
+						onClick={() => setEditPreferencesOpened(true)}
+					>
 						Edit preferences
 					</Button>
 				</Flex>
 			</Flex>
+			<EditInformationModal
+				opened={editInformationOpened}
+				onClose={setEditInformationOpened}
+			/>
+			<EditPreferencesModal
+				opened={editPreferencesOpened}
+				onClose={setEditPreferencesOpened}
+			/>
 		</Paper>
 	)
 }
