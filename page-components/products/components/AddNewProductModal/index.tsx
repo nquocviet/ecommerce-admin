@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
-import { Accordion, Button, Flex, Text } from '@mantine/core'
+import { Accordion, Text } from '@mantine/core'
 
 import { CloseIcon, ModalFullscreen } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
@@ -62,14 +62,8 @@ const AddNewProductModal = ({ opened, onClose }: ModalOpenedProps) => {
 		<ModalFullscreen
 			opened={opened}
 			onClose={onClose}
-			action={
-				<Flex align="stretch" gap={16}>
-					<Button size="sm" color="gray" variant="outline">
-						Save as draft
-					</Button>
-					<Button size="sm">Publish product</Button>
-				</Flex>
-			}
+			cancelText="Save as draft"
+			confirmText="Publish product"
 		>
 			<FormProvider {...methods}>
 				<form className="mx-auto mt-10 max-w-[680px]">

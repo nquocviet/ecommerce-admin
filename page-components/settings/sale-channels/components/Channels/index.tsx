@@ -34,7 +34,7 @@ const Channels = () => {
 						<RadioBox
 							value="default"
 							valueSelected={channelSelected}
-							label="Default Sales Channel"
+							label="Default sales channel"
 							description={`Created by ${STORE_NAME}`}
 							truncate
 						/>

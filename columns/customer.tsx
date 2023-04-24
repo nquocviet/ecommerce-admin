@@ -66,8 +66,8 @@ export const CUSTOMER_COLUMNS: MantineDataTableColumn<CustomerEntity> = [
 						</ActionIcon>
 					</Menu.Target>
 					<Menu.Dropdown>
-						<Menu.Item icon={<NotePencil size={18} />}>Edit</Menu.Item>
-						<Menu.Item icon={<UserCircle size={18} />}>Details</Menu.Item>
+						<Menu.Item icon={<NotePencil size={20} />}>Edit</Menu.Item>
+						<Menu.Item icon={<UserCircle size={20} />}>Details</Menu.Item>
 					</Menu.Dropdown>
 				</Menu>
 			)

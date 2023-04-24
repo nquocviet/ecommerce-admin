@@ -23,7 +23,7 @@ const CollectionDetailActions = () => {
 				<Trash size={18} />
 			</ActionIcon>
 			<ModalConfirm
-				title="Delete Product"
+				title="Delete product"
 				opened={deleteProductOpened}
 				onClose={setDeleteProductOpened}
 				message="Are you sure you want to delete this product?"
@@ -98,7 +98,11 @@ const ProductCheckbox = ({ id, index }: ProductCheckboxProps) => {
 		})
 	}, [index, isChecked, data, reset])
 
-	return <Checkbox name={`product-${index}`} control={control} />
+	return (
+		<form>
+			<Checkbox name={`product-${index}`} control={control} />
+		</form>
+	)
 }
 
 export const COLLECTION_PRODUCTS_COLUMNS: MantineDataTableColumn<ProductEntity> =

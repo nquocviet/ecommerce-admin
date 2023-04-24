@@ -12,7 +12,7 @@ const DiscountActions = () => {
 					size="xs"
 					leftIcon={<Plus size={16} />}
 				>
-					Add Discount
+					Add discount
 				</Button>
 			</Flex>
 		</>

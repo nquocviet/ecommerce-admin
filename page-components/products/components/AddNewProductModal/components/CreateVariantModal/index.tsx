@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Accordion, Button, Text } from '@mantine/core'
+import { Accordion, Text } from '@mantine/core'
 
-import { CloseIcon, Modal, ModalAction } from '@/components'
+import { CloseIcon, Modal } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
 
 import VariantGeneral from '../VariantGeneral'
@@ -38,23 +38,10 @@ const CreateVariantModal = ({ opened, onClose }: ModalOpenedProps) => {
 		<Modal
 			opened={opened}
 			onClose={onClose}
-			title="Create Variant"
+			title="Create variant"
 			size="xl"
 			zIndex={201}
-			action={
-				<ModalAction>
-					<Button
-						size="sm"
-						color="gray"
-						variant="outline"
-						onClick={() => onClose()}
-					>
-						Cancel
-					</Button>
-					<Button size="sm">Save and close</Button>
-				</ModalAction>
-			}
-			centered
+			confirmText="Save and close"
 		>
 			<Accordion
 				value={tabsOpened}

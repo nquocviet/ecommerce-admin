@@ -23,8 +23,8 @@ const ProductAttributes = () => {
 							</ActionIcon>
 						</Menu.Target>
 						<Menu.Dropdown>
-							<Menu.Item icon={<NotePencil size={18} />}>
-								Edit Attributes
+							<Menu.Item icon={<NotePencil size={20} />}>
+								Edit attributes
 							</Menu.Item>
 						</Menu.Dropdown>
 					</Menu>

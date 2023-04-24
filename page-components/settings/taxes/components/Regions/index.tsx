@@ -2,8 +2,10 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { ActionIcon, Flex, Menu, Paper } from '@mantine/core'
 import { DotsThree, GearSix } from '@phosphor-icons/react'
+import Link from 'next/link'
 
 import { PageTitle, RadioBox, RadioGroup } from '@/components'
+import ROUTES from '@/routes'
 
 const defaultValues = {
 	region: 'eu',
@@ -22,14 +24,18 @@ const Regions = () => {
 				description="Select the region you wish to manage taxes for"
 				size="sm"
 				action={
-					<Menu shadow="md" width={200}>
+					<Menu shadow="md" width={220}>
 						<Menu.Target>
 							<ActionIcon>
 								<DotsThree size={20} weight="bold" />
 							</ActionIcon>
 						</Menu.Target>
 						<Menu.Dropdown>
-							<Menu.Item icon={<GearSix size={18} />}>
+							<Menu.Item
+								component={Link}
+								href={ROUTES.SETTINGS.REGIONS}
+								icon={<GearSix size={20} />}
+							>
 								Go to Region settings
 							</Menu.Item>
 						</Menu.Dropdown>

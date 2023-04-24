@@ -57,9 +57,9 @@ export const PRICING_COLUMNS: MantineDataTableColumn<PricingEntity> = [
 						</ActionIcon>
 					</Menu.Target>
 					<Menu.Dropdown>
-						<Menu.Item icon={<Lock size={18} />}>Unpublish</Menu.Item>
+						<Menu.Item icon={<Lock size={20} />}>Unpublish</Menu.Item>
 						<Menu.Item
-							icon={<Trash size={18} />}
+							icon={<Trash size={20} />}
 							sx={{
 								color: 'var(--red-600)',
 							}}

@@ -12,7 +12,7 @@ const TeamActions = () => {
 					size="xs"
 					leftIcon={<Plus size={16} />}
 				>
-					Invite Users
+					Invite users
 				</Button>
 			</Flex>
 		</>

@@ -1,9 +1,9 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Button, Flex } from '@mantine/core'
+import { Flex } from '@mantine/core'
 
 import { COLLECTION_PRODUCTS_COLUMNS } from '@/columns/collection-detail'
-import { InputSearch, Modal, ModalAction, Table } from '@/components'
+import { InputSearch, Modal, Table } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useProducts } from '@/lib/product'
@@ -18,26 +18,13 @@ const EditProductsModal = ({ opened, onClose }: ModalOpenedProps) => {
 			onClose={onClose}
 			title="Add products"
 			size="xl"
-			action={
-				<ModalAction>
-					<Button
-						size="sm"
-						color="gray"
-						variant="outline"
-						onClick={() => onClose()}
-					>
-						Cancel
-					</Button>
-					<Button size="sm">Save</Button>
-				</ModalAction>
-			}
-			centered
+			confirmText="Save"
 		>
-			<Flex justify="flex-end">
-				<form>
+			<form>
+				<Flex justify="flex-end">
 					<InputSearch name="search" control={control} placeholder="Search" />
-				</form>
-			</Flex>
+				</Flex>
+			</form>
 			<Table
 				records={data}
 				columns={COLLECTION_PRODUCTS_COLUMNS}

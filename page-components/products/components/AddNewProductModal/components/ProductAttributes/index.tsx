@@ -61,7 +61,7 @@ const ProductAttributes = () => {
 							<TextInput
 								name="mid-code"
 								control={control}
-								label="MID Code"
+								label="MID code"
 								placeholder="XDSKLAD9999..."
 							/>
 						</Grid.Col>
@@ -69,7 +69,7 @@ const ProductAttributes = () => {
 							<TextInput
 								name="hs-code"
 								control={control}
-								label="HS Code"
+								label="HS code"
 								placeholder="BDJSK39277W..."
 							/>
 						</Grid.Col>

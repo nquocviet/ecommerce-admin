@@ -18,7 +18,7 @@ const CollectionActions = () => {
 					leftIcon={<Plus size={16} />}
 					onClick={() => setNewCollectionOpened(true)}
 				>
-					New Collection
+					New collection
 				</Button>
 			</Flex>
 			<AddNewCollectionModal

@@ -5,13 +5,13 @@ import { TextInput as MantineTextInput, TextInputProps } from '@mantine/core'
 type TTextInputProps<T extends FieldValues> = TextInputProps & {
 	control: Control<T>
 	name: Path<T>
-	withSlash?: boolean
+	textIcon?: string
 }
 
 const TextInput = <T extends FieldValues>({
 	control,
 	name,
-	withSlash,
+	textIcon,
 	...rest
 }: TTextInputProps<T>) => {
 	return (
@@ -23,8 +23,8 @@ const TextInput = <T extends FieldValues>({
 					{...field}
 					{...rest}
 					value={field.value ?? ''}
-					{...(withSlash && {
-						icon: '/',
+					{...(textIcon && {
+						icon: textIcon,
 						iconWidth: 18,
 						styles: {
 							...rest.styles,

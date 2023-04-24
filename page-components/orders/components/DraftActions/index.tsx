@@ -12,7 +12,7 @@ const DraftActions = () => {
 					size="xs"
 					leftIcon={<Plus size={16} />}
 				>
-					Create Draft Order
+					Create draft order
 				</Button>
 			</Flex>
 		</>

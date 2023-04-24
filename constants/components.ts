@@ -34,7 +34,6 @@ export const components: any = {
 	Button: {
 		styles: (theme, params: ButtonStylesParams, { variant }) => ({
 			root: {
-				textTransform: 'capitalize',
 				borderColor:
 					params.color === 'gray' && variant === 'outline'
 						? theme.colors.gray[3]
@@ -88,7 +87,8 @@ export const components: any = {
 	Menu: {
 		styles: () => ({
 			item: {
-				textTransform: 'capitalize',
+				fontSize: 'var(--fs-text-sm)',
+				fontWeight: 'var(--fw-semibold)',
 			},
 		}),
 	},
@@ -154,7 +154,10 @@ export const components: any = {
 			},
 			input: {
 				borderColor: theme.colors.gray[3],
-				'&:focus': {
+				'&[readonly]:focus': {
+					borderColor: `${theme.colors.gray[3]} !important`,
+				},
+				'&:not([readonly]):focus': {
 					boxShadow: '0 0 0 4px var(--primary-100)',
 				},
 			},
@@ -232,7 +235,10 @@ export const components: any = {
 			},
 			input: {
 				borderColor: theme.colors.gray[3],
-				'&:focus': {
+				'&[readonly]:focus': {
+					borderColor: `${theme.colors.gray[3]} !important`,
+				},
+				'&:not([readonly]):focus': {
 					boxShadow: '0 0 0 4px var(--primary-100)',
 				},
 				'&::placeholder': {
@@ -249,7 +255,10 @@ export const components: any = {
 			},
 			input: {
 				borderColor: theme.colors.gray[3],
-				'&:focus': {
+				'&[readonly]:focus': {
+					borderColor: `${theme.colors.gray[3]} !important`,
+				},
+				'&:not([readonly]):focus': {
 					boxShadow: '0 0 0 4px var(--primary-100)',
 				},
 				'&::placeholder': {

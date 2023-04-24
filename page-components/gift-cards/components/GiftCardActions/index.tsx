@@ -12,7 +12,7 @@ const GiftCardActions = () => {
 					size="xs"
 					leftIcon={<Plus size={16} />}
 				>
-					Custom Gift Card
+					Custom gift card
 				</Button>
 			</Flex>
 		</>

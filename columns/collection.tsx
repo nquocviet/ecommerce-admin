@@ -32,12 +32,12 @@ const Actions = ({ id }: ActionsProps) => {
 							pathname: ROUTES.COLLECTION_DETAIL,
 							query: { id },
 						}}
-						icon={<NotePencil size={18} />}
+						icon={<NotePencil size={20} />}
 					>
 						Edit
 					</Menu.Item>
 					<Menu.Item
-						icon={<Trash size={18} />}
+						icon={<Trash size={20} />}
 						sx={{
 							color: 'var(--red-600)',
 						}}
@@ -48,7 +48,7 @@ const Actions = ({ id }: ActionsProps) => {
 				</Menu.Dropdown>
 			</Menu>
 			<ModalConfirm
-				title="Delete Collection"
+				title="Delete collection"
 				opened={deleteOpened}
 				onClose={setDeleteOpened}
 				message="Are you sure you want to delete this collection?"

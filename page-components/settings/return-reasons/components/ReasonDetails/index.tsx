@@ -49,9 +49,9 @@ const ReasonDetails = ({ reasonSelected }: TDetailsProps) => {
 							</ActionIcon>
 						</Menu.Target>
 						<Menu.Dropdown>
-							<Menu.Item icon={<Copy size={18} />}>Duplicate</Menu.Item>
+							<Menu.Item icon={<Copy size={20} />}>Duplicate</Menu.Item>
 							<Menu.Item
-								icon={<Trash size={18} />}
+								icon={<Trash size={20} />}
 								sx={{
 									color: 'var(--red-600)',
 								}}

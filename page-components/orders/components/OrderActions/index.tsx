@@ -12,7 +12,7 @@ const OrderActions = () => {
 					size="xs"
 					leftIcon={<DownloadSimple size={16} />}
 				>
-					Export Orders
+					Export orders
 				</Button>
 			</Flex>
 		</>

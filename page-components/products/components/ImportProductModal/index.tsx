@@ -1,8 +1,8 @@
 import React from 'react'
-import { Button, Flex, Text } from '@mantine/core'
+import { Flex, Text } from '@mantine/core'
 import { DownloadSimple, File } from '@phosphor-icons/react'
 
-import { DropzoneCSV, Modal, ModalAction } from '@/components'
+import { DropzoneCSV, Modal } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
 import { STORE_NAME } from '@/constants/common'
 
@@ -13,20 +13,7 @@ const ImportProductModal = ({ opened, onClose }: ModalOpenedProps) => {
 			onClose={onClose}
 			title="Import products list"
 			size="xl"
-			action={
-				<ModalAction>
-					<Button
-						size="sm"
-						color="gray"
-						variant="outline"
-						onClick={() => onClose()}
-					>
-						Cancel
-					</Button>
-					<Button size="sm">Import list</Button>
-				</ModalAction>
-			}
-			centered
+			confirmText="Import list"
 		>
 			<Text className="font-semibold">Import products list</Text>
 			<Text className="text-gray-600">

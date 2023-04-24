@@ -55,16 +55,16 @@ const ProductGeneralInformation = () => {
 							</Menu.Target>
 							<Menu.Dropdown>
 								<Menu.Item
-									icon={<NotePencil size={18} />}
+									icon={<NotePencil size={20} />}
 									onClick={() => setEditProductOpened(true)}
 								>
-									Edit General Information
+									Edit general information
 								</Menu.Item>
-								<Menu.Item icon={<TreeStructure size={18} />}>
-									Edit Sale Channels
+								<Menu.Item icon={<TreeStructure size={20} />}>
+									Edit sale channels
 								</Menu.Item>
 								<Menu.Item
-									icon={<Trash size={18} />}
+									icon={<Trash size={20} />}
 									sx={{
 										color: 'var(--red-600)',
 									}}

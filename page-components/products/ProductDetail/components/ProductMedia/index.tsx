@@ -15,7 +15,7 @@ const ProductMedia = () => {
 				title="Media"
 				action={
 					<Button color="gray" variant="outline" size="xs">
-						Edit Media
+						Edit media
 					</Button>
 				}
 			/>
