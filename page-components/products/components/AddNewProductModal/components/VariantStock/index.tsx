@@ -47,7 +47,7 @@ const VariantStock = () => {
 					<TextInput
 						name="ean"
 						control={control}
-						label="EAN (Barcode)"
+						label="EAN (barcode)"
 						placeholder="123456789..."
 					/>
 				</Grid.Col>
@@ -55,7 +55,7 @@ const VariantStock = () => {
 					<TextInput
 						name="upc"
 						control={control}
-						label="UPC (Barcode)"
+						label="UPC (barcode)"
 						placeholder="024681012..."
 					/>
 				</Grid.Col>

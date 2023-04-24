@@ -70,7 +70,7 @@ const VariantShipping = () => {
 							<TextInput
 								name="mid-code"
 								control={control}
-								label="MID Code"
+								label="MID code"
 								placeholder="XDSKLAD9999..."
 							/>
 						</Grid.Col>
@@ -78,7 +78,7 @@ const VariantShipping = () => {
 							<TextInput
 								name="hs-code"
 								control={control}
-								label="HS Code"
+								label="HS code"
 								placeholder="BDJSK39277W..."
 							/>
 						</Grid.Col>

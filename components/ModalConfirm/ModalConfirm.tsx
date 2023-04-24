@@ -1,20 +1,20 @@
 import React, { ReactNode } from 'react'
-import { Button, ModalProps, Text } from '@mantine/core'
+import { ModalProps, Text } from '@mantine/core'
 
-import { Modal, ModalAction } from '@/components'
+import { Modal } from '@/components'
 
 type ModalConfirmProps = ModalProps & {
 	title: string
 	message: ReactNode
-	rejectMessage?: string
-	acceptMessage?: string
+	cancelText?: string
+	confirmText?: string
 }
 
 const ModalConfirm = ({
 	title,
 	message,
-	rejectMessage = 'Cancel',
-	acceptMessage = 'Yes, confirm',
+	cancelText = 'Cancel',
+	confirmText = 'Yes, confirm',
 	opened,
 	onClose,
 }: ModalConfirmProps) => {
@@ -24,22 +24,9 @@ const ModalConfirm = ({
 			opened={opened}
 			onClose={onClose}
 			size="lg"
-			action={
-				<ModalAction>
-					<Button
-						size="sm"
-						color="gray"
-						variant="outline"
-						onClick={() => onClose()}
-					>
-						{rejectMessage}
-					</Button>
-					<Button color="red" size="sm">
-						{acceptMessage}
-					</Button>
-				</ModalAction>
-			}
-			centered
+			cancelText={cancelText}
+			confirmText={confirmText}
+			confirmation
 		>
 			<Text className="text-gray-600">{message}</Text>
 		</Modal>

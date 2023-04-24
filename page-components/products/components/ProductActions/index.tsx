@@ -22,7 +22,7 @@ const ProductActions = () => {
 					leftIcon={<UploadSimple size={16} />}
 					onClick={() => setImportProductOpened(true)}
 				>
-					Import Products
+					Import products
 				</Button>
 				<Button
 					variant="outline"
@@ -31,7 +31,7 @@ const ProductActions = () => {
 					leftIcon={<DownloadSimple size={16} />}
 					onClick={() => setExportProductOpened(true)}
 				>
-					Export Products
+					Export products
 				</Button>
 				<Button
 					variant="outline"
@@ -40,7 +40,7 @@ const ProductActions = () => {
 					leftIcon={<Plus size={16} />}
 					onClick={() => setNewProductOpened(true)}
 				>
-					New Product
+					New product
 				</Button>
 			</Flex>
 			<ImportProductModal

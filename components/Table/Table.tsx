@@ -27,7 +27,8 @@ const Table = <T extends Record<string, unknown>>({
 			rowBorderColor="var(--gray-200)"
 			rowClassName="h-10"
 			sx={{
-				height: '100%',
+				height: 'auto',
+				flexGrow: 1,
 				'& > div': {
 					flex: 'unset',
 				},

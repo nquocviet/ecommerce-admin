@@ -12,7 +12,7 @@ const PricingActions = () => {
 					size="xs"
 					leftIcon={<Plus size={16} />}
 				>
-					Add New Price
+					Add new price
 				</Button>
 			</Flex>
 		</>

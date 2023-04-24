@@ -11,6 +11,7 @@ import {
 type TNumberInputProps<T extends FieldValues> = NumberInputProps & {
 	control: Control<T>
 	name: Path<T>
+	textIcon?: string
 }
 
 const IGNORE_CHARACTER = ['e', 'E', '-', '+']
@@ -18,6 +19,7 @@ const IGNORE_CHARACTER = ['e', 'E', '-', '+']
 const NumberInput = <T extends FieldValues>({
 	control,
 	name,
+	textIcon,
 	...rest
 }: TNumberInputProps<T>) => {
 	const handlers = useRef<NumberInputHandlers>()
@@ -30,7 +32,7 @@ const NumberInput = <T extends FieldValues>({
 				<MantineNumberInput
 					{...field}
 					{...rest}
-					value={field.value ?? 0}
+					value={field.value}
 					type="number"
 					styles={() => ({
 						input: {
@@ -60,6 +62,18 @@ const NumberInput = <T extends FieldValues>({
 							event.preventDefault()
 						}
 					}}
+					{...(textIcon && {
+						icon: textIcon,
+						iconWidth: 28,
+						styles: {
+							...rest.styles,
+							icon: {
+								left: 4,
+								color: 'var(--gray-400)',
+								fontSize: 'var(--fs-text-sm)',
+							},
+						},
+					})}
 					hideControls
 				/>
 			)}

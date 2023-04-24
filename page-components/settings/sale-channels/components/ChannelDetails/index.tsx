@@ -43,10 +43,10 @@ const ChannelDetails = () => {
 								</ActionIcon>
 							</Menu.Target>
 							<Menu.Dropdown>
-								<Menu.Item icon={<NotePencil size={18} />}>
+								<Menu.Item icon={<NotePencil size={20} />}>
 									Edit general info
 								</Menu.Item>
-								<Menu.Item icon={<Plus size={18} />}>Add product</Menu.Item>
+								<Menu.Item icon={<Plus size={20} />}>Add product</Menu.Item>
 							</Menu.Dropdown>
 						</Menu>
 					</Flex>

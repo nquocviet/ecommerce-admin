@@ -13,11 +13,11 @@ const CustomersTab = () => {
 
 	return (
 		<>
-			<Flex justify="flex-end" align="center" gap={12} className="mb-4">
-				<form>
+			<form>
+				<Flex justify="flex-end" align="center" gap={12} className="mb-4">
 					<InputSearch name="search" control={control} />
-				</form>
-			</Flex>
+				</Flex>
+			</form>
 			<Table
 				records={data}
 				columns={CUSTOMER_COLUMNS}

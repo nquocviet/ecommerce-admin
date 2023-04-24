@@ -57,7 +57,7 @@ const ProductGeneralInformation = () => {
 								</Flex>
 							}
 							placeholder="/winter-jacket"
-							withSlash
+							textIcon="/"
 						/>
 					</Grid.Col>
 					<Grid.Col span={6}>

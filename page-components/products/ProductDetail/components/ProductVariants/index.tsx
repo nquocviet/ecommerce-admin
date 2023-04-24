@@ -56,11 +56,11 @@ const ProductVariants = () => {
 							</ActionIcon>
 						</Menu.Target>
 						<Menu.Dropdown>
-							<Menu.Item icon={<Plus size={18} />}>Add Variant</Menu.Item>
-							<Menu.Item icon={<NotePencil size={18} />}>
-								Edit Variant
+							<Menu.Item icon={<Plus size={20} />}>Add variant</Menu.Item>
+							<Menu.Item icon={<NotePencil size={20} />}>
+								Edit variant
 							</Menu.Item>
-							<Menu.Item icon={<GearSix size={18} />}>Edit Options</Menu.Item>
+							<Menu.Item icon={<GearSix size={20} />}>Edit options</Menu.Item>
 						</Menu.Dropdown>
 					</Menu>
 				}

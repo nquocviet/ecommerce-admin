@@ -1,5 +1,7 @@
-import React, { ReactNode } from 'react'
-import { Modal as MantineModal, ModalBaseProps } from '@mantine/core'
+import React from 'react'
+import { Button, Modal as MantineModal, ModalBaseProps } from '@mantine/core'
+
+import { ModalAction } from '@/components'
 
 export type ModalOpenedProps = {
 	opened: boolean
@@ -7,17 +9,29 @@ export type ModalOpenedProps = {
 }
 
 type ModalProps = Omit<ModalBaseProps, '__staticSelector'> & {
-	action?: ReactNode
 	centered?: boolean
+	confirmation?: boolean
+	closeOnConfirm?: boolean
+	closeOnCancel?: boolean
+	cancelText?: string
+	confirmText?: string
+	onCancel?: () => void
+	onConfirm?: () => void
 }
 
 const Modal = ({
-	action,
 	title,
 	children,
 	opened,
 	centered,
+	confirmation = false,
+	closeOnConfirm = false,
+	closeOnCancel = true,
+	cancelText = 'Cancel',
+	confirmText = 'Confirm',
 	onClose,
+	onCancel,
+	onConfirm,
 	...rest
 }: ModalProps) => {
 	return (
@@ -25,7 +39,7 @@ const Modal = ({
 			{...rest}
 			opened={opened}
 			onClose={onClose}
-			centered={centered}
+			centered={centered ?? true}
 			lockScroll
 		>
 			<MantineModal.Overlay />
@@ -35,7 +49,7 @@ const Modal = ({
 					<MantineModal.CloseButton />
 				</MantineModal.Header>
 				<MantineModal.Body>{children}</MantineModal.Body>
-				{action && (
+				{(cancelText || confirmText) && (
 					<MantineModal.Header
 						sx={{
 							top: 'unset',
@@ -45,7 +59,37 @@ const Modal = ({
 							paddingRight: 0,
 						}}
 					>
-						{action}
+						<ModalAction>
+							{cancelText && (
+								<Button
+									size="sm"
+									color="gray"
+									variant="outline"
+									onClick={() => {
+										if (closeOnCancel) {
+											onClose()
+										}
+										onCancel?.()
+									}}
+								>
+									{cancelText}
+								</Button>
+							)}
+							{confirmText && (
+								<Button
+									{...(confirmation && { color: 'red' })}
+									size="sm"
+									onClick={() => {
+										if (closeOnConfirm) {
+											onClose()
+										}
+										onConfirm?.()
+									}}
+								>
+									{confirmText}
+								</Button>
+							)}
+						</ModalAction>
 					</MantineModal.Header>
 				)}
 			</MantineModal.Content>

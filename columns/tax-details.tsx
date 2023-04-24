@@ -1,10 +1,40 @@
 import React from 'react'
 import { ActionIcon, Flex, Menu } from '@mantine/core'
+import { useToggle } from '@mantine/hooks'
 import { DotsThree, LockSimple, NotePencil } from '@phosphor-icons/react'
 
+import { EditTaxRateModal } from '@/page-components/settings/taxes/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { TaxDetailEntity } from '@/types/tax'
 import { getValue } from '@/utils'
+
+const Actions = () => {
+	const [editTaxRateOpened, setEditTaxRateOpened] = useToggle()
+
+	return (
+		<>
+			<Menu shadow="md" width={200}>
+				<Menu.Target>
+					<ActionIcon>
+						<DotsThree size={20} weight="bold" />
+					</ActionIcon>
+				</Menu.Target>
+				<Menu.Dropdown>
+					<Menu.Item
+						icon={<NotePencil size={20} />}
+						onClick={() => setEditTaxRateOpened(true)}
+					>
+						Edit
+					</Menu.Item>
+				</Menu.Dropdown>
+			</Menu>
+			<EditTaxRateModal
+				opened={editTaxRateOpened}
+				onClose={setEditTaxRateOpened}
+			/>
+		</>
+	)
+}
 
 export const TAX_DETAIL_COLUMNS: MantineDataTableColumn<TaxDetailEntity> = [
 	{
@@ -41,18 +71,7 @@ export const TAX_DETAIL_COLUMNS: MantineDataTableColumn<TaxDetailEntity> = [
 		title: '',
 		width: '5%',
 		render: () => {
-			return (
-				<Menu shadow="md" width={200}>
-					<Menu.Target>
-						<ActionIcon>
-							<DotsThree size={20} weight="bold" />
-						</ActionIcon>
-					</Menu.Target>
-					<Menu.Dropdown>
-						<Menu.Item icon={<NotePencil size={18} />}>Edit</Menu.Item>
-					</Menu.Dropdown>
-				</Menu>
-			)
+			return <Actions />
 		},
 	},
 ]

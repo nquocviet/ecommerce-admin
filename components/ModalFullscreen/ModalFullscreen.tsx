@@ -1,26 +1,69 @@
 import React, { ReactNode } from 'react'
-import { Divider, Modal } from '@mantine/core'
+import { Button, Divider, Flex, Modal } from '@mantine/core'
 
 import { ModalOpenedProps } from '@/components/Modal'
 
 type ModalFullscreenProps = ModalOpenedProps & {
-	action: ReactNode
 	children: ReactNode
+	closeOnConfirm?: boolean
+	closeOnCancel?: boolean
+	cancelText?: string
+	confirmText?: string
+	onCancel?: () => void
+	onConfirm?: () => void
 	className?: string
 }
 
 const ModalFullscreen = ({
-	action,
 	children,
 	className,
 	opened,
+	closeOnConfirm = false,
+	closeOnCancel = true,
+	cancelText = 'Cancel',
+	confirmText = 'Confirm',
 	onClose,
+	onCancel,
+	onConfirm,
 }: ModalFullscreenProps) => {
 	return (
 		<Modal
 			opened={opened}
 			onClose={onClose}
-			title={action}
+			title={
+				(cancelText || confirmText) && (
+					<Flex align="stretch" gap={16}>
+						{cancelText && (
+							<Button
+								size="sm"
+								color="gray"
+								variant="outline"
+								onClick={() => {
+									if (closeOnCancel) {
+										onClose()
+									}
+									onCancel?.()
+								}}
+							>
+								{cancelText}
+							</Button>
+						)}
+						{confirmText && (
+							<Button
+								size="sm"
+								onClick={() => {
+									if (closeOnConfirm) {
+										onClose()
+									}
+									onConfirm?.()
+								}}
+							>
+								{confirmText}
+							</Button>
+						)}
+					</Flex>
+				)
+			}
 			closeButtonProps={{
 				size: 'md',
 				iconSize: 24,

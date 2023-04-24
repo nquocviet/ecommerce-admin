@@ -55,13 +55,13 @@ const CollectionDetail = () => {
 							</Menu.Target>
 							<Menu.Dropdown>
 								<Menu.Item
-									icon={<NotePencil size={18} />}
+									icon={<NotePencil size={20} />}
 									onClick={() => setEditCollectionOpened(true)}
 								>
 									Edit collection
 								</Menu.Item>
 								<Menu.Item
-									icon={<Trash size={18} />}
+									icon={<Trash size={20} />}
 									sx={{
 										color: 'var(--red-600)',
 									}}
@@ -111,7 +111,7 @@ const CollectionDetail = () => {
 				</Flex>
 			</Paper>
 			<ModalConfirm
-				title="Delete Collection"
+				title="Delete collection"
 				opened={deleteCollectionOpened}
 				onClose={setDeleteCollectionOpened}
 				message="Are you sure you want to delete this collection?"

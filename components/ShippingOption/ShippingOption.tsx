@@ -64,9 +64,9 @@ const ShippingOption = ({
 						</ActionIcon>
 					</Menu.Target>
 					<Menu.Dropdown>
-						<Menu.Item icon={<NotePencil size={18} />}>Edit</Menu.Item>
+						<Menu.Item icon={<NotePencil size={20} />}>Edit</Menu.Item>
 						<Menu.Item
-							icon={<Trash size={18} />}
+							icon={<Trash size={20} />}
 							sx={{
 								color: 'var(--red-600)',
 							}}

@@ -20,15 +20,17 @@ const DefaultCurrency = () => {
 				description="This is the currency your prices are shown in."
 				size="sm"
 			/>
-			<Select
-				control={control}
-				name="currency"
-				className="mt-8"
-				data={[
-					{ value: 'EUR', label: 'EUR (Euro)' },
-					{ value: 'USD', label: 'USD (US Dollar)' },
-				]}
-			/>
+			<form>
+				<Select
+					control={control}
+					name="currency"
+					className="mt-8"
+					data={[
+						{ value: 'EUR', label: 'EUR (Euro)' },
+						{ value: 'USD', label: 'USD (US Dollar)' },
+					]}
+				/>
+			</form>
 		</Paper>
 	)
 }

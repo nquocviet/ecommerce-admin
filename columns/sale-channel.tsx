@@ -41,9 +41,9 @@ export const SALE_CHANNEL_COLUMNS: MantineDataTableColumn<ProductEntity> = [
 						</ActionIcon>
 					</Menu.Target>
 					<Menu.Dropdown>
-						<Menu.Item icon={<TShirt size={18} />}>Details</Menu.Item>
+						<Menu.Item icon={<TShirt size={20} />}>Details</Menu.Item>
 						<Menu.Item
-							icon={<Trash size={18} />}
+							icon={<Trash size={20} />}
 							sx={{
 								color: 'var(--red-600)',
 							}}

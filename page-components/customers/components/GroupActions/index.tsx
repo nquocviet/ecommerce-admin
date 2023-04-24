@@ -12,7 +12,7 @@ const GroupActions = () => {
 					size="xs"
 					leftIcon={<Plus size={16} />}
 				>
-					New Group
+					New group
 				</Button>
 			</Flex>
 		</>
