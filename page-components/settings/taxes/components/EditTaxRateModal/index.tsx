@@ -12,19 +12,13 @@ const defaultValues = {
 	'tax-code': '',
 }
 
-const EditTaxRateModal = ({ opened, onClose }: ModalOpenedProps) => {
+const EditTaxRateModal = (props: ModalOpenedProps) => {
 	const { control } = useForm({
 		defaultValues,
 	})
 
 	return (
-		<Modal
-			title="Edit tax rate"
-			size="lg"
-			opened={opened}
-			onClose={onClose}
-			confirmText="Save"
-		>
+		<Modal title="Edit tax rate" size="lg" confirmText="Save" {...props}>
 			<form>
 				<Flex direction="column" align="stretch" gap={16}>
 					<Text className="text-sm font-semibold text-black">Details</Text>

@@ -9,9 +9,11 @@ import {
 	Menu,
 	Paper,
 } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 import { Copy, DotsThree, Trash } from '@phosphor-icons/react'
 
 import { PageTitle, TextInput } from '@/components'
+import { DeleteReasonModal } from '@/page-components/settings/return-reasons/components'
 import { ReturnReasonEntity } from '@/types/return-reason'
 
 type TDetailsProps = {
@@ -24,6 +26,7 @@ const defaultValues = {
 }
 
 const ReasonDetails = ({ reasonSelected }: TDetailsProps) => {
+	const [opened, { open, close }] = useDisclosure(false)
 	const { control, setValue } = useForm({
 		defaultValues,
 	})
@@ -55,6 +58,7 @@ const ReasonDetails = ({ reasonSelected }: TDetailsProps) => {
 								sx={{
 									color: 'var(--red-600)',
 								}}
+								onClick={open}
 							>
 								Delete
 							</Menu.Item>
@@ -87,6 +91,7 @@ const ReasonDetails = ({ reasonSelected }: TDetailsProps) => {
 					</Flex>
 				</Box>
 			</form>
+			<DeleteReasonModal opened={opened} onClose={close} />
 		</Paper>
 	)
 }

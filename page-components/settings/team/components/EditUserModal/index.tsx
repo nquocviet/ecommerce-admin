@@ -4,26 +4,21 @@ import { Flex, Grid } from '@mantine/core'
 
 import { Modal, TextInput } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
+import { STORE_NAME } from '@/constants/common'
 
 const defaultValues = {
 	firstName: '',
 	lastName: '',
-	email: 'admin@hercules.com',
+	email: `admin@${STORE_NAME.toLowerCase()}.com`,
 }
 
-const EditUserModal = ({ opened, onClose }: ModalOpenedProps) => {
+const EditUserModal = (props: ModalOpenedProps) => {
 	const { control } = useForm({
 		defaultValues,
 	})
 
 	return (
-		<Modal
-			title="Edit user"
-			size="lg"
-			confirmText="Save"
-			opened={opened}
-			onClose={onClose}
-		>
+		<Modal title="Edit user" size="lg" confirmText="Save" {...props}>
 			<form>
 				<Flex direction="column" align="stretch" gap={16}>
 					<Grid>

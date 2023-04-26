@@ -64,6 +64,9 @@ const ModalFullscreen = ({
 					</Flex>
 				)
 			}
+			transitionProps={{
+				duration: 0,
+			}}
 			closeButtonProps={{
 				size: 'md',
 				iconSize: 24,

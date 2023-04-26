@@ -5,16 +5,15 @@ import { Grid } from '@mantine/core'
 import { Modal, TextInput } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
 
-const EditInformationModal = ({ opened, onClose }: ModalOpenedProps) => {
+const EditInformationModal = (props: ModalOpenedProps) => {
 	const { control } = useForm()
 
 	return (
 		<Modal
 			title="Edit information"
 			size="lg"
-			opened={opened}
-			onClose={onClose}
 			confirmText="Submit and close"
+			{...props}
 		>
 			<form>
 				<Grid>

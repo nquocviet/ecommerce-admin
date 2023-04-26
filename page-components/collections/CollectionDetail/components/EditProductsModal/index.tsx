@@ -8,18 +8,12 @@ import { ModalOpenedProps } from '@/components/Modal'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useProducts } from '@/lib/product'
 
-const EditProductsModal = ({ opened, onClose }: ModalOpenedProps) => {
+const EditProductsModal = (props: ModalOpenedProps) => {
 	const { data, isLoading } = useProducts()
 	const { control } = useForm()
 
 	return (
-		<Modal
-			opened={opened}
-			onClose={onClose}
-			title="Add products"
-			size="xl"
-			confirmText="Save"
-		>
+		<Modal title="Add products" size="xl" confirmText="Save" {...props}>
 			<form>
 				<Flex justify="flex-end">
 					<InputSearch name="search" control={control} placeholder="Search" />

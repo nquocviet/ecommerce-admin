@@ -6,14 +6,13 @@ import { DropzoneCSV, Modal } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
 import { STORE_NAME } from '@/constants/common'
 
-const ImportProductModal = ({ opened, onClose }: ModalOpenedProps) => {
+const ImportProductModal = (props: ModalOpenedProps) => {
 	return (
 		<Modal
-			opened={opened}
-			onClose={onClose}
 			title="Import products list"
 			size="xl"
 			confirmText="Import list"
+			{...props}
 		>
 			<Text className="font-semibold">Import products list</Text>
 			<Text className="text-gray-600">

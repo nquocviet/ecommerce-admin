@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { Accordion, Text } from '@mantine/core'
 
 import { CloseIcon, Modal } from '@/components'
@@ -9,26 +9,27 @@ import {
 	VariantStock,
 } from '@/page-components/products/components/AddNewProductModal/components'
 
-const sections = [
-	{
-		value: 'general',
-		label: 'General',
-		required: true,
-		content: VariantGeneral,
-	},
-	{
-		value: 'stock',
-		label: 'Stock & Inventory',
-		content: VariantStock,
-	},
-	{
-		value: 'shipping',
-		label: 'Shipping',
-		content: VariantShipping,
-	},
-]
-
-const CreateVariantModal = ({ opened, onClose }: ModalOpenedProps) => {
+const CreateVariantModal = (props: ModalOpenedProps) => {
+	const sections = useMemo(() => {
+		return [
+			{
+				value: 'general',
+				label: 'General',
+				required: true,
+				content: VariantGeneral,
+			},
+			{
+				value: 'stock',
+				label: 'Stock & Inventory',
+				content: VariantStock,
+			},
+			{
+				value: 'shipping',
+				label: 'Shipping',
+				content: VariantShipping,
+			},
+		]
+	}, [])
 	const [tabsOpened, setTabsOpened] = useState<string[]>(['general'])
 
 	const isTabOpened = (tab: string) => {
@@ -37,12 +38,11 @@ const CreateVariantModal = ({ opened, onClose }: ModalOpenedProps) => {
 
 	return (
 		<Modal
-			opened={opened}
-			onClose={onClose}
 			title="Create variant"
 			size="xl"
 			zIndex={201}
 			confirmText="Save and close"
+			{...props}
 		>
 			<Accordion
 				value={tabsOpened}

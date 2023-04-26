@@ -48,7 +48,7 @@ const sections = [
 	},
 ]
 
-const AddNewProductModal = ({ opened, onClose }: ModalOpenedProps) => {
+const AddNewProductModal = (props: ModalOpenedProps) => {
 	const [tabsOpened, setTabsOpened] = useState<string[]>([
 		'general-information',
 	])
@@ -60,10 +60,9 @@ const AddNewProductModal = ({ opened, onClose }: ModalOpenedProps) => {
 
 	return (
 		<ModalFullscreen
-			opened={opened}
-			onClose={onClose}
 			cancelText="Save as draft"
 			confirmText="Publish product"
+			{...props}
 		>
 			<FormProvider {...methods}>
 				<form className="mx-auto mt-10 max-w-[680px]">
