@@ -44,14 +44,22 @@ const Modal = ({
 		>
 			<MantineModal.Overlay />
 			<MantineModal.Content>
-				<MantineModal.Header>
+				<MantineModal.Header sx={{ zIndex: 100 }}>
 					<MantineModal.Title>{title}</MantineModal.Title>
 					<MantineModal.CloseButton />
 				</MantineModal.Header>
-				<MantineModal.Body>{children}</MantineModal.Body>
+				<MantineModal.Body
+					sx={{
+						position: 'relative',
+						zIndex: 101,
+					}}
+				>
+					{children}
+				</MantineModal.Body>
 				{(cancelText || confirmText) && (
 					<MantineModal.Header
 						sx={{
+							zIndex: 100,
 							top: 'unset',
 							bottom: 0,
 							paddingTop: 0,

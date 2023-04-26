@@ -1,30 +1,33 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { ActionIcon, Button, Flex, Menu, Paper } from '@mantine/core'
-import { useToggle } from '@mantine/hooks'
+import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 
 import { COLLECTION_DETAIL_COLUMNS } from '@/columns/collection-detail'
-import {
-	InputSearch,
-	JSONView,
-	Loader,
-	ModalConfirm,
-	PageTitle,
-	Table,
-} from '@/components'
+import { InputSearch, JSONView, Loader, PageTitle, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { PRODUCT_TABS } from '@/constants/tabs'
 import { DetailLayout } from '@/layouts'
 import { useCollectionDetail } from '@/lib/collection'
+import { DeleteCollectionModal } from '@/page-components/products/components'
 import ROUTES from '@/routes'
 
 import { EditCollectionModal, EditProductsModal } from './components'
 
 const CollectionDetail = () => {
-	const [editCollectionOpened, setEditCollectionOpened] = useToggle()
-	const [deleteCollectionOpened, setDeleteCollectionOpened] = useToggle()
-	const [editProductsOpened, setEditProductsOpened] = useToggle()
+	const [
+		editCollectionOpened,
+		{ open: openEditCollection, close: closeEditCollection },
+	] = useDisclosure(false)
+	const [
+		deleteCollectionOpened,
+		{ open: openDeleteCollection, close: closeDeleteCollection },
+	] = useDisclosure(false)
+	const [
+		editProductsOpened,
+		{ open: openEditProducts, close: closeEditProducts },
+	] = useDisclosure(false)
 	const { control } = useForm()
 	const { data, isLoading } = useCollectionDetail()
 
@@ -56,7 +59,7 @@ const CollectionDetail = () => {
 							<Menu.Dropdown>
 								<Menu.Item
 									icon={<NotePencil size={20} />}
-									onClick={() => setEditCollectionOpened(true)}
+									onClick={openEditCollection}
 								>
 									Edit collection
 								</Menu.Item>
@@ -65,7 +68,7 @@ const CollectionDetail = () => {
 									sx={{
 										color: 'var(--red-600)',
 									}}
-									onClick={() => setDeleteCollectionOpened(true)}
+									onClick={openDeleteCollection}
 								>
 									Delete
 								</Menu.Item>
@@ -88,7 +91,7 @@ const CollectionDetail = () => {
 								variant="outline"
 								size="xs"
 								leftIcon={<NotePencil size={18} />}
-								onClick={() => setEditProductsOpened(true)}
+								onClick={openEditProducts}
 							>
 								Edit products
 							</Button>
@@ -110,19 +113,17 @@ const CollectionDetail = () => {
 					/>
 				</Flex>
 			</Paper>
-			<ModalConfirm
-				title="Delete collection"
+			<DeleteCollectionModal
 				opened={deleteCollectionOpened}
-				onClose={setDeleteCollectionOpened}
-				message="Are you sure you want to delete this collection?"
+				onClose={closeDeleteCollection}
 			/>
 			<EditCollectionModal
 				opened={editCollectionOpened}
-				onClose={setEditCollectionOpened}
+				onClose={closeEditCollection}
 			/>
 			<EditProductsModal
 				opened={editProductsOpened}
-				onClose={setEditProductsOpened}
+				onClose={closeEditProducts}
 			/>
 		</DetailLayout>
 	)

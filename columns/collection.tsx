@@ -1,10 +1,10 @@
 import React from 'react'
 import { ActionIcon, Menu } from '@mantine/core'
-import { useToggle } from '@mantine/hooks'
+import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 import Link from 'next/link'
 
-import { ModalConfirm } from '@/components'
+import { DeleteCollectionModal } from '@/page-components/products/components'
 import ROUTES from '@/routes'
 import { CollectionEntity } from '@/types/collection'
 import { MantineDataTableColumn } from '@/types/datatable'
@@ -15,7 +15,7 @@ type ActionsProps = {
 }
 
 const Actions = ({ id }: ActionsProps) => {
-	const [deleteOpened, setDeleteOpened] = useToggle()
+	const [opened, { open, close }] = useDisclosure(false)
 
 	return (
 		<>
@@ -41,18 +41,13 @@ const Actions = ({ id }: ActionsProps) => {
 						sx={{
 							color: 'var(--red-600)',
 						}}
-						onClick={() => setDeleteOpened(true)}
+						onClick={open}
 					>
 						Delete
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<ModalConfirm
-				title="Delete collection"
-				opened={deleteOpened}
-				onClose={setDeleteOpened}
-				message="Are you sure you want to delete this collection?"
-			/>
+			<DeleteCollectionModal opened={opened} onClose={close} />
 		</>
 	)
 }

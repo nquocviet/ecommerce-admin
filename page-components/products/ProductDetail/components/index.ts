@@ -1,3 +1,4 @@
+export { default as EditProductGeneralInformationModal } from './EditProductGeneralInformationModal'
 export { default as ProductAttributes } from './ProductAttributes'
 export { default as ProductGeneralInformation } from './ProductGeneralInformation'
 export { default as ProductMedia } from './ProductMedia'

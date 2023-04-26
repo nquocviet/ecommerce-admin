@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import { FieldValues } from 'react-hook-form'
 import { clsx, Flex, Text } from '@mantine/core'
 
-import Switch, { TSwitchProps } from '../Switch'
+import Switch, { TSwitchProps } from '@/components/Switch'
 
 type TSwitchGroupProps<T extends FieldValues> = TSwitchProps<T> & {
 	title: ReactNode

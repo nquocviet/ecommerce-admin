@@ -8,17 +8,24 @@ import {
 	Paper,
 	Text,
 } from '@mantine/core'
-import { useToggle } from '@mantine/hooks'
+import { useDisclosure } from '@mantine/hooks'
 
 import { PageTitle } from '@/components'
 import { STORE_NAME } from '@/constants/common'
-
-import EditInformationModal from '../EditInformationModal'
-import EditPreferencesModal from '../EditPreferencesModal'
+import {
+	EditInformationModal,
+	EditPreferencesModal,
+} from '@/page-components/settings/personal-information/components'
 
 const PersonalForm = () => {
-	const [editInformationOpened, setEditInformationOpened] = useToggle()
-	const [editPreferencesOpened, setEditPreferencesOpened] = useToggle()
+	const [
+		informationOpened,
+		{ open: openInformation, close: closeInformation },
+	] = useDisclosure(false)
+	const [
+		preferencesOpened,
+		{ open: openPreferences, close: closePreferences },
+	] = useDisclosure(false)
 
 	return (
 		<Paper shadow="xs" p="xl">
@@ -40,7 +47,7 @@ const PersonalForm = () => {
 						color="gray"
 						variant="outline"
 						size="xs"
-						onClick={() => setEditInformationOpened(true)}
+						onClick={openInformation}
 					>
 						Edit information
 					</Button>
@@ -65,19 +72,19 @@ const PersonalForm = () => {
 						color="gray"
 						variant="outline"
 						size="xs"
-						onClick={() => setEditPreferencesOpened(true)}
+						onClick={openPreferences}
 					>
 						Edit preferences
 					</Button>
 				</Flex>
 			</Flex>
 			<EditInformationModal
-				opened={editInformationOpened}
-				onClose={setEditInformationOpened}
+				opened={informationOpened}
+				onClose={closeInformation}
 			/>
 			<EditPreferencesModal
-				opened={editPreferencesOpened}
-				onClose={setEditPreferencesOpened}
+				opened={preferencesOpened}
+				onClose={closePreferences}
 			/>
 		</Paper>
 	)

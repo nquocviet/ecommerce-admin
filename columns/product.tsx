@@ -1,17 +1,18 @@
 import React from 'react'
 import { ActionIcon, Flex, Image, Menu, Text } from '@mantine/core'
-import { useToggle } from '@mantine/hooks'
+import { useDisclosure } from '@mantine/hooks'
 import { Copy, DotsThree, Lock, NotePencil, Trash } from '@phosphor-icons/react'
 import Link from 'next/link'
 
-import { Dots, ModalConfirm } from '@/components'
+import { Dots } from '@/components'
+import { DeleteProductModal } from '@/page-components/products/components'
 import ROUTES from '@/routes'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { ProductEntity, ProductVariantEntity } from '@/types/product'
 import { getStockOfVariants, getValue, toCapitalize } from '@/utils'
 
 const Actions = ({ id }) => {
-	const [deleteOpened, setDeleteOpened] = useToggle()
+	const [opened, { open, close }] = useDisclosure(false)
 
 	return (
 		<>
@@ -39,18 +40,13 @@ const Actions = ({ id }) => {
 						sx={{
 							color: 'var(--red-600)',
 						}}
-						onClick={() => setDeleteOpened(true)}
+						onClick={open}
 					>
 						Delete
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<ModalConfirm
-				title="Delete product"
-				opened={deleteOpened}
-				onClose={setDeleteOpened}
-				message="Are you sure you want to delete this product?"
-			/>
+			<DeleteProductModal opened={opened} onClose={close} />
 		</>
 	)
 }

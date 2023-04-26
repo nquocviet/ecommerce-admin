@@ -1,12 +1,12 @@
 import React from 'react'
 import { Button, Flex } from '@mantine/core'
-import { useToggle } from '@mantine/hooks'
+import { useDisclosure } from '@mantine/hooks'
 import { Plus } from '@phosphor-icons/react'
 
-import AddNewCollectionModal from '../AddNewCollectionModal'
+import { AddNewCollectionModal } from '@/page-components/products/components'
 
 const CollectionActions = () => {
-	const [newCollectionOpened, setNewCollectionOpened] = useToggle()
+	const [opened, { open, close }] = useDisclosure(false)
 
 	return (
 		<>
@@ -16,15 +16,12 @@ const CollectionActions = () => {
 					color="gray"
 					size="xs"
 					leftIcon={<Plus size={16} />}
-					onClick={() => setNewCollectionOpened(true)}
+					onClick={open}
 				>
 					New collection
 				</Button>
 			</Flex>
-			<AddNewCollectionModal
-				opened={newCollectionOpened}
-				onClose={setNewCollectionOpened}
-			/>
+			<AddNewCollectionModal opened={opened} onClose={close} />
 		</>
 	)
 }

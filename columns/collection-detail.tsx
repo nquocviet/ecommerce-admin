@@ -1,33 +1,25 @@
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { ActionIcon, Flex, Image, Text } from '@mantine/core'
-import { useToggle } from '@mantine/hooks'
+import { useDisclosure } from '@mantine/hooks'
 import { Trash } from '@phosphor-icons/react'
 
-import { Checkbox, Dots, ModalConfirm } from '@/components'
+import { Checkbox, Dots } from '@/components'
 import { useCollectionDetail } from '@/lib/collection'
+import { DeleteProductModal } from '@/page-components/products/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { ProductCollectionEntity, ProductEntity } from '@/types/product'
 import { toCapitalize } from '@/utils'
 
 const CollectionDetailActions = () => {
-	const [deleteProductOpened, setDeleteProductOpened] = useToggle()
+	const [opened, { open, close }] = useDisclosure(false)
 
 	return (
 		<>
-			<ActionIcon
-				color="gray"
-				variant="outline"
-				onClick={() => setDeleteProductOpened(true)}
-			>
+			<ActionIcon color="gray" variant="outline" onClick={open}>
 				<Trash size={18} />
 			</ActionIcon>
-			<ModalConfirm
-				title="Delete product"
-				opened={deleteProductOpened}
-				onClose={setDeleteProductOpened}
-				message="Are you sure you want to delete this product?"
-			/>
+			<DeleteProductModal opened={opened} onClose={close} />
 		</>
 	)
 }

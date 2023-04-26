@@ -1,3 +1,9 @@
+export enum RolesEnum {
+	MEMBER = 'MEMBER',
+	ADMIN = 'ADMIN',
+	DEVELOPER = 'DEVELOPER',
+}
+
 export type BaseEntity = {
 	id: string
 	created_at: Date

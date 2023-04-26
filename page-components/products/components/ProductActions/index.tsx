@@ -1,16 +1,25 @@
 import React from 'react'
 import { Button, Flex } from '@mantine/core'
-import { useToggle } from '@mantine/hooks'
+import { useDisclosure } from '@mantine/hooks'
 import { DownloadSimple, Plus, UploadSimple } from '@phosphor-icons/react'
 
-import AddNewProductModal from '../AddNewProductModal'
-import ExportProductModal from '../ExportProductModal'
-import ImportProductModal from '../ImportProductModal'
+import {
+	AddNewProductModal,
+	ExportProductModal,
+	ImportProductModal,
+} from '@/page-components/products/components'
 
 const ProductActions = () => {
-	const [importProductOpened, setImportProductOpened] = useToggle()
-	const [exportProductOpened, setExportProductOpened] = useToggle()
-	const [newProductOpened, setNewProductOpened] = useToggle()
+	const [
+		importProductOpened,
+		{ open: openImportProduct, close: closeImportProduct },
+	] = useDisclosure(false)
+	const [
+		exportProductOpened,
+		{ open: openExportProduct, close: closeExportProduct },
+	] = useDisclosure(false)
+	const [newProductOpened, { open: openNewProduct, close: closeNewProduct }] =
+		useDisclosure(false)
 
 	return (
 		<>
@@ -20,7 +29,7 @@ const ProductActions = () => {
 					color="gray"
 					size="xs"
 					leftIcon={<UploadSimple size={16} />}
-					onClick={() => setImportProductOpened(true)}
+					onClick={openImportProduct}
 				>
 					Import products
 				</Button>
@@ -29,7 +38,7 @@ const ProductActions = () => {
 					color="gray"
 					size="xs"
 					leftIcon={<DownloadSimple size={16} />}
-					onClick={() => setExportProductOpened(true)}
+					onClick={openExportProduct}
 				>
 					Export products
 				</Button>
@@ -38,23 +47,20 @@ const ProductActions = () => {
 					color="gray"
 					size="xs"
 					leftIcon={<Plus size={16} />}
-					onClick={() => setNewProductOpened(true)}
+					onClick={openNewProduct}
 				>
 					New product
 				</Button>
 			</Flex>
 			<ImportProductModal
 				opened={importProductOpened}
-				onClose={setImportProductOpened}
+				onClose={closeImportProduct}
 			/>
 			<ExportProductModal
 				opened={exportProductOpened}
-				onClose={setExportProductOpened}
+				onClose={closeExportProduct}
 			/>
-			<AddNewProductModal
-				opened={newProductOpened}
-				onClose={setNewProductOpened}
-			/>
+			<AddNewProductModal opened={newProductOpened} onClose={closeNewProduct} />
 		</>
 	)
 }
