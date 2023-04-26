@@ -1,2 +1,5 @@
+export { default as AddNewProductModal } from './AddNewProductModal'
+export { default as AddNewSalesChannelModal } from './AddNewSalesChannelModal'
 export { default as ChannelDetails } from './ChannelDetails'
 export { default as Channels } from './Channels'
+export { default as EditSalesChannelModal } from './EditSalesChannelModal'

@@ -40,6 +40,11 @@ const Modal = ({
 			opened={opened}
 			onClose={onClose}
 			centered={centered ?? true}
+			transitionProps={{
+				transition: 'fade',
+				duration: 225,
+				timingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+			}}
 			lockScroll
 		>
 			<MantineModal.Overlay />

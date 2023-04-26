@@ -1,10 +1,12 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { Button, Flex, Paper } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 import { Plus } from '@phosphor-icons/react'
 
 import { PageTitle, RadioBox, RadioGroup } from '@/components'
 import { useReturnReasons } from '@/lib/return-reasons'
+import { AddNewReasonModal } from '@/page-components/settings/return-reasons/components'
 import { ReturnReasonEntity } from '@/types/return-reason'
 
 type TReasonsProps = {
@@ -13,6 +15,7 @@ type TReasonsProps = {
 }
 
 const Reasons = ({ reasonSelected, setReasonSelected }: TReasonsProps) => {
+	const [opened, { open, close }] = useDisclosure(false)
 	const { data } = useReturnReasons()
 	const { control, setValue } = useForm()
 
@@ -41,6 +44,7 @@ const Reasons = ({ reasonSelected, setReasonSelected }: TReasonsProps) => {
 						color="gray"
 						size="xs"
 						leftIcon={<Plus size={16} />}
+						onClick={open}
 					>
 						Add reason
 					</Button>
@@ -62,6 +66,7 @@ const Reasons = ({ reasonSelected, setReasonSelected }: TReasonsProps) => {
 					</Flex>
 				</RadioGroup>
 			</form>
+			<AddNewReasonModal opened={opened} onClose={close} />
 		</Paper>
 	)
 }

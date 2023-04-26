@@ -5,16 +5,15 @@ import { Flex } from '@mantine/core'
 import { Modal, SwitchGroup } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
 
-const EditPreferencesModal = ({ opened, onClose }: ModalOpenedProps) => {
+const EditPreferencesModal = (props: ModalOpenedProps) => {
 	const { control } = useForm()
 
 	return (
 		<Modal
 			size="xl"
 			title="Edit preferences"
-			opened={opened}
-			onClose={onClose}
 			confirmText="Submit and close"
+			{...props}
 		>
 			<form>
 				<Flex direction="column" align="stretch" gap={24}>

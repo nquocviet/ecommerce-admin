@@ -3,14 +3,14 @@ import React from 'react'
 import { ModalConfirm } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
 
-const DeleteProductModal = (props: ModalOpenedProps) => {
+const DeleteReasonModal = (props: ModalOpenedProps) => {
 	return (
 		<ModalConfirm
-			title="Delete product"
-			message="Are you sure you want to delete this product?"
+			title="Delete reason"
+			message="Are you sure you want to delete this reason?"
 			{...props}
 		/>
 	)
 }
 
-export default DeleteProductModal
+export default DeleteReasonModal

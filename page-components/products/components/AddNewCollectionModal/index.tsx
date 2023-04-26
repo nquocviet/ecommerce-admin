@@ -6,7 +6,7 @@ import { Info, Plus, Trash } from '@phosphor-icons/react'
 import { Modal, TextInput } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
 
-const AddNewCollectionModal = ({ opened, onClose }: ModalOpenedProps) => {
+const AddNewCollectionModal = (props: ModalOpenedProps) => {
 	const { control } = useForm()
 	const {
 		fields: metadata,
@@ -19,11 +19,10 @@ const AddNewCollectionModal = ({ opened, onClose }: ModalOpenedProps) => {
 
 	return (
 		<Modal
-			opened={opened}
-			onClose={onClose}
 			title="Add collection"
 			size="xl"
 			confirmText="Publish collection"
+			{...props}
 		>
 			<form>
 				<Text className="text-sm text-gray-600">

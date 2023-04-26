@@ -6,17 +6,11 @@ import { Plus } from '@phosphor-icons/react'
 import { Modal, NumberInput, TextInput } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
 
-const NewTaxRateModal = ({ opened, onClose }: ModalOpenedProps) => {
+const NewTaxRateModal = (props: ModalOpenedProps) => {
 	const { control } = useForm()
 
 	return (
-		<Modal
-			title="Add tax rate"
-			size="lg"
-			opened={opened}
-			onClose={onClose}
-			confirmText="Create"
-		>
+		<Modal title="Add tax rate" size="lg" confirmText="Create" {...props}>
 			<form>
 				<Flex direction="column" align="stretch" gap={16}>
 					<Text className="text-sm font-semibold text-black">Details</Text>

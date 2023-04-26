@@ -4,7 +4,7 @@ import { Flex } from '@mantine/core'
 
 import { Modal, Select, TextInput } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
-import { ROLE_OPTIONS } from '@/constants/common'
+import { ROLE_OPTIONS, STORE_NAME } from '@/constants/common'
 import { RolesEnum } from '@/types/common'
 
 const defaultValues = {
@@ -12,19 +12,13 @@ const defaultValues = {
 	role: RolesEnum.MEMBER,
 }
 
-const InviteUsersModal = ({ opened, onClose }: ModalOpenedProps) => {
+const InviteUsersModal = (props: ModalOpenedProps) => {
 	const { control } = useForm({
 		defaultValues,
 	})
 
 	return (
-		<Modal
-			title="Invite users"
-			size="lg"
-			confirmText="Invite"
-			opened={opened}
-			onClose={onClose}
-		>
+		<Modal title="Invite users" size="lg" confirmText="Invite" {...props}>
 			<form>
 				<Flex direction="column" align="stretch" gap={16}>
 					<TextInput
@@ -32,7 +26,7 @@ const InviteUsersModal = ({ opened, onClose }: ModalOpenedProps) => {
 						control={control}
 						label="Email"
 						type="email"
-						placeholder="example@hercules.com"
+						placeholder={`example@${STORE_NAME.toLowerCase()}.com`}
 						required
 					/>
 					<Select

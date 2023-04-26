@@ -4,15 +4,9 @@ import { Text } from '@mantine/core'
 import { Modal } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
 
-const ExportProductModal = ({ opened, onClose }: ModalOpenedProps) => {
+const ExportProductModal = (props: ModalOpenedProps) => {
 	return (
-		<Modal
-			opened={opened}
-			onClose={onClose}
-			title="Export products"
-			size="md"
-			confirmText="Export"
-		>
+		<Modal title="Export products" size="md" confirmText="Export" {...props}>
 			<Text className="text-gray-600">Initialize an export of your data</Text>
 		</Modal>
 	)

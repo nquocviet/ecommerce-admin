@@ -1,16 +1,19 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { ActionIcon, Flex, Paper } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 import { Plus } from '@phosphor-icons/react'
 
 import { PageTitle, RadioBox, RadioGroup } from '@/components'
 import { STORE_NAME } from '@/constants/common'
+import { AddNewSalesChannelModal } from '@/page-components/settings/sale-channels/components'
 
 const defaultValues = {
 	channel: 'default',
 }
 
 const Channels = () => {
+	const [opened, { open, close }] = useDisclosure(false)
 	const { control, watch } = useForm({
 		defaultValues,
 	})
@@ -24,7 +27,7 @@ const Channels = () => {
 				size="sm"
 				action={
 					<ActionIcon>
-						<Plus size={20} weight="bold" />
+						<Plus size={20} weight="bold" onClick={open} />
 					</ActionIcon>
 				}
 			/>
@@ -48,6 +51,7 @@ const Channels = () => {
 					</Flex>
 				</RadioGroup>
 			</form>
+			<AddNewSalesChannelModal opened={opened} onClose={close} />
 		</Paper>
 	)
 }

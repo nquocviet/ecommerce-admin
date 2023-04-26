@@ -1,5 +1,6 @@
 import React from 'react'
 import { ActionIcon, Button, Flex, Menu, Paper } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 import {
 	DotsThree,
 	FunnelSimple,
@@ -11,8 +12,20 @@ import { SALE_CHANNEL_COLUMNS } from '@/columns/sale-channel'
 import { Dots, PageTitle, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useProducts } from '@/lib/product'
+import {
+	AddNewProductModal,
+	EditSalesChannelModal,
+} from '@/page-components/settings/sale-channels/components'
 
 const ChannelDetails = () => {
+	const [
+		editSalesChannelOpened,
+		{ open: openEditSalesChannel, close: closeEditSalesChannel },
+	] = useDisclosure(false)
+	const [
+		addNewProductOpened,
+		{ open: openAddNewProduct, close: closeAddNewProduct },
+	] = useDisclosure(false)
 	const { data, isLoading } = useProducts()
 
 	return (
@@ -43,10 +56,18 @@ const ChannelDetails = () => {
 								</ActionIcon>
 							</Menu.Target>
 							<Menu.Dropdown>
-								<Menu.Item icon={<NotePencil size={20} />}>
+								<Menu.Item
+									icon={<NotePencil size={20} />}
+									onClick={openEditSalesChannel}
+								>
 									Edit general info
 								</Menu.Item>
-								<Menu.Item icon={<Plus size={20} />}>Add product</Menu.Item>
+								<Menu.Item
+									icon={<Plus size={20} />}
+									onClick={openAddNewProduct}
+								>
+									Add product
+								</Menu.Item>
 							</Menu.Dropdown>
 						</Menu>
 					</Flex>
@@ -69,6 +90,14 @@ const ChannelDetails = () => {
 				recordsPerPage={PAGE_SIZE}
 				page={1}
 				onPageChange={() => null}
+			/>
+			<EditSalesChannelModal
+				opened={editSalesChannelOpened}
+				onClose={closeEditSalesChannel}
+			/>
+			<AddNewProductModal
+				opened={addNewProductOpened}
+				onClose={closeAddNewProduct}
 			/>
 		</Paper>
 	)

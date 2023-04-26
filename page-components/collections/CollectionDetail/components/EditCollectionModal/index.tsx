@@ -7,7 +7,7 @@ import { Modal, TextInput } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
 import { useCollectionDetail } from '@/lib/collection'
 
-const EditCollectionModal = ({ opened, onClose }: ModalOpenedProps) => {
+const EditCollectionModal = (props: ModalOpenedProps) => {
 	const { data } = useCollectionDetail()
 	const { control, reset } = useForm()
 	const {
@@ -38,11 +38,10 @@ const EditCollectionModal = ({ opened, onClose }: ModalOpenedProps) => {
 
 	return (
 		<Modal
-			opened={opened}
-			onClose={onClose}
 			title="Edit collection"
 			size="xl"
 			confirmText="Save collection"
+			{...props}
 		>
 			<form>
 				<Text className="text-sm text-gray-600">
