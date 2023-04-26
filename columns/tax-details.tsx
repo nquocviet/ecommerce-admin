@@ -1,6 +1,6 @@
 import React from 'react'
 import { ActionIcon, Flex, Menu } from '@mantine/core'
-import { useToggle } from '@mantine/hooks'
+import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, LockSimple, NotePencil } from '@phosphor-icons/react'
 
 import { EditTaxRateModal } from '@/page-components/settings/taxes/components'
@@ -9,7 +9,7 @@ import { TaxDetailEntity } from '@/types/tax'
 import { getValue } from '@/utils'
 
 const Actions = () => {
-	const [editTaxRateOpened, setEditTaxRateOpened] = useToggle()
+	const [opened, { open, close }] = useDisclosure(false)
 
 	return (
 		<>
@@ -20,18 +20,12 @@ const Actions = () => {
 					</ActionIcon>
 				</Menu.Target>
 				<Menu.Dropdown>
-					<Menu.Item
-						icon={<NotePencil size={20} />}
-						onClick={() => setEditTaxRateOpened(true)}
-					>
+					<Menu.Item icon={<NotePencil size={20} />} onClick={open}>
 						Edit
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<EditTaxRateModal
-				opened={editTaxRateOpened}
-				onClose={setEditTaxRateOpened}
-			/>
+			<EditTaxRateModal opened={opened} onClose={close} />
 		</>
 	)
 }

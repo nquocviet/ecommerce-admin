@@ -1,15 +1,14 @@
 import React from 'react'
 import { useFieldArray, useFormContext } from 'react-hook-form'
 import { ActionIcon, Button, Flex, Grid, Text, Tooltip } from '@mantine/core'
-import { useToggle } from '@mantine/hooks'
+import { useDisclosure } from '@mantine/hooks'
 import { Info, Plus, Trash } from '@phosphor-icons/react'
 
 import { TextInput } from '@/components'
-
-import CreateVariantModal from '../CreateVariantModal'
+import { CreateVariantModal } from '@/page-components/products/components/AddNewProductModal/components'
 
 const ProductVariants = () => {
-	const [newVariantOpened, setNewVariantOpened] = useToggle()
+	const [opened, { open, close }] = useDisclosure(false)
 	const { control } = useFormContext()
 	const {
 		fields: options,
@@ -92,16 +91,13 @@ const ProductVariants = () => {
 						color="gray"
 						variant="outline"
 						leftIcon={<Plus size={16} />}
-						onClick={() => setNewVariantOpened(true)}
+						onClick={open}
 					>
 						Add a variant
 					</Button>
 				</Flex>
 			</Flex>
-			<CreateVariantModal
-				opened={newVariantOpened}
-				onClose={setNewVariantOpened}
-			/>
+			<CreateVariantModal opened={opened} onClose={close} />
 		</div>
 	)
 }

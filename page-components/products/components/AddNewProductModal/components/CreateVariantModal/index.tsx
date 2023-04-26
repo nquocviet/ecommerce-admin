@@ -3,10 +3,11 @@ import { Accordion, Text } from '@mantine/core'
 
 import { CloseIcon, Modal } from '@/components'
 import { ModalOpenedProps } from '@/components/Modal'
-
-import VariantGeneral from '../VariantGeneral'
-import VariantShipping from '../VariantShipping'
-import VariantStock from '../VariantStock'
+import {
+	VariantGeneral,
+	VariantShipping,
+	VariantStock,
+} from '@/page-components/products/components/AddNewProductModal/components'
 
 const sections = [
 	{

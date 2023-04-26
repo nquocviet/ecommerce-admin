@@ -7,11 +7,51 @@ import {
 	Menu,
 	Text,
 } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 
+import {
+	DeleteUserModal,
+	EditUserModal,
+} from '@/page-components/settings/team/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { TeamEntity } from '@/types/team'
 import { toCapitalize } from '@/utils'
+
+const TeamActions = () => {
+	const [editUserOpened, { open: openEditUser, close: closeEditUser }] =
+		useDisclosure(false)
+	const [deleteUserOpened, { open: openDeleteUser, close: closeDeleteUser }] =
+		useDisclosure(false)
+
+	return (
+		<>
+			<Menu shadow="md" width={200}>
+				<Menu.Target>
+					<ActionIcon>
+						<DotsThree size={20} weight="bold" />
+					</ActionIcon>
+				</Menu.Target>
+				<Menu.Dropdown>
+					<Menu.Item icon={<NotePencil size={20} />} onClick={openEditUser}>
+						Edit
+					</Menu.Item>
+					<Menu.Item
+						icon={<Trash size={20} />}
+						sx={{
+							color: 'var(--red-600)',
+						}}
+						onClick={openDeleteUser}
+					>
+						Remove
+					</Menu.Item>
+				</Menu.Dropdown>
+			</Menu>
+			<EditUserModal opened={editUserOpened} onClose={closeEditUser} />
+			<DeleteUserModal opened={deleteUserOpened} onClose={closeDeleteUser} />
+		</>
+	)
+}
 
 export const TEAM_COLUMNS: MantineDataTableColumn<TeamEntity> = [
 	{
@@ -42,7 +82,11 @@ export const TEAM_COLUMNS: MantineDataTableColumn<TeamEntity> = [
 		title: 'Team permissions',
 		width: '25%',
 		render: ({ role }) => {
-			return toCapitalize(role)
+			return (
+				<Text className="font-medium text-primary-600">
+					{toCapitalize(role)}
+				</Text>
+			)
 		},
 	},
 	{
@@ -58,26 +102,7 @@ export const TEAM_COLUMNS: MantineDataTableColumn<TeamEntity> = [
 		title: '',
 		width: '5%',
 		render: () => {
-			return (
-				<Menu shadow="md" width={200}>
-					<Menu.Target>
-						<ActionIcon>
-							<DotsThree size={20} weight="bold" />
-						</ActionIcon>
-					</Menu.Target>
-					<Menu.Dropdown>
-						<Menu.Item icon={<NotePencil size={20} />}>Edit</Menu.Item>
-						<Menu.Item
-							icon={<Trash size={20} />}
-							sx={{
-								color: 'var(--red-600)',
-							}}
-						>
-							Remove
-						</Menu.Item>
-					</Menu.Dropdown>
-				</Menu>
-			)
+			return <TeamActions />
 		},
 	},
 ]

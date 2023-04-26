@@ -12,8 +12,7 @@ import { X } from '@phosphor-icons/react'
 import { Logo } from '@/components'
 import { APP_NAME } from '@/constants/common'
 import { ASIDE_WIDTH_LG, ASIDE_WIDTH_SM } from '@/constants/layout'
-
-import Menu from '../Menu'
+import { Menu } from '@/layouts/components'
 
 type TNavbarProps = {
 	opened: boolean

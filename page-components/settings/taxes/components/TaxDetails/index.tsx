@@ -1,14 +1,13 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Button, Flex, Paper, Title, Tooltip } from '@mantine/core'
-import { useToggle } from '@mantine/hooks'
+import { useDisclosure } from '@mantine/hooks'
 import { Info, Plus } from '@phosphor-icons/react'
 
 import { TAX_DETAIL_COLUMNS } from '@/columns/tax-details'
 import { Checkbox, PageTitle, Select, Table } from '@/components'
 import { APP_NAME } from '@/constants/common'
-
-import NewTaxRateModal from '../NewTaxRateModal'
+import { NewTaxRateModal } from '@/page-components/settings/taxes/components'
 
 const defaultValues = {
 	'tax-provider': '0',
@@ -17,7 +16,7 @@ const defaultValues = {
 }
 
 const TaxDetails = () => {
-	const [newTaxRateOpened, setNewTaxRateOpened] = useToggle()
+	const [opened, { open, close }] = useDisclosure(false)
 	const { control } = useForm({
 		defaultValues,
 	})
@@ -33,7 +32,7 @@ const TaxDetails = () => {
 						color="gray"
 						size="xs"
 						leftIcon={<Plus size={16} />}
-						onClick={() => setNewTaxRateOpened(true)}
+						onClick={open}
 					>
 						New task rate
 					</Button>
@@ -90,10 +89,7 @@ const TaxDetails = () => {
 					/>
 				</Flex>
 			</form>
-			<NewTaxRateModal
-				opened={newTaxRateOpened}
-				onClose={setNewTaxRateOpened}
-			/>
+			<NewTaxRateModal opened={opened} onClose={close} />
 		</Paper>
 	)
 }

@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-import useDidMountEffect from './useDidMountEffect'
+import { useDidMountEffect } from '@/hooks'
 
 const useActiveTab = (
 	activeTab: string | null,
@@ -28,7 +28,7 @@ const useActiveTab = (
 		}
 		const searchParams = new URLSearchParams(query).toString()
 
-		router.push(`?${searchParams}`, undefined, { shallow: false })
+		router.replace(`?${searchParams}`, undefined, { shallow: false })
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [activeTab])
 }
