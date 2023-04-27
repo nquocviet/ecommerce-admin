@@ -8,8 +8,8 @@ import { ModalOpenedProps } from '@/components/Modal'
 
 const defaultValues = {
 	name: 'Default',
-	'tax-rate': '',
-	'tax-code': '',
+	tax_rate: '',
+	tax_code: '',
 }
 
 const EditTaxRateModal = (props: ModalOpenedProps) => {
@@ -31,7 +31,7 @@ const EditTaxRateModal = (props: ModalOpenedProps) => {
 						readOnly
 					/>
 					<NumberInput
-						name="tax-rate"
+						name="tax_rate"
 						control={control}
 						label="Tax rate"
 						placeholder="12"
@@ -39,7 +39,7 @@ const EditTaxRateModal = (props: ModalOpenedProps) => {
 						required
 					/>
 					<TextInput
-						name="tax-code"
+						name="tax_code"
 						control={control}
 						label="Tax code"
 						placeholder="1000"

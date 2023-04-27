@@ -9,7 +9,7 @@ const VariantGeneral = () => {
 	const { control } = useFormContext()
 
 	return (
-		<div className="mb-8 text-sm text-gray-600">
+		<div className="text-sm text-gray-600">
 			<Text>Configure the general information for this variant.</Text>
 			<Grid className="mt-6">
 				<Grid.Col span={6}>

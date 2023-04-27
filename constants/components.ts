@@ -11,6 +11,11 @@ export const components: any = {
 					backgroundColor: 'transparent',
 				},
 			},
+			chevron: {
+				'&[data-rotate]': {
+					transform: 'unset',
+				},
+			},
 			content: {
 				paddingLeft: 0,
 				paddingRight: 0,

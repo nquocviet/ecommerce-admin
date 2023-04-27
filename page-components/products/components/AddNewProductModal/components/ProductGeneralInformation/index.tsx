@@ -9,7 +9,7 @@ const ProductGeneralInformation = () => {
 	const { control } = useFormContext()
 
 	return (
-		<div className="mb-8 text-sm text-gray-600">
+		<div className="text-sm text-gray-600">
 			<Text>To start selling, all you need is a name and a price.</Text>
 			<Flex direction="column" align="stretch" gap={24} className="mt-6">
 				<div>

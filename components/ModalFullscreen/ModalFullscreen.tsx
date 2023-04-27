@@ -78,12 +78,15 @@ const ModalFullscreen = ({
 					maxWidth: '1100px',
 					flexDirection: 'row-reverse',
 				},
+				close: {
+					marginLeft: 0,
+				},
 			})}
 			className={className}
 			fullScreen
 		>
 			<Divider color="gray" />
-			{children}
+			<div className="mx-auto mt-14 max-w-[760px]">{children}</div>
 		</Modal>
 	)
 }

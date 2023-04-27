@@ -14,7 +14,7 @@ const ProductOrganize = () => {
 	}))
 
 	return (
-		<div className="mb-8 text-sm text-gray-600">
+		<div className="text-sm text-gray-600">
 			<Text>To start selling, all you need is a name and a price.</Text>
 			<Flex direction="column" align="stretch" gap={24} className="mt-6">
 				<div>
@@ -51,7 +51,7 @@ const ProductOrganize = () => {
 				<SwitchGroup
 					title="Sales channels"
 					description="This product will only be available in the default sales channel if left untouched."
-					name="sales-channel"
+					name="sales_channel"
 					control={control}
 				/>
 			</Flex>
