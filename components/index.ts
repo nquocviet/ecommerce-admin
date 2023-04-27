@@ -1,3 +1,4 @@
+export { default as Accordion } from './Accordion'
 export { default as Checkbox } from './Checkbox'
 export { default as Chip } from './Chip'
 export { default as CloseIcon } from './CloseIcon'

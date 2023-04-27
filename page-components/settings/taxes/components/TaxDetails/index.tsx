@@ -10,9 +10,9 @@ import { APP_NAME } from '@/constants/common'
 import { NewTaxRateModal } from '@/page-components/settings/taxes/components'
 
 const defaultValues = {
-	'tax-provider': '0',
-	'calc-automatic': true,
-	'apply-tax': true,
+	tax_provider: '0',
+	calc_automatic: true,
+	apply_tax: true,
 }
 
 const TaxDetails = () => {
@@ -51,7 +51,7 @@ const TaxDetails = () => {
 				<Flex direction="column" gap={16}>
 					<Select
 						control={control}
-						name="tax-provider"
+						name="tax_provider"
 						label="Tax provider"
 						data={[
 							{ value: '0', label: 'System Tax Provider' },
@@ -61,7 +61,7 @@ const TaxDetails = () => {
 					/>
 					<Checkbox
 						control={control}
-						name="calc-automatic"
+						name="calc_automatic"
 						label="Calculate taxes automatically?"
 						rightIcon={
 							<Tooltip
@@ -75,7 +75,7 @@ const TaxDetails = () => {
 					/>
 					<Checkbox
 						control={control}
-						name="apply-tax"
+						name="apply_tax"
 						label="Apply tax to gift cards?"
 						rightIcon={
 							<Tooltip

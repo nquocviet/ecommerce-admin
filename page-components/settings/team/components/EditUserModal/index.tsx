@@ -7,8 +7,8 @@ import { ModalOpenedProps } from '@/components/Modal'
 import { STORE_NAME } from '@/constants/common'
 
 const defaultValues = {
-	firstName: '',
-	lastName: '',
+	first_name: '',
+	last_name: '',
 	email: `admin@${STORE_NAME.toLowerCase()}.com`,
 }
 
@@ -24,7 +24,7 @@ const EditUserModal = (props: ModalOpenedProps) => {
 					<Grid>
 						<Grid.Col span={6}>
 							<TextInput
-								name="firstName"
+								name="first_name"
 								control={control}
 								label="First name"
 								placeholder="First name..."
@@ -33,7 +33,7 @@ const EditUserModal = (props: ModalOpenedProps) => {
 						</Grid.Col>
 						<Grid.Col span={6}>
 							<TextInput
-								name="lastName"
+								name="last_name"
 								control={control}
 								label="Last name"
 								placeholder="Last name..."

@@ -9,12 +9,12 @@ const VariantStock = () => {
 	const { control } = useFormContext()
 
 	return (
-		<div className="mb-8 text-sm text-gray-600">
+		<div className="text-sm text-gray-600">
 			<Text>Configure the inventory and stock for this variant.</Text>
 			<SwitchGroup
 				title="Manage inventory"
 				description={`When checked ${STORE_NAME} will regulate the inventory when orders and returns are made."`}
-				name="manage-inventory"
+				name="manage_inventory"
 				control={control}
 				className="mt-6"
 				defaultChecked
@@ -22,7 +22,7 @@ const VariantStock = () => {
 			<SwitchGroup
 				title="Allow backorders"
 				description="When checked the product will be available for purchase despite the product being sold out"
-				name="allow-backorders"
+				name="allow_backorders"
 				control={control}
 				className="mt-6"
 			/>

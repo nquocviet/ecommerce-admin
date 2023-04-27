@@ -20,7 +20,7 @@ const ProductVariants = () => {
 	})
 
 	return (
-		<div className="mb-8 text-sm text-gray-600">
+		<div className="text-sm text-gray-600">
 			<Text>Add variations of this product.</Text>
 			<Text>
 				Offer your customers different options for color, format, size, shape,

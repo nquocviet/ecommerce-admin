@@ -14,7 +14,7 @@ const VariantShipping = () => {
 	}))
 
 	return (
-		<div className="mb-8 text-sm text-gray-600">
+		<div className="text-sm text-gray-600">
 			<Text>
 				Shipping information can be required depending on your shipping
 				provider, and whether or not you are shipping internationally.
@@ -68,7 +68,7 @@ const VariantShipping = () => {
 					<Grid>
 						<Grid.Col span={6}>
 							<TextInput
-								name="mid-code"
+								name="mid_code"
 								control={control}
 								label="MID code"
 								placeholder="XDSKLAD9999..."
@@ -76,7 +76,7 @@ const VariantShipping = () => {
 						</Grid.Col>
 						<Grid.Col span={6}>
 							<TextInput
-								name="hs-code"
+								name="hs_code"
 								control={control}
 								label="HS code"
 								placeholder="BDJSK39277W..."

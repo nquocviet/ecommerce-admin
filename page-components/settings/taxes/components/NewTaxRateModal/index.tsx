@@ -22,7 +22,7 @@ const NewTaxRateModal = (props: ModalOpenedProps) => {
 						required
 					/>
 					<NumberInput
-						name="tax-rate"
+						name="tax_rate"
 						control={control}
 						label="Tax rate"
 						placeholder="12"
@@ -30,7 +30,7 @@ const NewTaxRateModal = (props: ModalOpenedProps) => {
 						required
 					/>
 					<TextInput
-						name="tax-code"
+						name="tax_code"
 						control={control}
 						label="Tax code"
 						placeholder="1000"

@@ -30,13 +30,16 @@ const RadioBox = ({
 					: 'border-gray-300'
 			)}
 		>
-			<Flex gap={12}>
+			<Flex className="text-sm" gap={12}>
 				<MantineRadio {...rest} />
 				<div className={clsx('-mt-0.5', truncate && 'truncate')}>
 					<Text className="font-semibold">{label}</Text>
 					{description && (
 						<Text
-							className={clsx('text-sm text-gray-500', truncate && 'truncate')}
+							className={clsx(
+								'mt-1.5 text-sm text-gray-500',
+								truncate && 'truncate'
+							)}
 						>
 							{description}
 						</Text>
