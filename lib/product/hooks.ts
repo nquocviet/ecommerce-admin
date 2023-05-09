@@ -1,21 +1,21 @@
 import useSWR from 'swr'
 
 import fetcher from '@/lib/fetcher'
-import { ProductDetailEntity, ProductEntity } from '@/types/product'
+import { ProductDetailsEntity, ProductEntity } from '@/types/product'
 
 export const useProducts = () => {
 	return useSWR<ProductEntity[]>('/api/staticdata?type=product', fetcher)
 }
 
-export const useProductDetail = () => {
-	return useSWR<ProductDetailEntity>(
-		'/api/staticdata?type=product_detail',
+export const useProductDetails = () => {
+	return useSWR<ProductDetailsEntity>(
+		'/api/staticdata?type=product_details',
 		fetcher
 	)
 }
 
 export const useProductGiftCard = () => {
-	return useSWR<ProductDetailEntity>(
+	return useSWR<ProductDetailsEntity>(
 		'/api/staticdata?type=product_giftcard',
 		fetcher
 	)

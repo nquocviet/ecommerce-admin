@@ -25,7 +25,7 @@ const SalesChannelActions = ({ id }: { id: string }) => {
 					<Menu.Item
 						component={Link}
 						href={{
-							pathname: ROUTES.PRODUCT_DETAIL,
+							pathname: ROUTES.PRODUCT_DETAILS,
 							query: { id },
 						}}
 						icon={<TShirt size={20} />}

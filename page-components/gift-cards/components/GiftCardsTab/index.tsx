@@ -1,7 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Button, Flex } from '@mantine/core'
-import { FunnelSimple } from '@phosphor-icons/react'
+import { Flex } from '@mantine/core'
 
 import { GIFT_CARD_COLUMNS } from '@/columns/gift-card'
 import { InputSearch, Table } from '@/components'
@@ -15,15 +14,7 @@ const GiftCardsTab = () => {
 	return (
 		<>
 			<form>
-				<Flex justify="space-between" align="center" className="mb-4">
-					<Button
-						color="gray"
-						variant="outline"
-						size="xs"
-						rightIcon={<FunnelSimple size={16} />}
-					>
-						Filters
-					</Button>
+				<Flex justify="flex-end" align="center" className="mb-4">
 					<InputSearch name="search" control={control} />
 				</Flex>
 			</form>

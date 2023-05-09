@@ -83,7 +83,7 @@ export type ProductCollectionEntity = BaseEntity &
 		metadata: MetaDataEntity
 	}
 
-export type ProductDetailEntity = ProductEntity &
+export type ProductDetailsEntity = ProductEntity &
 	ProductSizeEntity & {
 		subtitle: string | null
 		description: string

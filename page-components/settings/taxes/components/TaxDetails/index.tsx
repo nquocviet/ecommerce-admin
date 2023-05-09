@@ -4,7 +4,7 @@ import { Button, Flex, Paper, Title, Tooltip } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { Info, Plus } from '@phosphor-icons/react'
 
-import { TAX_DETAIL_COLUMNS } from '@/columns/tax-details'
+import { TAX_DETAILS_COLUMNS } from '@/columns/tax-details'
 import { Checkbox, PageTitle, Select, Table } from '@/components'
 import { APP_NAME } from '@/constants/common'
 import { NewTaxRateModal } from '@/page-components/settings/taxes/components'
@@ -41,7 +41,7 @@ const TaxDetails = () => {
 			<Table
 				minHeight={82}
 				records={[{ id: 1, name: 'Default', code: null, rate: 0 }]}
-				columns={TAX_DETAIL_COLUMNS}
+				columns={TAX_DETAILS_COLUMNS}
 				className="mb-6 mt-8"
 			/>
 			<Title order={2} className="mb-4 text-lg font-semibold">
