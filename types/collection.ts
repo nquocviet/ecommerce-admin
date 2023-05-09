@@ -7,7 +7,7 @@ export type CollectionEntity = BaseEntity & {
 	products: ProductCollectionEntity[]
 }
 
-export type CollectionDetailEntity = BaseEntity & {
+export type CollectionDetailsEntity = BaseEntity & {
 	title: string
 	handle: string
 	metadata: MetaDataEntity

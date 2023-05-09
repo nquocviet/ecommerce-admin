@@ -26,7 +26,7 @@ const Actions = ({ id }) => {
 					<Menu.Item
 						component={Link}
 						href={{
-							pathname: ROUTES.PRODUCT_DETAIL,
+							pathname: ROUTES.PRODUCT_DETAILS,
 							query: { id },
 						}}
 						icon={<NotePencil size={20} />}

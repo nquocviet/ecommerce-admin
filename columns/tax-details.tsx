@@ -5,7 +5,7 @@ import { DotsThree, LockSimple, NotePencil } from '@phosphor-icons/react'
 
 import { EditTaxRateModal } from '@/page-components/settings/taxes/components'
 import { MantineDataTableColumn } from '@/types/datatable'
-import { TaxDetailEntity } from '@/types/tax'
+import { TaxDetailsEntity } from '@/types/tax'
 import { getValue } from '@/utils'
 
 const Actions = () => {
@@ -30,7 +30,7 @@ const Actions = () => {
 	)
 }
 
-export const TAX_DETAIL_COLUMNS: MantineDataTableColumn<TaxDetailEntity> = [
+export const TAX_DETAILS_COLUMNS: MantineDataTableColumn<TaxDetailsEntity> = [
 	{
 		accessor: 'name',
 		title: 'Name',

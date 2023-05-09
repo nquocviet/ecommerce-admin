@@ -2,13 +2,13 @@ import React from 'react'
 
 import { ROLES } from '@/constants/roles'
 import { withAuth } from '@/hocs'
-import CollectionDetail from '@/page-components/collections/CollectionDetail'
+import CollectionDetails from '@/page-components/collections/[id]'
 
-const CollectionDetailPage = () => {
-	return <CollectionDetail />
+const CollectionDetailsPage = () => {
+	return <CollectionDetails />
 }
 
 export default withAuth({
-	Component: CollectionDetailPage,
+	Component: CollectionDetailsPage,
 	allowedRoles: [ROLES.ADMIN],
 })

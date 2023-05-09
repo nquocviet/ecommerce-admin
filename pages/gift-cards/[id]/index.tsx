@@ -2,13 +2,13 @@ import React from 'react'
 
 import { ROLES } from '@/constants/roles'
 import { withAuth } from '@/hocs'
-import ProductDetails from '@/page-components/products/[id]'
+import GiftCardDetails from '@/page-components/gift-cards/[id]'
 
-const ProductDetailsPage = () => {
-	return <ProductDetails />
+const GiftCardDetailsPage = () => {
+	return <GiftCardDetails />
 }
 
 export default withAuth({
-	Component: ProductDetailsPage,
+	Component: GiftCardDetailsPage,
 	allowedRoles: [ROLES.ADMIN],
 })

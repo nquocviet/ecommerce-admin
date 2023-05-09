@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 
 import ROUTES from '@/routes'
 
-import DetailLayout from './DetailLayout'
+import DetailsLayout from './DetailsLayout'
 
 type SettingsLayoutProps = {
 	children: ReactNode
@@ -10,9 +10,9 @@ type SettingsLayoutProps = {
 
 const SettingsLayout = ({ children }: SettingsLayoutProps) => {
 	return (
-		<DetailLayout label="Back to settings" href={ROUTES.SETTINGS.DEFAULT}>
+		<DetailsLayout label="Back to settings" href={ROUTES.SETTINGS.DEFAULT}>
 			{children}
-		</DetailLayout>
+		</DetailsLayout>
 	)
 }
 
