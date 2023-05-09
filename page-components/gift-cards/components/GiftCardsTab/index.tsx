@@ -1,15 +1,18 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Flex } from '@mantine/core'
+import { useRouter } from 'next/router'
 
 import { GIFT_CARD_COLUMNS } from '@/columns/gift-card'
 import { InputSearch, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useGiftCards } from '@/lib/gift-card'
+import ROUTES from '@/routes'
 
 const GiftCardsTab = () => {
 	const { data, isLoading } = useGiftCards()
 	const { control } = useForm()
+	const router = useRouter()
 
 	return (
 		<>
@@ -24,8 +27,15 @@ const GiftCardsTab = () => {
 				fetching={isLoading}
 				totalRecords={data?.length}
 				recordsPerPage={PAGE_SIZE}
+				onRowClick={({ id }) => {
+					router.push({
+						pathname: ROUTES.GIFT_CARD_DETAILS,
+						query: { id },
+					})
+				}}
 				page={1}
 				onPageChange={() => null}
+				highlightOnHover
 			/>
 		</>
 	)

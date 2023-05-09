@@ -9,7 +9,7 @@ const ProductMetadata = () => {
 
 	return (
 		<Paper shadow="xs" p="xl">
-			<PageTitle order={2} size="sm" title="Raw Product" />
+			<PageTitle order={2} size="sm" title="Raw product" />
 			<JSONView data={data} className="mt-4" />
 		</Paper>
 	)
