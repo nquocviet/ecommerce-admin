@@ -48,7 +48,7 @@ const JSONView = <T extends Record<string, unknown>>({
 						</ActionIcon>
 					</div>
 				</div>
-				<Collapse in={expanded}>
+				<Collapse transitionDuration={100} in={expanded}>
 					<div className="mt-2 text-sm">
 						<JSONTree
 							data={data}

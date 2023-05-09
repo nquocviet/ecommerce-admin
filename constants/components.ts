@@ -1,4 +1,8 @@
-import { ActionIconStylesParams, ButtonStylesParams } from '@mantine/core'
+import {
+	ActionIconStylesParams,
+	BadgeStylesParams,
+	ButtonStylesParams,
+} from '@mantine/core'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const components: any = {
@@ -33,6 +37,16 @@ export const components: any = {
 				'&:active': {
 					transform: 'unset',
 				},
+			},
+		}),
+	},
+	Badge: {
+		styles: (theme, params: BadgeStylesParams, { variant }) => ({
+			root: {
+				backgroundColor:
+					params.color === 'gray' && variant === 'light'
+						? theme.colors.gray[2]
+						: undefined,
 			},
 		}),
 	},
