@@ -8,7 +8,7 @@ import { MantineDataTableColumn } from '@/types/datatable'
 import { TaxDetailsEntity } from '@/types/tax'
 import { getValue } from '@/utils'
 
-const Actions = () => {
+const TaxActions = () => {
 	const [opened, { open, close }] = useDisclosure(false)
 
 	return (
@@ -65,7 +65,7 @@ export const TAX_DETAILS_COLUMNS: MantineDataTableColumn<TaxDetailsEntity> = [
 		title: '',
 		width: '5%',
 		render: () => {
-			return <Actions />
+			return <TaxActions />
 		},
 	},
 ]

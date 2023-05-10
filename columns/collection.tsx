@@ -14,7 +14,7 @@ type ActionsProps = {
 	id: string
 }
 
-const Actions = ({ id }: ActionsProps) => {
+const CollectionActions = ({ id }: ActionsProps) => {
 	const [opened, { open, close }] = useDisclosure(false)
 
 	return (
@@ -95,7 +95,7 @@ export const COLLECTION_COLUMNS: MantineDataTableColumn<CollectionEntity> = [
 		title: '',
 		width: '5%',
 		render: ({ id }) => {
-			return <Actions id={id} />
+			return <CollectionActions id={id} />
 		},
 	},
 ]

@@ -91,16 +91,12 @@ const GiftCardDetails = () => {
 					<Flex align="stretch" gap={24} className="text-sm">
 						<div>
 							<Text className="mb-2 text-gray-500">Original amount</Text>
-							<Text className="text-gray-800">
-								{formatMoney(data.value / 100)}
-							</Text>
+							<Text className="text-gray-800">{formatMoney(data.value)}</Text>
 						</div>
 						<Divider orientation="vertical" color="var(--gray-300)" />
 						<div>
 							<Text className="mb-2 text-gray-500">Balance</Text>
-							<Text className="text-gray-800">
-								{formatMoney(data.balance / 100)}
-							</Text>
+							<Text className="text-gray-800">{formatMoney(data.balance)}</Text>
 						</div>
 						<Divider orientation="vertical" color="var(--gray-300)" />
 						<div>

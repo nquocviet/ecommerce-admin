@@ -21,7 +21,7 @@ export const GIFT_CARD_COLUMNS: MantineDataTableColumn<GiftCardEntity> = [
 		title: 'Original amount',
 		width: '25%',
 		render: ({ value, region }) => {
-			return formatMoney(value / 100, region?.currency_code)
+			return formatMoney(value, region?.currency_code)
 		},
 	},
 	{
@@ -29,7 +29,7 @@ export const GIFT_CARD_COLUMNS: MantineDataTableColumn<GiftCardEntity> = [
 		title: 'Balance',
 		width: '25%',
 		render: ({ balance, region }) => {
-			return formatMoney(balance / 100, region?.currency_code)
+			return formatMoney(balance, region?.currency_code)
 		},
 	},
 	{
