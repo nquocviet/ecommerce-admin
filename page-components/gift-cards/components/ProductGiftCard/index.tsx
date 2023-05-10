@@ -1,9 +1,11 @@
 import React from 'react'
 import { ActionIcon, Badge, Flex, Loader, Menu, Text } from '@mantine/core'
 import { DotsThree, Lock, NotePencil, Trash } from '@phosphor-icons/react'
+import Link from 'next/link'
 import { formatMoney } from 'utils'
 
 import { useProductGiftCard } from '@/lib/product'
+import ROUTES from '@/routes'
 
 const ProductGiftCard = () => {
 	const { data, isLoading } = useProductGiftCard()
@@ -23,7 +25,13 @@ const ProductGiftCard = () => {
 						</ActionIcon>
 					</Menu.Target>
 					<Menu.Dropdown>
-						<Menu.Item icon={<NotePencil size={20} />}>Edit</Menu.Item>
+						<Menu.Item
+							icon={<NotePencil size={20} />}
+							component={Link}
+							href={ROUTES.GIFT_CARD_MANAGE}
+						>
+							Edit
+						</Menu.Item>
 						<Menu.Item icon={<Lock size={20} />}>Unpublish</Menu.Item>
 						<Menu.Item
 							icon={<Trash size={20} />}
@@ -47,7 +55,7 @@ const ProductGiftCard = () => {
 			>
 				{data
 					? formatMoney(
-							data?.variants?.[0].prices?.[0]?.amount / 100,
+							data?.variants?.[0].prices?.[0]?.amount,
 							data?.variants?.[0].prices?.[0]?.currency_code
 					  )
 					: 0}

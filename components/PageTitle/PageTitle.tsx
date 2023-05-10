@@ -24,7 +24,7 @@ const PageTitle = ({
 
 	return (
 		<Box className={clsx('mb-2', className)}>
-			<Flex justify="space-between" gap={8} className="mb-2">
+			<Flex justify="space-between" gap={8} className="h-9">
 				<Box>
 					<Title order={order} size={fontSize} className="font-semibold">
 						{title}

@@ -5,13 +5,23 @@ import { Copy, DotsThree, Lock, NotePencil, Trash } from '@phosphor-icons/react'
 import Link from 'next/link'
 
 import { Dots } from '@/components'
+import {
+	DeleteDenominationModal,
+	EditDenominationModal,
+} from '@/page-components/gift-cards/manage/components'
 import { DeleteProductModal } from '@/page-components/products/components'
 import ROUTES from '@/routes'
 import { MantineDataTableColumn } from '@/types/datatable'
+import { PriceEntity } from '@/types/pricing'
 import { ProductEntity, ProductVariantEntity } from '@/types/product'
-import { getStockOfVariants, getValue, toCapitalize } from '@/utils'
+import {
+	formatMoney,
+	getStockOfVariants,
+	getValue,
+	toCapitalize,
+} from '@/utils'
 
-const Actions = ({ id }) => {
+const ProductActions = ({ id }) => {
 	const [opened, { open, close }] = useDisclosure(false)
 
 	return (
@@ -115,7 +125,7 @@ export const PRODUCT_COLUMNS: MantineDataTableColumn<ProductEntity> = [
 		title: '',
 		width: '5%',
 		render: ({ id }) => {
-			return <Actions id={id} />
+			return <ProductActions id={id} />
 		},
 	},
 ]
@@ -187,3 +197,75 @@ export const PRODUCT_VARIANT_COLUMNS: MantineDataTableColumn<ProductVariantEntit
 			},
 		},
 	]
+
+const ProductGiftCardActions = () => {
+	const [
+		editDenominationOpened,
+		{ open: openEditDenomination, close: closeEditDenomination },
+	] = useDisclosure(false)
+	const [
+		deleteDenominationOpened,
+		{ open: openDeleteDenomination, close: closeDeleteDenomination },
+	] = useDisclosure(false)
+
+	return (
+		<>
+			<Menu shadow="md" width={200}>
+				<Menu.Target>
+					<ActionIcon>
+						<DotsThree size={20} weight="bold" />
+					</ActionIcon>
+				</Menu.Target>
+				<Menu.Dropdown>
+					<Menu.Item
+						icon={<NotePencil size={20} />}
+						onClick={openEditDenomination}
+					>
+						Edit
+					</Menu.Item>
+					<Menu.Item
+						icon={<Trash size={20} />}
+						sx={{
+							color: 'var(--red-600)',
+						}}
+						onClick={openDeleteDenomination}
+					>
+						Delete
+					</Menu.Item>
+				</Menu.Dropdown>
+			</Menu>
+			<EditDenominationModal
+				opened={editDenominationOpened}
+				onClose={closeEditDenomination}
+			/>
+			<DeleteDenominationModal
+				opened={deleteDenominationOpened}
+				onClose={closeDeleteDenomination}
+			/>
+		</>
+	)
+}
+
+export const PRODUCT_GIFT_CARD_COLUMNS: MantineDataTableColumn<PriceEntity> = [
+	{
+		accessor: 'amount',
+		title: 'Default value',
+		width: '47.5%',
+		render: ({ amount }) => {
+			return formatMoney(amount)
+		},
+	},
+	{
+		accessor: 'other',
+		title: 'Other values',
+		width: '47.5%',
+	},
+	{
+		accessor: 'action',
+		title: '',
+		width: '5%',
+		render: () => {
+			return <ProductGiftCardActions />
+		},
+	},
+]
