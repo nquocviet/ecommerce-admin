@@ -5,7 +5,7 @@ import { DotsThree, Trash, TShirt } from '@phosphor-icons/react'
 import Link from 'next/link'
 
 import { DeleteProductModal } from '@/page-components/products/components'
-import ROUTES from '@/routes'
+import { ROUTES } from '@/routes'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { ProductEntity } from '@/types/product'
 import { getValue } from '@/utils'

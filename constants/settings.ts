@@ -11,7 +11,7 @@ import {
 } from '@phosphor-icons/react'
 
 import { APP_NAME } from '@/constants/common'
-import ROUTES from '@/routes'
+import { ROUTES } from '@/routes'
 
 export type SettingsType = {
 	title: string

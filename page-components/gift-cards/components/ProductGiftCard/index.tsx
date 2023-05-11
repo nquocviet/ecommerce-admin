@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { formatMoney } from 'utils'
 
 import { useProductGiftCard } from '@/lib/product'
-import ROUTES from '@/routes'
+import { ROUTES } from '@/routes'
 
 const ProductGiftCard = () => {
 	const { data, isLoading } = useProductGiftCard()

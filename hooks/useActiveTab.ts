@@ -16,7 +16,7 @@ const useActiveTab = (
 		const searchParams = new URLSearchParams(paramsString)
 		const tab = searchParams.get('tab')
 
-		if (tab) setActiveTab(tab.toUpperCase())
+		if (tab) setActiveTab(tab)
 	}, [setActiveTab])
 
 	useDidMountEffect(() => {
@@ -24,7 +24,7 @@ const useActiveTab = (
 
 		const query = {
 			...router.query,
-			tab: activeTab.toLowerCase(),
+			tab: activeTab,
 		}
 		const searchParams = new URLSearchParams(query).toString()
 

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import { MENU_LIST, MenuItemType } from '@/constants/menu'
-import ROUTES from '@/routes'
+import { ROUTES } from '@/routes'
 import { hasChildren } from '@/utils'
 
 type TSingleMenuProps = MenuItemType & {

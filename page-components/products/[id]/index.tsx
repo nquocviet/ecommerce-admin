@@ -5,7 +5,7 @@ import { Loader } from '@/components'
 import { PRODUCT_TABS } from '@/constants/tabs'
 import { DetailsLayout } from '@/layouts'
 import { useProductDetails } from '@/lib/product'
-import ROUTES from '@/routes'
+import { ROUTES } from '@/routes'
 
 import {
 	ProductAttributes,

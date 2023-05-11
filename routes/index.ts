@@ -8,7 +8,9 @@ const ROUTES = {
 	PRODUCT_DETAILS: '/products/[id]',
 	COLLECTION_DETAILS: '/collections/[id]',
 	ORDERS: '/orders',
+	ORDER_DETAILS: '/orders/[id]',
 	CUSTOMERS: '/customers',
+	CUSTOMER_DETAILS: '/customers/[id]',
 	DISCOUNTS: '/discounts',
 	GIFT_CARDS: '/gift-cards',
 	GIFT_CARD_MANAGE: '/gift-cards/manage',
@@ -45,7 +47,9 @@ const routeConfig: { [key: string]: { [key: string]: string } } = {
 		[ROUTES.PRODUCT_DETAILS]: ROUTES.PRODUCT_DETAILS,
 		[ROUTES.COLLECTION_DETAILS]: ROUTES.COLLECTION_DETAILS,
 		[ROUTES.ORDERS]: ROUTES.ORDERS,
+		[ROUTES.ORDER_DETAILS]: ROUTES.ORDER_DETAILS,
 		[ROUTES.CUSTOMERS]: ROUTES.CUSTOMERS,
+		[ROUTES.CUSTOMER_DETAILS]: ROUTES.CUSTOMER_DETAILS,
 		[ROUTES.DISCOUNTS]: ROUTES.DISCOUNTS,
 		[ROUTES.GIFT_CARDS]: ROUTES.GIFT_CARDS,
 		[ROUTES.GIFT_CARD_MANAGE]: ROUTES.GIFT_CARD_MANAGE,
@@ -68,6 +72,4 @@ const routeConfig: { [key: string]: { [key: string]: string } } = {
 	},
 }
 
-export { routeConfig }
-
-export default ROUTES
+export { routeConfig, ROUTES }

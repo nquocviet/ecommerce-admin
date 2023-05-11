@@ -1,30 +1,30 @@
 export const PRODUCT_TABS = {
-	PRODUCTS: 'PRODUCTS',
-	COLLECTIONS: 'COLLECTIONS',
+	PRODUCTS: 'products',
+	COLLECTIONS: 'collections',
 }
 
 export const ORDER_TABS = {
-	ORDERS: 'ORDERS',
-	DRAFTS: 'DRAFTS',
+	ORDERS: 'orders',
+	DRAFTS: 'drafts',
 }
 
 export const CUSTOMER_TABS = {
-	CUSTOMERS: 'CUSTOMERS',
-	GROUPS: 'GROUPS',
+	CUSTOMERS: 'customers',
+	GROUPS: 'groups',
 }
 
 export const DISCOUNT_TABS = {
-	DISCOUNTS: 'DISCOUNTS',
+	DISCOUNTS: 'discounts',
 }
 
 export const GIFT_CARD_TABS = {
-	GIFT_CARDS: 'GIFT_CARDS',
+	GIFT_CARDS: 'gift_cards',
 }
 
 export const PRICING_TABS = {
-	PRICING: 'PRICING',
+	PRICING: 'pricing',
 }
 
 export const TEAM_TABS = {
-	TEAM: 'TEAM',
+	TEAM: 'team',
 }
