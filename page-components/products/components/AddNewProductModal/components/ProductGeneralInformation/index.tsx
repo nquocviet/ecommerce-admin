@@ -56,7 +56,7 @@ const ProductGeneralInformation = () => {
 									</Tooltip>
 								</Flex>
 							}
-							placeholder="/winter-jacket"
+							placeholder="winter-jacket"
 							textIcon="/"
 						/>
 					</Grid.Col>

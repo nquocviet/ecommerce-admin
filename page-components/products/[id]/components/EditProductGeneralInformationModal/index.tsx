@@ -93,7 +93,7 @@ const EditProductGeneralnformationModal = ({
 								name="handle"
 								control={control}
 								label="Handle"
-								placeholder="/winter-jacket"
+								placeholder="winter-jacket"
 								textIcon="/"
 								required
 							/>

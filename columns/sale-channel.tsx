@@ -10,7 +10,11 @@ import { MantineDataTableColumn } from '@/types/datatable'
 import { ProductEntity } from '@/types/product'
 import { getValue } from '@/utils'
 
-const SalesChannelActions = ({ id }: { id: string }) => {
+type SalesChannelActionsProps = {
+	id: string
+}
+
+const SalesChannelActions = ({ id }: SalesChannelActionsProps) => {
 	const [opened, { open, close }] = useDisclosure(false)
 
 	return (

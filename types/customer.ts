@@ -23,6 +23,11 @@ export type CustomerOrderEntity = BaseEntity & {
 	sales_channel_id: string
 }
 
+export type CustomerGroupEntity = BaseEntity & {
+	name: string
+	metadata: MetaDataEntity
+}
+
 export type CustomerEntity = BaseEntity & {
 	email: string
 	first_name: string
@@ -32,4 +37,5 @@ export type CustomerEntity = BaseEntity & {
 	has_account: boolean
 	metadata: MetaDataEntity
 	orders: CustomerOrderEntity[]
+	groups: CustomerGroupEntity[]
 }

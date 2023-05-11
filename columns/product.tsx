@@ -21,7 +21,11 @@ import {
 	toCapitalize,
 } from '@/utils'
 
-const ProductActions = ({ id }) => {
+type ProductActionsProps = {
+	id: string
+}
+
+const ProductActions = ({ id }: ProductActionsProps) => {
 	const [opened, { open, close }] = useDisclosure(false)
 
 	return (

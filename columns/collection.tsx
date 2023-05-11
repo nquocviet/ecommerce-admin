@@ -10,11 +10,11 @@ import { CollectionEntity } from '@/types/collection'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { formatDate, getValue } from '@/utils'
 
-type ActionsProps = {
+type CollectionActionsProps = {
 	id: string
 }
 
-const CollectionActions = ({ id }: ActionsProps) => {
+const CollectionActions = ({ id }: CollectionActionsProps) => {
 	const [opened, { open, close }] = useDisclosure(false)
 
 	return (
