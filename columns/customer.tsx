@@ -17,7 +17,11 @@ import { CustomerEntity, CustomerOrderEntity } from '@/types/customer'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { formatDate } from '@/utils'
 
-const CustomerActions = ({ id }: { id: string }) => {
+type CustomerActionsProps = {
+	id: string
+}
+
+const CustomerActions = ({ id }: CustomerActionsProps) => {
 	const [opened, { open, close }] = useDisclosure(false)
 
 	return (

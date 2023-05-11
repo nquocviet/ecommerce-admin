@@ -74,7 +74,7 @@ const EditCollectionModal = (props: ModalOpenedProps) => {
 									</Tooltip>
 								</Flex>
 							}
-							placeholder="/sunglasses"
+							placeholder="sunglasses"
 							textIcon="/"
 						/>
 					</Grid.Col>
