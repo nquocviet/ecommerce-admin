@@ -10,7 +10,7 @@ import {
 	EditDenominationModal,
 } from '@/page-components/gift-cards/manage/components'
 import { DeleteProductModal } from '@/page-components/products/components'
-import ROUTES from '@/routes'
+import { ROUTES } from '@/routes'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { PriceEntity } from '@/types/pricing'
 import { ProductEntity, ProductVariantEntity } from '@/types/product'

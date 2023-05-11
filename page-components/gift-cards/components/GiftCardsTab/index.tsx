@@ -7,7 +7,7 @@ import { GIFT_CARD_COLUMNS } from '@/columns/gift-card'
 import { InputSearch, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useGiftCards } from '@/lib/gift-card'
-import ROUTES from '@/routes'
+import { ROUTES } from '@/routes'
 
 const GiftCardsTab = () => {
 	const { data, isLoading } = useGiftCards()

@@ -11,7 +11,7 @@ import { PRODUCT_TABS } from '@/constants/tabs'
 import { DetailsLayout } from '@/layouts'
 import { useCollectionDetails } from '@/lib/collection'
 import { DeleteCollectionModal } from '@/page-components/products/components'
-import ROUTES from '@/routes'
+import { ROUTES } from '@/routes'
 
 import { EditCollectionModal, EditProductsModal } from './components'
 

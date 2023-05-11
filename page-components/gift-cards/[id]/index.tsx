@@ -1,14 +1,5 @@
 import React from 'react'
-import {
-	ActionIcon,
-	Badge,
-	Button,
-	Divider,
-	Flex,
-	Menu,
-	Paper,
-	Text,
-} from '@mantine/core'
+import { ActionIcon, Badge, Button, Flex, Menu, Paper } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import {
 	CurrencyDollar,
@@ -17,10 +8,10 @@ import {
 	NotePencil,
 } from '@phosphor-icons/react'
 
-import { Dots, JSONView, Loader, PageTitle } from '@/components'
+import { BoxContent, Dots, JSONView, Loader, PageTitle } from '@/components'
 import { DetailsLayout } from '@/layouts'
 import { useGiftCardDetails } from '@/lib/gift-card'
-import ROUTES from '@/routes'
+import { ROUTES } from '@/routes'
 import { formatDate, formatMoney } from '@/utils'
 
 import { EditGiftCardDetailsModal, UpdateBalanceModal } from './components'
@@ -88,23 +79,20 @@ const GiftCardDetails = () => {
 					}
 				/>
 				<Flex justify="space-between" align="flex-end" className="pt-12 pb-8">
-					<Flex align="stretch" gap={24} className="text-sm">
-						<div>
-							<Text className="mb-2 text-gray-500">Original amount</Text>
-							<Text className="text-gray-800">{formatMoney(data.value)}</Text>
-						</div>
-						<Divider orientation="vertical" color="var(--gray-300)" />
-						<div>
-							<Text className="mb-2 text-gray-500">Balance</Text>
-							<Text className="text-gray-800">{formatMoney(data.balance)}</Text>
-						</div>
-						<Divider orientation="vertical" color="var(--gray-300)" />
-						<div>
-							<Text className="mb-2 text-gray-500">Created</Text>
-							<Text className="text-gray-800">
-								{formatDate(data.created_at)}
-							</Text>
-						</div>
+					<Flex>
+						<BoxContent
+							title="Original amount"
+							description={formatMoney(data.value)}
+						/>
+						<BoxContent
+							title="Balance"
+							description={formatMoney(data.balance)}
+						/>
+						<BoxContent
+							title="Created"
+							description={formatDate(data.created_at)}
+							lastItem
+						/>
 					</Flex>
 					<Badge color="gray" size="lg">
 						{data.region.name}

@@ -5,7 +5,7 @@ import { DotsThree, GearSix } from '@phosphor-icons/react'
 import Link from 'next/link'
 
 import { PageTitle, RadioBox, RadioGroup } from '@/components'
-import ROUTES from '@/routes'
+import { ROUTES } from '@/routes'
 
 const defaultValues = {
 	region: 'eu',

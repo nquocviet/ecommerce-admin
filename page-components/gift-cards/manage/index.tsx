@@ -25,7 +25,7 @@ import {
 } from '@/components'
 import { DetailsLayout } from '@/layouts'
 import { useProductGiftCard } from '@/lib/product'
-import ROUTES from '@/routes'
+import { ROUTES } from '@/routes'
 
 import { AddDenominationModal, DeleteProductGiftCardModal } from './components'
 

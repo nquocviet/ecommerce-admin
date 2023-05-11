@@ -5,7 +5,7 @@ import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 import Link from 'next/link'
 
 import { DeleteCollectionModal } from '@/page-components/products/components'
-import ROUTES from '@/routes'
+import { ROUTES } from '@/routes'
 import { CollectionEntity } from '@/types/collection'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { formatDate, getValue } from '@/utils'

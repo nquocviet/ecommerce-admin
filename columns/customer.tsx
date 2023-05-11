@@ -7,11 +7,47 @@ import {
 	Menu,
 	Text,
 } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, NotePencil, UserCircle } from '@phosphor-icons/react'
+import Link from 'next/link'
 
-import { CustomerEntity } from '@/types/customer'
+import { EditCustomerModal } from '@/page-components/customers/components'
+import { ROUTES } from '@/routes'
+import { CustomerEntity, CustomerOrderEntity } from '@/types/customer'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { formatDate } from '@/utils'
+
+const CustomerActions = ({ id }: { id: string }) => {
+	const [opened, { open, close }] = useDisclosure(false)
+
+	return (
+		<>
+			<Menu shadow="md" width={200}>
+				<Menu.Target>
+					<ActionIcon>
+						<DotsThree size={20} weight="bold" />
+					</ActionIcon>
+				</Menu.Target>
+				<Menu.Dropdown>
+					<Menu.Item icon={<NotePencil size={20} />} onClick={open}>
+						Edit
+					</Menu.Item>
+					<Menu.Item
+						component={Link}
+						href={{
+							pathname: ROUTES.CUSTOMER_DETAILS,
+							query: { id },
+						}}
+						icon={<UserCircle size={20} />}
+					>
+						Details
+					</Menu.Item>
+				</Menu.Dropdown>
+			</Menu>
+			<EditCustomerModal opened={opened} onClose={close} />
+		</>
+	)
+}
 
 export const CUSTOMER_COLUMNS: MantineDataTableColumn<CustomerEntity> = [
 	{
@@ -57,20 +93,54 @@ export const CUSTOMER_COLUMNS: MantineDataTableColumn<CustomerEntity> = [
 		accessor: '',
 		title: '',
 		width: '5%',
-		render: () => {
-			return (
-				<Menu shadow="md" width={200}>
-					<Menu.Target>
-						<ActionIcon>
-							<DotsThree size={20} weight="bold" />
-						</ActionIcon>
-					</Menu.Target>
-					<Menu.Dropdown>
-						<Menu.Item icon={<NotePencil size={20} />}>Edit</Menu.Item>
-						<Menu.Item icon={<UserCircle size={20} />}>Details</Menu.Item>
-					</Menu.Dropdown>
-				</Menu>
-			)
+		render: ({ id }) => {
+			return <CustomerActions id={id} />
 		},
 	},
 ]
+
+export const CUSTOMER_ORDERS_COLUMNS: MantineDataTableColumn<CustomerOrderEntity> =
+	[
+		{
+			accessor: 'id',
+			title: 'Order',
+			width: '15%',
+			render: ({ display_id }) => {
+				return `#${display_id}`
+			},
+		},
+		{
+			accessor: 'created_at',
+			title: 'Date',
+			width: '40%',
+			render: ({ created_at }) => {
+				return formatDate(created_at, {
+					day: 'numeric',
+					month: 'short',
+					year: 'numeric',
+					hour: '2-digit',
+					minute: '2-digit',
+				})
+			},
+		},
+		{
+			accessor: 'fulfillment_status',
+			title: 'Fulfillment',
+			width: '20%',
+			cellsClassName: 'capitalize',
+		},
+		{
+			accessor: 'status',
+			title: 'Status',
+			width: '20%',
+			cellsClassName: 'capitalize',
+		},
+		{
+			accessor: 'total',
+			title: 'Total',
+			width: '5%',
+			render: () => {
+				return 'N/A'
+			},
+		},
+	]

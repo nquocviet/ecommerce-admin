@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 
-import ROUTES from '@/routes'
+import { ROUTES } from '@/routes'
 
 import DetailsLayout from './DetailsLayout'
 
