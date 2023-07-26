@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { SettingsLayout } from '@/layouts'
 import ReturnReasons from '@/page-components/settings/return-reasons'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const ReturnReasonsPage = () => {
+const ReturnReasonsPage: NextPageWithLayout = () => {
 	return <ReturnReasons />
 }
 
-export default withAuth({
-	Component: ReturnReasonsPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+ReturnReasonsPage.getLayout = function getLayout(page: ReactElement) {
+	return <SettingsLayout>{page}</SettingsLayout>
+}
+
+export default ReturnReasonsPage

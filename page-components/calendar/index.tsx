@@ -1,9 +1,7 @@
 import React from 'react'
 
-import { BaseLayout } from '@/layouts'
-
 const Calendar = () => {
-	return <BaseLayout>Calendar</BaseLayout>
+	return <>Calendar</>
 }
 
 export default Calendar

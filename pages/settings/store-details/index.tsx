@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { SettingsLayout } from '@/layouts'
 import StoreDetails from '@/page-components/settings/store-details'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const StoreDetailsPage = () => {
+const StoreDetailsPage: NextPageWithLayout = () => {
 	return <StoreDetails />
 }
 
-export default withAuth({
-	Component: StoreDetailsPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+StoreDetailsPage.getLayout = function getLayout(page: ReactElement) {
+	return <SettingsLayout>{page}</SettingsLayout>
+}
+
+export default StoreDetailsPage

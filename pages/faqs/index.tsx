@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { BaseLayout } from '@/layouts'
 import FAQs from '@/page-components/faqs'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const FAQsPage = () => {
+const FAQsPage: NextPageWithLayout = () => {
 	return <FAQs />
 }
 
-export default withAuth({
-	Component: FAQsPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+FAQsPage.getLayout = function getLayout(page: ReactElement) {
+	return <BaseLayout>{page}</BaseLayout>
+}
+
+export default FAQsPage

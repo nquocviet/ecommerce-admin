@@ -1,12 +1,10 @@
 import React from 'react'
 
-import { withAuth } from '@/hocs'
 import Register from '@/page-components/register'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const RegisterPage = () => {
+const RegisterPage: NextPageWithLayout = () => {
 	return <Register />
 }
 
-export default withAuth({
-	Component: RegisterPage,
-})
+export default RegisterPage

@@ -1,14 +1,27 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { ROUTES } from '@/constants/routes'
+import { CUSTOMER_TABS } from '@/constants/tabs'
+import { DetailsLayout } from '@/layouts'
 import CustomerDetails from '@/page-components/customers/[id]'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const CustomerDetailsPage = () => {
+const CustomerDetailsPage: NextPageWithLayout = () => {
 	return <CustomerDetails />
 }
 
-export default withAuth({
-	Component: CustomerDetailsPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+CustomerDetailsPage.getLayout = function getLayout(page: ReactElement) {
+	return (
+		<DetailsLayout
+			label="Back to customers"
+			href={{
+				pathname: ROUTES.CUSTOMERS,
+				query: { tab: CUSTOMER_TABS.CUSTOMERS },
+			}}
+		>
+			{page}
+		</DetailsLayout>
+	)
+}
+
+export default CustomerDetailsPage

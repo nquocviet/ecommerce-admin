@@ -11,8 +11,8 @@ import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, NotePencil, UserCircle } from '@phosphor-icons/react'
 import Link from 'next/link'
 
-import { EditCustomerModal } from '@/page-components/customers/components'
-import { ROUTES } from '@/routes'
+import { ROUTES } from '@/constants/routes'
+import { ModalEditCustomer } from '@/page-components/customers/components'
 import { CustomerEntity, CustomerOrderEntity } from '@/types/customer'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { formatDate } from '@/utils'
@@ -48,7 +48,7 @@ const CustomerActions = ({ id }: CustomerActionsProps) => {
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<EditCustomerModal opened={opened} onClose={close} />
+			<ModalEditCustomer opened={opened} onClose={close} />
 		</>
 	)
 }

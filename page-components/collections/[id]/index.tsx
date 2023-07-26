@@ -7,13 +7,12 @@ import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 import { COLLECTION_DETAILS_COLUMNS } from '@/columns/collection-details'
 import { InputSearch, JSONView, Loader, PageTitle, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
-import { PRODUCT_TABS } from '@/constants/tabs'
-import { DetailsLayout } from '@/layouts'
 import { useCollectionDetails } from '@/lib/collection'
-import { DeleteCollectionModal } from '@/page-components/products/components'
-import { ROUTES } from '@/routes'
-
-import { EditCollectionModal, EditProductsModal } from './components'
+import {
+	ModalEditCollection,
+	ModalEditProducts,
+} from '@/page-components/collections/components'
+import { ModalDeleteCollection } from '@/page-components/products/components'
 
 const CollectionDetails = () => {
 	const [
@@ -34,15 +33,7 @@ const CollectionDetails = () => {
 	if (isLoading) return <Loader />
 
 	return (
-		<DetailsLayout
-			href={{
-				pathname: ROUTES.PRODUCTS,
-				query: {
-					tab: PRODUCT_TABS.COLLECTIONS,
-				},
-			}}
-			label="Back to collections"
-		>
+		<>
 			<Paper shadow="xs" p="xl">
 				<PageTitle
 					order={2}
@@ -113,19 +104,19 @@ const CollectionDetails = () => {
 					/>
 				</Flex>
 			</Paper>
-			<DeleteCollectionModal
+			<ModalDeleteCollection
 				opened={deleteCollectionOpened}
 				onClose={closeDeleteCollection}
 			/>
-			<EditCollectionModal
+			<ModalEditCollection
 				opened={editCollectionOpened}
 				onClose={closeEditCollection}
 			/>
-			<EditProductsModal
+			<ModalEditProducts
 				opened={editProductsOpened}
 				onClose={closeEditProducts}
 			/>
-		</DetailsLayout>
+		</>
 	)
 }
 

@@ -13,9 +13,9 @@ import { DotsThree, Trash, UserCircle } from '@phosphor-icons/react'
 import Link from 'next/link'
 
 import { Checkbox } from '@/components'
+import { ROUTES } from '@/constants/routes'
 import { useCustomerGroupDetails } from '@/lib/customer'
-import { RemoveCustomerModal } from '@/page-components/customers/components'
-import { ROUTES } from '@/routes'
+import { ModalRemoveCustomer } from '@/page-components/customers/components'
 import { CustomerEntity } from '@/types/customer'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { formatDate } from '@/utils'
@@ -57,7 +57,7 @@ const CustomerGroupActions = ({ id }: CustomerGroupActionsProps) => {
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<RemoveCustomerModal opened={opened} onClose={close} />
+			<ModalRemoveCustomer opened={opened} onClose={close} />
 		</>
 	)
 }

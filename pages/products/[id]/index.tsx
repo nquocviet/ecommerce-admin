@@ -1,14 +1,29 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { ROUTES } from '@/constants/routes'
+import { PRODUCT_TABS } from '@/constants/tabs'
+import { DetailsLayout } from '@/layouts'
 import ProductDetails from '@/page-components/products/[id]'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const ProductDetailsPage = () => {
+const ProductDetailsPage: NextPageWithLayout = () => {
 	return <ProductDetails />
 }
 
-export default withAuth({
-	Component: ProductDetailsPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+ProductDetailsPage.getLayout = function getLayout(page: ReactElement) {
+	return (
+		<DetailsLayout
+			href={{
+				pathname: ROUTES.PRODUCTS,
+				query: {
+					tab: PRODUCT_TABS.PRODUCTS,
+				},
+			}}
+			label="Back to products"
+		>
+			{page}
+		</DetailsLayout>
+	)
+}
+
+export default ProductDetailsPage

@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { ROUTES } from '@/constants/routes'
+import { DetailsLayout } from '@/layouts'
 import GiftCardManage from '@/page-components/gift-cards/manage'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const GiftCardManagePage = () => {
+const GiftCardManagePage: NextPageWithLayout = () => {
 	return <GiftCardManage />
 }
 
-export default withAuth({
-	Component: GiftCardManagePage,
-	allowedRoles: [ROLES.ADMIN],
-})
+GiftCardManagePage.getLayout = function getLayout(page: ReactElement) {
+	return (
+		<DetailsLayout href={ROUTES.GIFT_CARDS} label="Back to Gift cards">
+			{page}
+		</DetailsLayout>
+	)
+}
+
+export default GiftCardManagePage

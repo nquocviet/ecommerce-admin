@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { BaseLayout } from '@/layouts'
 import Messages from '@/page-components/messages'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const MessagesPage = () => {
+const MessagesPage: NextPageWithLayout = () => {
 	return <Messages />
 }
 
-export default withAuth({
-	Component: MessagesPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+MessagesPage.getLayout = function getLayout(page: ReactElement) {
+	return <BaseLayout>{page}</BaseLayout>
+}
+
+export default MessagesPage

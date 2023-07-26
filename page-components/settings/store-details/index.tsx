@@ -1,19 +1,15 @@
 import React from 'react'
 import { Grid } from '@mantine/core'
 
-import { SettingsLayout } from '@/layouts'
-
-import { StoreForm } from './components'
+import { StoreForm } from '@/page-components/settings/components'
 
 const StoreDetails = () => {
 	return (
-		<SettingsLayout>
-			<Grid>
-				<Grid.Col span={6}>
-					<StoreForm />
-				</Grid.Col>
-			</Grid>
-		</SettingsLayout>
+		<Grid>
+			<Grid.Col span={6}>
+				<StoreForm />
+			</Grid.Col>
+		</Grid>
 	)
 }
 

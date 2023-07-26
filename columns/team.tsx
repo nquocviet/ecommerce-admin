@@ -11,9 +11,9 @@ import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 
 import {
-	DeleteUserModal,
-	EditUserModal,
-} from '@/page-components/settings/team/components'
+	ModalDeleteUser,
+	ModalEditUser,
+} from '@/page-components/settings/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { TeamEntity } from '@/types/team'
 import { toCapitalize } from '@/utils'
@@ -47,8 +47,8 @@ const TeamActions = () => {
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<EditUserModal opened={editUserOpened} onClose={closeEditUser} />
-			<DeleteUserModal opened={deleteUserOpened} onClose={closeDeleteUser} />
+			<ModalEditUser opened={editUserOpened} onClose={closeEditUser} />
+			<ModalDeleteUser opened={deleteUserOpened} onClose={closeDeleteUser} />
 		</>
 	)
 }

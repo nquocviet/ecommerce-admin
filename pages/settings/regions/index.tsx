@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { SettingsLayout } from '@/layouts'
 import Regions from '@/page-components/settings/regions'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const RegionsPage = () => {
+const RegionsPage: NextPageWithLayout = () => {
 	return <Regions />
 }
 
-export default withAuth({
-	Component: RegionsPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+RegionsPage.getLayout = function getLayout(page: ReactElement) {
+	return <SettingsLayout>{page}</SettingsLayout>
+}
+
+export default RegionsPage

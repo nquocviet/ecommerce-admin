@@ -12,7 +12,7 @@ import {
 	Users,
 } from '@phosphor-icons/react'
 
-import { ROUTES } from '@/routes'
+import { ROUTES } from '@/constants/routes'
 
 export type MenuItemType = {
 	label: string

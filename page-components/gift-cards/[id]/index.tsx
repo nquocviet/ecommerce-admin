@@ -9,12 +9,12 @@ import {
 } from '@phosphor-icons/react'
 
 import { BoxContent, Dots, JSONView, Loader, PageTitle } from '@/components'
-import { DetailsLayout } from '@/layouts'
 import { useGiftCardDetails } from '@/lib/gift-card'
-import { ROUTES } from '@/routes'
+import {
+	ModalEditGiftCardDetails,
+	ModalUpdateBalance,
+} from '@/page-components/gift-cards/components'
 import { formatDate, formatMoney } from '@/utils'
-
-import { EditGiftCardDetailsModal, UpdateBalanceModal } from './components'
 
 const GiftCardDetails = () => {
 	const [
@@ -30,7 +30,7 @@ const GiftCardDetails = () => {
 	if (isLoading || !data) return <Loader />
 
 	return (
-		<DetailsLayout href={ROUTES.GIFT_CARDS} label="Back to Gift cards">
+		<>
 			<Paper shadow="xs" p="xl">
 				<PageTitle
 					order={2}
@@ -103,15 +103,15 @@ const GiftCardDetails = () => {
 				<PageTitle order={2} size="sm" title="Raw gift card" />
 				<JSONView data={data} className="mt-4" />
 			</Paper>
-			<EditGiftCardDetailsModal
+			<ModalEditGiftCardDetails
 				opened={editGiftCardOpened}
 				onClose={closeEditGiftCard}
 			/>
-			<UpdateBalanceModal
+			<ModalUpdateBalance
 				opened={editBalanceOpened}
 				onClose={closeEditBalance}
 			/>
-		</DetailsLayout>
+		</>
 	)
 }
 

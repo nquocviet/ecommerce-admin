@@ -1,12 +1,10 @@
 import React from 'react'
 
-import { withAuth } from '@/hocs'
 import Login from '@/page-components/login'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const LoginPage = () => {
+const LoginPage: NextPageWithLayout = () => {
 	return <Login />
 }
 
-export default withAuth({
-	Component: LoginPage,
-})
+export default LoginPage

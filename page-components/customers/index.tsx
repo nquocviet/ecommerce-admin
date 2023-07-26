@@ -3,9 +3,11 @@ import { Paper, Tabs } from '@mantine/core'
 
 import { CUSTOMER_TABS } from '@/constants/tabs'
 import { useActiveTab } from '@/hooks'
-import { BaseLayout } from '@/layouts'
-
-import { CustomersTab, GroupActions, GroupsTab } from './components'
+import {
+	CustomersTab,
+	GroupActions,
+	GroupsTab,
+} from '@/page-components/customers/components'
 
 const { CUSTOMERS, GROUPS } = CUSTOMER_TABS
 
@@ -15,29 +17,27 @@ const Customers = () => {
 	useActiveTab(activeTab, setActiveTab)
 
 	return (
-		<BaseLayout>
-			<Paper shadow="xs" p="xl" className="grow">
-				<Tabs
-					value={activeTab}
-					onTabChange={(tab) => setActiveTab(tab)}
-					keepMounted={false}
-				>
-					<Tabs.List>
-						<Tabs.Tab value={CUSTOMERS}>Customers</Tabs.Tab>
-						<Tabs.Tab value={GROUPS}>Groups</Tabs.Tab>
-						{activeTab === GROUPS && <GroupActions />}
-					</Tabs.List>
+		<Paper shadow="xs" p="xl" className="grow">
+			<Tabs
+				value={activeTab}
+				onTabChange={(tab) => setActiveTab(tab)}
+				keepMounted={false}
+			>
+				<Tabs.List>
+					<Tabs.Tab value={CUSTOMERS}>Customers</Tabs.Tab>
+					<Tabs.Tab value={GROUPS}>Groups</Tabs.Tab>
+					{activeTab === GROUPS && <GroupActions />}
+				</Tabs.List>
 
-					<Tabs.Panel value={CUSTOMERS}>
-						<CustomersTab />
-					</Tabs.Panel>
+				<Tabs.Panel value={CUSTOMERS}>
+					<CustomersTab />
+				</Tabs.Panel>
 
-					<Tabs.Panel value={GROUPS}>
-						<GroupsTab />
-					</Tabs.Panel>
-				</Tabs>
-			</Paper>
-		</BaseLayout>
+				<Tabs.Panel value={GROUPS}>
+					<GroupsTab />
+				</Tabs.Panel>
+			</Tabs>
+		</Paper>
 	)
 }
 

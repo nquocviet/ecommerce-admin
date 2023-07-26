@@ -1,14 +1,29 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { ROUTES } from '@/constants/routes'
+import { PRODUCT_TABS } from '@/constants/tabs'
+import { DetailsLayout } from '@/layouts'
 import CollectionDetails from '@/page-components/collections/[id]'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const CollectionDetailsPage = () => {
+const CollectionDetailsPage: NextPageWithLayout = () => {
 	return <CollectionDetails />
 }
 
-export default withAuth({
-	Component: CollectionDetailsPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+CollectionDetailsPage.getLayout = function getLayout(page: ReactElement) {
+	return (
+		<DetailsLayout
+			href={{
+				pathname: ROUTES.PRODUCTS,
+				query: {
+					tab: PRODUCT_TABS.COLLECTIONS,
+				},
+			}}
+			label="Back to collections"
+		>
+			{page}
+		</DetailsLayout>
+	)
+}
+
+export default CollectionDetailsPage

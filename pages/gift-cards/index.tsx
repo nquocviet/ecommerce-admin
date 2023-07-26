@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { BaseLayout } from '@/layouts'
 import GiftCards from '@/page-components/gift-cards'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const GiftCardsPage = () => {
+const GiftCardsPage: NextPageWithLayout = () => {
 	return <GiftCards />
 }
 
-export default withAuth({
-	Component: GiftCardsPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+GiftCardsPage.getLayout = function getLayout(page: ReactElement) {
+	return <BaseLayout>{page}</BaseLayout>
+}
+
+export default GiftCardsPage

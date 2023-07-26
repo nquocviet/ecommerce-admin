@@ -23,11 +23,11 @@ import {
 	Textarea,
 	TextInput,
 } from '@/components'
-import { DetailsLayout } from '@/layouts'
 import { useProductGiftCard } from '@/lib/product'
-import { ROUTES } from '@/routes'
-
-import { AddDenominationModal, DeleteProductGiftCardModal } from './components'
+import {
+	ModalAddDenomination,
+	ModalDeleteProductGiftCard,
+} from '@/page-components/gift-cards/components'
 
 const GiftCardManage = () => {
 	const [
@@ -55,7 +55,7 @@ const GiftCardManage = () => {
 	if (isLoading) return <Loader />
 
 	return (
-		<DetailsLayout href={ROUTES.GIFT_CARDS} label="Back to Gift cards">
+		<>
 			<Paper shadow="xs" p="xl">
 				<PageTitle
 					order={2}
@@ -196,15 +196,15 @@ const GiftCardManage = () => {
 				/>
 				<DropzoneImage onDrop={() => null} className="mt-12" />
 			</Paper>
-			<AddDenominationModal
+			<ModalAddDenomination
 				opened={addDenominationOpened}
 				onClose={closeAddDenomination}
 			/>
-			<DeleteProductGiftCardModal
+			<ModalDeleteProductGiftCard
 				opened={deleteProductGiftCardOpened}
 				onClose={closeDeleteProductGiftCard}
 			/>
-		</DetailsLayout>
+		</>
 	)
 }
 

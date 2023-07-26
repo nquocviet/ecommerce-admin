@@ -3,9 +3,10 @@ import { Paper, Tabs } from '@mantine/core'
 
 import { PRICING_TABS } from '@/constants/tabs'
 import { useActiveTab } from '@/hooks'
-import { BaseLayout } from '@/layouts'
-
-import { PricingActions, PricingsTab } from './components'
+import {
+	PricingActions,
+	PricingsTab,
+} from '@/page-components/pricing/components'
 
 const { PRICING } = PRICING_TABS
 
@@ -15,7 +16,7 @@ const Pricing = () => {
 	useActiveTab(activeTab, setActiveTab)
 
 	return (
-		<BaseLayout>
+		<>
 			<Paper shadow="xs" p="xl" className="grow">
 				<Tabs
 					value={activeTab}
@@ -32,7 +33,7 @@ const Pricing = () => {
 					</Tabs.Panel>
 				</Tabs>
 			</Paper>
-		</BaseLayout>
+		</>
 	)
 }
 

@@ -3,14 +3,9 @@
 		"baseUrl": "./",
 		"paths": {
 			"@/*": ["*"],
-			"@/api": ["api/"],
 			"@/columns/*": ["columns/*"],
 			"@/components": ["components/"],
-			"@/config": ["config/"],
 			"@/constants/*": ["constants/*"],
-			"@/context": ["context/"],
-			"@/features/*": ["features/*"],
-			"@/hocs": ["hocs/"],
 			"@/hooks": ["hooks/"],
 			"@/layouts": ["layouts/"],
 			"@/lib/*": ["lib/*"],
@@ -18,11 +13,9 @@
 			"@/pages/*": ["pages/*"],
 			"@/providers": ["providers/"],
 			"@/public/*": ["public/*"],
-			"@/routes": ["routes/"],
 			"@/styles/*": ["styles/*"],
 			"@/types/*": ["types/*"],
-			"@/utils": ["utils/"],
-			"@/validators/*": ["validators/*"]
+			"@/utils": ["utils/"]
 		},
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false,

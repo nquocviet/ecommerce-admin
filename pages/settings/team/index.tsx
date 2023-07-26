@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { SettingsLayout } from '@/layouts'
 import Team from '@/page-components/settings/team'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const TeamPage = () => {
+const TeamPage: NextPageWithLayout = () => {
 	return <Team />
 }
 
-export default withAuth({
-	Component: TeamPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+TeamPage.getLayout = function getLayout(page: ReactElement) {
+	return <SettingsLayout>{page}</SettingsLayout>
+}
+
+export default TeamPage

@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { BaseLayout } from '@/layouts'
 import Kanban from '@/page-components/kanban'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const KanbanPage = () => {
+const KanbanPage: NextPageWithLayout = () => {
 	return <Kanban />
 }
 
-export default withAuth({
-	Component: KanbanPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+KanbanPage.getLayout = function getLayout(page: ReactElement) {
+	return <BaseLayout fluid>{page}</BaseLayout>
+}
+
+export default KanbanPage

@@ -1,2 +1,2 @@
-export { default as DiscountActions } from './DiscountActions'
-export { default as DiscountsTab } from './DiscountsTab'
+export { default as DiscountActions } from './discount-actions'
+export { default as DiscountsTab } from './discounts-tab'

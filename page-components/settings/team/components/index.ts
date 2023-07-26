@@ -1,5 +1,0 @@
-export { default as DeleteUserModal } from './DeleteUserModal'
-export { default as EditUserModal } from './EditUserModal'
-export { default as InviteUsersModal } from './InviteUsersModal'
-export { default as TeamActions } from './TeamActions'
-export { default as TeamsTab } from './TeamsTab'

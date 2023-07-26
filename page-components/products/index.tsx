@@ -3,14 +3,12 @@ import { Paper, Tabs } from '@mantine/core'
 
 import { PRODUCT_TABS } from '@/constants/tabs'
 import { useActiveTab } from '@/hooks'
-import { BaseLayout } from '@/layouts'
-
 import {
 	CollectionActions,
 	CollectionsTab,
 	ProductActions,
 	ProductsTab,
-} from './components'
+} from '@/page-components/products/components'
 
 const { PRODUCTS, COLLECTIONS } = PRODUCT_TABS
 
@@ -20,7 +18,7 @@ const Products = () => {
 	useActiveTab(activeTab, setActiveTab)
 
 	return (
-		<BaseLayout>
+		<>
 			<Paper shadow="xs" p="xl" className="grow">
 				<Tabs
 					value={activeTab}
@@ -43,7 +41,7 @@ const Products = () => {
 					</Tabs.Panel>
 				</Tabs>
 			</Paper>
-		</BaseLayout>
+		</>
 	)
 }
 
