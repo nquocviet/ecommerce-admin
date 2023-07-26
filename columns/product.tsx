@@ -5,12 +5,12 @@ import { Copy, DotsThree, Lock, NotePencil, Trash } from '@phosphor-icons/react'
 import Link from 'next/link'
 
 import { Dots } from '@/components'
+import { ROUTES } from '@/constants/routes'
 import {
-	DeleteDenominationModal,
-	EditDenominationModal,
-} from '@/page-components/gift-cards/manage/components'
-import { DeleteProductModal } from '@/page-components/products/components'
-import { ROUTES } from '@/routes'
+	ModalDeleteDenomination,
+	ModalEditDenomination,
+} from '@/page-components/gift-cards/components'
+import { ModalDeleteProduct } from '@/page-components/products/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { PriceEntity } from '@/types/pricing'
 import { ProductEntity, ProductVariantEntity } from '@/types/product'
@@ -60,7 +60,7 @@ const ProductActions = ({ id }: ProductActionsProps) => {
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<DeleteProductModal opened={opened} onClose={close} />
+			<ModalDeleteProduct opened={opened} onClose={close} />
 		</>
 	)
 }
@@ -238,11 +238,11 @@ const ProductGiftCardActions = () => {
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<EditDenominationModal
+			<ModalEditDenomination
 				opened={editDenominationOpened}
 				onClose={closeEditDenomination}
 			/>
-			<DeleteDenominationModal
+			<ModalDeleteDenomination
 				opened={deleteDenominationOpened}
 				onClose={closeDeleteDenomination}
 			/>

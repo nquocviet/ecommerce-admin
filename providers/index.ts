@@ -1,1 +1,1 @@
-export { default } from './AppProvider'
+export { default } from './app-provider'

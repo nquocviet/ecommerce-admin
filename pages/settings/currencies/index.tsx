@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { SettingsLayout } from '@/layouts'
 import Currencies from '@/page-components/settings/currencies'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const CurrenciesPage = () => {
+const CurrenciesPage: NextPageWithLayout = () => {
 	return <Currencies />
 }
 
-export default withAuth({
-	Component: CurrenciesPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+CurrenciesPage.getLayout = function getLayout(page: ReactElement) {
+	return <SettingsLayout>{page}</SettingsLayout>
+}
+
+export default CurrenciesPage

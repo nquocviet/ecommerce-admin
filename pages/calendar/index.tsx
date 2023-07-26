@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { BaseLayout } from '@/layouts'
 import Calendar from '@/page-components/calendar'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const CalendarPage = () => {
+const CalendarPage: NextPageWithLayout = () => {
 	return <Calendar />
 }
 
-export default withAuth({
-	Component: CalendarPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+CalendarPage.getLayout = function getLayout(page: ReactElement) {
+	return <BaseLayout>{page}</BaseLayout>
+}
+
+export default CalendarPage

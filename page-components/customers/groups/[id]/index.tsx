@@ -7,15 +7,12 @@ import { DotsThree, NotePencil, Plus, Trash } from '@phosphor-icons/react'
 import { CUSTOMER_GROUP_COLUMNS } from '@/columns/customer-group'
 import { InputSearch, Loader, PageTitle, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
-import { CUSTOMER_TABS } from '@/constants/tabs'
-import { DetailsLayout } from '@/layouts'
 import { useCustomerGroupDetails } from '@/lib/customer'
 import {
-	AddEditCustomerGroupModal,
-	DeleteCustomerGroupModal,
-	EditCustomersModal,
+	ModalAddEditCustomerGroup,
+	ModalDeleteCustomerGroup,
+	ModalEditCustomers,
 } from '@/page-components/customers/components'
-import { ROUTES } from '@/routes'
 
 const CustomerGroups = () => {
 	const { control } = useForm()
@@ -36,13 +33,7 @@ const CustomerGroups = () => {
 	if (isLoading || !data) return <Loader />
 
 	return (
-		<DetailsLayout
-			label="Back to customer groups"
-			href={{
-				pathname: ROUTES.CUSTOMER_GROUP_DETAILS,
-				query: { tab: CUSTOMER_TABS.GROUPS },
-			}}
-		>
+		<>
 			<Paper shadow="xs" p="xl">
 				<PageTitle
 					order={2}
@@ -110,7 +101,7 @@ const CustomerGroups = () => {
 					/>
 				</Flex>
 			</Paper>
-			<AddEditCustomerGroupModal
+			<ModalAddEditCustomerGroup
 				opened={editCustomerGroupOpened}
 				onClose={closeEditCustomerGroup}
 				defaultValues={{
@@ -118,15 +109,15 @@ const CustomerGroups = () => {
 					metadata: [],
 				}}
 			/>
-			<DeleteCustomerGroupModal
+			<ModalDeleteCustomerGroup
 				opened={deleteCustomerGroupOpened}
 				onClose={closeDeleteCustomerGroup}
 			/>
-			<EditCustomersModal
+			<ModalEditCustomers
 				opened={editCustomersOpened}
 				onClose={closeEditCustomers}
 			/>
-		</DetailsLayout>
+		</>
 	)
 }
 

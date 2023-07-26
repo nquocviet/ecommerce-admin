@@ -6,7 +6,7 @@ import { Trash } from '@phosphor-icons/react'
 
 import { Checkbox, Dots } from '@/components'
 import { useCollectionDetails } from '@/lib/collection'
-import { DeleteProductModal } from '@/page-components/products/components'
+import { ModalDeleteProduct } from '@/page-components/products/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { ProductCollectionEntity, ProductEntity } from '@/types/product'
 import { toCapitalize } from '@/utils'
@@ -19,7 +19,7 @@ const CollectionDetailsActions = () => {
 			<ActionIcon color="gray" variant="outline" onClick={open}>
 				<Trash size={18} />
 			</ActionIcon>
-			<DeleteProductModal opened={opened} onClose={close} />
+			<ModalDeleteProduct opened={opened} onClose={close} />
 		</>
 	)
 }

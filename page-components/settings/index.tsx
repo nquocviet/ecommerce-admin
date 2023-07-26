@@ -4,13 +4,11 @@ import { Grid } from '@mantine/core'
 import { PageTitle } from '@/components'
 import { APP_NAME } from '@/constants/common'
 import { SETTINGS } from '@/constants/settings'
-import { BaseLayout } from '@/layouts'
-
-import { SettingsCard } from './components'
+import { SettingsCard } from '@/page-components/settings/components'
 
 const Settings = () => {
 	return (
-		<BaseLayout>
+		<>
 			<PageTitle
 				title="Settings"
 				description={`Manage the settings for your ${APP_NAME}.`}
@@ -22,7 +20,7 @@ const Settings = () => {
 					</Grid.Col>
 				))}
 			</Grid>
-		</BaseLayout>
+		</>
 	)
 }
 

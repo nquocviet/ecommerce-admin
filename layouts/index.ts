@@ -1,3 +1,3 @@
-export { default as BaseLayout } from './BaseLayout'
-export { default as DetailsLayout } from './DetailsLayout'
-export { default as SettingsLayout } from './SettingsLayout'
+export { default as BaseLayout } from './base-layout'
+export { default as DetailsLayout } from './details-layout'
+export { default as SettingsLayout } from './settings-layout'

@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { SettingsLayout } from '@/layouts'
 import SaleChannels from '@/page-components/settings/sale-channels'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const SaleChannelsPage = () => {
+const SaleChannelsPage: NextPageWithLayout = () => {
 	return <SaleChannels />
 }
 
-export default withAuth({
-	Component: SaleChannelsPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+SaleChannelsPage.getLayout = function getLayout(page: ReactElement) {
+	return <SettingsLayout>{page}</SettingsLayout>
+}
+
+export default SaleChannelsPage

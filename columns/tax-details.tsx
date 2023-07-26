@@ -3,7 +3,7 @@ import { ActionIcon, Flex, Menu } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, LockSimple, NotePencil } from '@phosphor-icons/react'
 
-import { EditTaxRateModal } from '@/page-components/settings/taxes/components'
+import { ModalEditTaxRate } from '@/page-components/settings/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { TaxDetailsEntity } from '@/types/tax'
 import { getValue } from '@/utils'
@@ -25,7 +25,7 @@ const TaxActions = () => {
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<EditTaxRateModal opened={opened} onClose={close} />
+			<ModalEditTaxRate opened={opened} onClose={close} />
 		</>
 	)
 }

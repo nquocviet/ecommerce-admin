@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react'
+import { ReactElement, ReactNode, useEffect, useState } from 'react'
 import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
@@ -10,11 +10,14 @@ import '@/styles/global.css'
 import '@/styles/tailwind.css'
 import 'nprogress/nprogress.css'
 
-export type NextPageWithLayout = NextPage & {
-	getLayout?: (page: ReactNode) => ReactNode
+export type NextPageWithLayout<P = Record<string, unknown>, IP = P> = NextPage<
+	P,
+	IP
+> & {
+	getLayout?: (page: ReactElement) => ReactNode
 }
 
-export type AppPropsWithLayout = AppProps & {
+type AppPropsWithLayout = AppProps & {
 	Component: NextPageWithLayout
 }
 

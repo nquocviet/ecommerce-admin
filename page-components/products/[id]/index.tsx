@@ -2,10 +2,7 @@ import React from 'react'
 import { Flex, Grid } from '@mantine/core'
 
 import { Loader } from '@/components'
-import { PRODUCT_TABS } from '@/constants/tabs'
-import { DetailsLayout } from '@/layouts'
 import { useProductDetails } from '@/lib/product'
-import { ROUTES } from '@/routes'
 
 import {
 	ProductAttributes,
@@ -22,15 +19,7 @@ const ProductDetails = () => {
 	if (isLoading) return <Loader />
 
 	return (
-		<DetailsLayout
-			href={{
-				pathname: ROUTES.PRODUCTS,
-				query: {
-					tab: PRODUCT_TABS.PRODUCTS,
-				},
-			}}
-			label="Back to products"
-		>
+		<>
 			<Grid>
 				<Grid.Col span={8}>
 					<Flex direction="column" align="stretch" gap={16}>
@@ -47,7 +36,7 @@ const ProductDetails = () => {
 					</Flex>
 				</Grid.Col>
 			</Grid>
-		</DetailsLayout>
+		</>
 	)
 }
 

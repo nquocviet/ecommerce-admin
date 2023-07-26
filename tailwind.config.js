@@ -1,7 +1,6 @@
 module.exports = {
 	content: [
 		'./components/**/*.{jsx,tsx}',
-		'./features/**/*.{jsx,tsx}',
 		'./layouts/**/*.{jsx,tsx}',
 		'./pages/**/*.{jsx,tsx}',
 		'./page-components/**/*.{jsx,tsx}',

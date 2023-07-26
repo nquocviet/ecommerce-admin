@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ROLES } from '@/constants/roles'
-import { withAuth } from '@/hocs'
+import { SettingsLayout } from '@/layouts'
 import PersonalInformation from '@/page-components/settings/personal-information/'
+import { NextPageWithLayout } from '@/pages/_app'
 
-const PersonalInformationPage = () => {
+const PersonalInformationPage: NextPageWithLayout = () => {
 	return <PersonalInformation />
 }
 
-export default withAuth({
-	Component: PersonalInformationPage,
-	allowedRoles: [ROLES.ADMIN],
-})
+PersonalInformationPage.getLayout = function getLayout(page: ReactElement) {
+	return <SettingsLayout>{page}</SettingsLayout>
+}
+
+export default PersonalInformationPage

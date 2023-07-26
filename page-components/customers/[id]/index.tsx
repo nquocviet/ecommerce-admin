@@ -14,14 +14,12 @@ import {
 	Table,
 } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
-import { CUSTOMER_TABS } from '@/constants/tabs'
-import { DetailsLayout } from '@/layouts'
+import { ROUTES } from '@/constants/routes'
 import { useCustomerDetails } from '@/lib/customer'
 import {
-	DeleteCustomerModal,
-	EditCustomerModal,
+	ModalDeleteCustomer,
+	ModalEditCustomer,
 } from '@/page-components/customers/components'
-import { ROUTES } from '@/routes'
 import { formatDate } from '@/utils'
 
 const CustomerDetails = () => {
@@ -39,13 +37,7 @@ const CustomerDetails = () => {
 	if (isLoading || !data) return <Loader />
 
 	return (
-		<DetailsLayout
-			label="Back to customers"
-			href={{
-				pathname: ROUTES.CUSTOMERS,
-				query: { tab: CUSTOMER_TABS.CUSTOMERS },
-			}}
-		>
+		<>
 			<Paper shadow="xs" p="xl">
 				<Box className="-mx-6 mb-16 -mt-6 overflow-hidden rounded-t">
 					<Box className="h-32 w-full bg-gradient-to-b from-primary-300 to-white"></Box>
@@ -139,15 +131,15 @@ const CustomerDetails = () => {
 				<PageTitle order={2} size="sm" title="Raw customer" />
 				<JSONView data={data} className="mt-4" />
 			</Paper>
-			<EditCustomerModal
+			<ModalEditCustomer
 				opened={editCustomerOpened}
 				onClose={closeEditCustomer}
 			/>
-			<DeleteCustomerModal
+			<ModalDeleteCustomer
 				opened={deleteCustomerOpened}
 				onClose={closeDeleteCustomer}
 			/>
-		</DetailsLayout>
+		</>
 	)
 }
 

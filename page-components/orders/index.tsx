@@ -3,9 +3,12 @@ import { Paper, Tabs } from '@mantine/core'
 
 import { ORDER_TABS } from '@/constants/tabs'
 import { useActiveTab } from '@/hooks'
-import { BaseLayout } from '@/layouts'
-
-import { DraftActions, DraftsTab, OrderActions, OrdersTab } from './components'
+import {
+	DraftActions,
+	DraftsTab,
+	OrderActions,
+	OrdersTab,
+} from '@/page-components/orders/components'
 
 const { ORDERS, DRAFTS } = ORDER_TABS
 
@@ -15,7 +18,7 @@ const Orders = () => {
 	useActiveTab(activeTab, setActiveTab)
 
 	return (
-		<BaseLayout>
+		<>
 			<Paper shadow="xs" p="xl" className="grow">
 				<Tabs
 					value={activeTab}
@@ -38,7 +41,7 @@ const Orders = () => {
 					</Tabs.Panel>
 				</Tabs>
 			</Paper>
-		</BaseLayout>
+		</>
 	)
 }
 

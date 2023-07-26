@@ -4,7 +4,7 @@ import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, Lock, Trash } from '@phosphor-icons/react'
 
 import { Dots } from '@/components'
-import { DeletePriceModal } from '@/page-components/pricing/components'
+import { ModalDeletePrice } from '@/page-components/pricing/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { PricingEntity } from '@/types/pricing'
 import { ProductEntity } from '@/types/product'
@@ -34,7 +34,7 @@ const PricingActions = () => {
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<DeletePriceModal opened={opened} onClose={close} />
+			<ModalDeletePrice opened={opened} onClose={close} />
 		</>
 	)
 }

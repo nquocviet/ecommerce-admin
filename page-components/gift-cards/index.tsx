@@ -3,9 +3,11 @@ import { Paper, Tabs } from '@mantine/core'
 
 import { GIFT_CARD_TABS } from '@/constants/tabs'
 import { useActiveTab } from '@/hooks'
-import { BaseLayout } from '@/layouts'
-
-import { GiftCardActions, GiftCardsTab, ProductGiftCard } from './components'
+import {
+	GiftCardActions,
+	GiftCardsTab,
+	ProductGiftCard,
+} from '@/page-components/gift-cards/components'
 
 const { GIFT_CARDS } = GIFT_CARD_TABS
 
@@ -15,7 +17,7 @@ const GiftCards = () => {
 	useActiveTab(activeTab, setActiveTab)
 
 	return (
-		<BaseLayout>
+		<>
 			<Paper shadow="xs" p="xl">
 				<ProductGiftCard />
 			</Paper>
@@ -35,7 +37,7 @@ const GiftCards = () => {
 					</Tabs.Panel>
 				</Tabs>
 			</Paper>
-		</BaseLayout>
+		</>
 	)
 }
 

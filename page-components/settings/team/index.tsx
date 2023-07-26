@@ -3,9 +3,7 @@ import { Paper, Tabs } from '@mantine/core'
 
 import { TEAM_TABS } from '@/constants/tabs'
 import { useActiveTab } from '@/hooks'
-import { SettingsLayout } from '@/layouts'
-
-import { TeamActions, TeamsTab } from './components'
+import { TeamActions, TeamsTab } from '@/page-components/settings/components'
 
 const { TEAM } = TEAM_TABS
 
@@ -15,24 +13,22 @@ const Team = () => {
 	useActiveTab(activeTab, setActiveTab)
 
 	return (
-		<SettingsLayout>
-			<Paper shadow="xs" p="xl" className="grow">
-				<Tabs
-					value={activeTab}
-					onTabChange={(tab) => setActiveTab(tab)}
-					keepMounted={false}
-				>
-					<Tabs.List>
-						<Tabs.Tab value={TEAM}>Team</Tabs.Tab>
-						{activeTab === TEAM && <TeamActions />}
-					</Tabs.List>
+		<Paper shadow="xs" p="xl" className="grow">
+			<Tabs
+				value={activeTab}
+				onTabChange={(tab) => setActiveTab(tab)}
+				keepMounted={false}
+			>
+				<Tabs.List>
+					<Tabs.Tab value={TEAM}>Team</Tabs.Tab>
+					{activeTab === TEAM && <TeamActions />}
+				</Tabs.List>
 
-					<Tabs.Panel value={TEAM}>
-						<TeamsTab />
-					</Tabs.Panel>
-				</Tabs>
-			</Paper>
-		</SettingsLayout>
+				<Tabs.Panel value={TEAM}>
+					<TeamsTab />
+				</Tabs.Panel>
+			</Tabs>
+		</Paper>
 	)
 }
 

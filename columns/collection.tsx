@@ -4,8 +4,8 @@ import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 import Link from 'next/link'
 
-import { DeleteCollectionModal } from '@/page-components/products/components'
-import { ROUTES } from '@/routes'
+import { ROUTES } from '@/constants/routes'
+import { ModalDeleteCollection } from '@/page-components/products/components'
 import { CollectionEntity } from '@/types/collection'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { formatDate, getValue } from '@/utils'
@@ -47,7 +47,7 @@ const CollectionActions = ({ id }: CollectionActionsProps) => {
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<DeleteCollectionModal opened={opened} onClose={close} />
+			<ModalDeleteCollection opened={opened} onClose={close} />
 		</>
 	)
 }

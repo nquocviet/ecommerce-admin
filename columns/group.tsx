@@ -4,8 +4,8 @@ import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, NotePencil, UserCircle } from '@phosphor-icons/react'
 import Link from 'next/link'
 
-import { AddEditCustomerGroupModal } from '@/page-components/customers/components'
-import { ROUTES } from '@/routes'
+import { ROUTES } from '@/constants/routes'
+import { ModalAddEditCustomerGroup } from '@/page-components/customers/components'
 import { CustomerGroupEntity } from '@/types/customer-group'
 import { MantineDataTableColumn } from '@/types/datatable'
 
@@ -37,7 +37,7 @@ const GroupActions = ({ id }: GroupActionsProps) => {
 					</Menu.Item>
 				</Menu.Dropdown>
 			</Menu>
-			<AddEditCustomerGroupModal
+			<ModalAddEditCustomerGroup
 				opened={opened}
 				onClose={close}
 				defaultValues={{
