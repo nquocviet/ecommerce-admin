@@ -4,6 +4,7 @@ import {
 	AccordionProps as MantineAccordionProps,
 	Text,
 	Tooltip,
+	TooltipProps,
 } from '@mantine/core'
 import { Info } from '@phosphor-icons/react'
 
@@ -20,10 +21,12 @@ type AccordionSection = {
 interface AccordionProps<T extends AccordionSection>
 	extends Omit<MantineAccordionProps, 'children'> {
 	sections: T[]
+	hintProps?: Omit<TooltipProps, 'children' | 'label'>
 }
 
 const Accordion = <T extends AccordionSection>({
 	sections,
+	hintProps,
 	defaultValue,
 	...props
 }: AccordionProps<T>) => {
@@ -55,9 +58,11 @@ const Accordion = <T extends AccordionSection>({
 								</Text>
 							)}
 							{hint && (
-								<Tooltip width={240} label={hint} multiline>
-									<Info size={16} className="ml-1 -mb-[3px] text-gray-600" />
-								</Tooltip>
+								<span className="font-regular">
+									<Tooltip width="auto" label={hint} multiline {...hintProps}>
+										<Info size={16} className="ml-1 -mb-[3px] text-gray-600" />
+									</Tooltip>
+								</span>
 							)}
 						</Text>
 					</MantineAccordion.Control>

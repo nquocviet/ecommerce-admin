@@ -1,11 +1,48 @@
 import React from 'react'
 import { ActionIcon, Badge, Flex, Menu } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 import { Copy, DotsThree, Lock, NotePencil, Trash } from '@phosphor-icons/react'
 
 import { Dots } from '@/components'
+import { ModalDeleteDiscount } from '@/page-components/discounts/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { DiscountEntity } from '@/types/discount'
 import { getValue, toCapitalize } from '@/utils'
+
+type DiscountActionsProps = {
+	id: string
+}
+
+const DiscountActions = ({ id }: DiscountActionsProps) => {
+	const [opened, { open, close }] = useDisclosure(false)
+
+	return (
+		<>
+			<Menu shadow="md" width={200}>
+				<Menu.Target>
+					<ActionIcon>
+						<DotsThree size={20} weight="bold" />
+					</ActionIcon>
+				</Menu.Target>
+				<Menu.Dropdown>
+					<Menu.Item icon={<NotePencil size={20} />}>Edit</Menu.Item>
+					<Menu.Item icon={<Lock size={20} />}>Unpublish</Menu.Item>
+					<Menu.Item icon={<Copy size={20} />}>Duplicate</Menu.Item>
+					<Menu.Item
+						icon={<Trash size={20} />}
+						sx={{
+							color: 'var(--red-600)',
+						}}
+						onClick={open}
+					>
+						Delete
+					</Menu.Item>
+				</Menu.Dropdown>
+			</Menu>
+			<ModalDeleteDiscount opened={opened} onClose={close} />
+		</>
+	)
+}
 
 export const DISCOUNT_COLUMNS: MantineDataTableColumn<DiscountEntity> = [
 	{
@@ -68,29 +105,8 @@ export const DISCOUNT_COLUMNS: MantineDataTableColumn<DiscountEntity> = [
 		accessor: '',
 		title: '',
 		width: '5%',
-		render: () => {
-			return (
-				<Menu shadow="md" width={200}>
-					<Menu.Target>
-						<ActionIcon>
-							<DotsThree size={20} weight="bold" />
-						</ActionIcon>
-					</Menu.Target>
-					<Menu.Dropdown>
-						<Menu.Item icon={<NotePencil size={20} />}>Edit</Menu.Item>
-						<Menu.Item icon={<Lock size={20} />}>Unpublish</Menu.Item>
-						<Menu.Item icon={<Copy size={20} />}>Duplicate</Menu.Item>
-						<Menu.Item
-							icon={<Trash size={20} />}
-							sx={{
-								color: 'var(--red-600)',
-							}}
-						>
-							Delete
-						</Menu.Item>
-					</Menu.Dropdown>
-				</Menu>
-			)
+		render: ({ id }) => {
+			return <DiscountActions id={id} />
 		},
 	},
 ]
