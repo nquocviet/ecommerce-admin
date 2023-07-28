@@ -1,2 +1,8 @@
 export { default as DiscountActions } from './discount-actions'
+export { default as DiscountConditions } from './discount-conditions'
+export { default as DiscountConfiguration } from './discount-configuration'
+export { default as DiscountGeneral } from './discount-general'
+export { default as DiscountType } from './discount-type'
 export { default as DiscountsTab } from './discounts-tab'
+export { default as ModalAddDiscount } from './modal-add-discount'
+export { default as ModalDeleteDiscount } from './modal-delete-discount'

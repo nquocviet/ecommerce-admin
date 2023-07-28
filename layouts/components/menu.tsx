@@ -34,7 +34,10 @@ const SingleMenu = ({
 		if (domain && href.includes(domain)) {
 			setActive(true)
 			toggle?.()
+			return
 		}
+
+		setActive(false)
 	}, [pathname, domain, href, setActive, toggle])
 
 	return (

@@ -89,6 +89,26 @@ export const components: any = {
 			},
 		}),
 	},
+	DateTimePicker: {
+		styles: (theme) => ({
+			label: {
+				fontSize: 'var(--fs-text-sm)',
+				marginBottom: '0.375rem',
+			},
+			input: {
+				borderColor: theme.colors.gray[3],
+				'&[readonly]:focus': {
+					borderColor: `${theme.colors.gray[3]} !important`,
+				},
+				'&:not([readonly]):focus': {
+					boxShadow: '0 0 0 4px var(--primary-100)',
+				},
+				'&::placeholder': {
+					color: theme.colors.gray[4],
+				},
+			},
+		}),
+	},
 	Divider: {
 		styles: (theme) => ({
 			root: {
