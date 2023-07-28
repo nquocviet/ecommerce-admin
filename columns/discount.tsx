@@ -2,8 +2,10 @@ import React from 'react'
 import { ActionIcon, Badge, Flex, Menu } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { Copy, DotsThree, Lock, NotePencil, Trash } from '@phosphor-icons/react'
+import Link from 'next/link'
 
 import { Dots } from '@/components'
+import { ROUTES } from '@/constants/routes'
 import { ModalDeleteDiscount } from '@/page-components/discounts/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { DiscountEntity } from '@/types/discount'
@@ -25,7 +27,16 @@ const DiscountActions = ({ id }: DiscountActionsProps) => {
 					</ActionIcon>
 				</Menu.Target>
 				<Menu.Dropdown>
-					<Menu.Item icon={<NotePencil size={20} />}>Edit</Menu.Item>
+					<Menu.Item
+						component={Link}
+						href={{
+							pathname: ROUTES.DISCOUNT_DETAILS,
+							query: { id },
+						}}
+						icon={<NotePencil size={20} />}
+					>
+						Edit
+					</Menu.Item>
 					<Menu.Item icon={<Lock size={20} />}>Unpublish</Menu.Item>
 					<Menu.Item icon={<Copy size={20} />}>Duplicate</Menu.Item>
 					<Menu.Item
