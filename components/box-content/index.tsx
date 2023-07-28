@@ -5,6 +5,7 @@ interface BoxContentProps {
 	title: ReactNode
 	description: ReactNode
 	lastItem?: boolean
+	titleClassName?: string
 	className?: string
 }
 
@@ -12,12 +13,15 @@ const BoxContent = ({
 	title,
 	description,
 	lastItem,
+	titleClassName,
 	className,
 }: BoxContentProps) => {
 	return (
 		<Flex align="stretch" className={clsx('text-sm', className)}>
 			<div>
-				<Text className="mb-2 text-gray-500">{title}</Text>
+				<Text className={clsx('mb-2 text-gray-500', titleClassName)}>
+					{title}
+				</Text>
 				<Text className="text-gray-800">{description}</Text>
 			</div>
 			{!lastItem && (

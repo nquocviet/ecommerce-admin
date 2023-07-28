@@ -11,6 +11,7 @@ export const ROUTES = {
 	CUSTOMER_DETAILS: '/customers/[id]',
 	CUSTOMER_GROUP_DETAILS: '/customers/groups/[id]',
 	DISCOUNTS: '/discounts',
+	DISCOUNT_DETAILS: '/discounts/[id]',
 	GIFT_CARDS: '/gift-cards',
 	GIFT_CARD_MANAGE: '/gift-cards/manage',
 	GIFT_CARD_DETAILS: '/gift-cards/[id]',
