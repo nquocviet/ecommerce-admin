@@ -1,5 +1,5 @@
 import React from 'react'
-import { ActionIcon, Button, Flex, Menu, Paper } from '@mantine/core'
+import { ActionIcon, Button, Flex, Menu } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import {
 	DotsThree,
@@ -9,7 +9,7 @@ import {
 } from '@phosphor-icons/react'
 
 import { SALE_CHANNEL_COLUMNS } from '@/columns/sale-channel'
-import { Dots, PageTitle, Table } from '@/components'
+import { Dots, PageTitle, Paper, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useProducts } from '@/lib/product'
 import {
@@ -29,7 +29,7 @@ const ChannelDetails = () => {
 	const { data, isLoading } = useProducts()
 
 	return (
-		<Paper shadow="xs" p="xl" className="h-full">
+		<Paper className="h-full">
 			<PageTitle
 				title="Default Sales Channel"
 				size="sm"

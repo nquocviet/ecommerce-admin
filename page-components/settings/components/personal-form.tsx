@@ -1,16 +1,8 @@
 import React from 'react'
-import {
-	Avatar,
-	Badge,
-	Button,
-	Divider,
-	Flex,
-	Paper,
-	Text,
-} from '@mantine/core'
+import { Avatar, Badge, Button, Divider, Flex, Text } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 
-import { PageTitle } from '@/components'
+import { PageTitle, Paper } from '@/components'
 import { STORE_NAME } from '@/constants/common'
 import {
 	ModalEditInformation,
@@ -28,7 +20,7 @@ const PersonalForm = () => {
 	] = useDisclosure(false)
 
 	return (
-		<Paper shadow="xs" p="xl">
+		<Paper>
 			<Flex direction="column" align="stretch" gap={32}>
 				<PageTitle
 					title="Personal information"

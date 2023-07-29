@@ -1,18 +1,10 @@
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import {
-	ActionIcon,
-	Box,
-	Button,
-	Divider,
-	Flex,
-	Menu,
-	Paper,
-} from '@mantine/core'
+import { ActionIcon, Box, Button, Divider, Flex, Menu } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { Copy, DotsThree, Trash } from '@phosphor-icons/react'
 
-import { PageTitle, TextInput } from '@/components'
+import { PageTitle, Paper, TextInput } from '@/components'
 import { ModalDeleteReason } from '@/page-components/settings/components'
 import { ReturnReasonEntity } from '@/types/return-reason'
 
@@ -39,7 +31,7 @@ const ReasonDetails = ({ reasonSelected }: TDetailsProps) => {
 	}, [reasonSelected, setValue])
 
 	return (
-		<Paper shadow="xs" p="xl" className="h-full">
+		<Paper className="h-full">
 			<PageTitle
 				title="Details"
 				description={reasonSelected?.value}

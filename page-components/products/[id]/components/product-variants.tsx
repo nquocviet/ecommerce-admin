@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react'
-import { ActionIcon, Flex, Menu, Paper, Text } from '@mantine/core'
+import { ActionIcon, Flex, Menu, Text } from '@mantine/core'
 import { DotsThree, GearSix, NotePencil, Plus } from '@phosphor-icons/react'
 
 import { PRODUCT_VARIANT_COLUMNS } from '@/columns/product'
-import { Chip, PageTitle, Table } from '@/components'
+import { Chip, PageTitle, Paper, Table } from '@/components'
 import { useProductDetails } from '@/lib/product'
 import { ProductOptionEntity } from '@/types/product'
 
@@ -43,7 +43,7 @@ const ProductVariants = () => {
 	}, [data, options])
 
 	return (
-		<Paper shadow="xs" p="xl">
+		<Paper>
 			<PageTitle
 				order={2}
 				size="sm"

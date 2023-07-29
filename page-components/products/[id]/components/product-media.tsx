@@ -1,14 +1,14 @@
 import React from 'react'
-import { Button, Grid, Image, Paper } from '@mantine/core'
+import { Button, Grid, Image } from '@mantine/core'
 
-import { PageTitle } from '@/components'
+import { PageTitle, Paper } from '@/components'
 import { useProductDetails } from '@/lib/product'
 
 const ProductMedia = () => {
 	const { data } = useProductDetails()
 
 	return (
-		<Paper shadow="xs" p="xl">
+		<Paper>
 			<PageTitle
 				order={2}
 				size="sm"

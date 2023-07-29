@@ -1,5 +1,5 @@
 import React from 'react'
-import { ActionIcon, Badge, Button, Flex, Menu, Paper } from '@mantine/core'
+import { ActionIcon, Badge, Button, Flex, Menu } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import {
 	CurrencyDollar,
@@ -8,7 +8,14 @@ import {
 	NotePencil,
 } from '@phosphor-icons/react'
 
-import { BoxContent, Dots, JSONView, Loader, PageTitle } from '@/components'
+import {
+	BoxContent,
+	Dots,
+	JSONView,
+	Loader,
+	PageTitle,
+	Paper,
+} from '@/components'
 import { useGiftCardDetails } from '@/lib/gift-card'
 import {
 	ModalEditGiftCardDetails,
@@ -31,7 +38,7 @@ const GiftCardDetails = () => {
 
 	return (
 		<>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					order={2}
 					size="sm"
@@ -99,7 +106,7 @@ const GiftCardDetails = () => {
 					</Badge>
 				</Flex>
 			</Paper>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle order={2} size="sm" title="Raw gift card" />
 				<JSONView data={data} className="mt-4" />
 			</Paper>

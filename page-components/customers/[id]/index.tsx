@@ -1,5 +1,5 @@
 import React from 'react'
-import { ActionIcon, Avatar, Box, Flex, Menu, Paper } from '@mantine/core'
+import { ActionIcon, Avatar, Box, Flex, Menu } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 import { useRouter } from 'next/router'
@@ -11,6 +11,7 @@ import {
 	JSONView,
 	Loader,
 	PageTitle,
+	Paper,
 	Table,
 } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
@@ -38,7 +39,7 @@ const CustomerDetails = () => {
 
 	return (
 		<>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<Box className="-mx-6 mb-16 -mt-6 overflow-hidden rounded-t">
 					<Box className="h-32 w-full bg-gradient-to-b from-primary-300 to-white"></Box>
 				</Box>
@@ -101,7 +102,7 @@ const CustomerDetails = () => {
 					/>
 				</Flex>
 			</Paper>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					order={2}
 					size="sm"
@@ -127,7 +128,7 @@ const CustomerDetails = () => {
 					highlightOnHover
 				/>
 			</Paper>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle order={2} size="sm" title="Raw customer" />
 				<JSONView data={data} className="mt-4" />
 			</Paper>
