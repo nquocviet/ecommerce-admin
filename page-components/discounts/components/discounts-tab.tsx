@@ -1,12 +1,13 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Button, Flex } from '@mantine/core'
-import { FunnelSimple } from '@phosphor-icons/react'
+import { Flex } from '@mantine/core'
 
 import { DISCOUNT_COLUMNS } from '@/columns/discount'
-import { InputSearch, Table } from '@/components'
+import { FilterPopover, InputSearch, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useDiscounts } from '@/lib/discount'
+
+const filterOptions = [{ value: 'types', label: 'Types' }]
 
 const DiscountsTab = () => {
 	const { data, isLoading } = useDiscounts()
@@ -16,14 +17,7 @@ const DiscountsTab = () => {
 		<>
 			<form>
 				<Flex justify="space-between" align="center" className="mb-4">
-					<Button
-						color="gray"
-						variant="outline"
-						size="xs"
-						rightIcon={<FunnelSimple size={16} />}
-					>
-						Filters
-					</Button>
+					<FilterPopover filterOptions={filterOptions} />
 					<InputSearch name="search" control={control} />
 				</Flex>
 			</form>

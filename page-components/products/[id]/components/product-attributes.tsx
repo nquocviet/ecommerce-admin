@@ -1,8 +1,8 @@
 import React from 'react'
-import { ActionIcon, Flex, Menu, Paper, Text } from '@mantine/core'
+import { ActionIcon, Flex, Menu, Text } from '@mantine/core'
 import { DotsThree, NotePencil } from '@phosphor-icons/react'
 
-import { PageTitle } from '@/components'
+import { PageTitle, Paper } from '@/components'
 import { useProductDetails } from '@/lib/product'
 import { getValue } from '@/utils'
 
@@ -10,7 +10,7 @@ const ProductAttributes = () => {
 	const { data } = useProductDetails()
 
 	return (
-		<Paper shadow="xs" p="xl">
+		<Paper>
 			<PageTitle
 				order={2}
 				size="sm"

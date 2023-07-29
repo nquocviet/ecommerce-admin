@@ -1,5 +1,5 @@
 import React from 'react'
-import { ActionIcon, Button, Flex, Grid, Menu, Paper } from '@mantine/core'
+import { ActionIcon, Button, Flex, Grid, Menu } from '@mantine/core'
 import { DotsThree, NotePencil, Plus, Trash } from '@phosphor-icons/react'
 
 import {
@@ -9,6 +9,7 @@ import {
 	ListBoxItem,
 	Loader,
 	PageTitle,
+	Paper,
 } from '@/components'
 import { FULL_DATE_TIME_OPTIONS } from '@/constants/common'
 import { useDiscountDetails } from '@/lib/discount'
@@ -21,7 +22,7 @@ const DiscountDetails = () => {
 
 	return (
 		<>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					order={2}
 					size="sm"
@@ -83,7 +84,7 @@ const DiscountDetails = () => {
 					/>
 				</Flex>
 			</Paper>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					order={2}
 					size="sm"
@@ -121,7 +122,7 @@ const DiscountDetails = () => {
 					</Grid.Col>
 				</Grid>
 			</Paper>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					order={2}
 					size="sm"
@@ -157,7 +158,7 @@ const DiscountDetails = () => {
 					</Grid.Col>
 				</Grid>
 			</Paper>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle order={2} size="sm" title="Raw discount" />
 				<JSONView data={data} className="mt-4" />
 			</Paper>

@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { Button, Flex, Paper } from '@mantine/core'
+import { Button, Flex } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { Plus } from '@phosphor-icons/react'
 
-import { PageTitle, RadioBox, RadioGroup } from '@/components'
+import { PageTitle, Paper, RadioBox, RadioGroup } from '@/components'
 import { useReturnReasons } from '@/lib/return-reasons'
 import { ModalAddNewReason } from '@/page-components/settings/components'
 import { ReturnReasonEntity } from '@/types/return-reason'
@@ -33,7 +33,7 @@ const Reasons = ({ reasonSelected, setReasonSelected }: TReasonsProps) => {
 	}
 
 	return (
-		<Paper shadow="xs" p="xl" className="h-full">
+		<Paper className="h-full">
 			<PageTitle
 				title="Return Reasons"
 				description="Manage reasons for returned items"

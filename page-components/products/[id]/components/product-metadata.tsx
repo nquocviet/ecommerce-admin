@@ -1,14 +1,13 @@
 import React from 'react'
-import { Paper } from '@mantine/core'
 
-import { JSONView, PageTitle } from '@/components'
+import { JSONView, PageTitle, Paper } from '@/components'
 import { useProductDetails } from '@/lib/product'
 
 const ProductMetadata = () => {
 	const { data } = useProductDetails()
 
 	return (
-		<Paper shadow="xs" p="xl">
+		<Paper>
 			<PageTitle order={2} size="sm" title="Raw product" />
 			<JSONView data={data} className="mt-4" />
 		</Paper>

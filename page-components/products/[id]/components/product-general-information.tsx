@@ -1,5 +1,5 @@
 import React from 'react'
-import { ActionIcon, Button, Flex, Menu, Paper, Text } from '@mantine/core'
+import { ActionIcon, Button, Flex, Menu, Text } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import {
 	DotsThree,
@@ -8,7 +8,7 @@ import {
 	TreeStructure,
 } from '@phosphor-icons/react'
 
-import { Chip, Dots, PageTitle } from '@/components'
+import { Chip, Dots, PageTitle, Paper } from '@/components'
 import { useProductDetails } from '@/lib/product'
 import { useSalesChannels } from '@/lib/sales-channel'
 import { ModalEditProductGeneralInformation } from '@/page-components/products/[id]/components'
@@ -20,7 +20,7 @@ const ProductGeneralInformation = () => {
 	const { data: salesChannels } = useSalesChannels()
 
 	return (
-		<Paper shadow="xs" p="xl">
+		<Paper>
 			<PageTitle
 				order={2}
 				size="sm"

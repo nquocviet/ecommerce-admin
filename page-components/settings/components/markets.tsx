@@ -1,9 +1,9 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { ActionIcon, Flex, Paper, Text } from '@mantine/core'
+import { ActionIcon, Flex, Text } from '@mantine/core'
 import { Plus } from '@phosphor-icons/react'
 
-import { PageTitle, RadioBox, RadioGroup } from '@/components'
+import { PageTitle, Paper, RadioBox, RadioGroup } from '@/components'
 
 const defaultValues = {
 	market: 'eu',
@@ -16,7 +16,7 @@ const Markets = () => {
 	const marketSelected = watch('market')
 
 	return (
-		<Paper shadow="xs" p="xl" className="h-full">
+		<Paper className="h-full">
 			<PageTitle
 				title="Regions"
 				description="Manage the markets that you will operate within."

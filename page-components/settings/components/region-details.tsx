@@ -1,21 +1,13 @@
 import React from 'react'
-import {
-	ActionIcon,
-	Button,
-	Flex,
-	Menu,
-	Paper,
-	Text,
-	Title,
-} from '@mantine/core'
+import { ActionIcon, Button, Flex, Menu, Text, Title } from '@mantine/core'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 
-import { PageTitle, ShippingOption } from '@/components'
+import { PageTitle, Paper, ShippingOption } from '@/components'
 
 const RegionDetails = () => {
 	return (
 		<Flex direction="column" align="stretch" gap={16} className="h-full">
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					title="EU"
 					size="sm"
@@ -69,7 +61,7 @@ const RegionDetails = () => {
 					</Flex>
 				</Flex>
 			</Paper>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					title="Shipping Options"
 					description="Enter specifics about available regional shipment methods."
@@ -87,7 +79,7 @@ const RegionDetails = () => {
 					/>
 				</Flex>
 			</Paper>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					title="Return Shipping Options"
 					description="Enter specifics about available regional return shipment methods."

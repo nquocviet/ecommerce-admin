@@ -1,11 +1,11 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { ActionIcon, Button, Flex, Menu, Paper } from '@mantine/core'
+import { ActionIcon, Button, Flex, Menu } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, NotePencil, Plus, Trash } from '@phosphor-icons/react'
 
 import { CUSTOMER_GROUP_COLUMNS } from '@/columns/customer-group'
-import { InputSearch, Loader, PageTitle, Table } from '@/components'
+import { InputSearch, Loader, PageTitle, Paper, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useCustomerGroupDetails } from '@/lib/customer'
 import {
@@ -34,7 +34,7 @@ const CustomerGroups = () => {
 
 	return (
 		<>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					order={2}
 					size="sm"
@@ -67,7 +67,7 @@ const CustomerGroups = () => {
 					}
 				/>
 			</Paper>
-			<Paper shadow="xs" p="xl" className="grow">
+			<Paper className="grow">
 				<Flex direction="column" align="stretch" className="h-full">
 					<PageTitle
 						order={2}

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Box, Button, Divider, Flex, Paper, Title } from '@mantine/core'
+import { Box, Button, Divider, Flex, Title } from '@mantine/core'
 
-import { PageTitle, TextInput } from '@/components'
+import { PageTitle, Paper, TextInput } from '@/components'
 import { APP_NAME, STORE_NAME } from '@/constants/common'
 
 const defaultValues = {
@@ -18,7 +18,7 @@ const StoreForm = () => {
 	})
 
 	return (
-		<Paper shadow="xs" p="xl">
+		<Paper>
 			<PageTitle
 				title="Store Details"
 				description="Manage your business details"

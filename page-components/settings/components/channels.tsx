@@ -1,10 +1,10 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { ActionIcon, Flex, Paper } from '@mantine/core'
+import { ActionIcon, Flex } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { Plus } from '@phosphor-icons/react'
 
-import { PageTitle, RadioBox, RadioGroup } from '@/components'
+import { PageTitle, Paper, RadioBox, RadioGroup } from '@/components'
 import { STORE_NAME } from '@/constants/common'
 import { ModalAddNewSalesChannel } from '@/page-components/settings/components'
 
@@ -20,7 +20,7 @@ const Channels = () => {
 	const channelSelected = watch('channel')
 
 	return (
-		<Paper shadow="xs" p="xl" className="h-full">
+		<Paper className="h-full">
 			<PageTitle
 				title="Sales channels"
 				description="Control which products are available in which channels"

@@ -1,10 +1,10 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { ActionIcon, Flex, Menu, Paper } from '@mantine/core'
+import { ActionIcon, Flex, Menu } from '@mantine/core'
 import { DotsThree, GearSix } from '@phosphor-icons/react'
 import Link from 'next/link'
 
-import { PageTitle, RadioBox, RadioGroup } from '@/components'
+import { PageTitle, Paper, RadioBox, RadioGroup } from '@/components'
 import { ROUTES } from '@/constants/routes'
 
 const defaultValues = {
@@ -18,7 +18,7 @@ const Regions = () => {
 	const regionSelected = watch('region')
 
 	return (
-		<Paper shadow="xs" p="xl" className="h-full">
+		<Paper className="h-full">
 			<PageTitle
 				title="Regions"
 				description="Select the region you wish to manage taxes for"

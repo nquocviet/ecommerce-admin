@@ -1,19 +1,19 @@
 import React from 'react'
-import { Button, Flex, Paper } from '@mantine/core'
+import { Button, Flex } from '@mantine/core'
 
-import { PageTitle } from '@/components'
+import { PageTitle, Paper } from '@/components'
 
 const StoreCurrencies = () => {
 	return (
 		<Flex direction="column" align="stretch" gap={16} className="h-full">
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					title="Currencies"
 					description="Manage the markets that you will operate within."
 					size="sm"
 				/>
 			</Paper>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					title="Store currencies"
 					description="All the currencies available in your store."

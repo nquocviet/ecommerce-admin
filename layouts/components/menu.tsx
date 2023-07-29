@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useMemo } from 'react'
 import { clsx, Collapse, Divider, Flex, NavLink } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { CaretRight } from '@phosphor-icons/react'
@@ -21,24 +21,18 @@ const SingleMenu = ({
 	toggle,
 	className,
 }: SingleMenuProps) => {
-	const [active, setActive] = useState(false)
 	const { pathname } = useRouter()
 	const domain = pathname.split('/')[1]
-
-	useEffect(() => {
+	const active = useMemo(() => {
 		if (href === ROUTES.HOME && domain === '') {
-			setActive(true)
-			return
+			return true
 		}
-
 		if (domain && href.includes(domain)) {
-			setActive(true)
 			toggle?.()
-			return
+			return true
 		}
-
-		setActive(false)
-	}, [pathname, domain, href, setActive, toggle])
+		return false
+	}, [domain, href, toggle])
 
 	return (
 		<NavLink

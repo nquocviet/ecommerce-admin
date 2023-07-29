@@ -4,6 +4,11 @@ export enum RolesEnum {
 	DEVELOPER = 'DEVELOPER',
 }
 
+export type OptionType = {
+	label: string
+	value: string | number
+}
+
 export type BaseEntity = {
 	id: string
 	created_at: Date

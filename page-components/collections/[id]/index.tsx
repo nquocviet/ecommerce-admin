@@ -1,11 +1,18 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { ActionIcon, Button, Flex, Menu, Paper } from '@mantine/core'
+import { ActionIcon, Button, Flex, Menu } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 
 import { COLLECTION_DETAILS_COLUMNS } from '@/columns/collection-details'
-import { InputSearch, JSONView, Loader, PageTitle, Table } from '@/components'
+import {
+	InputSearch,
+	JSONView,
+	Loader,
+	PageTitle,
+	Paper,
+	Table,
+} from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useCollectionDetails } from '@/lib/collection'
 import {
@@ -34,7 +41,7 @@ const CollectionDetails = () => {
 
 	return (
 		<>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					order={2}
 					size="sm"
@@ -69,7 +76,7 @@ const CollectionDetails = () => {
 				/>
 				<JSONView title="Metadata" data={data?.metadata} className="mt-6" />
 			</Paper>
-			<Paper shadow="xs" p="xl" className="min-h-[50vh] grow">
+			<Paper className="min-h-[50vh] grow">
 				<Flex direction="column" align="stretch" className="h-full">
 					<PageTitle
 						order={2}

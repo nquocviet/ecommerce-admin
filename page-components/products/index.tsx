@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { Paper, Tabs } from '@mantine/core'
+import { Tabs } from '@mantine/core'
 
+import { Paper } from '@/components'
 import { PRODUCT_TABS } from '@/constants/tabs'
 import { useActiveTab } from '@/hooks'
 import {
@@ -19,7 +20,7 @@ const Products = () => {
 
 	return (
 		<>
-			<Paper shadow="xs" p="xl" className="grow">
+			<Paper className="grow">
 				<Tabs
 					value={activeTab}
 					onTabChange={(tab) => setActiveTab(tab)}

@@ -1,15 +1,15 @@
 import React from 'react'
-import { ActionIcon, Button, Flex, Grid, Image, Paper } from '@mantine/core'
+import { ActionIcon, Button, Flex, Grid, Image } from '@mantine/core'
 import { Trash } from '@phosphor-icons/react'
 
-import { PageTitle } from '@/components'
+import { PageTitle, Paper } from '@/components'
 import { useProductDetails } from '@/lib/product'
 
 const ProductThumbnail = () => {
 	const { data } = useProductDetails()
 
 	return (
-		<Paper shadow="xs" p="xl">
+		<Paper>
 			<PageTitle
 				order={2}
 				size="sm"

@@ -1,14 +1,6 @@
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import {
-	ActionIcon,
-	Button,
-	Flex,
-	Grid,
-	Menu,
-	Paper,
-	Tooltip,
-} from '@mantine/core'
+import { ActionIcon, Button, Flex, Grid, Menu, Tooltip } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, EyeSlash, Info, Plus, Trash } from '@phosphor-icons/react'
 
@@ -18,6 +10,7 @@ import {
 	DropzoneImage,
 	Loader,
 	PageTitle,
+	Paper,
 	Select,
 	Table,
 	Textarea,
@@ -56,7 +49,7 @@ const GiftCardManage = () => {
 
 	return (
 		<>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					order={2}
 					size="sm"
@@ -163,7 +156,7 @@ const GiftCardManage = () => {
 					</Grid.Col>
 				</Grid>
 			</Paper>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					order={2}
 					size="sm"
@@ -187,7 +180,7 @@ const GiftCardManage = () => {
 					className="mt-6"
 				/>
 			</Paper>
-			<Paper shadow="xs" p="xl">
+			<Paper>
 				<PageTitle
 					order={2}
 					size="sm"
