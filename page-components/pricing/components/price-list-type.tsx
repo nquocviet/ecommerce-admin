@@ -15,7 +15,7 @@ const PriceListType = () => {
 			</Text>
 			<RadioGroup control={control} name="type">
 				<Grid>
-					<Grid.Col span={6}>
+					<Grid.Col sm={6}>
 						<RadioBox
 							value="sale"
 							valueSelected={typeSelected}
@@ -24,7 +24,7 @@ const PriceListType = () => {
 							truncate
 						/>
 					</Grid.Col>
-					<Grid.Col span={6}>
+					<Grid.Col sm={6}>
 						<RadioBox
 							value="override"
 							valueSelected={typeSelected}

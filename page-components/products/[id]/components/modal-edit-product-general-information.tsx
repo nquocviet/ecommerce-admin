@@ -62,7 +62,7 @@ const ModalEditProductGeneralInformation = ({
 				>
 					<div>
 						<Grid>
-							<Grid.Col span={6}>
+							<Grid.Col xs={6}>
 								<TextInput
 									name="title"
 									control={control}
@@ -71,7 +71,7 @@ const ModalEditProductGeneralInformation = ({
 									required
 								/>
 							</Grid.Col>
-							<Grid.Col span={6}>
+							<Grid.Col xs={6}>
 								<TextInput
 									name="subtitle"
 									control={control}
@@ -88,7 +88,7 @@ const ModalEditProductGeneralInformation = ({
 						</div>
 					</div>
 					<Grid>
-						<Grid.Col span={6}>
+						<Grid.Col xs={6}>
 							<TextInput
 								name="handle"
 								control={control}
@@ -98,7 +98,7 @@ const ModalEditProductGeneralInformation = ({
 								required
 							/>
 						</Grid.Col>
-						<Grid.Col span={6}>
+						<Grid.Col xs={6}>
 							<TextInput
 								name="material"
 								control={control}
@@ -127,7 +127,7 @@ const ModalEditProductGeneralInformation = ({
 							Organize product
 						</Text>
 						<Grid>
-							<Grid.Col span={6}>
+							<Grid.Col xs={6}>
 								<Select
 									name="type"
 									control={control}
@@ -136,7 +136,7 @@ const ModalEditProductGeneralInformation = ({
 									data={[]}
 								/>
 							</Grid.Col>
-							<Grid.Col span={6}>
+							<Grid.Col xs={6}>
 								<Select
 									name="collection"
 									control={control}

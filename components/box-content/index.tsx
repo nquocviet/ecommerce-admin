@@ -28,7 +28,7 @@ const BoxContent = ({
 				<Divider
 					orientation="vertical"
 					color="var(--gray-200)"
-					className="mx-6"
+					className="mx-6 hidden sm:block"
 				/>
 			)}
 		</Flex>

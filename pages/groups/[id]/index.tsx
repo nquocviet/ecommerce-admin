@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react'
 import { ROUTES } from '@/constants/routes'
 import { CUSTOMER_TABS } from '@/constants/tabs'
 import { DetailsLayout } from '@/layouts'
-import CustomerGroups from '@/page-components/customers/groups/[id]'
+import CustomerGroups from '@/page-components/groups/[id]'
 import { NextPageWithLayout } from '@/pages/_app'
 
 const CustomerGroupsPage: NextPageWithLayout = () => {

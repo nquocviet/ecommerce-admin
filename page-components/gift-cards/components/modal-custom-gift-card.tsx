@@ -30,7 +30,7 @@ const ModalCustomGiftCard = (props: ModalOpenedProps) => {
 					<Flex direction="column" align="stretch" gap={16}>
 						<Text className="font-semibold">Value</Text>
 						<Grid>
-							<Grid.Col span={5}>
+							<Grid.Col xs={5}>
 								<Select
 									name="region"
 									control={control}
@@ -41,7 +41,7 @@ const ModalCustomGiftCard = (props: ModalOpenedProps) => {
 									label="Region"
 								/>
 							</Grid.Col>
-							<Grid.Col span={2}>
+							<Grid.Col xs={2}>
 								<TextInput
 									name="currency"
 									control={control}
@@ -49,7 +49,7 @@ const ModalCustomGiftCard = (props: ModalOpenedProps) => {
 									readOnly
 								/>
 							</Grid.Col>
-							<Grid.Col span={5}>
+							<Grid.Col xs={5}>
 								<NumberInput
 									name="amount"
 									control={control}

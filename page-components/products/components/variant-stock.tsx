@@ -27,7 +27,7 @@ const VariantStock = () => {
 				className="mt-6"
 			/>
 			<Grid className="mt-6">
-				<Grid.Col span={6}>
+				<Grid.Col xs={6}>
 					<TextInput
 						name="sku"
 						control={control}
@@ -35,7 +35,7 @@ const VariantStock = () => {
 						placeholder="SUN-G, JK1234..."
 					/>
 				</Grid.Col>
-				<Grid.Col span={6}>
+				<Grid.Col xs={6}>
 					<NumberInput
 						name="quantity"
 						control={control}
@@ -43,7 +43,7 @@ const VariantStock = () => {
 						placeholder="100..."
 					/>
 				</Grid.Col>
-				<Grid.Col span={6}>
+				<Grid.Col xs={6}>
 					<TextInput
 						name="ean"
 						control={control}
@@ -51,7 +51,7 @@ const VariantStock = () => {
 						placeholder="123456789..."
 					/>
 				</Grid.Col>
-				<Grid.Col span={6}>
+				<Grid.Col xs={6}>
 					<TextInput
 						name="upc"
 						control={control}
@@ -59,7 +59,7 @@ const VariantStock = () => {
 						placeholder="024681012..."
 					/>
 				</Grid.Col>
-				<Grid.Col span={6}>
+				<Grid.Col xs={6}>
 					<TextInput
 						name="barcode"
 						control={control}

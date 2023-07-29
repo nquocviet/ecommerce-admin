@@ -23,7 +23,7 @@ const DiscountGeneral = () => {
 					required
 				/>
 			</Grid.Col>
-			<Grid.Col span={6}>
+			<Grid.Col sm={6}>
 				<TextInput
 					name="code"
 					control={control}
@@ -32,7 +32,7 @@ const DiscountGeneral = () => {
 					required
 				/>
 			</Grid.Col>
-			<Grid.Col span={6}>
+			<Grid.Col sm={6}>
 				<NumberInput
 					name="percentage"
 					control={control}

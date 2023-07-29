@@ -38,6 +38,7 @@ export const ORDER_COLUMNS: MantineDataTableColumn<OrderEntity> = [
 		accessor: 'created_at',
 		title: 'Date added',
 		width: '10%',
+		cellsClassName: 'whitespace-nowrap',
 		render: ({ created_at }) => {
 			return formatDate(created_at)
 		},
@@ -65,6 +66,7 @@ export const ORDER_COLUMNS: MantineDataTableColumn<OrderEntity> = [
 		accessor: 'fulfillment_status',
 		title: 'Fulfillment',
 		width: '10%',
+		cellsClassName: 'whitespace-nowrap',
 		render: ({ fulfillment_status }) => {
 			return getValue(fulfillment_status)
 		},
@@ -98,7 +100,7 @@ export const ORDER_COLUMNS: MantineDataTableColumn<OrderEntity> = [
 		width: '10%',
 		render: ({ total, currency_code }) => {
 			return (
-				<Flex align="center" gap={8}>
+				<Flex align="center" className="whitespace-nowrap" gap={8}>
 					{formatMoney(total, currency_code)}
 					<Text className="text-gray-400" sx={{ textTransform: 'uppercase' }}>
 						{currency_code}

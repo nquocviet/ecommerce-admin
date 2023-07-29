@@ -1,5 +1,12 @@
 import React, { useMemo } from 'react'
-import { clsx, Collapse, Divider, Flex, NavLink } from '@mantine/core'
+import {
+	clsx,
+	Collapse,
+	Divider,
+	Flex,
+	MediaQuery,
+	NavLink,
+} from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { CaretRight } from '@phosphor-icons/react'
 import Link from 'next/link'
@@ -7,6 +14,7 @@ import { useRouter } from 'next/router'
 
 import { MENU_LIST, MenuItemType } from '@/constants/menu'
 import { ROUTES } from '@/constants/routes'
+import { AppSearch } from '@/layouts/components'
 import { hasChildren } from '@/utils'
 
 interface SingleMenuProps extends MenuItemType {
@@ -17,6 +25,7 @@ interface SingleMenuProps extends MenuItemType {
 const SingleMenu = ({
 	label,
 	href,
+	subPaths,
 	icon: Icon,
 	toggle,
 	className,
@@ -27,12 +36,16 @@ const SingleMenu = ({
 		if (href === ROUTES.HOME && domain === '') {
 			return true
 		}
+		if (domain && subPaths && subPaths.some((path) => path.includes(domain))) {
+			toggle?.()
+			return true
+		}
 		if (domain && href.includes(domain)) {
 			toggle?.()
 			return true
 		}
 		return false
-	}, [domain, href, toggle])
+	}, [domain, href, subPaths, toggle])
 
 	return (
 		<NavLink
@@ -87,6 +100,9 @@ const MenuItem = (props: MenuItemType) => {
 const Menu = () => {
 	return (
 		<Flex direction="column" align="stretch" gap={6} className="font-medium">
+			<MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+				<AppSearch className="mb-4" />
+			</MediaQuery>
 			{MENU_LIST.map((menu, index) => {
 				const isLast = index === MENU_LIST.length - 1
 

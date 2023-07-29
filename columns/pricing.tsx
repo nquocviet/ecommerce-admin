@@ -116,7 +116,7 @@ export const PRICING_PRODUCT_COLUMNS: MantineDataTableColumn<ProductEntity> = [
 			const color = status === 'published' ? 'green' : 'gray'
 
 			return (
-				<Flex align="center" gap={8}>
+				<Flex align="center" gap={8} className="whitespace-nowrap">
 					<Dots size={6} color={color} />
 					{toCapitalize(status)}
 				</Flex>

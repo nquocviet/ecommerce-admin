@@ -28,11 +28,14 @@ const ShippingOption = ({
 			align="center"
 			gap={16}
 			className={clsx(
-				'rounded-lg border border-solid border-gray-200 p-4',
+				'relative rounded-lg border border-solid border-gray-200 p-4',
 				className
 			)}
 		>
-			<Flex align="center" gap={16}>
+			<Flex
+				gap={16}
+				className="flex-col items-start sm:flex-row sm:items-center"
+			>
 				<ThemeIcon
 					variant="outlined"
 					color="gray"
@@ -48,7 +51,11 @@ const ShippingOption = ({
 					)}
 				</Box>
 			</Flex>
-			<Flex align="center" gap={16}>
+			<Flex
+				align="center"
+				gap={16}
+				className="absolute top-4 right-4 sm:static"
+			>
 				<Badge
 					color="green"
 					size="lg"

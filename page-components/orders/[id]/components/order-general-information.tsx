@@ -40,7 +40,7 @@ const OrderGeneralInformation = () => {
 					</Menu>
 				}
 			/>
-			<Flex className="mt-6">
+			<Flex className="mt-6 flex-col gap-4 sm:flex-row sm:gap-0">
 				<BoxContent title="Email" description={data?.email} />
 				<BoxContent title="Phone" description={data?.customer.phone} />
 				<BoxContent

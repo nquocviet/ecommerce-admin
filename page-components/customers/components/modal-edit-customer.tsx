@@ -29,7 +29,7 @@ const ModalEditCustomer = (props: ModalOpenedProps) => {
 					<Flex direction="column" align="stretch" gap={12}>
 						<Text className="text-sm font-semibold">General</Text>
 						<Grid>
-							<Grid.Col span={6}>
+							<Grid.Col xs={6}>
 								<TextInput
 									name="first_name"
 									control={control}
@@ -37,7 +37,7 @@ const ModalEditCustomer = (props: ModalOpenedProps) => {
 									placeholder="Lebron"
 								/>
 							</Grid.Col>
-							<Grid.Col span={6}>
+							<Grid.Col xs={6}>
 								<TextInput
 									name="last_name"
 									control={control}
@@ -50,7 +50,7 @@ const ModalEditCustomer = (props: ModalOpenedProps) => {
 					<Flex direction="column" align="stretch" gap={12}>
 						<Text className="text-sm font-semibold">Contact</Text>
 						<Grid>
-							<Grid.Col span={6}>
+							<Grid.Col xs={6}>
 								<TextInput
 									name="email"
 									control={control}
@@ -58,7 +58,7 @@ const ModalEditCustomer = (props: ModalOpenedProps) => {
 									placeholder="example@domain.com"
 								/>
 							</Grid.Col>
-							<Grid.Col span={6}>
+							<Grid.Col xs={6}>
 								<TextInput
 									name="phone"
 									control={control}

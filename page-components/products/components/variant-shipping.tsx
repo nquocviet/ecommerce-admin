@@ -26,7 +26,7 @@ const VariantShipping = () => {
 						Configure to calculate the most accurate shipping rates.
 					</Text>
 					<Grid>
-						<Grid.Col span={3}>
+						<Grid.Col span={6} sm={3}>
 							<NumberInput
 								name="width"
 								control={control}
@@ -34,7 +34,7 @@ const VariantShipping = () => {
 								placeholder="100..."
 							/>
 						</Grid.Col>
-						<Grid.Col span={3}>
+						<Grid.Col span={6} sm={3}>
 							<NumberInput
 								name="length"
 								control={control}
@@ -42,7 +42,7 @@ const VariantShipping = () => {
 								placeholder="100..."
 							/>
 						</Grid.Col>
-						<Grid.Col span={3}>
+						<Grid.Col span={6} sm={3}>
 							<NumberInput
 								name="height"
 								control={control}
@@ -50,7 +50,7 @@ const VariantShipping = () => {
 								placeholder="100..."
 							/>
 						</Grid.Col>
-						<Grid.Col span={3}>
+						<Grid.Col span={6} sm={3}>
 							<NumberInput
 								name="weight"
 								control={control}
@@ -66,7 +66,7 @@ const VariantShipping = () => {
 						Configure if you are shipping internationally.
 					</Text>
 					<Grid>
-						<Grid.Col span={6}>
+						<Grid.Col xs={6}>
 							<TextInput
 								name="mid_code"
 								control={control}
@@ -74,7 +74,7 @@ const VariantShipping = () => {
 								placeholder="XDSKLAD9999..."
 							/>
 						</Grid.Col>
-						<Grid.Col span={6}>
+						<Grid.Col xs={6}>
 							<TextInput
 								name="hs_code"
 								control={control}
@@ -82,7 +82,7 @@ const VariantShipping = () => {
 								placeholder="BDJSK39277W..."
 							/>
 						</Grid.Col>
-						<Grid.Col span={6}>
+						<Grid.Col xs={6}>
 							<Select
 								name="country"
 								control={control}

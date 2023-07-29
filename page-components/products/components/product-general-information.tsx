@@ -14,7 +14,7 @@ const ProductGeneralInformation = () => {
 			<Flex direction="column" align="stretch" gap={24} className="mt-6">
 				<div>
 					<Grid>
-						<Grid.Col span={6}>
+						<Grid.Col xs={6}>
 							<TextInput
 								name="title"
 								control={control}
@@ -23,7 +23,7 @@ const ProductGeneralInformation = () => {
 								required
 							/>
 						</Grid.Col>
-						<Grid.Col span={6}>
+						<Grid.Col xs={6}>
 							<TextInput
 								name="subtitle"
 								control={control}
@@ -40,7 +40,7 @@ const ProductGeneralInformation = () => {
 					</div>
 				</div>
 				<Grid>
-					<Grid.Col span={6}>
+					<Grid.Col xs={6}>
 						<TextInput
 							name="handle"
 							control={control}
@@ -60,7 +60,7 @@ const ProductGeneralInformation = () => {
 							textIcon="/"
 						/>
 					</Grid.Col>
-					<Grid.Col span={6}>
+					<Grid.Col xs={6}>
 						<TextInput
 							name="material"
 							control={control}

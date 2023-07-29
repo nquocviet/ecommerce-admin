@@ -100,7 +100,7 @@ export const DISCOUNT_COLUMNS: MantineDataTableColumn<DiscountEntity> = [
 			const text = is_disabled ? 'disabled' : 'active'
 
 			return (
-				<Flex align="center" gap={8}>
+				<Flex align="center" className="whitespace-nowrap" gap={8}>
 					<Dots size={6} color={color} />
 					{toCapitalize(text)}
 				</Flex>

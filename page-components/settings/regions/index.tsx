@@ -6,10 +6,10 @@ import { Markets, RegionDetails } from '@/page-components/settings/components'
 const Regions = () => {
 	return (
 		<Grid>
-			<Grid.Col span={4}>
+			<Grid.Col md={4}>
 				<Markets />
 			</Grid.Col>
-			<Grid.Col span={8}>
+			<Grid.Col md={8}>
 				<RegionDetails />
 			</Grid.Col>
 		</Grid>

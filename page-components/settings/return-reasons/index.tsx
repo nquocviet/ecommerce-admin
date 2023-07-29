@@ -10,13 +10,13 @@ const ReturnReasons = () => {
 
 	return (
 		<Grid>
-			<Grid.Col span={6}>
+			<Grid.Col md={6}>
 				<Reasons
 					reasonSelected={reasonSelected}
 					setReasonSelected={setReasonSelected}
 				/>
 			</Grid.Col>
-			<Grid.Col span={6}>
+			<Grid.Col md={6}>
 				<ReasonDetails reasonSelected={reasonSelected} />
 			</Grid.Col>
 		</Grid>

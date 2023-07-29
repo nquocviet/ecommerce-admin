@@ -20,7 +20,7 @@ const OrderDetails = () => {
 	return (
 		<>
 			<Grid>
-				<Grid.Col span={8}>
+				<Grid.Col md={8}>
 					<Flex direction="column" align="stretch" gap={16}>
 						<OrderGeneralInformation />
 						<OrderSummary />
@@ -29,7 +29,7 @@ const OrderDetails = () => {
 						<OrderMetadata />
 					</Flex>
 				</Grid.Col>
-				<Grid.Col span={4}>
+				<Grid.Col md={4}>
 					<Flex direction="column" align="stretch" gap={16}>
 						<OrderTimeline />
 					</Flex>

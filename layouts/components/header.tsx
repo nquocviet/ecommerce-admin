@@ -3,15 +3,14 @@ import {
 	ActionIcon,
 	Avatar,
 	Burger,
-	Button,
 	Flex,
 	Header as MantineHeader,
 	MediaQuery,
-	Text,
 } from '@mantine/core'
-import { BellSimple, MagnifyingGlass, Question } from '@phosphor-icons/react'
+import { BellSimple, Question } from '@phosphor-icons/react'
 
 import { HEADER_HEIGHT } from '@/constants/layout'
+import { AppSearch } from '@/layouts/components'
 
 interface HeaderProps {
 	opened: boolean
@@ -27,15 +26,9 @@ const Header = ({ opened, toggle }: HeaderProps) => {
 						<MediaQuery largerThan="sm" styles={{ display: 'none' }}>
 							<Burger opened={opened} onClick={toggle} size="sm" mr="xl" />
 						</MediaQuery>
-						<Button
-							color="gray"
-							variant="light"
-							leftIcon={<MagnifyingGlass size={20} />}
-							className="text-gray-400"
-						>
-							<Text className="px-2 font-semibold">Ctrl K</Text>
-							<Text className="font-regular">Search anything...</Text>
-						</Button>
+						<MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
+							<AppSearch />
+						</MediaQuery>
 					</Flex>
 					<Flex align="center" gap={12}>
 						<ActionIcon variant="subtle" color="gray" size="lg">

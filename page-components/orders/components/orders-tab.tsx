@@ -36,6 +36,7 @@ const OrdersTab = () => {
 				fetching={isLoading}
 				totalRecords={data?.length}
 				recordsPerPage={PAGE_SIZE}
+				minWidth={900}
 				page={1}
 				onPageChange={() => null}
 				onRowClick={({ id }) =>

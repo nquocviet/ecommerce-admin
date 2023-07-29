@@ -12,7 +12,7 @@ const VariantGeneral = () => {
 		<div className="text-sm text-gray-600">
 			<Text>Configure the general information for this variant.</Text>
 			<Grid className="mt-6">
-				<Grid.Col span={6}>
+				<Grid.Col xs={6}>
 					<TextInput
 						name="title"
 						control={control}
@@ -20,7 +20,7 @@ const VariantGeneral = () => {
 						placeholder="Green / XL..."
 					/>
 				</Grid.Col>
-				<Grid.Col span={6}>
+				<Grid.Col xs={6}>
 					<TextInput
 						name="material"
 						control={control}
@@ -40,7 +40,7 @@ const VariantGeneral = () => {
 				</Tooltip>
 			</Flex>
 			<Grid className="mt-2">
-				<Grid.Col span={6}>
+				<Grid.Col xs={6}>
 					<Select
 						control={control}
 						name="options"

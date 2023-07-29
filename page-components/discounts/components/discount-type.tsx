@@ -11,7 +11,7 @@ const DiscountType = () => {
 	return (
 		<RadioGroup control={control} name="type">
 			<Grid>
-				<Grid.Col span={4}>
+				<Grid.Col sm={4}>
 					<RadioBox
 						value="percentage"
 						valueSelected={typeSelected}
@@ -20,7 +20,7 @@ const DiscountType = () => {
 						truncate
 					/>
 				</Grid.Col>
-				<Grid.Col span={4}>
+				<Grid.Col sm={4}>
 					<RadioBox
 						value="fixed"
 						valueSelected={typeSelected}
@@ -29,7 +29,7 @@ const DiscountType = () => {
 						truncate
 					/>
 				</Grid.Col>
-				<Grid.Col span={4}>
+				<Grid.Col sm={4}>
 					<RadioBox
 						value="free_shipping"
 						valueSelected={typeSelected}

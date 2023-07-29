@@ -30,7 +30,7 @@ const ModalAddNewCollection = (props: ModalOpenedProps) => {
 				</Text>
 				<Text className="mt-6 mb-3 text-sm font-semibold">Details</Text>
 				<Grid>
-					<Grid.Col span={6}>
+					<Grid.Col xs={6}>
 						<TextInput
 							name="title"
 							control={control}
@@ -39,7 +39,7 @@ const ModalAddNewCollection = (props: ModalOpenedProps) => {
 							required
 						/>
 					</Grid.Col>
-					<Grid.Col span={6}>
+					<Grid.Col xs={6}>
 						<TextInput
 							name="handle"
 							control={control}

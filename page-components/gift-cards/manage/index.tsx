@@ -94,7 +94,7 @@ const GiftCardManage = () => {
 					}
 				/>
 				<Grid className="my-6">
-					<Grid.Col span={6}>
+					<Grid.Col md={6}>
 						<TextInput
 							name="name"
 							control={control}
@@ -103,7 +103,7 @@ const GiftCardManage = () => {
 							required
 						/>
 					</Grid.Col>
-					<Grid.Col span={6}>
+					<Grid.Col md={6}>
 						<TextInput
 							name="subtitle"
 							control={control}
@@ -111,7 +111,7 @@ const GiftCardManage = () => {
 							placeholder="Add a subtitle"
 						/>
 					</Grid.Col>
-					<Grid.Col span={6}>
+					<Grid.Col md={6}>
 						<Textarea
 							name="description"
 							control={control}
@@ -122,7 +122,7 @@ const GiftCardManage = () => {
 					</Grid.Col>
 				</Grid>
 				<Grid>
-					<Grid.Col span={6}>
+					<Grid.Col md={6}>
 						<TextInput
 							name="handle"
 							control={control}
@@ -137,7 +137,7 @@ const GiftCardManage = () => {
 							placeholder="product handle"
 						/>
 					</Grid.Col>
-					<Grid.Col span={6}>
+					<Grid.Col md={6}>
 						<Select
 							name="type"
 							control={control}
@@ -146,7 +146,7 @@ const GiftCardManage = () => {
 							data={[]}
 						/>
 					</Grid.Col>
-					<Grid.Col span={6}>
+					<Grid.Col md={6}>
 						<TextInput
 							name="tags"
 							control={control}

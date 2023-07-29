@@ -20,7 +20,7 @@ const ProductAttributes = () => {
 				<div>
 					<Text className="mb-3 font-semibold text-black">Dimensions</Text>
 					<Grid>
-						<Grid.Col span={3}>
+						<Grid.Col span={6} xs={3}>
 							<NumberInput
 								name="width"
 								control={control}
@@ -28,7 +28,7 @@ const ProductAttributes = () => {
 								placeholder="100..."
 							/>
 						</Grid.Col>
-						<Grid.Col span={3}>
+						<Grid.Col span={6} xs={3}>
 							<NumberInput
 								name="length"
 								control={control}
@@ -36,7 +36,7 @@ const ProductAttributes = () => {
 								placeholder="100..."
 							/>
 						</Grid.Col>
-						<Grid.Col span={3}>
+						<Grid.Col span={6} xs={3}>
 							<NumberInput
 								name="height"
 								control={control}
@@ -44,7 +44,7 @@ const ProductAttributes = () => {
 								placeholder="100..."
 							/>
 						</Grid.Col>
-						<Grid.Col span={3}>
+						<Grid.Col span={6} xs={3}>
 							<NumberInput
 								name="weight"
 								control={control}
@@ -57,7 +57,7 @@ const ProductAttributes = () => {
 				<div>
 					<Text className="mb-3 font-semibold text-black">Customs</Text>
 					<Grid>
-						<Grid.Col span={6}>
+						<Grid.Col xs={6}>
 							<TextInput
 								name="mid-code"
 								control={control}
@@ -65,7 +65,7 @@ const ProductAttributes = () => {
 								placeholder="XDSKLAD9999..."
 							/>
 						</Grid.Col>
-						<Grid.Col span={6}>
+						<Grid.Col xs={6}>
 							<TextInput
 								name="hs-code"
 								control={control}
@@ -73,7 +73,7 @@ const ProductAttributes = () => {
 								placeholder="BDJSK39277W..."
 							/>
 						</Grid.Col>
-						<Grid.Col span={6}>
+						<Grid.Col xs={6}>
 							<Select
 								name="country"
 								control={control}

@@ -65,7 +65,7 @@ const DiscountDetails = () => {
 						</Flex>
 					}
 				/>
-				<Flex className="mt-6">
+				<Flex className="mt-6 flex-col gap-4 sm:flex-row sm:gap-0">
 					<BoxContent
 						titleClassName="text-xl !text-black font-medium"
 						title={`${data.rule.value}%`}
@@ -106,14 +106,14 @@ const DiscountDetails = () => {
 					}
 				/>
 				<Grid>
-					<Grid.Col span={6}>
+					<Grid.Col md={6}>
 						<ListBoxItem
 							order={1}
 							title="Start date"
 							description={formatDate(data.created_at, FULL_DATE_TIME_OPTIONS)}
 						/>
 					</Grid.Col>
-					<Grid.Col span={6}>
+					<Grid.Col md={6}>
 						<ListBoxItem
 							order={2}
 							title="Number of redemptionse"
@@ -142,14 +142,14 @@ const DiscountDetails = () => {
 					}
 				/>
 				<Grid>
-					<Grid.Col span={6}>
+					<Grid.Col md={6}>
 						<ListBoxItem
 							order={1}
 							title="Product"
 							description="Discount is applicable to specific products"
 						/>
 					</Grid.Col>
-					<Grid.Col span={6}>
+					<Grid.Col md={6}>
 						<ListBoxItem
 							order={2}
 							title="Collection"

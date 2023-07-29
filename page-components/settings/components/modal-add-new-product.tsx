@@ -1,13 +1,18 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Button, Flex } from '@mantine/core'
-import { FunnelSimple } from '@phosphor-icons/react'
+import { Flex } from '@mantine/core'
 
 import { SALE_CHANNEL_PRODUCT_COLUMNS } from '@/columns/sale-channel'
-import { InputSearch, Modal, Table } from '@/components'
+import { FilterPopover, InputSearch, Modal, Table } from '@/components'
 import { ModalOpenedProps } from '@/components/modal'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useProducts } from '@/lib/product'
+
+const filterOptions = [
+	{ value: 'status', label: 'Status' },
+	{ value: 'collection', label: 'Collection' },
+	{ value: 'tags', label: 'Tags' },
+]
 
 const ModalAddNewProduct = (props: ModalOpenedProps) => {
 	const { data, isLoading } = useProducts()
@@ -23,14 +28,7 @@ const ModalAddNewProduct = (props: ModalOpenedProps) => {
 		>
 			<form>
 				<Flex justify="space-between" align="center" className="mb-4">
-					<Button
-						color="gray"
-						variant="outline"
-						size="xs"
-						rightIcon={<FunnelSimple size={16} />}
-					>
-						Filters
-					</Button>
+					<FilterPopover filterOptions={filterOptions} />
 					<InputSearch name="search" control={control} />
 				</Flex>
 			</form>
