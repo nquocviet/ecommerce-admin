@@ -57,7 +57,7 @@ const ModalAddNewPrice = (props: ModalOpenedProps) => {
 			<FormProvider {...methods}>
 				<form>
 					<Title order={2} className="text-display-xs font-semibold">
-						Create new sales channel
+						Create new pricing
 					</Title>
 					<Accordion sections={sections} defaultValue="type" />
 				</form>

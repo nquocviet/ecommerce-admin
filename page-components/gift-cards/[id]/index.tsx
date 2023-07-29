@@ -86,7 +86,7 @@ const GiftCardDetails = () => {
 					}
 				/>
 				<Flex justify="space-between" align="flex-end" className="pt-12 pb-8">
-					<Flex>
+					<Flex className="flex-col gap-4 sm:flex-row sm:gap-0">
 						<BoxContent
 							title="Original amount"
 							description={formatMoney(data.value)}

@@ -9,10 +9,10 @@ import {
 const Currencies = () => {
 	return (
 		<Grid>
-			<Grid.Col span={8}>
+			<Grid.Col md={8}>
 				<StoreCurrencies />
 			</Grid.Col>
-			<Grid.Col span={4}>
+			<Grid.Col md={4}>
 				<DefaultCurrency />
 			</Grid.Col>
 		</Grid>

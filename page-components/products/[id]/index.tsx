@@ -21,7 +21,7 @@ const ProductDetails = () => {
 	return (
 		<>
 			<Grid>
-				<Grid.Col span={8}>
+				<Grid.Col md={8}>
 					<Flex direction="column" align="stretch" gap={16}>
 						<ProductGeneralInformation />
 						<ProductVariants />
@@ -29,7 +29,7 @@ const ProductDetails = () => {
 						<ProductMetadata />
 					</Flex>
 				</Grid.Col>
-				<Grid.Col span={4}>
+				<Grid.Col md={4}>
 					<Flex direction="column" align="stretch" gap={16}>
 						<ProductThumbnail />
 						<ProductMedia />

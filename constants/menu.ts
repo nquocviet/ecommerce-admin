@@ -17,6 +17,7 @@ import { ROUTES } from '@/constants/routes'
 export type MenuItemType = {
 	label: string
 	href: string
+	subPaths?: string[]
 	icon?: Icon
 	children?: MenuItemType[]
 }
@@ -33,6 +34,7 @@ export const MENU_LIST: MenuListType = [
 		{
 			label: 'Products',
 			href: ROUTES.PRODUCTS,
+			subPaths: [ROUTES.COLLECTION_DETAILS],
 			icon: Tag,
 		},
 		{
@@ -43,6 +45,7 @@ export const MENU_LIST: MenuListType = [
 		{
 			label: 'Customers',
 			href: ROUTES.CUSTOMERS,
+			subPaths: [ROUTES.CUSTOMER_GROUP_DETAILS],
 			icon: Users,
 		},
 		{

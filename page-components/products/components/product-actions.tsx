@@ -1,7 +1,12 @@
 import React from 'react'
-import { Button, Flex } from '@mantine/core'
+import { ActionIcon, Button, Flex, MediaQuery, Menu } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
-import { DownloadSimple, Plus, UploadSimple } from '@phosphor-icons/react'
+import {
+	DotsThree,
+	DownloadSimple,
+	Plus,
+	UploadSimple,
+} from '@phosphor-icons/react'
 
 import {
 	ModalAddNewProduct,
@@ -23,35 +28,65 @@ const ProductActions = () => {
 
 	return (
 		<>
-			<Flex className="ml-auto -mt-2" gap={12}>
-				<Button
-					variant="outline"
-					color="gray"
-					size="xs"
-					leftIcon={<UploadSimple size={16} />}
-					onClick={openImportProduct}
-				>
-					Import products
-				</Button>
-				<Button
-					variant="outline"
-					color="gray"
-					size="xs"
-					leftIcon={<DownloadSimple size={16} />}
-					onClick={openExportProduct}
-				>
-					Export products
-				</Button>
-				<Button
-					variant="outline"
-					color="gray"
-					size="xs"
-					leftIcon={<Plus size={16} />}
-					onClick={openNewProduct}
-				>
-					New product
-				</Button>
-			</Flex>
+			<MediaQuery smallerThan="md" styles={{ display: 'none' }}>
+				<Flex className="ml-auto -mt-2" gap={12}>
+					<Button
+						variant="outline"
+						color="gray"
+						size="xs"
+						leftIcon={<UploadSimple size={16} />}
+						onClick={openImportProduct}
+					>
+						Import products
+					</Button>
+					<Button
+						variant="outline"
+						color="gray"
+						size="xs"
+						leftIcon={<DownloadSimple size={16} />}
+						onClick={openExportProduct}
+					>
+						Export products
+					</Button>
+					<Button
+						variant="outline"
+						color="gray"
+						size="xs"
+						leftIcon={<Plus size={16} />}
+						onClick={openNewProduct}
+					>
+						New product
+					</Button>
+				</Flex>
+			</MediaQuery>
+			<MediaQuery largerThan="md" styles={{ display: 'none' }}>
+				<div className="ml-auto -mt-2">
+					<Menu position="top-end" shadow="md" width={200}>
+						<Menu.Target>
+							<ActionIcon>
+								<DotsThree size={20} weight="bold" />
+							</ActionIcon>
+						</Menu.Target>
+						<Menu.Dropdown>
+							<Menu.Item
+								icon={<UploadSimple size={16} />}
+								onClick={openImportProduct}
+							>
+								Import products
+							</Menu.Item>
+							<Menu.Item
+								icon={<DownloadSimple size={16} />}
+								onClick={openExportProduct}
+							>
+								Export products
+							</Menu.Item>
+							<Menu.Item icon={<Plus size={16} />} onClick={openNewProduct}>
+								New product
+							</Menu.Item>
+						</Menu.Dropdown>
+					</Menu>
+				</div>
+			</MediaQuery>
 			<ModalImportProduct
 				opened={importProductOpened}
 				onClose={closeImportProduct}

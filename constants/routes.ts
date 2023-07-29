@@ -9,7 +9,7 @@ export const ROUTES = {
 	ORDER_DETAILS: '/orders/[id]',
 	CUSTOMERS: '/customers',
 	CUSTOMER_DETAILS: '/customers/[id]',
-	CUSTOMER_GROUP_DETAILS: '/customers/groups/[id]',
+	CUSTOMER_GROUP_DETAILS: '/groups/[id]',
 	DISCOUNTS: '/discounts',
 	DISCOUNT_DETAILS: '/discounts/[id]',
 	GIFT_CARDS: '/gift-cards',
@@ -20,7 +20,6 @@ export const ROUTES = {
 	CALENDAR: '/calendar',
 	KANBAN: '/kanban',
 	FAQS: '/faqs',
-
 	SETTINGS: {
 		DEFAULT: '/settings',
 		CURRENCIES: '/settings/currencies',

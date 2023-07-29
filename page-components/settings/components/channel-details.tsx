@@ -1,21 +1,22 @@
 import React from 'react'
 import { ActionIcon, Button, Flex, Menu } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
-import {
-	DotsThree,
-	FunnelSimple,
-	NotePencil,
-	Plus,
-} from '@phosphor-icons/react'
+import { DotsThree, NotePencil, Plus } from '@phosphor-icons/react'
 
 import { SALE_CHANNEL_COLUMNS } from '@/columns/sale-channel'
-import { Dots, PageTitle, Paper, Table } from '@/components'
+import { Dots, FilterPopover, PageTitle, Paper, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useProducts } from '@/lib/product'
 import {
 	ModalAddNewProduct,
 	ModalEditSalesChannel,
 } from '@/page-components/settings/components'
+
+const filterOptions = [
+	{ value: 'status', label: 'Status' },
+	{ value: 'collection', label: 'Collection' },
+	{ value: 'tags', label: 'Tags' },
+]
 
 const ChannelDetails = () => {
 	const [
@@ -73,15 +74,7 @@ const ChannelDetails = () => {
 					</Flex>
 				}
 			/>
-			<Button
-				color="gray"
-				variant="outline"
-				size="xs"
-				rightIcon={<FunnelSimple size={16} />}
-				className="my-4"
-			>
-				Filters
-			</Button>
+			<FilterPopover filterOptions={filterOptions} className="my-4" />
 			<Table
 				records={data}
 				columns={SALE_CHANNEL_COLUMNS}

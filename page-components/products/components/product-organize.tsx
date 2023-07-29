@@ -22,7 +22,7 @@ const ProductOrganize = () => {
 						Organize product
 					</Text>
 					<Grid>
-						<Grid.Col span={6}>
+						<Grid.Col xs={6}>
 							<Select
 								name="type"
 								control={control}
@@ -32,7 +32,7 @@ const ProductOrganize = () => {
 								required
 							/>
 						</Grid.Col>
-						<Grid.Col span={6}>
+						<Grid.Col xs={6}>
 							<Select
 								name="collection"
 								control={control}

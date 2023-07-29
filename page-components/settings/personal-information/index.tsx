@@ -6,7 +6,7 @@ import { PersonalForm } from '@/page-components/settings/components'
 const PersonalInformation = () => {
 	return (
 		<Grid>
-			<Grid.Col span={6}>
+			<Grid.Col md={6}>
 				<PersonalForm />
 			</Grid.Col>
 		</Grid>

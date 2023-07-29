@@ -1,12 +1,16 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Button, Flex } from '@mantine/core'
-import { FunnelSimple } from '@phosphor-icons/react'
+import { Flex } from '@mantine/core'
 
 import { TEAM_COLUMNS } from '@/columns/team'
-import { InputSearch, Table } from '@/components'
+import { FilterPopover, InputSearch, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useTeamMembers } from '@/lib/team'
+
+const filterOptions = [
+	{ value: 'status', label: 'Status' },
+	{ value: 'permissions', label: 'Permissions' },
+]
 
 const TeamsTab = () => {
 	const { data, isLoading } = useTeamMembers()
@@ -16,14 +20,7 @@ const TeamsTab = () => {
 		<>
 			<form>
 				<Flex justify="space-between" align="center" className="mb-4">
-					<Button
-						color="gray"
-						variant="outline"
-						size="xs"
-						rightIcon={<FunnelSimple size={16} />}
-					>
-						Filters
-					</Button>
+					<FilterPopover filterOptions={filterOptions} />
 					<InputSearch name="search" control={control} />
 				</Flex>
 			</form>

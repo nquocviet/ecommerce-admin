@@ -6,9 +6,10 @@ import { OptionType } from '@/types/common'
 
 interface FilterPopoverProps {
 	filterOptions: OptionType[]
+	className?: string
 }
 
-const FilterPopover = ({ filterOptions }: FilterPopoverProps) => {
+const FilterPopover = ({ filterOptions, className }: FilterPopoverProps) => {
 	return (
 		<Popover width={200} position="bottom" shadow="md" withArrow>
 			<Popover.Target>
@@ -17,6 +18,7 @@ const FilterPopover = ({ filterOptions }: FilterPopoverProps) => {
 					variant="outline"
 					size="xs"
 					rightIcon={<FunnelSimple size={16} />}
+					className={className}
 				>
 					Filters
 				</Button>

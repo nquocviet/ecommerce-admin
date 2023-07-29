@@ -6,7 +6,7 @@ import { StoreForm } from '@/page-components/settings/components'
 const StoreDetails = () => {
 	return (
 		<Grid>
-			<Grid.Col span={6}>
+			<Grid.Col md={6}>
 				<StoreForm />
 			</Grid.Col>
 		</Grid>

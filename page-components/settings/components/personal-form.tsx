@@ -28,7 +28,11 @@ const PersonalForm = () => {
 					size="sm"
 				/>
 				<Divider />
-				<Flex justify="space-between" align="center" gap={12}>
+				<Flex
+					justify="space-between"
+					className="sm:flex-center flex-col items-start sm:flex-row"
+					gap={12}
+				>
 					<Flex align="center" gap={16}>
 						<Avatar size="lg" radius="xl" color="primary" variant="filled">
 							E
@@ -45,7 +49,11 @@ const PersonalForm = () => {
 					</Button>
 				</Flex>
 				<Divider className="border-gray-300" />
-				<Flex justify="space-between" align="center" gap={12}>
+				<Flex
+					justify="space-between"
+					className="sm:flex-center flex-col items-start sm:flex-row"
+					gap={12}
+				>
 					<Flex direction="column" gap={4}>
 						<Flex align="center" gap={8}>
 							<Text className="font-semibold">Usage insights</Text>
