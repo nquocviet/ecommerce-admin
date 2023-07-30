@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
-import { Button, Grid } from '@mantine/core'
+import React, { useCallback, useState } from 'react'
+import { Button, Flex } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { Plus } from '@phosphor-icons/react'
 
-import { ModalAddTask } from '@/page-components/kanban/components'
+import { KanbanTask } from '@/components'
+import { ModalAddEditTask } from '@/page-components/kanban/components'
+import { generateKanbanTask } from '@/utils'
 
 const defaultGroups = [
-	{ id: 1, title: 'To do', tasks: [] },
-	{ id: 2, title: 'In progress', tasks: [] },
-	{ id: 3, title: 'Resolved', tasks: [] },
+	{ id: 1, title: 'To do', tasks: generateKanbanTask(4) },
+	{ id: 2, title: 'In progress', tasks: generateKanbanTask(2) },
+	{ id: 3, title: 'Resolved', tasks: generateKanbanTask(3) },
 ]
 
 const Kanban = () => {
@@ -16,40 +18,55 @@ const Kanban = () => {
 		useDisclosure(false)
 	const [groups, setGroups] = useState(defaultGroups)
 
+	const onSubmit = useCallback((data) => {
+		console.log(data)
+	}, [])
+
 	return (
 		<>
-			<Grid gutter={20}>
+			<Flex gap={20} className="grow overflow-auto">
 				{groups.map(({ id, title, tasks }) => (
-					<Grid.Col span="auto" key={id}>
-						<h2 className="mt-0 mb-4 text-lg font-semibold">{title}</h2>
-						<Button
-							color="gray"
-							variant="outline"
-							leftIcon={<Plus size={20} />}
-							className="!h-auto bg-white !py-2.5"
-							onClick={openAddTask}
-							fullWidth
-						>
-							Add new task
-						</Button>
-					</Grid.Col>
+					<Flex
+						key={id}
+						direction="column"
+						align="stretch"
+						className="min-w-[320px] flex-1"
+						gap={20}
+					>
+						<Flex justify="space-between" align="center">
+							<h2 className="my-0 text-lg font-semibold">{title}</h2>
+							<Button
+								color="gray"
+								variant="outline"
+								size="xs"
+								className="bg-white"
+								leftIcon={<Plus weight="bold" size={16} />}
+								onClick={openAddTask}
+							>
+								New task
+							</Button>
+						</Flex>
+						{tasks.map((task) => (
+							<KanbanTask key={task.id} {...task} />
+						))}
+					</Flex>
 				))}
-				<Grid.Col span="auto">
+				<div className="min-w-[320px] flex-1">
 					<Button
 						color="gray"
 						variant="outline"
 						leftIcon={<Plus size={20} />}
-						className="mt-11 !h-auto bg-white !py-2.5"
+						className="mt-14 !h-auto bg-white !py-2.5"
 						fullWidth
 					>
 						Add another group
 					</Button>
-				</Grid.Col>
-			</Grid>
-			<ModalAddTask
+				</div>
+			</Flex>
+			<ModalAddEditTask
 				opened={addTaskOpened}
 				onClose={closeAddTask}
-				onSubmit={() => null}
+				onSubmit={onSubmit}
 			/>
 		</>
 	)
