@@ -17,7 +17,7 @@ const getRandomValues = (randomTotal: number, options: OptionType[]) => {
 
 export const generateKanbanTask = (total: number): KanbanEntity[] => {
 	return [...Array(total)].map(() => ({
-		id: faker.datatype.uuid(),
+		id: faker.string.uuid(),
 		title: generateLoremIpsum(Math.floor(15 + Math.random() * 30)).trim(),
 		description: generateLoremIpsum(
 			Math.floor(100 + Math.random() * 100),
