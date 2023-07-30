@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { Grid, Text } from '@mantine/core'
 
@@ -36,7 +36,6 @@ const ModalAddEditTask = ({
 	onClose,
 	onSubmit,
 }: ModalAddEditTaskProps) => {
-	const [tags, setTags] = useState(KANBAN_TAG_OPTIONS)
 	const { control, reset, handleSubmit } = useForm({ defaultValues })
 
 	useEffect(() => {
@@ -65,14 +64,12 @@ const ModalAddEditTask = ({
 					<MultiSelect
 						name="tags"
 						control={control}
-						data={tags}
+						data={KANBAN_TAG_OPTIONS}
 						label="Tags (max 3 items)"
 						placeholder="UI/UX design..."
 						maxSelectedValues={3}
-						getCreateLabel={(query) => `+ Create ${query}`}
 						clearable
 						searchable
-						creatable
 						required
 					/>
 				</Grid.Col>

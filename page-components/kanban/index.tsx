@@ -1,74 +1,92 @@
 import React, { useCallback, useState } from 'react'
-import { Button, Flex } from '@mantine/core'
+import { DragDropContext } from 'react-beautiful-dnd'
+import { Flex } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
-import { Plus } from '@phosphor-icons/react'
 
-import { KanbanTask } from '@/components'
-import { ModalAddEditTask } from '@/page-components/kanban/components'
+import {
+	KanbanGroup,
+	ModalAddEditTask,
+} from '@/page-components/kanban/components'
 import { generateKanbanTask } from '@/utils'
 
-const defaultGroups = [
-	{ id: 1, title: 'To do', tasks: generateKanbanTask(4) },
-	{ id: 2, title: 'In progress', tasks: generateKanbanTask(2) },
-	{ id: 3, title: 'Resolved', tasks: generateKanbanTask(3) },
-]
+const defaultGroups = {
+	'1': {
+		title: 'To do',
+		tasks: generateKanbanTask(4),
+	},
+	'2': {
+		title: 'In progress',
+		tasks: generateKanbanTask(2),
+	},
+	'3': {
+		title: 'Resolved',
+		tasks: generateKanbanTask(3),
+	},
+	'4': {
+		title: 'Closed',
+		tasks: generateKanbanTask(1),
+	},
+}
 
 const Kanban = () => {
-	const [addTaskOpened, { open: openAddTask, close: closeAddTask }] =
-		useDisclosure(false)
 	const [groups, setGroups] = useState(defaultGroups)
+	const [addTaskOpened, { open, close }] = useDisclosure(false)
 
 	const onSubmit = useCallback((data) => {
 		console.log(data)
 	}, [])
 
+	const onDragEnd = useCallback((result, groups, setGroups) => {
+		if (!result.destination) return
+		const { source, destination } = result
+		if (source.droppableId !== destination.droppableId) {
+			const sourceGroup = groups[source.droppableId]
+			const destGroup = groups[destination.droppableId]
+			const sourceTasks = [...sourceGroup.tasks]
+			const destTasks = [...destGroup.tasks]
+			const [removed] = sourceTasks.splice(source.index, 1)
+			destTasks.splice(destination.index, 0, removed)
+			setGroups({
+				...groups,
+				[source.droppableId]: {
+					...sourceGroup,
+					tasks: sourceTasks,
+				},
+				[destination.droppableId]: {
+					...destGroup,
+					tasks: destTasks,
+				},
+			})
+		} else {
+			const group = groups[source.droppableId]
+			const copiedTasks = [...group.tasks]
+			const [removed] = copiedTasks.splice(source.index, 1)
+			copiedTasks.splice(destination.index, 0, removed)
+			setGroups({
+				...groups,
+				[source.droppableId]: {
+					...group,
+					tasks: copiedTasks,
+				},
+			})
+		}
+	}, [])
+
 	return (
-		<>
+		<DragDropContext
+			onDragEnd={(result) => onDragEnd(result, groups, setGroups)}
+		>
 			<Flex gap={20} className="grow overflow-auto">
-				{groups.map(({ id, title, tasks }) => (
-					<Flex
-						key={id}
-						direction="column"
-						align="stretch"
-						className="min-w-[320px] flex-1"
-						gap={20}
-					>
-						<Flex justify="space-between" align="center">
-							<h2 className="my-0 text-lg font-semibold">{title}</h2>
-							<Button
-								color="gray"
-								variant="outline"
-								size="xs"
-								className="bg-white"
-								leftIcon={<Plus weight="bold" size={16} />}
-								onClick={openAddTask}
-							>
-								New task
-							</Button>
-						</Flex>
-						{tasks.map((task) => (
-							<KanbanTask key={task.id} {...task} />
-						))}
-					</Flex>
+				{Object.entries(groups).map(([groupId, group]) => (
+					<KanbanGroup key={groupId} id={groupId} onOpen={open} {...group} />
 				))}
-				<div className="min-w-[320px] flex-1">
-					<Button
-						color="gray"
-						variant="outline"
-						leftIcon={<Plus size={20} />}
-						className="mt-14 !h-auto bg-white !py-2.5"
-						fullWidth
-					>
-						Add another group
-					</Button>
-				</div>
 			</Flex>
 			<ModalAddEditTask
 				opened={addTaskOpened}
-				onClose={closeAddTask}
+				onClose={close}
 				onSubmit={onSubmit}
 			/>
-		</>
+		</DragDropContext>
 	)
 }
 
