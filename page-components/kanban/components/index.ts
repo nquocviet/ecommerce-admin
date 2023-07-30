@@ -1,1 +1,1 @@
-export { default as ModalAddTask } from './modal-add-task'
+export { default as ModalAddEditTask } from './modal-add-edit-task'

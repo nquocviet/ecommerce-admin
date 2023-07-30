@@ -176,10 +176,10 @@ export const components: any = {
 			},
 			input: {
 				borderColor: theme.colors.gray[3],
-				'&[readonly]:focus': {
-					borderColor: `${theme.colors.gray[3]} !important`,
-				},
-				'&:not([readonly]):focus': {
+			},
+			wrapper: {
+				borderRadius: '0.25rem',
+				'&:focus-within': {
 					boxShadow: '0 0 0 4px var(--primary-100)',
 				},
 			},

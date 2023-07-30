@@ -6,7 +6,7 @@ export enum RolesEnum {
 
 export type OptionType = {
 	label: string
-	value: string | number
+	value: string
 }
 
 export type BaseEntity = {
