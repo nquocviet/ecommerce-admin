@@ -8,10 +8,16 @@ import {
 	JSONView,
 	ListBoxItem,
 	Loader,
+	Meta,
 	PageTitle,
 	Paper,
 } from '@/components'
-import { FULL_DATE_TIME_OPTIONS } from '@/constants/common'
+import {
+	APP_DOMAIN,
+	APP_NAME,
+	FULL_DATE_TIME_OPTIONS,
+} from '@/constants/common'
+import { ROUTES } from '@/constants/routes'
 import { useDiscountDetails } from '@/lib/discount'
 import { formatDate } from '@/utils'
 
@@ -22,6 +28,10 @@ const DiscountDetails = () => {
 
 	return (
 		<>
+			<Meta
+				title={`${data.code} | ${APP_NAME}`}
+				canonical={`${APP_DOMAIN}${ROUTES.DISCOUNTS}`}
+			/>
 			<Paper>
 				<PageTitle
 					order={2}

@@ -1,19 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import { Droppable } from 'react-beautiful-dnd'
 import { Button, Flex, Text } from '@mantine/core'
 import { Plus } from '@phosphor-icons/react'
 
 import { KanbanTask } from '@/components'
+import { AddEditTaskModalType } from '@/page-components/kanban'
 import { KanbanEntity } from '@/types/kanban'
 
 interface KanbanGroupProps {
 	id: string
 	title: string
 	tasks: KanbanEntity[]
-	onOpen: () => void
+	setAddEditTaskModal: Dispatch<SetStateAction<AddEditTaskModalType>>
 }
 
-const KanbanGroup = ({ id, title, tasks, onOpen }: KanbanGroupProps) => {
+const KanbanGroup = ({
+	id,
+	title,
+	tasks,
+	setAddEditTaskModal,
+}: KanbanGroupProps) => {
 	const [enabled, setEnabled] = useState(false)
 
 	useEffect(() => {
@@ -45,7 +51,13 @@ const KanbanGroup = ({ id, title, tasks, onOpen }: KanbanGroupProps) => {
 					size="xs"
 					className="bg-white"
 					leftIcon={<Plus weight="bold" size={16} />}
-					onClick={onOpen}
+					onClick={() =>
+						setAddEditTaskModal({
+							opened: true,
+							kanban: null,
+							groupId: id,
+						})
+					}
 				>
 					New task
 				</Button>
@@ -62,7 +74,13 @@ const KanbanGroup = ({ id, title, tasks, onOpen }: KanbanGroupProps) => {
 					>
 						{tasks.length ? (
 							tasks.map((task, index) => (
-								<KanbanTask key={task.id} index={index} {...task} />
+								<KanbanTask
+									key={task.id}
+									index={index}
+									groupId={id}
+									setAddEditTaskModal={setAddEditTaskModal}
+									{...task}
+								/>
 							))
 						) : (
 							<Text className="text-center font-medium">

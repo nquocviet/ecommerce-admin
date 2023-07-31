@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Tabs } from '@mantine/core'
 
-import { Paper } from '@/components'
+import { Meta, Paper } from '@/components'
+import { APP_DOMAIN, APP_NAME } from '@/constants/common'
+import { ROUTES } from '@/constants/routes'
 import { GIFT_CARD_TABS } from '@/constants/tabs'
 import { useActiveTab } from '@/hooks'
 import {
@@ -19,6 +21,10 @@ const GiftCards = () => {
 
 	return (
 		<>
+			<Meta
+				title={`Gift Card Management | ${APP_NAME}`}
+				canonical={`${APP_DOMAIN}${ROUTES.GIFT_CARDS}`}
+			/>
 			<Paper>
 				<ProductGiftCard />
 			</Paper>

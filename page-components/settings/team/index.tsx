@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Tabs } from '@mantine/core'
 
-import { Paper } from '@/components'
+import { Meta, Paper } from '@/components'
+import { APP_DOMAIN, APP_NAME } from '@/constants/common'
+import { ROUTES } from '@/constants/routes'
 import { TEAM_TABS } from '@/constants/tabs'
 import { useActiveTab } from '@/hooks'
 import { TeamActions, TeamsTab } from '@/page-components/settings/components'
@@ -14,22 +16,28 @@ const Team = () => {
 	useActiveTab(activeTab, setActiveTab)
 
 	return (
-		<Paper className="grow">
-			<Tabs
-				value={activeTab}
-				onTabChange={(tab) => setActiveTab(tab)}
-				keepMounted={false}
-			>
-				<Tabs.List>
-					<Tabs.Tab value={TEAM}>Team</Tabs.Tab>
-					{activeTab === TEAM && <TeamActions />}
-				</Tabs.List>
+		<>
+			<Meta
+				title={`Team Settings | ${APP_NAME}`}
+				canonical={`${APP_DOMAIN}${ROUTES.SETTINGS.TEAM}`}
+			/>
+			<Paper className="grow">
+				<Tabs
+					value={activeTab}
+					onTabChange={(tab) => setActiveTab(tab)}
+					keepMounted={false}
+				>
+					<Tabs.List>
+						<Tabs.Tab value={TEAM}>Team</Tabs.Tab>
+						{activeTab === TEAM && <TeamActions />}
+					</Tabs.List>
 
-				<Tabs.Panel value={TEAM}>
-					<TeamsTab />
-				</Tabs.Panel>
-			</Tabs>
-		</Paper>
+					<Tabs.Panel value={TEAM}>
+						<TeamsTab />
+					</Tabs.Panel>
+				</Tabs>
+			</Paper>
+		</>
 	)
 }
 

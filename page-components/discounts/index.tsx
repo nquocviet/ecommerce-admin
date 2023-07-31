@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Tabs } from '@mantine/core'
 
-import { Paper } from '@/components'
+import { Meta, Paper } from '@/components'
+import { APP_DOMAIN, APP_NAME } from '@/constants/common'
+import { ROUTES } from '@/constants/routes'
 import { DISCOUNT_TABS } from '@/constants/tabs'
 import { useActiveTab } from '@/hooks'
 import {
@@ -17,22 +19,28 @@ const Discounts = () => {
 	useActiveTab(activeTab, setActiveTab)
 
 	return (
-		<Paper className="grow">
-			<Tabs
-				value={activeTab}
-				onTabChange={(tab) => setActiveTab(tab)}
-				keepMounted={false}
-			>
-				<Tabs.List>
-					<Tabs.Tab value={DISCOUNTS}>Discounts</Tabs.Tab>
-					{activeTab === DISCOUNTS && <DiscountActions />}
-				</Tabs.List>
+		<>
+			<Meta
+				title={`Discount Management | ${APP_NAME}`}
+				canonical={`${APP_DOMAIN}${ROUTES.DISCOUNTS}`}
+			/>
+			<Paper className="grow">
+				<Tabs
+					value={activeTab}
+					onTabChange={(tab) => setActiveTab(tab)}
+					keepMounted={false}
+				>
+					<Tabs.List>
+						<Tabs.Tab value={DISCOUNTS}>Discounts</Tabs.Tab>
+						{activeTab === DISCOUNTS && <DiscountActions />}
+					</Tabs.List>
 
-				<Tabs.Panel value={DISCOUNTS}>
-					<DiscountsTab />
-				</Tabs.Panel>
-			</Tabs>
-		</Paper>
+					<Tabs.Panel value={DISCOUNTS}>
+						<DiscountsTab />
+					</Tabs.Panel>
+				</Tabs>
+			</Paper>
+		</>
 	)
 }
 

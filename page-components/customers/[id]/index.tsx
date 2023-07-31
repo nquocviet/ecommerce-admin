@@ -10,10 +10,12 @@ import {
 	Dots,
 	JSONView,
 	Loader,
+	Meta,
 	PageTitle,
 	Paper,
 	Table,
 } from '@/components'
+import { APP_DOMAIN, APP_NAME } from '@/constants/common'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { ROUTES } from '@/constants/routes'
 import { useCustomerDetails } from '@/lib/customer'
@@ -39,6 +41,10 @@ const CustomerDetails = () => {
 
 	return (
 		<>
+			<Meta
+				title={`${data.first_name} ${data.last_name} | ${APP_NAME}`}
+				canonical={`${APP_DOMAIN}${ROUTES.CUSTOMERS}`}
+			/>
 			<Paper>
 				<Box className="-mx-6 mb-16 -mt-6 overflow-hidden rounded-t">
 					<Box className="h-32 w-full bg-gradient-to-b from-primary-300 to-white"></Box>

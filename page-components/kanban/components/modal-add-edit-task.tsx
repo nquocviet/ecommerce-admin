@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { Grid, Text } from '@mantine/core'
+import { AspectRatio, Grid, Image, Text } from '@mantine/core'
 
 import {
 	DatePickerInput,
@@ -19,7 +19,7 @@ import {
 import { KanbanEntity } from '@/types/kanban'
 
 interface ModalAddEditTaskProps extends ModalOpenedProps {
-	onSubmit: (data) => void
+	defaultValues: KanbanEntity | null
 }
 
 const defaultValues: KanbanEntity = {
@@ -34,9 +34,14 @@ const defaultValues: KanbanEntity = {
 const ModalAddEditTask = ({
 	opened,
 	onClose,
-	onSubmit,
+	...props
 }: ModalAddEditTaskProps) => {
-	const { control, reset, handleSubmit } = useForm({ defaultValues })
+	const { control, reset, watch } = useForm({ defaultValues })
+	const attachment = watch('attachment')
+
+	useEffect(() => {
+		if (props.defaultValues) reset(props.defaultValues)
+	}, [props.defaultValues, reset])
 
 	useEffect(() => {
 		if (!opened) reset(defaultValues)
@@ -44,11 +49,10 @@ const ModalAddEditTask = ({
 
 	return (
 		<Modal
-			title="Add new task"
+			title={props.defaultValues ? 'Edit task' : 'Add new task'}
 			size="xl"
 			opened={opened}
 			onClose={onClose}
-			onConfirm={handleSubmit(onSubmit)}
 		>
 			<Grid gutter={16}>
 				<Grid.Col>
@@ -111,6 +115,15 @@ const ModalAddEditTask = ({
 						onDrop={(file) => console.log('accepted file', file)}
 						multiple={false}
 					/>
+					<Grid gutter={20} className="mt-4">
+						<Grid.Col span={4}>
+							{attachment && (
+								<AspectRatio ratio={16 / 9}>
+									<Image src={attachment} alt="" />
+								</AspectRatio>
+							)}
+						</Grid.Col>
+					</Grid>
 				</Grid.Col>
 			</Grid>
 		</Modal>

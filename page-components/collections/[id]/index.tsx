@@ -9,11 +9,14 @@ import {
 	InputSearch,
 	JSONView,
 	Loader,
+	Meta,
 	PageTitle,
 	Paper,
 	Table,
 } from '@/components'
+import { APP_DOMAIN, APP_NAME } from '@/constants/common'
 import { PAGE_SIZE } from '@/constants/pagination'
+import { ROUTES } from '@/constants/routes'
 import { useCollectionDetails } from '@/lib/collection'
 import {
 	ModalEditCollection,
@@ -41,6 +44,10 @@ const CollectionDetails = () => {
 
 	return (
 		<>
+			<Meta
+				title={`${data?.title} | ${APP_NAME}`}
+				canonical={`${APP_DOMAIN}${ROUTES.COLLECTIONS}`}
+			/>
 			<Paper>
 				<PageTitle
 					order={2}
