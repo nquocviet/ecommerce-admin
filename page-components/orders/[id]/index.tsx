@@ -1,7 +1,9 @@
 import React from 'react'
 import { Flex, Grid } from '@mantine/core'
 
-import { Loader } from '@/components'
+import { Loader, Meta } from '@/components'
+import { APP_DOMAIN, APP_NAME } from '@/constants/common'
+import { ROUTES } from '@/constants/routes'
 import { useOrderDetails } from '@/lib/order'
 import {
 	OrderCustomer,
@@ -13,12 +15,16 @@ import {
 } from '@/page-components/orders/[id]/components'
 
 const OrderDetails = () => {
-	const { isLoading } = useOrderDetails()
+	const { data, isLoading } = useOrderDetails()
 
 	if (isLoading) return <Loader />
 
 	return (
 		<>
+			<Meta
+				title={`Order #${data?.display_id} | ${APP_NAME}`}
+				canonical={`${APP_DOMAIN}${ROUTES.ORDERS}`}
+			/>
 			<Grid>
 				<Grid.Col md={8}>
 					<Flex direction="column" align="stretch" gap={16}>

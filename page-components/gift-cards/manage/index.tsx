@@ -9,6 +9,7 @@ import {
 	Dots,
 	DropzoneImage,
 	Loader,
+	Meta,
 	PageTitle,
 	Paper,
 	Select,
@@ -16,6 +17,8 @@ import {
 	Textarea,
 	TextInput,
 } from '@/components'
+import { APP_DOMAIN, APP_NAME } from '@/constants/common'
+import { ROUTES } from '@/constants/routes'
 import { useProductGiftCard } from '@/lib/product'
 import {
 	ModalAddDenomination,
@@ -49,6 +52,10 @@ const GiftCardManage = () => {
 
 	return (
 		<>
+			<Meta
+				title={`Gift Card Settings | ${APP_NAME}`}
+				canonical={`${APP_DOMAIN}${ROUTES.GIFT_CARD_MANAGE}`}
+			/>
 			<Paper>
 				<PageTitle
 					order={2}

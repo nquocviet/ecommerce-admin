@@ -1,13 +1,22 @@
 import React, { useCallback, useState } from 'react'
 import { DragDropContext } from 'react-beautiful-dnd'
 import { Flex } from '@mantine/core'
-import { useDisclosure } from '@mantine/hooks'
 
+import { Meta } from '@/components'
+import { APP_DOMAIN, APP_NAME } from '@/constants/common'
+import { ROUTES } from '@/constants/routes'
 import {
 	KanbanGroup,
 	ModalAddEditTask,
 } from '@/page-components/kanban/components'
+import { KanbanEntity } from '@/types/kanban'
 import { generateKanbanTask } from '@/utils'
+
+export type AddEditTaskModalType = {
+	opened: boolean
+	kanban: KanbanEntity | null
+	groupId: string | null
+}
 
 const defaultGroups = {
 	'1': {
@@ -30,11 +39,12 @@ const defaultGroups = {
 
 const Kanban = () => {
 	const [groups, setGroups] = useState(defaultGroups)
-	const [addTaskOpened, { open, close }] = useDisclosure(false)
-
-	const onSubmit = useCallback((data) => {
-		console.log(data)
-	}, [])
+	const [addEditTaskModal, setAddEditTaskModal] =
+		useState<AddEditTaskModalType>({
+			opened: false,
+			kanban: null,
+			groupId: null,
+		})
 
 	const onDragEnd = useCallback((result, groups, setGroups) => {
 		if (!result.destination) return
@@ -73,20 +83,37 @@ const Kanban = () => {
 	}, [])
 
 	return (
-		<DragDropContext
-			onDragEnd={(result) => onDragEnd(result, groups, setGroups)}
-		>
-			<Flex gap={20} className="grow overflow-auto">
-				{Object.entries(groups).map(([groupId, group]) => (
-					<KanbanGroup key={groupId} id={groupId} onOpen={open} {...group} />
-				))}
-			</Flex>
-			<ModalAddEditTask
-				opened={addTaskOpened}
-				onClose={close}
-				onSubmit={onSubmit}
+		<>
+			<Meta
+				title={`Kanban Board | ${APP_NAME}`}
+				canonical={`${APP_DOMAIN}${ROUTES.KANBAN}`}
 			/>
-		</DragDropContext>
+			<DragDropContext
+				onDragEnd={(result) => onDragEnd(result, groups, setGroups)}
+			>
+				<Flex gap={20} className="grow overflow-auto">
+					{Object.entries(groups).map(([groupId, group]) => (
+						<KanbanGroup
+							key={groupId}
+							id={groupId}
+							setAddEditTaskModal={setAddEditTaskModal}
+							{...group}
+						/>
+					))}
+				</Flex>
+				<ModalAddEditTask
+					opened={addEditTaskModal.opened}
+					defaultValues={addEditTaskModal.kanban}
+					onClose={() =>
+						setAddEditTaskModal({
+							opened: false,
+							kanban: null,
+							groupId: null,
+						})
+					}
+				/>
+			</DragDropContext>
+		</>
 	)
 }
 

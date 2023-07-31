@@ -13,9 +13,12 @@ import {
 	Dots,
 	JSONView,
 	Loader,
+	Meta,
 	PageTitle,
 	Paper,
 } from '@/components'
+import { APP_DOMAIN, APP_NAME } from '@/constants/common'
+import { ROUTES } from '@/constants/routes'
 import { useGiftCardDetails } from '@/lib/gift-card'
 import {
 	ModalEditGiftCardDetails,
@@ -38,6 +41,10 @@ const GiftCardDetails = () => {
 
 	return (
 		<>
+			<Meta
+				title={`${data.code} | ${APP_NAME}`}
+				canonical={`${APP_DOMAIN}${ROUTES.GIFT_CARDS}`}
+			/>
 			<Paper>
 				<PageTitle
 					order={2}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import { Draggable } from 'react-beautiful-dnd'
 import {
 	ActionIcon,
@@ -15,12 +15,15 @@ import {
 import { Clock, NotePencil } from '@phosphor-icons/react'
 
 import { KANBAN_TAG_OPTIONS, KANBAN_USERS } from '@/constants/common'
+import { AddEditTaskModalType } from '@/page-components/kanban'
 import { KanbanEntity } from '@/types/kanban'
 import { formatDate } from '@/utils'
 
 interface KanbanTaskProps extends KanbanEntity {
 	index: number
+	groupId: string
 	className?: string
+	setAddEditTaskModal: Dispatch<SetStateAction<AddEditTaskModalType>>
 }
 
 const MAX_USER_NUMBER = 3
@@ -38,6 +41,8 @@ const KanbanTask = ({
 	tags,
 	attachment,
 	pics,
+	groupId,
+	setAddEditTaskModal,
 }: KanbanTaskProps) => {
 	return (
 		<Draggable draggableId={id} index={index}>
@@ -52,7 +57,24 @@ const KanbanTask = ({
 				>
 					<Flex justify="space-between" gap={8}>
 						<Text className="text-lg font-semibold">{title}</Text>
-						<ActionIcon className="-mr-1">
+						<ActionIcon
+							className="-mr-1"
+							onClick={() =>
+								setAddEditTaskModal({
+									opened: true,
+									kanban: {
+										id,
+										title,
+										description,
+										pics,
+										due_date,
+										tags,
+										attachment,
+									},
+									groupId,
+								})
+							}
+						>
 							<NotePencil size={20} />
 						</ActionIcon>
 					</Flex>

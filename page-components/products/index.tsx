@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Tabs } from '@mantine/core'
 
-import { Paper } from '@/components'
+import { Meta, Paper } from '@/components'
+import { APP_DOMAIN, APP_NAME } from '@/constants/common'
+import { ROUTES } from '@/constants/routes'
 import { PRODUCT_TABS } from '@/constants/tabs'
 import { useActiveTab } from '@/hooks'
 import {
@@ -20,6 +22,10 @@ const Products = () => {
 
 	return (
 		<>
+			<Meta
+				title={`Product Management | ${APP_NAME}`}
+				canonical={`${APP_DOMAIN}${ROUTES.PRODUCTS}`}
+			/>
 			<Paper className="grow">
 				<Tabs
 					value={activeTab}

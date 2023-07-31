@@ -4,6 +4,7 @@ import { OptionType, RolesEnum } from '@/types/common'
 
 export const STORE_NAME = 'Hercules'
 export const APP_NAME = `${STORE_NAME} Store`
+export const APP_DOMAIN = 'https://hercules-ecommerce-admin.vercel.app'
 
 export const CURRENT_DATE = new Date()
 export const CURRENT_YEAR = +new Date().getFullYear()

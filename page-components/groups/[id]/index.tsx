@@ -5,8 +5,17 @@ import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, NotePencil, Plus, Trash } from '@phosphor-icons/react'
 
 import { CUSTOMER_GROUP_COLUMNS } from '@/columns/customer-group'
-import { InputSearch, Loader, PageTitle, Paper, Table } from '@/components'
+import {
+	InputSearch,
+	Loader,
+	Meta,
+	PageTitle,
+	Paper,
+	Table,
+} from '@/components'
+import { APP_DOMAIN, APP_NAME } from '@/constants/common'
 import { PAGE_SIZE } from '@/constants/pagination'
+import { ROUTES } from '@/constants/routes'
 import { useCustomerGroupDetails } from '@/lib/customer'
 import {
 	ModalAddEditCustomerGroup,
@@ -34,6 +43,10 @@ const CustomerGroups = () => {
 
 	return (
 		<>
+			<Meta
+				title={`${data.name} | ${APP_NAME}`}
+				canonical={`${APP_DOMAIN}${ROUTES.CUSTOMER_GROUPS}`}
+			/>
 			<Paper>
 				<PageTitle
 					order={2}

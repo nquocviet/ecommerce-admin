@@ -1,7 +1,9 @@
 import React from 'react'
 import { Accordion, Grid, Text } from '@mantine/core'
 
-import { PageTitle, Paper } from '@/components'
+import { Meta, PageTitle, Paper } from '@/components'
+import { APP_DOMAIN, APP_NAME } from '@/constants/common'
+import { ROUTES } from '@/constants/routes'
 import { generateFaqs, splitParagraph } from '@/utils'
 
 const categories = [
@@ -30,6 +32,10 @@ const categories = [
 const FAQs = () => {
 	return (
 		<>
+			<Meta
+				title={`Frequently Asked Questions | ${APP_NAME}`}
+				canonical={`${APP_DOMAIN}${ROUTES.FAQS}`}
+			/>
 			<PageTitle
 				title="Frequently asked questions"
 				description="Need help with something? Here are our most frequently asked questions."
