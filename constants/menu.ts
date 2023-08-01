@@ -72,7 +72,7 @@ export const MENU_LIST: MenuListType = [
 		},
 		{
 			label: 'Calendar',
-			href: ROUTES.CALENDAR,
+			href: ROUTES.CALENDAR.WEEK,
 			icon: Calendar,
 		},
 		{

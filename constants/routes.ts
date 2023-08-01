@@ -19,9 +19,15 @@ export const ROUTES = {
 	GIFT_CARD_DETAILS: '/gift-cards/[id]',
 	PRICING: '/pricing',
 	MESSAGES: '/messages',
-	CALENDAR: '/calendar',
 	KANBAN: '/kanban',
 	FAQS: '/faqs',
+	CALENDAR: {
+		DEFAULT: '/calendar',
+		DAY: '/calendar/day',
+		WEEK: '/calendar/week',
+		MONTH: '/calendar/month',
+		YEAR: '/calendar/year',
+	},
 	SETTINGS: {
 		DEFAULT: '/settings',
 		CURRENCIES: '/settings/currencies',
