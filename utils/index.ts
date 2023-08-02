@@ -5,14 +5,28 @@ import {
 	CURRENT_MONTH,
 	CURRENT_YEAR,
 	DAYS_IN_WEEK,
+	MINUTES_SPAN,
 } from '@/constants/common'
-import { KANBAN_PIC_OPTIONS, KANBAN_TAG_OPTIONS } from '@/constants/common'
+import { KANBAN_TAG_OPTIONS, SYSTEM_USER_OPTIONS } from '@/constants/common'
 import { OptionType } from '@/types/common'
 import { KanbanEntity } from '@/types/kanban'
 import { ProductVariantEntity } from '@/types/product'
 
 export const zeroPad = (value: number, length: number) => {
 	return `${value}`.padStart(length, '0')
+}
+
+export const getCurrentTime = (hours = 0, minutes = 0) => {
+	const hour = new Date().getHours() + hours
+	const minute = Number(zeroPad(new Date().getMinutes(), 2)) + minutes
+	const roundHour = hour > 24 ? hour - 24 : hour
+	const roundMinute = MINUTES_SPAN.reduce((prev, curr) => {
+		if (!prev) return curr
+		if (Math.abs(curr - minute) < prev) return curr
+		return prev
+	})
+
+	return `${roundHour}:${roundMinute}`
 }
 
 export const getMonday = (date: number | string) => {
@@ -111,8 +125,10 @@ export const getMonthDates = (month = CURRENT_MONTH, year = CURRENT_YEAR) => {
 	return [...previousMonthDates, ...currentMonthDates, ...nextMonthDates]
 }
 
+export const getDayPeriod = (hour: number) => (hour >= 12 ? 'PM' : 'AM')
+
 export const hourWithPeriod = (value: number) => {
-	const period = value >= 12 ? 'PM' : 'AM'
+	const period = getDayPeriod(value)
 	const hour = value > 12 ? value - 12 : value
 
 	return `${hour} ${period}`
@@ -221,7 +237,7 @@ export const generateKanbanTask = (total: number): KanbanEntity[] => {
 		due_date: getFutureDate(10),
 		tags: getRandomValues(3, KANBAN_TAG_OPTIONS),
 		attachment: Math.random() < 0.3 ? faker.image.urlPicsumPhotos() : '',
-		pics: getRandomValues(5, KANBAN_PIC_OPTIONS),
+		pics: getRandomValues(5, SYSTEM_USER_OPTIONS),
 		created_at: getFutureDate(-3),
 		updated_at: undefined,
 	}))

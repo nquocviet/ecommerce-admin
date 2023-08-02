@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { Grid, Group } from '@mantine/core'
 import { DatePicker } from '@mantine/dates'
 
-import { CURRENT_YEAR, TOTAL_MONTHS } from '@/constants/common'
+import { CURRENT_DATE, CURRENT_YEAR, TOTAL_MONTHS } from '@/constants/common'
 import { CalendarLayout } from '@/page-components/calendar/components'
+import { isSameDate } from '@/utils'
 
 const YearlyCalendar = () => {
 	const [currentYear, setCurrentYear] = useState(CURRENT_YEAR)
@@ -33,6 +34,25 @@ const YearlyCalendar = () => {
 									calendarHeaderControl: {
 										display: 'none !important',
 									},
+								}}
+								getDayProps={(date) => {
+									if (
+										date.getMonth() === index &&
+										isSameDate(date, CURRENT_DATE)
+									) {
+										return {
+											sx: (theme) => ({
+												backgroundColor:
+													theme.colors.primary[theme.fn.primaryShade()],
+												color: theme.white,
+												...theme.fn.hover({
+													backgroundColor: theme.colors.primary[7],
+												}),
+											}),
+										}
+									}
+
+									return {}
 								}}
 							/>
 						</Group>

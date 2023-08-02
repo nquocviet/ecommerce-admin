@@ -3,13 +3,14 @@ import { ActionIcon, clsx, Flex, Grid, Text } from '@mantine/core'
 
 import {
 	CALENDAR_WEEK_ROWS,
+	CURRENT_DATE,
 	CURRENT_MONTH,
 	CURRENT_YEAR,
 	DATE_MONTH_YEAR_OPTIONS,
 	WEEKDAY_SHORT_NAMES,
 } from '@/constants/common'
 import { CalendarLayout } from '@/page-components/calendar/components'
-import { formatDate, getMonthDates } from '@/utils'
+import { formatDate, getMonthDates, isSameDate } from '@/utils'
 
 const DEFAULT_MONTH = `${CURRENT_YEAR}-${CURRENT_MONTH}`
 
@@ -65,7 +66,14 @@ const MonthlyCalendar = () => {
 						gutter={0}
 					>
 						{[...Array(CALENDAR_WEEK_ROWS)].map((_, col) => {
-							const [, month, day] = monthDates[col + CALENDAR_WEEK_ROWS * row]
+							const [year, month, day] =
+								monthDates[col + CALENDAR_WEEK_ROWS * row]
+							const date = new Date(
+								Number(year),
+								Number(month) - 1,
+								Number(day)
+							)
+							const highlight = isSameDate(date, CURRENT_DATE)
 
 							return (
 								<Grid.Col
@@ -76,9 +84,13 @@ const MonthlyCalendar = () => {
 									<Flex justify="center">
 										<ActionIcon
 											radius="xl"
+											color={highlight ? 'primary' : 'gray'}
+											variant={highlight ? 'filled' : 'subtle'}
 											className={clsx(
 												'text-xs font-semibold',
-												Number(month) !== Number(currentMonth)
+												highlight
+													? 'text-white'
+													: Number(month) !== Number(currentMonth)
 													? 'text-gray-400'
 													: 'text-black'
 											)}
