@@ -2,6 +2,7 @@ import { faker } from '@faker-js/faker'
 
 import { ROUTES } from '@/constants/routes'
 import { OptionType, RolesEnum } from '@/types/common'
+import { getDayPeriod, zeroPad } from '@/utils'
 
 export const STORE_NAME = 'Hercules'
 export const APP_NAME = `${STORE_NAME} Store`
@@ -16,6 +17,7 @@ export const CURRENT_YEAR = +new Date().getFullYear()
 export const TOTAL_MONTHS = 12
 export const CALENDAR_WEEK_ROWS = 7
 export const CALENDAR_WEEK_COLUMNS = 6
+export const MINUTES_SPAN = [0, 15, 30, 45]
 
 export const ROLE_OPTIONS = [
 	{ value: RolesEnum.MEMBER, label: 'Member' },
@@ -51,7 +53,7 @@ export const WEEKDAY_SHORT_NAMES = {
 	6: 'Sat',
 }
 
-export const KANBAN_USERS = [...Array(10)].map((_, index) => ({
+export const SYSTEM_USERS = [...Array(10)].map((_, index) => ({
 	id: `${index + 1}`,
 	name: faker.person.fullName(),
 	email: faker.internet.email(),
@@ -76,10 +78,17 @@ export const KANBAN_TAG_OPTIONS: OptionType[] = [
 	{ value: 'urgent', label: 'Urgent' },
 ]
 
-export const KANBAN_PIC_OPTIONS: OptionType[] = KANBAN_USERS.map(
+export const SYSTEM_USER_OPTIONS: OptionType[] = SYSTEM_USERS.map(
 	({ id, name }) => ({
 		value: id,
 		label: name,
+	})
+)
+
+export const SYSTEM_LOCATION_OPTIONS: OptionType[] = [...Array(5)].map(
+	(_, index) => ({
+		value: String(index),
+		label: `${faker.location.buildingNumber()} ${faker.location.street()}, ${faker.location.state()}`,
 	})
 )
 
@@ -89,3 +98,17 @@ export const CALENDAR_VIEW_OPTIONS = [
 	{ value: ROUTES.CALENDAR.MONTH, label: 'Month' },
 	{ value: ROUTES.CALENDAR.YEAR, label: 'Year' },
 ]
+
+export const HOUR_MINUTE_OPTIONS = [...Array(HOURS_PER_DAY)].reduce(
+	(prev, _, index) => {
+		const hour = index > 12 ? index - 12 : index
+
+		const timeWithMinutes = MINUTES_SPAN.map((minute) => ({
+			value: `${index}:${zeroPad(minute, 2)}`,
+			label: `${hour}:${zeroPad(minute, 2)} ${getDayPeriod(index)}`,
+		}))
+
+		return [...prev, ...timeWithMinutes]
+	},
+	[] as OptionType[]
+)

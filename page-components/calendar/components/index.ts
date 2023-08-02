@@ -1,4 +1,6 @@
 export { default as CalendarLayout } from './calendar-layout'
+export { default as FormNewEvent } from './form-new-event'
+export { default as ModalNewEvent } from './modal-new-event'
 export { default as TimeHeader } from './time-header'
 export { default as TimeSidebar } from './time-sidebar'
 export { default as TimeTable } from './time-table'

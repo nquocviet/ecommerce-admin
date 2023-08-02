@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 import { ActionIcon, Button, Flex, Menu, Text } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 import {
 	CalendarBlank,
 	CaretDown,
@@ -13,6 +14,8 @@ import { useRouter } from 'next/router'
 import { Meta, Paper } from '@/components'
 import { APP_DOMAIN, APP_NAME, CALENDAR_VIEW_OPTIONS } from '@/constants/common'
 import { ROUTES } from '@/constants/routes'
+import { ModalNewEvent } from '@/page-components/calendar/components'
+import { EventProvider } from '@/providers'
 
 interface CalendarLayoutProps {
 	dateDisplay: string
@@ -31,9 +34,10 @@ const CalendarLayout = ({
 }: CalendarLayoutProps) => {
 	const { pathname } = useRouter()
 	const calendarType = pathname.split('/').pop()
+	const [opened, { open, close }] = useDisclosure(false)
 
 	return (
-		<>
+		<EventProvider>
 			<Meta
 				title={`Calendar | ${APP_NAME}`}
 				canonical={`${APP_DOMAIN}${ROUTES.CALENDAR.DEFAULT}`}
@@ -86,6 +90,7 @@ const CalendarLayout = ({
 							color="primary"
 							variant="filled"
 							leftIcon={<Plus size={20} weight="bold" />}
+							onClick={open}
 						>
 							New event
 						</Button>
@@ -95,7 +100,8 @@ const CalendarLayout = ({
 					<div className="absolute inset-0 overflow-x-hidden">{children}</div>
 				</div>
 			</Paper>
-		</>
+			<ModalNewEvent opened={opened} onClose={close} />
+		</EventProvider>
 	)
 }
 

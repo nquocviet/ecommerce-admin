@@ -13,8 +13,8 @@ import {
 } from '@/components'
 import {
 	CURRENT_DATE,
-	KANBAN_PIC_OPTIONS,
 	KANBAN_TAG_OPTIONS,
+	SYSTEM_USER_OPTIONS,
 } from '@/constants/common'
 import { KanbanEntity } from '@/types/kanban'
 
@@ -91,7 +91,7 @@ const ModalAddEditTask = ({
 					<MultiSelect
 						name="pics"
 						control={control}
-						data={KANBAN_PIC_OPTIONS}
+						data={SYSTEM_USER_OPTIONS}
 						label="PICs"
 						placeholder="Lebron..."
 						maxSelectedValues={3}

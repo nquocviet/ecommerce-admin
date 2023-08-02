@@ -14,7 +14,7 @@ import {
 } from '@mantine/core'
 import { Clock, NotePencil } from '@phosphor-icons/react'
 
-import { KANBAN_TAG_OPTIONS, KANBAN_USERS } from '@/constants/common'
+import { KANBAN_TAG_OPTIONS, SYSTEM_USERS } from '@/constants/common'
 import { AddEditTaskModalType } from '@/page-components/kanban'
 import { KanbanEntity } from '@/types/kanban'
 import { formatDate } from '@/utils'
@@ -103,7 +103,7 @@ const KanbanTask = ({
 					<Flex justify="space-between" align="center" className="mt-4">
 						<Avatar.Group spacing="xs">
 							{pics.slice(0, MAX_USER_NUMBER).map((id) => {
-								const user = KANBAN_USERS.find((user) => user.id === id)
+								const user = SYSTEM_USERS.find((user) => user.id === id)
 								return (
 									<Tooltip key={id} label={user?.name}>
 										<Avatar src={user?.avatar} alt="" size={32} radius="xl" />
