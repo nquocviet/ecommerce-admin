@@ -48,7 +48,7 @@ const ProductGeneralInformation = () => {
 						</Menu>
 						<Menu shadow="md" width={240}>
 							<Menu.Target>
-								<ActionIcon>
+								<ActionIcon aria-label="More options">
 									<DotsThree size={20} weight="bold" />
 								</ActionIcon>
 							</Menu.Target>

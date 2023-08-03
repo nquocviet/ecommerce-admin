@@ -22,7 +22,7 @@ const Markets = () => {
 				description="Manage the markets that you will operate within."
 				size="sm"
 				action={
-					<ActionIcon>
+					<ActionIcon aria-label="Create new region">
 						<Plus size={20} weight="bold" />
 					</ActionIcon>
 				}

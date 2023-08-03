@@ -12,7 +12,7 @@ const AppSearch = ({ className }: AppSearchProps) => {
 			color="gray"
 			variant="light"
 			leftIcon={<MagnifyingGlass size={20} />}
-			className={clsx('text-gray-400 child:!justify-start', className)}
+			className={clsx('text-gray-500 child:!justify-start', className)}
 		>
 			<Text className="px-2 font-semibold">Ctrl K</Text>
 			<Text className="font-regular">Search anything...</Text>

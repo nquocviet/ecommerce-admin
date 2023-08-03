@@ -63,7 +63,7 @@ const ProductActions = () => {
 				<div className="ml-auto -mt-2">
 					<Menu position="top-end" shadow="md" width={200}>
 						<Menu.Target>
-							<ActionIcon>
+							<ActionIcon aria-label="More options">
 								<DotsThree size={20} weight="bold" />
 							</ActionIcon>
 						</Menu.Target>

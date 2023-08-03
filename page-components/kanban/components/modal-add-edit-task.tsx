@@ -20,6 +20,7 @@ import { KanbanEntity } from '@/types/kanban'
 
 interface ModalAddEditTaskProps extends ModalOpenedProps {
 	defaultValues: KanbanEntity | null
+	onSubmit: (data: KanbanEntity) => void
 }
 
 const defaultValues: KanbanEntity = {
@@ -33,10 +34,11 @@ const defaultValues: KanbanEntity = {
 
 const ModalAddEditTask = ({
 	opened,
+	onSubmit,
 	onClose,
 	...props
 }: ModalAddEditTaskProps) => {
-	const { control, reset, watch } = useForm({ defaultValues })
+	const { control, reset, watch, handleSubmit } = useForm({ defaultValues })
 	const attachment = watch('attachment')
 
 	useEffect(() => {
@@ -53,6 +55,7 @@ const ModalAddEditTask = ({
 			size="xl"
 			opened={opened}
 			onClose={onClose}
+			onConfirm={handleSubmit(onSubmit)}
 		>
 			<Grid gutter={16}>
 				<Grid.Col>

@@ -1,6 +1,8 @@
 import React, { useCallback, useState } from 'react'
 import { DragDropContext } from 'react-beautiful-dnd'
+import { faker } from '@faker-js/faker'
 import { Flex } from '@mantine/core'
+import update from 'immutability-helper'
 
 import { Meta } from '@/components'
 import { APP_DOMAIN, APP_NAME } from '@/constants/common'
@@ -82,10 +84,64 @@ const Kanban = () => {
 		}
 	}, [])
 
+	const onClose = () => {
+		setAddEditTaskModal({
+			opened: false,
+			kanban: null,
+			groupId: null,
+		})
+	}
+
+	const onSubmit = useCallback(
+		(data) => {
+			const { id } = data
+			const { groupId } = addEditTaskModal
+
+			if (!groupId) return
+
+			if (id) {
+				setGroups((prevState) => {
+					const taskIndex = prevState[groupId].tasks.findIndex(
+						(task) => task.id === id
+					)
+
+					return update(prevState, {
+						[groupId]: {
+							tasks: {
+								[taskIndex]: {
+									$set: data,
+								},
+							},
+						},
+					})
+				})
+			} else {
+				setGroups((prevState) =>
+					update(prevState, {
+						[groupId]: {
+							tasks: {
+								$push: [
+									{
+										...data,
+										id: faker.string.uuid(),
+									},
+								],
+							},
+						},
+					})
+				)
+			}
+
+			onClose()
+		},
+		[addEditTaskModal]
+	)
+
 	return (
 		<>
 			<Meta
 				title={`Kanban Board | ${APP_NAME}`}
+				desc="Efficiently manage your online store with our comprehensive e-commerce admin page. Streamline product management, inventory tracking, order fulfillment, and customer support for seamless operations. Stay in control with a user-friendly interface designed to optimize your e-commerce business."
 				canonical={`${APP_DOMAIN}${ROUTES.KANBAN}`}
 			/>
 			<DragDropContext
@@ -104,13 +160,8 @@ const Kanban = () => {
 				<ModalAddEditTask
 					opened={addEditTaskModal.opened}
 					defaultValues={addEditTaskModal.kanban}
-					onClose={() =>
-						setAddEditTaskModal({
-							opened: false,
-							kanban: null,
-							groupId: null,
-						})
-					}
+					onSubmit={onSubmit}
+					onClose={onClose}
 				/>
 			</DragDropContext>
 		</>
