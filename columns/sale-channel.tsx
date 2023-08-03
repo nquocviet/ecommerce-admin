@@ -21,7 +21,7 @@ const SalesChannelActions = ({ id }: SalesChannelActionsProps) => {
 		<>
 			<Menu shadow="md" width={200}>
 				<Menu.Target>
-					<ActionIcon>
+					<ActionIcon aria-label="More options">
 						<DotsThree size={20} weight="bold" />
 					</ActionIcon>
 				</Menu.Target>
@@ -60,7 +60,7 @@ export const SALE_CHANNEL_COLUMNS: MantineDataTableColumn<ProductEntity> = [
 		render: ({ title, thumbnail }) => {
 			return (
 				<Flex align="center" gap={12}>
-					<Image maw={32} src={thumbnail} alt={title} />
+					<Image width={32} height={40} src={thumbnail} alt={title} />
 					<Text>{title}</Text>
 				</Flex>
 			)
@@ -101,7 +101,7 @@ export const SALE_CHANNEL_PRODUCT_COLUMNS: MantineDataTableColumn<ProductEntity>
 			render: ({ title, thumbnail }) => {
 				return (
 					<Flex align="center" gap={12}>
-						<Image maw={32} src={thumbnail} alt={title} />
+						<Image width={32} height={40} src={thumbnail} alt={title} />
 						<Text>{title}</Text>
 					</Flex>
 				)

@@ -26,7 +26,7 @@ const Channels = () => {
 				description="Control which products are available in which channels"
 				size="sm"
 				action={
-					<ActionIcon>
+					<ActionIcon aria-label="Create new sales channel">
 						<Plus size={20} weight="bold" onClick={open} />
 					</ActionIcon>
 				}

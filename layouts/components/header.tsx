@@ -31,10 +31,20 @@ const Header = ({ opened, toggle }: HeaderProps) => {
 						</MediaQuery>
 					</Flex>
 					<Flex align="center" gap={12}>
-						<ActionIcon variant="subtle" color="gray" size="lg">
+						<ActionIcon
+							variant="subtle"
+							color="gray"
+							size="lg"
+							aria-label="Help"
+						>
 							<Question size={24} />
 						</ActionIcon>
-						<ActionIcon variant="subtle" color="gray" size="lg">
+						<ActionIcon
+							variant="subtle"
+							color="gray"
+							size="lg"
+							aria-label="Notification"
+						>
 							<BellSimple size={24} />
 						</ActionIcon>
 						<ActionIcon variant="transparent" color="gray" size="lg">

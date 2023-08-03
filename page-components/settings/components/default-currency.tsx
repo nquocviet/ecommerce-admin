@@ -28,6 +28,7 @@ const DefaultCurrency = () => {
 						{ value: 'EUR', label: 'EUR (Euro)' },
 						{ value: 'USD', label: 'USD (US Dollar)' },
 					]}
+					aria-label="Store currency"
 				/>
 			</form>
 		</Paper>

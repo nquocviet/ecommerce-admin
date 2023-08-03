@@ -1,5 +1,7 @@
 import Head from 'next/head'
 
+import { APP_DESCRIPTION } from '@/constants/common'
+
 interface MetaProps {
 	canonical: string
 	desc?: string
@@ -7,24 +9,21 @@ interface MetaProps {
 	title: string
 }
 
-const Meta = ({ canonical, desc, image, title }: MetaProps) => {
+const Meta = ({
+	canonical,
+	desc = APP_DESCRIPTION,
+	image,
+	title,
+}: MetaProps) => {
 	return (
 		<Head>
 			<title>{title}</title>
 			<meta property="og:locale" content="en_US" />
 			<meta property="og:type" content="website" />
 			<meta name="og:title" property="og:title" content={title} />
-			{desc && (
-				<>
-					<meta name="description" content={desc} />
-					<meta
-						name="og:description"
-						property="og:description"
-						content={desc}
-					/>
-					<meta name="twitter:description" content={desc} />
-				</>
-			)}
+			<meta name="description" content={desc} />
+			<meta name="og:description" property="og:description" content={desc} />
+			<meta name="twitter:description" content={desc} />
 			{image && (
 				<>
 					<meta property="og:image" content={image} />

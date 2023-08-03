@@ -7,6 +7,8 @@ import { getDayPeriod, zeroPad } from '@/utils'
 export const STORE_NAME = 'Hercules'
 export const APP_NAME = `${STORE_NAME} Store`
 export const APP_DOMAIN = 'https://hercules-ecommerce-admin.vercel.app'
+export const APP_DESCRIPTION =
+	'Efficiently manage your online store with our comprehensive e-commerce admin page. Streamline product management, inventory tracking, order fulfillment, and customer support for seamless operations. Stay in control with a user-friendly interface designed to optimize your e-commerce business.'
 
 export const MILLISECONDS_PER_DAY = 24 * 60 * 60 * 1000
 export const HOURS_PER_DAY = 24

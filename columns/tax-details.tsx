@@ -15,7 +15,7 @@ const TaxActions = () => {
 		<>
 			<Menu shadow="md" width={200}>
 				<Menu.Target>
-					<ActionIcon>
+					<ActionIcon aria-label="More options">
 						<DotsThree size={20} weight="bold" />
 					</ActionIcon>
 				</Menu.Target>
@@ -37,7 +37,7 @@ export const TAX_DETAILS_COLUMNS: MantineDataTableColumn<TaxDetailsEntity> = [
 		width: '45%',
 		render: ({ name }) => {
 			return (
-				<Flex align="center" gap={4} className="text-gray-400">
+				<Flex align="center" gap={4} className="text-gray-500">
 					<LockSimple size={14} />
 					<span>{name}</span>
 				</Flex>

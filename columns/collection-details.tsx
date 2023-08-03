@@ -41,7 +41,7 @@ export const COLLECTION_DETAILS_COLUMNS: MantineDataTableColumn<ProductCollectio
 			render: ({ title, thumbnail }) => {
 				return (
 					<Flex align="center" gap={12}>
-						<Image maw={32} src={thumbnail} alt={title} />
+						<Image width={32} height={40} src={thumbnail} alt={title} />
 						<Text>{title}</Text>
 					</Flex>
 				)
@@ -118,7 +118,7 @@ export const COLLECTION_PRODUCTS_COLUMNS: MantineDataTableColumn<ProductEntity> 
 			render: ({ title, thumbnail }) => {
 				return (
 					<Flex align="center" gap={12}>
-						<Image maw={32} src={thumbnail} alt={title} />
+						<Image width={32} height={40} src={thumbnail} alt={title} />
 						<Text>{title}</Text>
 					</Flex>
 				)
