@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker'
 
 import { ROUTES } from '@/constants/routes'
 import { OptionType, RolesEnum } from '@/types/common'
-import { getDayPeriod, zeroPad } from '@/utils'
+import { getDayPeriod, getMonthDays, zeroPad } from '@/utils'
 
 export const STORE_NAME = 'Hercules'
 export const APP_NAME = `${STORE_NAME} Store`
@@ -16,6 +16,8 @@ export const DAYS_IN_WEEK = 7
 export const CURRENT_DATE = new Date(new Date().setHours(0, 0, 0, 0))
 export const CURRENT_MONTH = +new Date().getMonth() + 1
 export const CURRENT_YEAR = +new Date().getFullYear()
+export const CURRENT_DAY = +new Date().getDate()
+export const DAYS_OF_CURRENT_MONTH = getMonthDays(CURRENT_MONTH, CURRENT_YEAR)
 export const TOTAL_MONTHS = 12
 export const CALENDAR_WEEK_ROWS = 7
 export const CALENDAR_WEEK_COLUMNS = 6
@@ -29,6 +31,11 @@ export const ROLE_OPTIONS = [
 
 export const DATE_MONTH_OPTIONS: Intl.DateTimeFormatOptions = {
 	month: 'long',
+}
+
+export const DATE_MONTH_SHORT_OPTIONS: Intl.DateTimeFormatOptions = {
+	day: 'numeric',
+	month: 'short',
 }
 
 export const DATE_MONTH_YEAR_OPTIONS: Intl.DateTimeFormatOptions = {

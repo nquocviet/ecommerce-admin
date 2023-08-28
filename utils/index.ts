@@ -6,6 +6,7 @@ import {
 	CURRENT_YEAR,
 	DAYS_IN_WEEK,
 	MINUTES_SPAN,
+	TOTAL_MONTHS,
 } from '@/constants/common'
 import { KANBAN_TAG_OPTIONS, SYSTEM_USER_OPTIONS } from '@/constants/common'
 import { OptionType } from '@/types/common'
@@ -82,6 +83,19 @@ export const getWeekDates = (date: Date) => {
 	return datesInWeek
 }
 
+export const getCurrentMonthDates = (
+	month = CURRENT_MONTH,
+	year = CURRENT_YEAR
+) => {
+	const currentMonthDays = getMonthDays(month, year)
+	const currentMonthDates = [...new Array(currentMonthDays)].map((_, index) => {
+		const day = index + 1
+		return new Date(year, month, day)
+	})
+
+	return currentMonthDates
+}
+
 export const getMonthDates = (month = CURRENT_MONTH, year = CURRENT_YEAR) => {
 	const previousMonth = getPreviousMonth(month, year)
 	const nextMonth = getNextMonth(month, year)
@@ -123,6 +137,13 @@ export const getMonthDates = (month = CURRENT_MONTH, year = CURRENT_YEAR) => {
 	)
 
 	return [...previousMonthDates, ...currentMonthDates, ...nextMonthDates]
+}
+
+export const getFirstDayOfMonths = () => {
+	const date = new Date()
+	return [...Array(TOTAL_MONTHS)].map(
+		(_, index) => new Date(date.getFullYear(), index, 1)
+	)
 }
 
 export const getDayPeriod = (hour: number) => (hour >= 12 ? 'PM' : 'AM')
@@ -287,5 +308,16 @@ export const toCapitalize = ([first, ...rest]: string, lowerRest = false) => {
 	return (
 		first.toUpperCase() +
 		(lowerRest ? rest.join('').toLowerCase() : rest.join(''))
+	)
+}
+
+export const getRandomChartData = (totalSeries: number, multiply = 1) => {
+	return [...Array(2)].map(() =>
+		[...Array(totalSeries)].map(() =>
+			faker.number.int({
+				min: 5000 * multiply,
+				max: 50000 * multiply,
+			})
+		)
 	)
 }

@@ -9,7 +9,7 @@ const HomePage: NextPageWithLayout = () => {
 }
 
 HomePage.getLayout = function getLayout(page: ReactElement) {
-	return <BaseLayout>{page}</BaseLayout>
+	return <BaseLayout fluid>{page}</BaseLayout>
 }
 
 export default HomePage

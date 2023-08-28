@@ -4,14 +4,13 @@ import { useDisclosure } from '@mantine/hooks'
 
 import { CONTAINER_WIDTH } from '@/constants/layout'
 
-import { Footer, Header, Navbar } from './components'
+import { Footer, Header } from './components'
 
-interface BaseLayoutProps {
+interface ErrorLayoutProps {
 	children: ReactNode
-	fluid?: boolean
 }
 
-const BaseLayout = ({ children, fluid }: BaseLayoutProps) => {
+const ErrorLayout = ({ children }: ErrorLayoutProps) => {
 	const theme = useMantineTheme()
 	const [opened, { toggle }] = useDisclosure(false)
 
@@ -25,7 +24,6 @@ const BaseLayout = ({ children, fluid }: BaseLayoutProps) => {
 							: theme.colors.gray[0],
 					minHeight: 'calc(100vh - var(--footer-height))',
 					paddingBottom: '1rem',
-					marginBottom: 'var(--footer-height)',
 				},
 				body: {
 					overflow: 'hidden',
@@ -34,7 +32,6 @@ const BaseLayout = ({ children, fluid }: BaseLayoutProps) => {
 			layout="alt"
 			navbarOffsetBreakpoint="sm"
 			asideOffsetBreakpoint="sm"
-			navbar={<Navbar opened={opened} toggle={toggle} />}
 			footer={<Footer opened={opened} />}
 			header={<Header opened={opened} toggle={toggle} />}
 		>
@@ -42,12 +39,13 @@ const BaseLayout = ({ children, fluid }: BaseLayoutProps) => {
 				size={CONTAINER_WIDTH}
 				py={16}
 				className="flex h-full flex-col items-stretch gap-6"
-				fluid={fluid}
 			>
-				{children}
+				<div className="flex h-full w-full flex-col items-center justify-center text-center">
+					{children}
+				</div>
 			</Container>
 		</AppShell>
 	)
 }
 
-export default BaseLayout
+export default ErrorLayout

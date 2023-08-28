@@ -1,7 +1,6 @@
 import { CurrencyCircleDollar, Gift, Icon } from '@phosphor-icons/react'
 import {
 	Calendar,
-	Chats,
 	CurrencyDollarSimple,
 	GearSix,
 	Kanban,
@@ -65,11 +64,6 @@ export const MENU_LIST: MenuListType = [
 		},
 	],
 	[
-		{
-			label: 'Messages',
-			href: ROUTES.MESSAGES,
-			icon: Chats,
-		},
 		{
 			label: 'Calendar',
 			href: ROUTES.CALENDAR.WEEK,

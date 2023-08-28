@@ -15,7 +15,6 @@ const Footer = ({ opened }: FooterProps) => {
 			hidden={opened}
 			fixed={false}
 			sx={{
-				position: 'static',
 				height: 'var(--footer-height)',
 			}}
 		>

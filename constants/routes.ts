@@ -18,7 +18,6 @@ export const ROUTES = {
 	GIFT_CARD_MANAGE: '/gift-cards/manage',
 	GIFT_CARD_DETAILS: '/gift-cards/[id]',
 	PRICING: '/pricing',
-	MESSAGES: '/messages',
 	KANBAN: '/kanban',
 	FAQS: '/faqs',
 	CALENDAR: {
