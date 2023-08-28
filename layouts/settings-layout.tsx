@@ -4,7 +4,7 @@ import { ROUTES } from '@/constants/routes'
 
 import DetailsLayout from './details-layout'
 
-type SettingsLayoutProps = {
+interface SettingsLayoutProps {
 	children: ReactNode
 }
 

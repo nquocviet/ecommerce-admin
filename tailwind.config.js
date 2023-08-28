@@ -1,6 +1,7 @@
 module.exports = {
 	content: [
 		'./components/**/*.{jsx,tsx}',
+		'./columns/**/*.{jsx,tsx}',
 		'./layouts/**/*.{jsx,tsx}',
 		'./pages/**/*.{jsx,tsx}',
 		'./page-components/**/*.{jsx,tsx}',
@@ -155,6 +156,7 @@ module.exports = {
 		keyframes: {},
 	},
 	plugins: [
+		require('@tailwindcss/line-clamp'),
 		function ({ addVariant }) {
 			addVariant('child', '& > *')
 			addVariant('child-hover', '& > *:hover')

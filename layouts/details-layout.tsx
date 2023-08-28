@@ -7,7 +7,7 @@ import { CustomLink } from '@/components'
 
 import BaseLayout from './base-layout'
 
-type DetailsLayoutProps = {
+interface DetailsLayoutProps {
 	href: UrlObject | string
 	label: string
 	children: ReactNode
