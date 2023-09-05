@@ -19,7 +19,9 @@ const Select = <T extends FieldValues>({
 		<Controller
 			control={control}
 			name={name}
-			render={({ field }) => <MantineSelect {...field} {...rest} />}
+			render={({ field, fieldState: { error } }) => (
+				<MantineSelect {...field} {...rest} error={error?.message} />
+			)}
 		/>
 	)
 }

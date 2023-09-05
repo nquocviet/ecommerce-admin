@@ -1,3 +1,4 @@
+export { default as AuthLayout } from './auth-layout'
 export { default as BaseLayout } from './base-layout'
 export { default as DetailsLayout } from './details-layout'
 export { default as ErrorLayout } from './error-layout'

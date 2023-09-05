@@ -1,6 +1,7 @@
-import { ReactNode } from 'react'
+import { ReactNode, useLayoutEffect } from 'react'
 import { AppShell, Container, useMantineTheme } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
+import { useRouter } from 'next/router'
 
 import { CONTAINER_WIDTH } from '@/constants/layout'
 
@@ -13,7 +14,14 @@ interface BaseLayoutProps {
 
 const BaseLayout = ({ children, fluid }: BaseLayoutProps) => {
 	const theme = useMantineTheme()
-	const [opened, { toggle }] = useDisclosure(false)
+	const { asPath } = useRouter()
+	const [opened, { close, toggle }] = useDisclosure(false)
+
+	useLayoutEffect(() => {
+		if (!opened) return
+		close()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [asPath, close])
 
 	return (
 		<AppShell
@@ -25,7 +33,6 @@ const BaseLayout = ({ children, fluid }: BaseLayoutProps) => {
 							: theme.colors.gray[0],
 					minHeight: 'calc(100vh - var(--footer-height))',
 					paddingBottom: '1rem',
-					marginBottom: 'var(--footer-height)',
 				},
 				body: {
 					overflow: 'hidden',

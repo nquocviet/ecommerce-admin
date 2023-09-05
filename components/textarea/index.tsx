@@ -19,8 +19,13 @@ const Textarea = <T extends FieldValues>({
 		<Controller
 			control={control}
 			name={name}
-			render={({ field }) => (
-				<MantineTextarea {...field} {...rest} value={field.value ?? ''} />
+			render={({ field, fieldState: { error } }) => (
+				<MantineTextarea
+					{...field}
+					{...rest}
+					value={field.value ?? ''}
+					error={error?.message}
+				/>
 			)}
 		/>
 	)

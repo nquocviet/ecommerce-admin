@@ -20,7 +20,9 @@ const DatePickerInput = <T extends FieldValues>({
 		<Controller
 			control={control}
 			name={name}
-			render={({ field }) => <MantineDatePickerInput {...field} {...rest} />}
+			render={({ field, fieldState: { error } }) => (
+				<MantineDatePickerInput {...field} {...rest} error={error?.message} />
+			)}
 		/>
 	)
 }

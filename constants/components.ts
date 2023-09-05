@@ -103,6 +103,9 @@ export const components: any = {
 				'&:not([readonly]):focus': {
 					boxShadow: '0 0 0 4px var(--primary-100)',
 				},
+				'&[data-invalid]:focus': {
+					boxShadow: '0 0 0 4px var(--red-100)',
+				},
 				'&::placeholder': {
 					color: theme.colors.gray[4],
 				},
@@ -122,6 +125,9 @@ export const components: any = {
 				},
 				'&:not([readonly]):focus': {
 					boxShadow: '0 0 0 4px var(--primary-100)',
+				},
+				'&[data-invalid]:focus': {
+					boxShadow: '0 0 0 4px var(--red-100)',
 				},
 				'&::placeholder': {
 					color: theme.colors.gray[4],
@@ -212,6 +218,31 @@ export const components: any = {
 			},
 		}),
 	},
+	PasswordInput: {
+		styles: (theme) => ({
+			label: {
+				fontSize: 'var(--fs-text-sm)',
+				marginBottom: '0.375rem',
+			},
+			input: {
+				borderColor: theme.colors.gray[3],
+				'&[readonly]:focus-within': {
+					borderColor: `${theme.colors.gray[3]} !important`,
+				},
+				'&:not([readonly]):focus-within': {
+					boxShadow: '0 0 0 4px var(--primary-100)',
+				},
+				'&[data-invalid]:focus-within': {
+					boxShadow: '0 0 0 4px var(--red-100)',
+				},
+			},
+			innerInput: {
+				'&::placeholder': {
+					color: theme.colors.gray[4],
+				},
+			},
+		}),
+	},
 	Radio: {
 		styles: () => ({
 			radio: {
@@ -235,6 +266,9 @@ export const components: any = {
 				},
 				'&:not([readonly]):focus': {
 					boxShadow: '0 0 0 4px var(--primary-100)',
+				},
+				'&[data-invalid]:focus': {
+					boxShadow: '0 0 0 4px var(--red-100)',
 				},
 			},
 		}),
@@ -317,6 +351,9 @@ export const components: any = {
 				'&:not([readonly]):focus': {
 					boxShadow: '0 0 0 4px var(--primary-100)',
 				},
+				'&[data-invalid]:focus': {
+					boxShadow: '0 0 0 4px var(--red-100)',
+				},
 				'&::placeholder': {
 					color: theme.colors.gray[4],
 				},
@@ -336,6 +373,9 @@ export const components: any = {
 				},
 				'&:not([readonly]):focus': {
 					boxShadow: '0 0 0 4px var(--primary-100)',
+				},
+				'&[data-invalid]:focus': {
+					boxShadow: '0 0 0 4px var(--red-100)',
 				},
 				'&::placeholder': {
 					color: theme.colors.gray[4],

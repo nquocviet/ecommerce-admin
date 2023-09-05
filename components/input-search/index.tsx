@@ -20,7 +20,7 @@ const InputSearch = <T extends FieldValues>({
 		<Controller
 			control={control}
 			name={name}
-			render={({ field }) => (
+			render={({ field, fieldState: { error } }) => (
 				<Input
 					placeholder={placeholder}
 					icon={icon || <MagnifyingGlass size={18} />}
@@ -38,6 +38,7 @@ const InputSearch = <T extends FieldValues>({
 					{...field}
 					{...rest}
 					value={field.value ?? ''}
+					error={error?.message}
 				/>
 			)}
 		/>
