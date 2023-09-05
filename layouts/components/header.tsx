@@ -6,11 +6,23 @@ import {
 	Flex,
 	Header as MantineHeader,
 	MediaQuery,
+	Menu,
+	Text,
 } from '@mantine/core'
-import { BellSimple, Question } from '@phosphor-icons/react'
+import {
+	BellSimple,
+	GearSix,
+	Question,
+	SignOut,
+	User,
+} from '@phosphor-icons/react'
+import Link from 'next/link'
 
 import { HEADER_HEIGHT } from '@/constants/layout'
+import { ROUTES } from '@/constants/routes'
 import { AppSearch } from '@/layouts/components'
+
+import HelperDialog from './helper-dialog'
 
 interface HeaderProps {
 	opened: boolean
@@ -31,14 +43,23 @@ const Header = ({ opened, toggle }: HeaderProps) => {
 						</MediaQuery>
 					</Flex>
 					<Flex align="center" gap={12}>
-						<ActionIcon
-							variant="subtle"
-							color="gray"
-							size="lg"
-							aria-label="Help"
-						>
-							<Question size={24} />
-						</ActionIcon>
+						<MediaQuery smallerThan="xs" styles={{ display: 'none' }}>
+							<Menu shadow="md" width={400}>
+								<Menu.Target>
+									<ActionIcon
+										variant="subtle"
+										color="gray"
+										size="lg"
+										aria-label="Help"
+									>
+										<Question size={24} />
+									</ActionIcon>
+								</Menu.Target>
+								<Menu.Dropdown>
+									<HelperDialog />
+								</Menu.Dropdown>
+							</Menu>
+						</MediaQuery>
 						<ActionIcon
 							variant="subtle"
 							color="gray"
@@ -47,11 +68,49 @@ const Header = ({ opened, toggle }: HeaderProps) => {
 						>
 							<BellSimple size={24} />
 						</ActionIcon>
-						<ActionIcon variant="transparent" color="gray" size="lg">
-							<Avatar color="primary" radius="xl" size={32}>
-								US
-							</Avatar>
-						</ActionIcon>
+						<Menu shadow="md" width={240}>
+							<Menu.Target>
+								<ActionIcon variant="transparent" color="gray" size="lg">
+									<Avatar color="primary" radius="xl" size={32}>
+										US
+									</Avatar>
+								</ActionIcon>
+							</Menu.Target>
+							<Menu.Dropdown>
+								<div className="truncate px-3 py-2">
+									<Text className="text-sm font-semibold">Username</Text>
+									<Text className="text-xs text-gray-600">
+										example@gmail.com
+									</Text>
+								</div>
+								<Menu.Divider />
+								<Menu.Item
+									component={Link}
+									href={ROUTES.SETTINGS.PERSONAL_INFORMATION}
+									icon={<User size={20} />}
+								>
+									Profile
+								</Menu.Item>
+								<Menu.Item
+									component={Link}
+									href={ROUTES.SETTINGS.DEFAULT}
+									icon={<GearSix size={20} />}
+								>
+									Settings
+								</Menu.Item>
+								<Menu.Divider />
+								<Menu.Item
+									component={Link}
+									href={ROUTES.LOGIN}
+									icon={<SignOut size={20} />}
+									sx={{
+										color: 'var(--red-600)',
+									}}
+								>
+									Sign out
+								</Menu.Item>
+							</Menu.Dropdown>
+						</Menu>
 					</Flex>
 				</Flex>
 			</Flex>

@@ -21,11 +21,12 @@ const TextInput = <T extends FieldValues>({
 		<Controller
 			control={control}
 			name={name}
-			render={({ field }) => (
+			render={({ field, fieldState: { error } }) => (
 				<MantineTextInput
 					{...field}
 					{...rest}
 					value={field.value ?? ''}
+					error={error?.message}
 					{...(textIcon && {
 						icon: textIcon,
 						iconWidth: 18,

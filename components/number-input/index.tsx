@@ -29,7 +29,7 @@ const NumberInput = <T extends FieldValues>({
 		<Controller
 			control={control}
 			name={name}
-			render={({ field }) => (
+			render={({ field, fieldState: { error } }) => (
 				<MantineNumberInput
 					{...field}
 					{...rest}
@@ -75,6 +75,7 @@ const NumberInput = <T extends FieldValues>({
 							},
 						},
 					})}
+					error={error?.message}
 					hideControls
 				/>
 			)}
