@@ -3,8 +3,13 @@ import { useForm } from 'react-hook-form'
 import { Flex } from '@mantine/core'
 
 import { SALE_CHANNEL_PRODUCT_COLUMNS } from '@/columns/sale-channel'
-import { FilterPopover, InputSearch, Modal, Table } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import {
+	FilterPopover,
+	InputSearch,
+	Modal,
+	ModalOpenedProps,
+	Table,
+} from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useProducts } from '@/lib/product'
 

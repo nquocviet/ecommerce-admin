@@ -34,8 +34,8 @@ const HelperDialog = () => {
 					size="md"
 					label="How can we help?"
 					placeholder="Write a message..."
-					className="mb-8"
-					minRows={8}
+					className="mb-6"
+					minRows={6}
 				/>
 				<Link href="#" className="mb-4 block no-underline">
 					<div className="flex w-full flex-col items-center justify-center rounded p-4 hover:bg-gray-50">

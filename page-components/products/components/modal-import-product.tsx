@@ -2,8 +2,7 @@ import React from 'react'
 import { Flex, Text } from '@mantine/core'
 import { DownloadSimple, File } from '@phosphor-icons/react'
 
-import { DropzoneCSV, Modal } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { DropzoneCSV, Modal, ModalOpenedProps } from '@/components'
 import { STORE_NAME } from '@/constants/common'
 
 const ModalImportProduct = (props: ModalOpenedProps) => {

@@ -2,8 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Grid } from '@mantine/core'
 
-import { Modal, TextInput } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Modal, ModalOpenedProps, TextInput } from '@/components'
 
 const ModalEditInformation = (props: ModalOpenedProps) => {
 	const { control } = useForm()

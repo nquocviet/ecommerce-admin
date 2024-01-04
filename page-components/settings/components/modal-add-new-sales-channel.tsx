@@ -2,8 +2,7 @@ import React, { useMemo } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { Title } from '@mantine/core'
 
-import { Accordion, ModalFullscreen } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Accordion, ModalFullscreen, ModalOpenedProps } from '@/components'
 import { SalesChannelGeneral } from '@/page-components/settings/components'
 
 const ModalAddNewSalesChannel = (props: ModalOpenedProps) => {

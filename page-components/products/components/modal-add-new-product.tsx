@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 
-import { Accordion, ModalFullscreen } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Accordion, ModalFullscreen, ModalOpenedProps } from '@/components'
 import {
 	ProductAttributes,
 	ProductGeneralInformation,

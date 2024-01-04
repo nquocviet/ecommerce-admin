@@ -9,6 +9,7 @@ import {
 	Menu,
 	Text,
 } from '@mantine/core'
+import { useViewportSize } from '@mantine/hooks'
 import {
 	BellSimple,
 	GearSix,
@@ -18,7 +19,7 @@ import {
 } from '@phosphor-icons/react'
 import Link from 'next/link'
 
-import { HEADER_HEIGHT } from '@/constants/layout'
+import { CONTAINER_WIDTH_XS, HEADER_HEIGHT } from '@/constants/layout'
 import { ROUTES } from '@/constants/routes'
 import { AppSearch } from '@/layouts/components'
 
@@ -30,6 +31,10 @@ interface HeaderProps {
 }
 
 const Header = ({ opened, toggle }: HeaderProps) => {
+	const { width } = useViewportSize()
+	const windowWidth =
+		(typeof window !== 'undefined' && window.screen.width) || 0
+
 	return (
 		<MantineHeader height={HEADER_HEIGHT} px="xl" py="md">
 			<Flex align="center" className="h-full">
@@ -38,9 +43,7 @@ const Header = ({ opened, toggle }: HeaderProps) => {
 						<MediaQuery largerThan="sm" styles={{ display: 'none' }}>
 							<Burger opened={opened} onClick={toggle} size="sm" mr="xl" />
 						</MediaQuery>
-						<MediaQuery smallerThan="sm" styles={{ display: 'none' }}>
-							<AppSearch />
-						</MediaQuery>
+						{(width || windowWidth) >= CONTAINER_WIDTH_XS && <AppSearch />}
 					</Flex>
 					<Flex align="center" gap={12}>
 						<MediaQuery smallerThan="xs" styles={{ display: 'none' }}>
@@ -55,7 +58,7 @@ const Header = ({ opened, toggle }: HeaderProps) => {
 										<Question size={24} />
 									</ActionIcon>
 								</Menu.Target>
-								<Menu.Dropdown>
+								<Menu.Dropdown sx={{ maxHeight: '90vh', overflow: 'auto' }}>
 									<HelperDialog />
 								</Menu.Dropdown>
 							</Menu>

@@ -1,17 +1,11 @@
 import React, { useMemo } from 'react'
-import {
-	clsx,
-	Collapse,
-	Divider,
-	Flex,
-	MediaQuery,
-	NavLink,
-} from '@mantine/core'
-import { useDisclosure } from '@mantine/hooks'
+import { clsx, Collapse, Divider, Flex, NavLink } from '@mantine/core'
+import { useDisclosure, useViewportSize } from '@mantine/hooks'
 import { CaretRight } from '@phosphor-icons/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
+import { CONTAINER_WIDTH_XS } from '@/constants/layout'
 import { MENU_LIST, MenuItemType } from '@/constants/menu'
 import { ROUTES } from '@/constants/routes'
 import { AppSearch } from '@/layouts/components'
@@ -98,11 +92,15 @@ const MenuItem = (props: MenuItemType) => {
 }
 
 const Menu = () => {
+	const { width } = useViewportSize()
+	const windowWidth =
+		(typeof window !== 'undefined' && window.screen.width) || 0
+
 	return (
 		<Flex direction="column" align="stretch" gap={6} className="font-medium">
-			<MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+			{(width || windowWidth) < CONTAINER_WIDTH_XS && (
 				<AppSearch className="mb-4" />
-			</MediaQuery>
+			)}
 			{MENU_LIST.map((menu, index) => {
 				const isLast = index === MENU_LIST.length - 1
 

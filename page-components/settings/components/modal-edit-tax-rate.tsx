@@ -3,8 +3,7 @@ import { useForm } from 'react-hook-form'
 import { Flex, Text } from '@mantine/core'
 import { LockSimple } from '@phosphor-icons/react'
 
-import { Modal, NumberInput, TextInput } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Modal, ModalOpenedProps, NumberInput, TextInput } from '@/components'
 
 const defaultValues = {
 	name: 'Default',

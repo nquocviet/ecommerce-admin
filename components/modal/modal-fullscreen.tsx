@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import { Button, Divider, Flex, Modal } from '@mantine/core'
 
-import { ModalOpenedProps } from '@/components/modal'
+import { ModalOpenedProps } from '@/components'
 
 interface ModalFullscreenProps extends ModalOpenedProps {
 	children: ReactNode

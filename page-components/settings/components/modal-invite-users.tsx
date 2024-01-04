@@ -2,8 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Flex } from '@mantine/core'
 
-import { Modal, Select, TextInput } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Modal, ModalOpenedProps, Select, TextInput } from '@/components'
 import { ROLE_OPTIONS, STORE_NAME } from '@/constants/common'
 import { RolesEnum } from '@/types/common'
 

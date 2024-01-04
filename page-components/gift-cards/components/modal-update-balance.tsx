@@ -2,8 +2,7 @@ import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { Grid } from '@mantine/core'
 
-import { Modal, NumberInput, TextInput } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Modal, ModalOpenedProps, NumberInput, TextInput } from '@/components'
 import { useGiftCardDetails } from '@/lib/gift-card'
 
 const ModalUpdateBalance = (props: ModalOpenedProps) => {

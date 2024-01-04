@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { ModalConfirm } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { ModalConfirm, ModalOpenedProps } from '@/components'
 
 const ModalDeleteCustomer = (props: ModalOpenedProps) => {
 	return (

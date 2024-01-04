@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react'
 
-import { Accordion, Modal } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Accordion, Modal, ModalOpenedProps } from '@/components'
 import {
 	VariantGeneral,
 	VariantShipping,

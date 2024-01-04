@@ -2,8 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Flex, Grid } from '@mantine/core'
 
-import { Modal, Textarea, TextInput } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Modal, ModalOpenedProps, Textarea, TextInput } from '@/components'
 
 const ModalAddNewReason = (props: ModalOpenedProps) => {
 	const { control } = useForm()

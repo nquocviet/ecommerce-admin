@@ -3,8 +3,7 @@ import { useFieldArray, useForm } from 'react-hook-form'
 import { ActionIcon, Button, Flex, Grid, Text } from '@mantine/core'
 import { Plus, Trash } from '@phosphor-icons/react'
 
-import { Modal, TextInput } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Modal, ModalOpenedProps, TextInput } from '@/components'
 
 type DefaultValue = {
 	title: string

@@ -2,8 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Flex } from '@mantine/core'
 
-import { Modal, SwitchGroup } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Modal, ModalOpenedProps, SwitchGroup } from '@/components'
 
 const ModalEditPreferences = (props: ModalOpenedProps) => {
 	const { control } = useForm()

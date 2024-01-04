@@ -2,8 +2,14 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Flex, Grid, Text } from '@mantine/core'
 
-import { Modal, NumberInput, Select, Textarea, TextInput } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import {
+	Modal,
+	ModalOpenedProps,
+	NumberInput,
+	Select,
+	Textarea,
+	TextInput,
+} from '@/components'
 
 const defaultValues = {
 	region: 'eu',

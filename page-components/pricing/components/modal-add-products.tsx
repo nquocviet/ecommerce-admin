@@ -3,8 +3,7 @@ import { useForm } from 'react-hook-form'
 import { Flex } from '@mantine/core'
 
 import { PRICING_PRODUCT_COLUMNS } from '@/columns/pricing'
-import { InputSearch, Modal, Table } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { InputSearch, Modal, ModalOpenedProps, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useProducts } from '@/lib/product'
 

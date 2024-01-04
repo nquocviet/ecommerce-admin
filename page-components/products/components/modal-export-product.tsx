@@ -1,8 +1,7 @@
 import React from 'react'
 import { Text } from '@mantine/core'
 
-import { Modal } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Modal, ModalOpenedProps } from '@/components'
 
 const ModalExportProduct = (props: ModalOpenedProps) => {
 	return (

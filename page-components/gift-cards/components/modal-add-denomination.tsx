@@ -3,8 +3,7 @@ import { useFieldArray, useForm } from 'react-hook-form'
 import { ActionIcon, Button, Flex, Grid, Text, Tooltip } from '@mantine/core'
 import { Info, Plus, Trash } from '@phosphor-icons/react'
 
-import { Modal, NumberInput, TextInput } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Modal, ModalOpenedProps, NumberInput, TextInput } from '@/components'
 
 const ModalAddDenomination = (props: ModalOpenedProps) => {
 	const { control } = useForm()

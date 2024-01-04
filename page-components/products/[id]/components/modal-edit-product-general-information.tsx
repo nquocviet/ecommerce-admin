@@ -2,8 +2,14 @@ import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { Flex, Grid, Text } from '@mantine/core'
 
-import { Modal, Select, SwitchGroup, Textarea, TextInput } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import {
+	Modal,
+	ModalOpenedProps,
+	Select,
+	SwitchGroup,
+	Textarea,
+	TextInput,
+} from '@/components'
 import { useCollections } from '@/lib/collection'
 import { useProductDetails } from '@/lib/product'
 

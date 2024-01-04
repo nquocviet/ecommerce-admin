@@ -2,8 +2,7 @@ import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { Flex, Grid, Text } from '@mantine/core'
 
-import { Modal, TextInput } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Modal, ModalOpenedProps, TextInput } from '@/components'
 import { useCustomerDetails } from '@/lib/customer'
 
 const ModalEditCustomer = (props: ModalOpenedProps) => {

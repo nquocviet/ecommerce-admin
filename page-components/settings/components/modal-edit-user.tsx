@@ -2,8 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Flex, Grid } from '@mantine/core'
 
-import { Modal, TextInput } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Modal, ModalOpenedProps, TextInput } from '@/components'
 import { STORE_NAME } from '@/constants/common'
 
 const defaultValues = {

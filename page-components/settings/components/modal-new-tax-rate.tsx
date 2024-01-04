@@ -3,8 +3,7 @@ import { useForm } from 'react-hook-form'
 import { Box, Button, Flex, Text } from '@mantine/core'
 import { Plus } from '@phosphor-icons/react'
 
-import { Modal, NumberInput, TextInput } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Modal, ModalOpenedProps, NumberInput, TextInput } from '@/components'
 
 const ModalNewTaxRate = (props: ModalOpenedProps) => {
 	const { control } = useForm()

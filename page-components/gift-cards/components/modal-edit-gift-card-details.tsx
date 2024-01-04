@@ -1,8 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 
-import { Modal, Select } from '@/components'
-import { ModalOpenedProps } from '@/components/modal'
+import { Modal, ModalOpenedProps, Select } from '@/components'
 
 const defaultValues = {
 	region: 'na',
