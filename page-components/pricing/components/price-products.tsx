@@ -11,7 +11,7 @@ const PriceProducts = () => {
 	return (
 		<>
 			<Flex direction="column" align="stretch" gap={20}>
-				<Text className="text-sm text-gray-600">
+				<Text className="text-sm text-gray-500">
 					You will be able to override the prices for the products you add here
 				</Text>
 				<Button

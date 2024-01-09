@@ -87,7 +87,7 @@ const Header = ({ opened, toggle }: HeaderProps) => {
 							<Menu.Dropdown>
 								<div className="truncate px-3 py-2">
 									<Text className="text-sm font-semibold">Username</Text>
-									<Text className="text-xs text-gray-600">
+									<Text className="text-xs text-gray-500">
 										example@gmail.com
 									</Text>
 								</div>

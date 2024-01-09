@@ -64,7 +64,7 @@ const ModalEditProductGeneralInformation = ({
 					direction="column"
 					align="stretch"
 					gap={24}
-					className="text-sm text-gray-600"
+					className="text-sm text-gray-500"
 				>
 					<div>
 						<Grid>

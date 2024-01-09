@@ -9,7 +9,7 @@ const VariantStock = () => {
 	const { control } = useFormContext()
 
 	return (
-		<div className="text-sm text-gray-600">
+		<div className="text-sm text-gray-500">
 			<Text>Configure the inventory and stock for this variant.</Text>
 			<SwitchGroup
 				title="Manage inventory"

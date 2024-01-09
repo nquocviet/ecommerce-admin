@@ -8,7 +8,7 @@ const RegionNewProviders = () => {
 	const { control } = useFormContext()
 
 	return (
-		<div className="text-sm text-gray-600">
+		<div className="text-sm text-gray-500">
 			<Text>
 				Add which fulfillment and payment providers should be available in this
 				region.

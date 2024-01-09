@@ -10,7 +10,7 @@ const PriceListType = () => {
 
 	return (
 		<Flex direction="column" gap={20}>
-			<Text className="text-sm text-gray-600">
+			<Text className="text-sm text-gray-500">
 				Select the type of the price list
 			</Text>
 			<RadioGroup control={control} name="type">

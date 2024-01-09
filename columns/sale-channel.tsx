@@ -8,6 +8,7 @@ import { ROUTES } from '@/constants/routes'
 import { ModalDeleteProduct } from '@/page-components/products/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { ProductEntity } from '@/types/product'
+import { SaleChannelEntity } from '@/types/sale-channel'
 import { getValue } from '@/utils'
 
 type SalesChannelActionsProps = {
@@ -114,5 +115,27 @@ export const SALE_CHANNEL_PRODUCT_COLUMNS: MantineDataTableColumn<ProductEntity>
 			render: ({ collection }) => {
 				return getValue(collection?.title)
 			},
+		},
+	]
+
+export const CURRENT_SALE_CHANNEL_COLUMNS: MantineDataTableColumn<SaleChannelEntity> =
+	[
+		{
+			accessor: '',
+			title: <Checkbox />,
+			width: '5%',
+			render: () => {
+				return <Checkbox />
+			},
+		},
+		{
+			accessor: 'name',
+			title: 'Title',
+			width: '40%',
+		},
+		{
+			accessor: 'description',
+			title: 'Description',
+			width: '55%',
 		},
 	]

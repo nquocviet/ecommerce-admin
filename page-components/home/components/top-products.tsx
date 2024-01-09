@@ -33,11 +33,11 @@ const TopProducts = () => {
 						>
 							<div className="grow">
 								<Text className="font-semibold">{name}</Text>
-								<Text className="text-xs text-gray-600 line-clamp-1">
+								<Text className="text-xs text-gray-500 line-clamp-1">
 									{description}
 								</Text>
 							</div>
-							<Text className="shrink-0 text-gray-600">
+							<Text className="shrink-0 text-gray-500">
 								<span className="font-bold text-black">{total}</span> sales
 							</Text>
 						</Flex>

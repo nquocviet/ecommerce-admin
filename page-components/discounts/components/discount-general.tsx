@@ -43,7 +43,7 @@ const DiscountGeneral = () => {
 				/>
 			</Grid.Col>
 			<Grid.Col span={12}>
-				<Text className="text-sm text-gray-600">
+				<Text className="text-sm text-gray-500">
 					The code your customers will enter during checkout. This will appear
 					on your customer’s invoice. Uppercase letters and numbers only.
 				</Text>
@@ -68,7 +68,7 @@ const DiscountGeneral = () => {
 							width={240}
 							multiline
 						>
-							<Info size={16} className="text-gray-600" />
+							<Info size={16} className="text-gray-500" />
 						</Tooltip>
 					}
 				/>

@@ -96,7 +96,7 @@ export const CUSTOMER_GROUP_COLUMNS: MantineDataTableColumn<CustomerEntity> = [
 				<Flex align="center" gap={8}>
 					<Text>{groups?.[0].name}</Text>
 					{groups.length > 1 && (
-						<Text className="text-xs text-gray-400">
+						<Text className="text-xs text-gray-500">
 							+{groups.length - 1} more
 						</Text>
 					)}

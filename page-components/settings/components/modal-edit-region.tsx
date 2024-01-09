@@ -23,11 +23,11 @@ const ModalEditRegion = (props: ModalOpenedProps) => {
 		<Modal
 			title="Edit region details"
 			size="xl"
-			confirmText="Save and close"
+			confirmText="Save"
 			withClose={false}
 			{...props}
 		>
-			<div className="text-sm font-semibold text-gray-600">
+			<div className="text-sm font-semibold text-gray-500">
 				<form>
 					<Text>Details</Text>
 					<Flex direction="column" align="stretch" gap={24} className="mt-4">

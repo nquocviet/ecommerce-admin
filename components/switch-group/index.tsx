@@ -24,14 +24,14 @@ const SwitchGroup = <T extends FieldValues>({
 	...rest
 }: SwitchGroupProps<T>) => {
 	return (
-		<label className={clsx('text-sm text-gray-600', className)}>
+		<label className={clsx('text-sm text-gray-500', className)}>
 			<Flex justify="space-between" align="center" className="mb-1.5">
 				<Text className="font-semibold text-black">
 					{title}
 					{hint && (
 						<span className="font-regular">
 							<Tooltip width="auto" label={hint} multiline {...hintProps}>
-								<Info size={16} className="ml-1 -mb-[3px] text-gray-600" />
+								<Info size={16} className="ml-1 -mb-[3px] text-gray-500" />
 							</Tooltip>
 						</span>
 					)}

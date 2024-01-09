@@ -15,17 +15,12 @@ const ModalEditShippingOption = (props: ModalOpenedProps) => {
 	const { control } = useForm()
 
 	return (
-		<Modal
-			title="Edit shipping option"
-			size="xl"
-			confirmText="Save and close"
-			{...props}
-		>
+		<Modal title="Edit shipping option" size="xl" confirmText="Save" {...props}>
 			<form>
-				<Text className="mb-2 text-sm font-semibold text-gray-600">
+				<Text className="mb-2 text-sm font-semibold text-gray-500">
 					Fulfillment Method
 				</Text>
-				<Text className="text-sm text-gray-600">
+				<Text className="text-sm text-gray-500">
 					manual-fulfillment via manual
 				</Text>
 				<Divider my={32} />
@@ -36,7 +31,7 @@ const ModalEditShippingOption = (props: ModalOpenedProps) => {
 					description="Enable or disable the shipping option visiblity in store."
 				/>
 				<Divider my={32} />
-				<Text className="text-sm font-semibold text-gray-600">Details</Text>
+				<Text className="text-sm font-semibold text-gray-500">Details</Text>
 				<Flex direction="column" align="stretch" gap={24} className="mt-4">
 					<Grid>
 						<Grid.Col xs={6}>
@@ -77,7 +72,7 @@ const ModalEditShippingOption = (props: ModalOpenedProps) => {
 					</Grid>
 				</Flex>
 				<Divider my={32} />
-				<Text className="text-sm font-semibold text-gray-600">
+				<Text className="text-sm font-semibold text-gray-500">
 					Requirements
 				</Text>
 				<div className="mt-4">

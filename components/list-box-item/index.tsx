@@ -27,12 +27,12 @@ const ListBoxItem = ({
 			)}
 		>
 			<Flex gap={16} className="flex-1 overflow-hidden">
-				<div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-gray-100 text-sm font-semibold text-gray-600">
+				<div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-gray-100 text-sm font-semibold text-gray-500">
 					§{order}
 				</div>
 				<div className="text-sm">
 					<p className="m-0 font-medium text-black">{title}</p>
-					<p className="m-0 truncate text-gray-600">{description}</p>
+					<p className="m-0 truncate text-gray-500">{description}</p>
 				</div>
 			</Flex>
 			{action}

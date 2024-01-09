@@ -55,7 +55,7 @@ const ModalEditDiscount = (props: ModalOpenedProps) => {
 							/>
 						</Grid.Col>
 					</Grid>
-					<Text className="text-xs text-gray-600">
+					<Text className="text-xs text-gray-500">
 						The code your customers will enter during checkout. This will appear
 						on your customer&apos;s invoice. <br />
 						Uppercase letters and numbers only.

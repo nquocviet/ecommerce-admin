@@ -14,7 +14,7 @@ const DiscountConfiguration = () => {
 
 	return (
 		<Flex direction="column" align="stretch" gap={20}>
-			<Text className="text-sm text-gray-600">
+			<Text className="text-sm text-gray-500">
 				Discount code applies from you hit the publish button and forever if
 				left untouched.
 			</Text>

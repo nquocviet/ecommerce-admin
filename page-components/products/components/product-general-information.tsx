@@ -9,7 +9,7 @@ const ProductGeneralInformation = () => {
 	const { control } = useFormContext()
 
 	return (
-		<div className="text-sm text-gray-600">
+		<div className="text-sm text-gray-500">
 			<Text>To start selling, all you need is a name and a price.</Text>
 			<Flex direction="column" align="stretch" gap={24} className="mt-6">
 				<div>
@@ -52,7 +52,7 @@ const ProductGeneralInformation = () => {
 										label="The handle is the part of the URL that identifies the product. If not specified, it will be generated from the title."
 										multiline
 									>
-										<Info size={16} className="text-gray-600" />
+										<Info size={16} className="text-gray-500" />
 									</Tooltip>
 								</Flex>
 							}

@@ -35,7 +35,7 @@ const LatestCustomers = () => {
 								<Avatar size="md" radius="xl" src={avatar} />
 								<div>
 									<Text className="font-semibold">{name}</Text>
-									<Text className="text-xs text-gray-600">{email}</Text>
+									<Text className="text-xs text-gray-500">{email}</Text>
 								</div>
 							</Flex>
 							<span className="shrink-0 font-bold">

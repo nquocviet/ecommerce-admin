@@ -5,7 +5,7 @@ import { useDisclosure } from '@mantine/hooks'
 import { Info, Plus, Trash } from '@phosphor-icons/react'
 
 import { TextInput } from '@/components'
-import { ModalCreateVariant } from '@/page-components/products/components'
+import { ModalAddEditVariant } from '@/page-components/products/components'
 
 const ProductVariants = () => {
 	const [opened, { open, close }] = useDisclosure(false)
@@ -20,7 +20,7 @@ const ProductVariants = () => {
 	})
 
 	return (
-		<div className="text-sm text-gray-600">
+		<div className="text-sm text-gray-500">
 			<Text>Add variations of this product.</Text>
 			<Text>
 				Offer your customers different options for color, format, size, shape,
@@ -97,7 +97,7 @@ const ProductVariants = () => {
 					</Button>
 				</Flex>
 			</Flex>
-			<ModalCreateVariant opened={opened} onClose={close} />
+			<ModalAddEditVariant opened={opened} onClose={close} />
 		</div>
 	)
 }

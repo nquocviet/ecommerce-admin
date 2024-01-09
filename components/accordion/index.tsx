@@ -60,7 +60,7 @@ const Accordion = <T extends AccordionSection>({
 							{hint && (
 								<span className="font-regular">
 									<Tooltip width="auto" label={hint} multiline {...hintProps}>
-										<Info size={16} className="ml-1 -mb-[3px] text-gray-600" />
+										<Info size={16} className="ml-1 -mb-[3px] text-gray-500" />
 									</Tooltip>
 								</span>
 							)}

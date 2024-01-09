@@ -102,7 +102,7 @@ export const ORDER_COLUMNS: MantineDataTableColumn<OrderEntity> = [
 			return (
 				<Flex align="center" className="whitespace-nowrap" gap={8}>
 					{formatMoney(total, currency_code)}
-					<Text className="text-gray-400" sx={{ textTransform: 'uppercase' }}>
+					<Text className="text-gray-500" sx={{ textTransform: 'uppercase' }}>
 						{currency_code}
 					</Text>
 				</Flex>

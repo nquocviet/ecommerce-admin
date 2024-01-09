@@ -7,7 +7,14 @@ import {
 	VariantStock,
 } from '@/page-components/products/components'
 
-const ModalCreateVariant = (props: ModalOpenedProps) => {
+interface ModalAddEditVariantProps extends ModalOpenedProps {
+	editable?: boolean
+}
+
+const ModalAddEditVariant = ({
+	editable,
+	...props
+}: ModalAddEditVariantProps) => {
 	const sections = useMemo(
 		() => [
 			{
@@ -32,10 +39,10 @@ const ModalCreateVariant = (props: ModalOpenedProps) => {
 
 	return (
 		<Modal
-			title="Create variant"
+			title={editable ? 'Edit variant' : 'Add variant'}
 			size="xl"
 			zIndex={201}
-			confirmText="Save and close"
+			confirmText="Save"
 			{...props}
 		>
 			<Accordion sections={sections} defaultValue="general" />
@@ -43,4 +50,4 @@ const ModalCreateVariant = (props: ModalOpenedProps) => {
 	)
 }
 
-export default ModalCreateVariant
+export default ModalAddEditVariant

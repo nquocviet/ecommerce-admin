@@ -6,7 +6,7 @@ import { Modal, ModalOpenedProps } from '@/components'
 const ModalExportProduct = (props: ModalOpenedProps) => {
 	return (
 		<Modal title="Export products" size="md" confirmText="Export" {...props}>
-			<Text className="text-gray-600">Initialize an export of your data</Text>
+			<Text className="text-gray-500">Initialize an export of your data</Text>
 		</Modal>
 	)
 }

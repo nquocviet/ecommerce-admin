@@ -14,7 +14,7 @@ const VariantShipping = () => {
 	}))
 
 	return (
-		<div className="text-sm text-gray-600">
+		<div className="text-sm text-gray-500">
 			<Text>
 				Shipping information can be required depending on your shipping
 				provider, and whether or not you are shipping internationally.

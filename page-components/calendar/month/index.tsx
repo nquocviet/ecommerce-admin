@@ -91,7 +91,7 @@ const MonthlyCalendar = () => {
 												highlight
 													? 'text-white'
 													: Number(month) !== Number(currentMonth)
-													? 'text-gray-400'
+													? 'text-gray-500'
 													: 'text-black'
 											)}
 										>

@@ -14,7 +14,7 @@ const FormNewEvent = () => {
 	const { control } = useFormContext()
 
 	return (
-		<Flex direction="column" align="stretch" gap={12} className="pt-2">
+		<Flex direction="column" align="stretch" gap={20} className="pt-2">
 			<TextInput
 				name="title"
 				control={control}
@@ -35,6 +35,7 @@ const FormNewEvent = () => {
 								fontSize: '0.875rem',
 							},
 						})}
+						minDate={new Date()}
 					/>
 					<Select
 						name="start_time"

@@ -25,7 +25,7 @@ const ModalEditTaxRate = (props: ModalOpenedProps) => {
 						name="name"
 						control={control}
 						label="Name"
-						icon={<LockSimple size={14} className="text-gray-400" />}
+						icon={<LockSimple size={14} className="text-gray-500" />}
 						required
 						readOnly
 					/>

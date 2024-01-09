@@ -6,7 +6,7 @@ import { DropzoneImage } from '@/components'
 const ProductThumbnail = () => {
 	return (
 		<div>
-			<Text className="text-sm text-gray-600">
+			<Text className="text-sm text-gray-500">
 				Used to represent your product during checkout, social sharing and more.
 			</Text>
 			<DropzoneImage

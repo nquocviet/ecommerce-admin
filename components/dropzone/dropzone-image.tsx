@@ -24,7 +24,7 @@ const DropzoneImage = ({ onDrop, className, ...rest }: DropzoneImageProps) => {
 						</Text>
 						.
 					</Text>
-					<Text size="sm" align="center" className="text-gray-600">
+					<Text size="sm" align="center" className="text-gray-500">
 						1200 x 1600 (3:4) recommended, up to 10MB each
 					</Text>
 				</div>

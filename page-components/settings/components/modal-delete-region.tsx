@@ -15,7 +15,7 @@ const ModalDeleteRegion = (props: ModalOpenedProps) => {
 			withClose={false}
 			{...props}
 		>
-			<div className="text-sm text-gray-600">
+			<div className="text-sm text-gray-500">
 				<Text className="mb-6">
 					Are you sure you want to delete this region?
 				</Text>

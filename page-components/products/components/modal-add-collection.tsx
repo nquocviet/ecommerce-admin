@@ -24,7 +24,7 @@ const ModalAddCollection = (props: ModalOpenedProps) => {
 			{...props}
 		>
 			<form>
-				<Text className="text-sm text-gray-600">
+				<Text className="text-sm text-gray-500">
 					To create a collection, all you need is a title and a handle.
 				</Text>
 				<Text className="mt-6 mb-3 text-sm font-semibold">Details</Text>
@@ -50,7 +50,7 @@ const ModalAddCollection = (props: ModalOpenedProps) => {
 										label="URL Slug for the collection. Will be auto generated if left blank."
 										multiline
 									>
-										<Info size={16} className="text-gray-600" />
+										<Info size={16} className="text-gray-500" />
 									</Tooltip>
 								</Flex>
 							}

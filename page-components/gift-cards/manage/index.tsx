@@ -137,7 +137,7 @@ const GiftCardManage = () => {
 								<Flex align="center" gap={6}>
 									Handle
 									<Tooltip label="URL of the product.">
-										<Info size={16} className="text-gray-600" />
+										<Info size={16} className="text-gray-500" />
 									</Tooltip>
 								</Flex>
 							}

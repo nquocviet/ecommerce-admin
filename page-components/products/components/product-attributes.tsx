@@ -14,7 +14,7 @@ const ProductAttributes = () => {
 	}))
 
 	return (
-		<div className="text-sm text-gray-600">
+		<div className="text-sm text-gray-500">
 			<Text>Used for shipping and customs purposes.</Text>
 			<Flex direction="column" align="stretch" gap={24} className="mt-6">
 				<div>

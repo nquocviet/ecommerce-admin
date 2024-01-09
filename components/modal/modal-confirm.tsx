@@ -28,7 +28,7 @@ const ModalConfirm = ({
 			confirmText={confirmText}
 			confirmation
 		>
-			<Text className="text-gray-600">{message}</Text>
+			<Text className="text-gray-500">{message}</Text>
 		</Modal>
 	)
 }

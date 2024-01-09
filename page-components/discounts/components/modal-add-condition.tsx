@@ -28,12 +28,7 @@ const ModalAddCondition = (props: ModalOpenedProps) => {
 	if (isLoading || !data) return <Loader />
 
 	return (
-		<Modal
-			title="Add conditions"
-			size="xl"
-			confirmText="Save and close"
-			{...props}
-		>
+		<Modal title="Add conditions" size="xl" confirmText="Save" {...props}>
 			<form>
 				<Flex direction="column" align="stretch" gap={16}>
 					<RadioGroup control={control} name="type">

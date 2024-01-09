@@ -10,7 +10,11 @@ import {
 	ModalDeleteDenomination,
 	ModalEditDenomination,
 } from '@/page-components/gift-cards/components'
-import { ModalDeleteProduct } from '@/page-components/products/components'
+import ModalDeleteVariant from '@/page-components/products/[id]/components/modal-delete-variant'
+import {
+	ModalAddEditVariant,
+	ModalDeleteProduct,
+} from '@/page-components/products/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { PriceEntity } from '@/types/pricing'
 import { ProductEntity, ProductVariantEntity } from '@/types/product'
@@ -135,28 +139,54 @@ export const PRODUCT_COLUMNS: MantineDataTableColumn<ProductEntity> = [
 ]
 
 const VariantActions = () => {
+	const [
+		editVariantOpened,
+		{ open: openEditVariant, close: closeEditVariant },
+	] = useDisclosure(false)
+	const [
+		deleteVariantOpened,
+		{ open: openDeleteVariant, close: closeDeleteVariant },
+	] = useDisclosure(false)
+
 	return (
-		<Flex justify="flex-end">
-			<Menu shadow="md" width={200}>
-				<Menu.Target>
-					<ActionIcon aria-label="More options">
-						<DotsThree size={20} weight="bold" />
-					</ActionIcon>
-				</Menu.Target>
-				<Menu.Dropdown>
-					<Menu.Item icon={<NotePencil size={20} />}>Edit variant</Menu.Item>
-					<Menu.Item icon={<Copy size={20} />}>Duplicate variant</Menu.Item>
-					<Menu.Item
-						icon={<Trash size={20} />}
-						sx={{
-							color: 'var(--red-600)',
-						}}
-					>
-						Delete variant
-					</Menu.Item>
-				</Menu.Dropdown>
-			</Menu>
-		</Flex>
+		<>
+			<Flex justify="flex-end">
+				<Menu shadow="md" width={200}>
+					<Menu.Target>
+						<ActionIcon aria-label="More options">
+							<DotsThree size={20} weight="bold" />
+						</ActionIcon>
+					</Menu.Target>
+					<Menu.Dropdown>
+						<Menu.Item
+							icon={<NotePencil size={20} />}
+							onClick={openEditVariant}
+						>
+							Edit variant
+						</Menu.Item>
+						<Menu.Item icon={<Copy size={20} />}>Duplicate variant</Menu.Item>
+						<Menu.Item
+							icon={<Trash size={20} />}
+							sx={{
+								color: 'var(--red-600)',
+							}}
+							onClick={openDeleteVariant}
+						>
+							Delete variant
+						</Menu.Item>
+					</Menu.Dropdown>
+				</Menu>
+			</Flex>
+			<ModalAddEditVariant
+				opened={editVariantOpened}
+				onClose={closeEditVariant}
+				editable
+			/>
+			<ModalDeleteVariant
+				opened={deleteVariantOpened}
+				onClose={closeDeleteVariant}
+			/>
+		</>
 	)
 }
 

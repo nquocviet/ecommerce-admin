@@ -20,7 +20,7 @@ const OrderFulfillment = () => {
 					</Button>
 				}
 			/>
-			<Text className="text-sm text-gray-600">Shipping Method</Text>
+			<Text className="text-sm text-gray-500">Shipping Method</Text>
 			<JSONView
 				data={{ shipping_methods: data?.shipping_methods }}
 				className="mt-4"

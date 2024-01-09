@@ -26,7 +26,7 @@ const DropzoneCSV = ({ onDrop, className, ...rest }: DropzoneCSVProps) => {
 						</Text>
 						.
 					</Text>
-					<Text size="sm" align="center" className="text-gray-600">
+					<Text size="sm" align="center" className="text-gray-500">
 						Only .csv files are supported.
 					</Text>
 				</div>

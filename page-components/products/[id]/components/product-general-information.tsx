@@ -11,11 +11,26 @@ import {
 import { Chip, Dots, PageTitle, Paper } from '@/components'
 import { useProductDetails } from '@/lib/product'
 import { useSalesChannels } from '@/lib/sales-channel'
-import { ModalEditProductGeneralInformation } from '@/page-components/products/[id]/components'
+import {
+	ModalEditProductGeneralInformation,
+	ModalEditSaleChannels,
+} from '@/page-components/products/[id]/components'
+import { ModalDeleteProduct } from '@/page-components/products/components'
 import { getValue } from '@/utils'
 
 const ProductGeneralInformation = () => {
-	const [opened, { open, close }] = useDisclosure(false)
+	const [
+		editGeneralInformationOpened,
+		{ open: openGeneralInformation, close: closeGeneralInformation },
+	] = useDisclosure(false)
+	const [
+		editSaleChannelsOpened,
+		{ open: openSaleChannels, close: closeSaleChannels },
+	] = useDisclosure(false)
+	const [
+		deleteProductOpened,
+		{ open: openDeleteProduct, close: closeDeleteProduct },
+	] = useDisclosure(false)
 	const { data } = useProductDetails()
 	const { data: salesChannels } = useSalesChannels()
 
@@ -53,10 +68,16 @@ const ProductGeneralInformation = () => {
 								</ActionIcon>
 							</Menu.Target>
 							<Menu.Dropdown>
-								<Menu.Item icon={<NotePencil size={20} />} onClick={open}>
+								<Menu.Item
+									icon={<NotePencil size={20} />}
+									onClick={openGeneralInformation}
+								>
 									Edit general information
 								</Menu.Item>
-								<Menu.Item icon={<TreeStructure size={20} />}>
+								<Menu.Item
+									icon={<TreeStructure size={20} />}
+									onClick={openSaleChannels}
+								>
 									Edit sale channels
 								</Menu.Item>
 								<Menu.Item
@@ -64,6 +85,7 @@ const ProductGeneralInformation = () => {
 									sx={{
 										color: 'var(--red-600)',
 									}}
+									onClick={openDeleteProduct}
 								>
 									Delete
 								</Menu.Item>
@@ -72,7 +94,7 @@ const ProductGeneralInformation = () => {
 					</Flex>
 				}
 			/>
-			<div className="mt-8 text-sm text-gray-600">
+			<div className="mt-8 text-sm text-gray-500">
 				<Flex direction="column" align="stretch" gap={24}>
 					<Flex direction="column" align="stretch" gap={12}>
 						<Text className="font-semibold text-black">Details</Text>
@@ -108,7 +130,7 @@ const ProductGeneralInformation = () => {
 						<Chip key={id} label={name} />
 					))}
 				</Flex>
-				<Text className="text-gray-600">
+				<Text className="text-gray-500">
 					Available in{' '}
 					<Text component="span" className="font-semibold">
 						{data?.sales_channels.length}
@@ -120,7 +142,18 @@ const ProductGeneralInformation = () => {
 					Sales Channels
 				</Text>
 			</Flex>
-			<ModalEditProductGeneralInformation opened={opened} onClose={close} />
+			<ModalEditProductGeneralInformation
+				opened={editGeneralInformationOpened}
+				onClose={closeGeneralInformation}
+			/>
+			<ModalEditSaleChannels
+				opened={editSaleChannelsOpened}
+				onClose={closeSaleChannels}
+			/>
+			<ModalDeleteProduct
+				opened={deleteProductOpened}
+				onClose={closeDeleteProduct}
+			/>
 		</Paper>
 	)
 }

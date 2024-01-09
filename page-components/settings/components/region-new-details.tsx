@@ -14,7 +14,7 @@ const RegionNewDetails = () => {
 	}))
 
 	return (
-		<div className="text-sm text-gray-600">
+		<div className="text-sm text-gray-500">
 			<Text>Add the region details.</Text>
 			<Flex direction="column" align="stretch" gap={24} className="mt-6">
 				<Grid>
