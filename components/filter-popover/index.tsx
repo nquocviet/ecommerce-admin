@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Checkbox, Flex, Popover, TextInput } from '@mantine/core'
 import { FunnelSimple } from '@phosphor-icons/react'
 
@@ -10,8 +10,17 @@ interface FilterPopoverProps {
 }
 
 const FilterPopover = ({ filterOptions, className }: FilterPopoverProps) => {
+	const [opened, setOpened] = useState(false)
+
 	return (
-		<Popover width={200} position="bottom" shadow="md" withArrow>
+		<Popover
+			opened={opened}
+			onChange={setOpened}
+			width={200}
+			position="bottom"
+			shadow="md"
+			withArrow
+		>
 			<Popover.Target>
 				<Button
 					color="gray"
@@ -19,6 +28,7 @@ const FilterPopover = ({ filterOptions, className }: FilterPopoverProps) => {
 					size="xs"
 					rightIcon={<FunnelSimple size={16} />}
 					className={className}
+					onClick={() => setOpened(true)}
 				>
 					Filters
 				</Button>
@@ -28,7 +38,13 @@ const FilterPopover = ({ filterOptions, className }: FilterPopoverProps) => {
 					<Button color="gray" variant="outline" size="sm">
 						Clear
 					</Button>
-					<Button color="primary" variant="filled" size="sm" className="flex-1">
+					<Button
+						color="primary"
+						variant="filled"
+						size="sm"
+						className="flex-1"
+						onClick={() => setOpened(false)}
+					>
 						Apply
 					</Button>
 				</Flex>

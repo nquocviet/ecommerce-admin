@@ -36,7 +36,12 @@ const Header = ({ opened, toggle }: HeaderProps) => {
 		(typeof window !== 'undefined' && window.screen.width) || 0
 
 	return (
-		<MantineHeader height={HEADER_HEIGHT} px="xl" py="md">
+		<MantineHeader
+			height={HEADER_HEIGHT}
+			px="xl"
+			py="md"
+			mr="var(--removed-body-scroll-bar-size)"
+		>
 			<Flex align="center" className="h-full">
 				<Flex justify="space-between" align="center" className="w-full">
 					<Flex align="center" gap={12}>

@@ -13,8 +13,9 @@ interface ModalProps extends Omit<ModalBaseProps, '__staticSelector'> {
 	confirmation?: boolean
 	closeOnConfirm?: boolean
 	closeOnCancel?: boolean
-	cancelText?: string
-	confirmText?: string
+	cancelText?: string | null
+	confirmText?: string | null
+	withClose?: boolean
 	onCancel?: () => void
 	onConfirm?: () => void
 }
@@ -29,6 +30,7 @@ const Modal = ({
 	closeOnCancel = true,
 	cancelText = 'Cancel',
 	confirmText = 'Confirm',
+	withClose = true,
 	onClose,
 	onCancel,
 	onConfirm,
@@ -51,13 +53,13 @@ const Modal = ({
 			<MantineModal.Content>
 				<MantineModal.Header sx={{ zIndex: 1000 }}>
 					<MantineModal.Title>{title}</MantineModal.Title>
-					<MantineModal.CloseButton />
+					{withClose && <MantineModal.CloseButton />}
 				</MantineModal.Header>
 				<MantineModal.Body>{children}</MantineModal.Body>
 				{(cancelText || confirmText) && (
 					<MantineModal.Header
 						sx={{
-							zIndex: 1000,
+							zIndex: 1,
 							top: 'unset',
 							bottom: 0,
 							paddingTop: 0,

@@ -9,8 +9,8 @@ import { getCurrentTime } from '@/utils'
 const defaultValues = {
 	title: '',
 	date: new Date(),
-	startTime: getCurrentTime(),
-	endTime: getCurrentTime(1),
+	start_time: getCurrentTime(),
+	end_time: getCurrentTime(1),
 	guests: [],
 	location: '',
 	description: '',
@@ -22,8 +22,6 @@ const ModalNewEvent = (props: ModalOpenedProps) => {
 	})
 	const context = useContext(EventContext)
 	const { handleSubmit } = methods
-
-	console.log(defaultValues)
 
 	if (!context) return null
 

@@ -6,8 +6,8 @@ import { Modal } from '@/components'
 interface ModalConfirmProps extends ModalProps {
 	title: string
 	message: ReactNode
-	cancelText?: string
-	confirmText?: string
+	cancelText?: string | null
+	confirmText?: string | null
 }
 
 const ModalConfirm = ({

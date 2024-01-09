@@ -37,7 +37,7 @@ const FormNewEvent = () => {
 						})}
 					/>
 					<Select
-						name="startTime"
+						name="start_time"
 						control={control}
 						data={HOUR_MINUTE_OPTIONS}
 						maxDropdownHeight={240}
@@ -59,7 +59,7 @@ const FormNewEvent = () => {
 					/>
 					<span>-</span>
 					<Select
-						name="endTime"
+						name="end_time"
 						control={control}
 						data={HOUR_MINUTE_OPTIONS}
 						maxDropdownHeight={240}

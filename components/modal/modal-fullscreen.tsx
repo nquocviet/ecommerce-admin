@@ -7,8 +7,8 @@ interface ModalFullscreenProps extends ModalOpenedProps {
 	children: ReactNode
 	closeOnConfirm?: boolean
 	closeOnCancel?: boolean
-	cancelText?: string
-	confirmText?: string
+	cancelText?: string | null
+	confirmText?: string | null
 	onCancel?: () => void
 	onConfirm?: () => void
 	className?: string
@@ -65,7 +65,8 @@ const ModalFullscreen = ({
 				)
 			}
 			transitionProps={{
-				duration: 0,
+				transition: 'fade',
+				duration: 200,
 			}}
 			closeButtonProps={{
 				size: 'md',

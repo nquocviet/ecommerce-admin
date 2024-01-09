@@ -6,10 +6,10 @@ import { PageTitle, Paper, TextInput } from '@/components'
 import { APP_NAME, STORE_NAME } from '@/constants/common'
 
 const defaultValues = {
-	storeName: APP_NAME,
-	swapLink: '',
-	draftOrder: '',
-	inviteLink: '',
+	store_name: APP_NAME,
+	swap_link: '',
+	draft_order: '',
+	invite_link: '',
 }
 
 const StoreForm = () => {
@@ -31,7 +31,7 @@ const StoreForm = () => {
 				<Flex direction="column" gap={16} className="mb-6">
 					<TextInput
 						control={control}
-						name="storeName"
+						name="store_name"
 						label="Store name"
 						placeholder={APP_NAME}
 					/>
@@ -42,19 +42,19 @@ const StoreForm = () => {
 				<Flex direction="column" gap={16} className="mb-6">
 					<TextInput
 						control={control}
-						name="swapLink"
+						name="swap_link"
 						label="Swap link template"
 						placeholder={`https://${STORE_NAME.toLowerCase()}.inc/swap={swap_id}`}
 					/>
 					<TextInput
 						control={control}
-						name="draftOrder"
+						name="draft_order"
 						label="Draft order link template"
 						placeholder={`https://${STORE_NAME.toLowerCase()}.inc/payment={payment_id}`}
 					/>
 					<TextInput
 						control={control}
-						name="inviteLink"
+						name="invite_link"
 						label="Invite link template"
 						placeholder={`https://${STORE_NAME.toLowerCase()}-admin.inc/invite?token={invite_token}`}
 					/>

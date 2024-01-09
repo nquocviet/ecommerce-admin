@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Button, Text } from '@mantine/core'
 import Link from 'next/link'
@@ -12,11 +12,7 @@ const defaultValues = {
 }
 
 const ResetPassword = () => {
-	const { control, handleSubmit } = useForm({ defaultValues })
-
-	const onSubmit = useCallback((data) => {
-		console.log(data)
-	}, [])
+	const { control } = useForm({ defaultValues })
 
 	return (
 		<>
@@ -31,7 +27,7 @@ const ResetPassword = () => {
 				</Text>
 			</div>
 			<div className="mx-16">
-				<form onSubmit={handleSubmit(onSubmit)} className="mb-4 text-left">
+				<form className="mb-4 text-left">
 					<TextInput
 						name="email"
 						control={control}
