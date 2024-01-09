@@ -8,7 +8,7 @@ import { Dots, FilterPopover, PageTitle, Paper, Table } from '@/components'
 import { PAGE_SIZE } from '@/constants/pagination'
 import { useProducts } from '@/lib/product'
 import {
-	ModalAddNewProduct,
+	ModalAddProduct,
 	ModalEditSalesChannel,
 } from '@/page-components/settings/components'
 
@@ -88,7 +88,7 @@ const ChannelDetails = () => {
 				opened={editSalesChannelOpened}
 				onClose={closeEditSalesChannel}
 			/>
-			<ModalAddNewProduct
+			<ModalAddProduct
 				opened={addNewProductOpened}
 				onClose={closeAddNewProduct}
 			/>

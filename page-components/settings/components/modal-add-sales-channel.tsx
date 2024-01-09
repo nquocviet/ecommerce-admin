@@ -5,7 +5,7 @@ import { Title } from '@mantine/core'
 import { Accordion, ModalFullscreen, ModalOpenedProps } from '@/components'
 import { SalesChannelGeneral } from '@/page-components/settings/components'
 
-const ModalAddNewSalesChannel = (props: ModalOpenedProps) => {
+const ModalAddSalesChannel = (props: ModalOpenedProps) => {
 	const sections = useMemo(
 		() => [
 			{
@@ -37,4 +37,4 @@ const ModalAddNewSalesChannel = (props: ModalOpenedProps) => {
 	)
 }
 
-export default ModalAddNewSalesChannel
+export default ModalAddSalesChannel

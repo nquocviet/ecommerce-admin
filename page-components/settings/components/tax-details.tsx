@@ -7,7 +7,7 @@ import { Info, Plus } from '@phosphor-icons/react'
 import { TAX_DETAILS_COLUMNS } from '@/columns/tax-details'
 import { Checkbox, PageTitle, Select, Table } from '@/components'
 import { APP_NAME } from '@/constants/common'
-import { ModalAddNewTaxRate } from '@/page-components/settings/components'
+import { ModalAddTaxRate } from '@/page-components/settings/components'
 
 const defaultValues = {
 	tax_provider: '0',
@@ -89,7 +89,7 @@ const TaxDetails = () => {
 					/>
 				</Flex>
 			</form>
-			<ModalAddNewTaxRate opened={opened} onClose={close} />
+			<ModalAddTaxRate opened={opened} onClose={close} />
 		</Paper>
 	)
 }

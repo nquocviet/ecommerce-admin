@@ -1,5 +1,6 @@
 import React from 'react'
 import { ActionIcon, Button, Flex, Grid, Menu } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 import { DotsThree, NotePencil, Plus, Trash } from '@phosphor-icons/react'
 
 import {
@@ -19,10 +20,32 @@ import {
 } from '@/constants/common'
 import { ROUTES } from '@/constants/routes'
 import { useDiscountDetails } from '@/lib/discount'
+import {
+	ModalAddCondition,
+	ModalDeleteDiscount,
+	ModalEditConfigurations,
+	ModalEditDiscount,
+} from '@/page-components/discounts/components'
 import { formatDate } from '@/utils'
 
 const DiscountDetails = () => {
 	const { data, isLoading } = useDiscountDetails()
+	const [
+		editDiscountOpened,
+		{ open: openEditDiscount, close: closeEditDiscount },
+	] = useDisclosure(false)
+	const [
+		deleteDiscountOpened,
+		{ open: openDeleteDiscount, close: closeDeleteDiscount },
+	] = useDisclosure(false)
+	const [
+		editConfigurationsOpened,
+		{ open: openEditConfigurations, close: closeEditConfigurations },
+	] = useDisclosure(false)
+	const [
+		addConditionOpened,
+		{ open: openAddCondition, close: closeAddCondition },
+	] = useDisclosure(false)
 
 	if (isLoading || !data) return <Loader />
 
@@ -61,12 +84,18 @@ const DiscountDetails = () => {
 									</ActionIcon>
 								</Menu.Target>
 								<Menu.Dropdown>
-									<Menu.Item icon={<NotePencil size={20} />}>Edit</Menu.Item>
+									<Menu.Item
+										icon={<NotePencil size={20} />}
+										onClick={openEditDiscount}
+									>
+										Edit
+									</Menu.Item>
 									<Menu.Item
 										icon={<Trash size={20} />}
 										sx={{
 											color: 'var(--red-600)',
 										}}
+										onClick={openDeleteDiscount}
 									>
 										Delete
 									</Menu.Item>
@@ -108,7 +137,10 @@ const DiscountDetails = () => {
 								</ActionIcon>
 							</Menu.Target>
 							<Menu.Dropdown>
-								<Menu.Item icon={<NotePencil size={20} />}>
+								<Menu.Item
+									icon={<NotePencil size={20} />}
+									onClick={openEditConfigurations}
+								>
 									Edit configurations
 								</Menu.Item>
 							</Menu.Dropdown>
@@ -146,7 +178,9 @@ const DiscountDetails = () => {
 								</ActionIcon>
 							</Menu.Target>
 							<Menu.Dropdown>
-								<Menu.Item icon={<Plus size={20} />}>Add condition</Menu.Item>
+								<Menu.Item icon={<Plus size={20} />} onClick={openAddCondition}>
+									Add condition
+								</Menu.Item>
 							</Menu.Dropdown>
 						</Menu>
 					}
@@ -172,6 +206,22 @@ const DiscountDetails = () => {
 				<PageTitle order={2} size="sm" title="Raw discount" />
 				<JSONView data={data} className="mt-4" />
 			</Paper>
+			<ModalEditDiscount
+				opened={editDiscountOpened}
+				onClose={closeEditDiscount}
+			/>
+			<ModalDeleteDiscount
+				opened={deleteDiscountOpened}
+				onClose={closeDeleteDiscount}
+			/>
+			<ModalEditConfigurations
+				opened={editConfigurationsOpened}
+				onClose={closeEditConfigurations}
+			/>
+			<ModalAddCondition
+				opened={addConditionOpened}
+				onClose={closeAddCondition}
+			/>
 		</>
 	)
 }

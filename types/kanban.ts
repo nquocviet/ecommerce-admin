@@ -16,10 +16,10 @@ export type KanbanComment = {
 export type KanbanEntity = {
 	id?: string
 	title: string
-	description?: string
+	description?: string | null
 	due_date: Date
 	tags: string[]
-	attachment?: string
+	attachment?: string | null
 	pics: string[]
 	created_at?: Date
 	updated_at?: Date

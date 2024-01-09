@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
 import { AspectRatio, Grid, Image, Text } from '@mantine/core'
+import { array, date, object, string } from 'yup'
 
 import {
 	DatePickerInput,
@@ -16,6 +18,7 @@ import {
 	KANBAN_TAG_OPTIONS,
 	SYSTEM_USER_OPTIONS,
 } from '@/constants/common'
+import { MAX_LENGTH_255 } from '@/constants/validation'
 import { KanbanEntity } from '@/types/kanban'
 
 interface ModalAddEditTaskProps extends ModalOpenedProps {
@@ -32,13 +35,33 @@ const defaultValues: KanbanEntity = {
 	pics: [],
 }
 
+const schema = object({
+	title: string()
+		.max(
+			MAX_LENGTH_255,
+			`Title must be shorter than or equal to ${MAX_LENGTH_255} characters`
+		)
+		.required('Title should not be empty'),
+	description: string().nullable(),
+	due_date: date().required('Due date should not be empty'),
+	tags: array()
+		.max(3, 'Please select a maximum of three tags from the list')
+		.min(1, 'Tags should not be empty')
+		.required(),
+	attachment: string().nullable(),
+	pics: array().min(1, 'PICs should not be empty').required(),
+})
+
 const ModalAddEditTask = ({
 	opened,
 	onSubmit,
 	onClose,
 	...props
 }: ModalAddEditTaskProps) => {
-	const { control, reset, watch, handleSubmit } = useForm({ defaultValues })
+	const { control, reset, watch, handleSubmit } = useForm({
+		defaultValues,
+		resolver: yupResolver(schema),
+	})
 	const attachment = watch('attachment')
 
 	useEffect(() => {

@@ -7,7 +7,7 @@ import {
 	RegionNewProviders,
 } from '@/page-components/settings/components'
 
-const ModalAddNewRegion = (props: ModalOpenedProps) => {
+const ModalAddRegion = (props: ModalOpenedProps) => {
 	const sections = useMemo(
 		() => [
 			{
@@ -38,4 +38,4 @@ const ModalAddNewRegion = (props: ModalOpenedProps) => {
 	)
 }
 
-export default ModalAddNewRegion
+export default ModalAddRegion

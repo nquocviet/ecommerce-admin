@@ -12,7 +12,7 @@ import {
 	Text,
 	Tooltip,
 } from '@mantine/core'
-import { Clock, NotePencil } from '@phosphor-icons/react'
+import { Clock, Fire, NotePencil } from '@phosphor-icons/react'
 
 import { KANBAN_TAG_OPTIONS, SYSTEM_USERS } from '@/constants/common'
 import { AddEditTaskModalType } from '@/page-components/kanban'
@@ -44,6 +44,9 @@ const KanbanTask = ({
 	groupId,
 	setAddEditTaskModal,
 }: KanbanTaskProps) => {
+	const outdated = new Date() > due_date
+	const Icon = outdated ? Fire : Clock
+
 	return (
 		<Draggable draggableId={id} index={index}>
 			{(provided) => (
@@ -117,10 +120,10 @@ const KanbanTask = ({
 							)}
 						</Avatar.Group>
 						<Badge
-							color={new Date() > due_date ? 'red' : 'primary'}
+							color={outdated ? 'red' : 'primary'}
 							className="!h-auto py-1"
 						>
-							<Clock size={20} className="-mb-1.5 mr-1.5" />
+							<Icon size={20} className="-mb-1.5 mr-1.5" />
 							{formatDate(due_date)}
 						</Badge>
 					</Flex>

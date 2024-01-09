@@ -182,12 +182,16 @@ export const components: any = {
 			},
 			input: {
 				borderColor: theme.colors.gray[3],
-			},
-			wrapper: {
-				borderRadius: '0.25rem',
 				'&:focus-within': {
 					boxShadow: '0 0 0 4px var(--primary-100)',
 				},
+				'&[data-invalid]:focus-within': {
+					boxShadow: '0 0 0 4px var(--red-100)',
+				},
+			},
+			wrapper: {
+				overflow: 'visible !important',
+				borderRadius: '0.25rem',
 			},
 		}),
 	},
@@ -387,6 +391,29 @@ export const components: any = {
 		styles: () => ({
 			tooltip: {
 				fontSize: 'var(--fs-text-sm)',
+			},
+		}),
+	},
+	TimeInput: {
+		styles: (theme) => ({
+			label: {
+				fontSize: 'var(--fs-text-sm)',
+				marginBottom: '0.375rem',
+			},
+			input: {
+				borderColor: theme.colors.gray[3],
+				'&[readonly]:focus': {
+					borderColor: `${theme.colors.gray[3]} !important`,
+				},
+				'&:not([readonly]):focus': {
+					boxShadow: '0 0 0 4px var(--primary-100)',
+				},
+				'&[data-invalid]:focus': {
+					boxShadow: '0 0 0 4px var(--red-100)',
+				},
+				'&::placeholder': {
+					color: theme.colors.gray[4],
+				},
 			},
 		}),
 	},

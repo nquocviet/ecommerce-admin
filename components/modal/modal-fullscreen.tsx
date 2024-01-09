@@ -67,6 +67,7 @@ const ModalFullscreen = ({
 			transitionProps={{
 				transition: 'fade',
 				duration: 200,
+				timingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
 			}}
 			closeButtonProps={{
 				size: 'md',

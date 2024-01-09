@@ -11,7 +11,7 @@ import {
 	TextInput,
 } from '@/components'
 
-const ModalAddNewShippingOption = (props: ModalOpenedProps) => {
+const ModalAddShippingOption = (props: ModalOpenedProps) => {
 	const { control } = useForm()
 
 	return (
@@ -112,4 +112,4 @@ const ModalAddNewShippingOption = (props: ModalOpenedProps) => {
 	)
 }
 
-export default ModalAddNewShippingOption
+export default ModalAddShippingOption

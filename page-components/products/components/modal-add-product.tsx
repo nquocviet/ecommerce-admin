@@ -11,7 +11,7 @@ import {
 	ProductVariants,
 } from '@/page-components/products/components'
 
-const ModalAddNewProduct = (props: ModalOpenedProps) => {
+const ModalAddProduct = (props: ModalOpenedProps) => {
 	const sections = useMemo(
 		() => [
 			{
@@ -66,4 +66,4 @@ const ModalAddNewProduct = (props: ModalOpenedProps) => {
 	)
 }
 
-export default ModalAddNewProduct
+export default ModalAddProduct

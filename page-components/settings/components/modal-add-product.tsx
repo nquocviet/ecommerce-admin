@@ -19,7 +19,7 @@ const filterOptions = [
 	{ value: 'tags', label: 'Tags' },
 ]
 
-const ModalAddNewProduct = (props: ModalOpenedProps) => {
+const ModalAddProduct = (props: ModalOpenedProps) => {
 	const { data, isLoading } = useProducts()
 	const { control } = useForm()
 
@@ -52,4 +52,4 @@ const ModalAddNewProduct = (props: ModalOpenedProps) => {
 	)
 }
 
-export default ModalAddNewProduct
+export default ModalAddProduct

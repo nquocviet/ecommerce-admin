@@ -20,7 +20,9 @@ const MultiSelect = <T extends FieldValues>({
 		<Controller
 			control={control}
 			name={name}
-			render={({ field }) => <MantineMultiSelect {...field} {...rest} />}
+			render={({ field, fieldState: { error } }) => (
+				<MantineMultiSelect {...field} {...rest} error={error?.message} />
+			)}
 		/>
 	)
 }

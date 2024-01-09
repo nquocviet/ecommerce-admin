@@ -5,7 +5,7 @@ import { Info, Plus, Trash } from '@phosphor-icons/react'
 
 import { Modal, ModalOpenedProps, TextInput } from '@/components'
 
-const ModalAddNewCollection = (props: ModalOpenedProps) => {
+const ModalAddCollection = (props: ModalOpenedProps) => {
 	const { control } = useForm()
 	const {
 		fields: metadata,
@@ -108,4 +108,4 @@ const ModalAddNewCollection = (props: ModalOpenedProps) => {
 	)
 }
 
-export default ModalAddNewCollection
+export default ModalAddCollection

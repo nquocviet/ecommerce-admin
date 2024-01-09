@@ -6,7 +6,7 @@ import { Plus } from '@phosphor-icons/react'
 
 import { PageTitle, Paper, RadioBox, RadioGroup } from '@/components'
 import { useReturnReasons } from '@/lib/return-reasons'
-import { ModalAddNewReason } from '@/page-components/settings/components'
+import { ModalAddReason } from '@/page-components/settings/components'
 import { ReturnReasonEntity } from '@/types/return-reason'
 
 type TReasonsProps = {
@@ -66,7 +66,7 @@ const Reasons = ({ reasonSelected, setReasonSelected }: TReasonsProps) => {
 					</Flex>
 				</RadioGroup>
 			</form>
-			<ModalAddNewReason opened={opened} onClose={close} />
+			<ModalAddReason opened={opened} onClose={close} />
 		</Paper>
 	)
 }

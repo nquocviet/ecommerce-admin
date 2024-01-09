@@ -5,7 +5,7 @@ import { Plus } from '@phosphor-icons/react'
 
 import { Modal, ModalOpenedProps, NumberInput, TextInput } from '@/components'
 
-const ModalAddNewTaxRate = (props: ModalOpenedProps) => {
+const ModalAddTaxRate = (props: ModalOpenedProps) => {
 	const { control } = useForm()
 
 	return (
@@ -55,4 +55,4 @@ const ModalAddNewTaxRate = (props: ModalOpenedProps) => {
 	)
 }
 
-export default ModalAddNewTaxRate
+export default ModalAddTaxRate

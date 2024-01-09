@@ -44,7 +44,7 @@ const Modal = ({
 			centered={centered ?? true}
 			transitionProps={{
 				transition: 'fade',
-				duration: 225,
+				duration: 200,
 				timingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
 			}}
 			lockScroll

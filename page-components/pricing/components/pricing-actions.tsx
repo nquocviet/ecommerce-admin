@@ -3,7 +3,7 @@ import { Button, Flex } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { Plus } from '@phosphor-icons/react'
 
-import { ModalAddNewPrice } from '@/page-components/pricing/components'
+import { ModalAddPrice } from '@/page-components/pricing/components'
 
 const PricingActions = () => {
 	const [opened, { open, close }] = useDisclosure(false)
@@ -21,7 +21,7 @@ const PricingActions = () => {
 					Add new price
 				</Button>
 			</Flex>
-			<ModalAddNewPrice opened={opened} onClose={close} />
+			<ModalAddPrice opened={opened} onClose={close} />
 		</>
 	)
 }

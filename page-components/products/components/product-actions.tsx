@@ -9,7 +9,7 @@ import {
 } from '@phosphor-icons/react'
 
 import {
-	ModalAddNewProduct,
+	ModalAddProduct,
 	ModalExportProduct,
 	ModalImportProduct,
 } from '@/page-components/products/components'
@@ -95,7 +95,7 @@ const ProductActions = () => {
 				opened={exportProductOpened}
 				onClose={closeExportProduct}
 			/>
-			<ModalAddNewProduct opened={newProductOpened} onClose={closeNewProduct} />
+			<ModalAddProduct opened={newProductOpened} onClose={closeNewProduct} />
 		</>
 	)
 }

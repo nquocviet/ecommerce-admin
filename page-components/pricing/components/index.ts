@@ -1,4 +1,4 @@
-export { default as ModalAddNewPrice } from './modal-add-new-price'
+export { default as ModalAddPrice } from './modal-add-price'
 export { default as ModalAddProducts } from './modal-add-products'
 export { default as ModalDeletePrice } from './modal-delete-price'
 export { default as PriceConfiguration } from './price-configuration'

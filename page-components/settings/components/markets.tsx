@@ -5,8 +5,7 @@ import { useDisclosure } from '@mantine/hooks'
 import { Plus } from '@phosphor-icons/react'
 
 import { PageTitle, Paper, RadioBox, RadioGroup } from '@/components'
-
-import ModalAddNewRegion from './modal-add-new-region'
+import { ModalAddRegion } from '@/page-components/settings/components'
 
 const defaultValues = {
 	market: 'eu',
@@ -92,7 +91,7 @@ const Markets = () => {
 					</RadioGroup>
 				</form>
 			</Paper>
-			<ModalAddNewRegion opened={opened} onClose={close} />
+			<ModalAddRegion opened={opened} onClose={close} />
 		</>
 	)
 }

@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import {
 	ActionIcon,
 	Avatar,
+	Checkbox as MantineCheckbox,
 	Flex,
 	MANTINE_COLORS,
 	Menu,
@@ -16,7 +17,7 @@ import { Checkbox } from '@/components'
 import { ROUTES } from '@/constants/routes'
 import { useCustomerGroupDetails } from '@/lib/customer'
 import { ModalRemoveCustomer } from '@/page-components/customers/components'
-import { CustomerEntity } from '@/types/customer'
+import { CustomerEntity, CustomerGroupEntity } from '@/types/customer'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { formatDate } from '@/utils'
 
@@ -183,3 +184,24 @@ export const CUSTOMERS_COLUMNS: MantineDataTableColumn<CustomerEntity> = [
 		},
 	},
 ]
+
+export const CUSTOMERS_GROUP_CONDITION_COLUMNS: MantineDataTableColumn<CustomerGroupEntity> =
+	[
+		{
+			accessor: 'no',
+			title: '',
+			width: '5%',
+			render: () => {
+				return (
+					<Flex justify="center">
+						<MantineCheckbox />
+					</Flex>
+				)
+			},
+		},
+		{
+			accessor: 'name',
+			title: 'Title',
+			width: '95%',
+		},
+	]

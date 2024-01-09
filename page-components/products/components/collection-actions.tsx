@@ -3,7 +3,7 @@ import { Button, Flex } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { Plus } from '@phosphor-icons/react'
 
-import { ModalAddNewCollection } from '@/page-components/products/components'
+import { ModalAddCollection } from '@/page-components/products/components'
 
 const CollectionActions = () => {
 	const [opened, { open, close }] = useDisclosure(false)
@@ -21,7 +21,7 @@ const CollectionActions = () => {
 					New collection
 				</Button>
 			</Flex>
-			<ModalAddNewCollection opened={opened} onClose={close} />
+			<ModalAddCollection opened={opened} onClose={close} />
 		</>
 	)
 }

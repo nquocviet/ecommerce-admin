@@ -6,7 +6,7 @@ import { Plus } from '@phosphor-icons/react'
 
 import { PageTitle, Paper, RadioBox, RadioGroup } from '@/components'
 import { STORE_NAME } from '@/constants/common'
-import { ModalAddNewSalesChannel } from '@/page-components/settings/components'
+import { ModalAddSalesChannel } from '@/page-components/settings/components'
 
 const defaultValues = {
 	channel: 'default',
@@ -51,7 +51,7 @@ const Channels = () => {
 					</Flex>
 				</RadioGroup>
 			</form>
-			<ModalAddNewSalesChannel opened={opened} onClose={close} />
+			<ModalAddSalesChannel opened={opened} onClose={close} />
 		</Paper>
 	)
 }

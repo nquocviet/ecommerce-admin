@@ -15,6 +15,13 @@ export const useCustomerDetails = () => {
 	)
 }
 
+export const useCustomerGroups = () => {
+	return useSWR<CustomerGroupEntity[]>(
+		'/api/staticdata?type=customer_group',
+		fetcher
+	)
+}
+
 export const useCustomerGroupDetails = () => {
 	return useSWR<CustomerGroupEntity>(
 		'/api/staticdata?type=customer_group_details',

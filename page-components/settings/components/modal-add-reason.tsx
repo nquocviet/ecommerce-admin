@@ -4,7 +4,7 @@ import { Flex, Grid } from '@mantine/core'
 
 import { Modal, ModalOpenedProps, Textarea, TextInput } from '@/components'
 
-const ModalAddNewReason = (props: ModalOpenedProps) => {
+const ModalAddReason = (props: ModalOpenedProps) => {
 	const { control } = useForm()
 
 	return (
@@ -44,4 +44,4 @@ const ModalAddNewReason = (props: ModalOpenedProps) => {
 	)
 }
 
-export default ModalAddNewReason
+export default ModalAddReason

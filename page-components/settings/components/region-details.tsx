@@ -5,7 +5,7 @@ import { DotsThree, NotePencil, Trash } from '@phosphor-icons/react'
 
 import { PageTitle, Paper, ShippingOption } from '@/components'
 import {
-	ModalAddNewShippingOption,
+	ModalAddShippingOption,
 	ModalDeleteRegion,
 	ModalEditRegion,
 } from '@/page-components/settings/components'
@@ -140,7 +140,7 @@ const RegionDetails = () => {
 					</Flex>
 				</Paper>
 			</Flex>
-			<ModalAddNewShippingOption
+			<ModalAddShippingOption
 				opened={addShippingOptionOpened}
 				onClose={closeAddShippingOption}
 			/>

@@ -14,7 +14,7 @@ const defaultValues = {
 	type: 'sale',
 }
 
-const ModalAddNewPrice = (props: ModalOpenedProps) => {
+const ModalAddPrice = (props: ModalOpenedProps) => {
 	const sections = useMemo(
 		() => [
 			{
@@ -65,4 +65,4 @@ const ModalAddNewPrice = (props: ModalOpenedProps) => {
 	)
 }
 
-export default ModalAddNewPrice
+export default ModalAddPrice
