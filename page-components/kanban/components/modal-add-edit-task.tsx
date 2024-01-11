@@ -80,7 +80,7 @@ const ModalAddEditTask = ({
 			onClose={onClose}
 			onConfirm={handleSubmit(onSubmit)}
 		>
-			<Grid gutter={16}>
+			<Grid>
 				<Grid.Col>
 					<TextInput
 						name="title"

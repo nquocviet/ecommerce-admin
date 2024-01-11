@@ -31,7 +31,7 @@ const ModalRegisterClaim = (props: ModalOpenedProps) => {
 					onPageChange={() => null}
 				/>
 				<Text className="text-sm font-semibold">Shipping for return items</Text>
-				<Text className="mb-3 text-sm text-gray-600">
+				<Text className="mb-3 text-sm text-gray-500">
 					Return shipping for items claimed by the customer is complimentary.
 				</Text>
 				<Select

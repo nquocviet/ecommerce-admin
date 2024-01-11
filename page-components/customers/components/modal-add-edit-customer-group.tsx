@@ -22,9 +22,12 @@ const formDefaultValues = {
 	metadata: [],
 }
 
-const ModalAddEditCustomerGroup = (props: ModalAddEditCustomerGroupProps) => {
+const ModalAddEditCustomerGroup = ({
+	defaultValues,
+	...props
+}: ModalAddEditCustomerGroupProps) => {
 	const { control } = useForm({
-		defaultValues: props.defaultValues || formDefaultValues,
+		defaultValues: defaultValues || formDefaultValues,
 	})
 	const {
 		fields: metadata,
@@ -38,12 +41,10 @@ const ModalAddEditCustomerGroup = (props: ModalAddEditCustomerGroupProps) => {
 	return (
 		<Modal
 			title={
-				props.defaultValues
-					? 'Edit customer group'
-					: 'Create a new customer group'
+				defaultValues ? 'Edit customer group' : 'Create a new customer group'
 			}
 			size="xl"
-			confirmText={props.defaultValues ? 'Edit group' : 'Publish group'}
+			confirmText={defaultValues ? 'Edit group' : 'Publish group'}
 			{...props}
 		>
 			<form>

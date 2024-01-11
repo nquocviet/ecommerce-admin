@@ -53,15 +53,9 @@ const ModalAddCondition = (props: ModalOpenedProps) => {
 							</Grid.Col>
 						</Grid>
 					</RadioGroup>
-					<form>
-						<Flex justify="flex-end">
-							<InputSearch
-								name="search"
-								control={control}
-								placeholder="Search"
-							/>
-						</Flex>
-					</form>
+					<Flex justify="flex-end">
+						<InputSearch name="search" control={control} placeholder="Search" />
+					</Flex>
 					<Table
 						records={data}
 						columns={CUSTOMERS_GROUP_CONDITION_COLUMNS}

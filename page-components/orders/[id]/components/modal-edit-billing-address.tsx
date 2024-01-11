@@ -17,7 +17,7 @@ const ModalEditBillingAddress = (props: ModalOpenedProps) => {
 		<Modal title="Edit billing address" size="xl" confirmText="Save" {...props}>
 			<form>
 				<Text className="mb-3 text-sm font-semibold">General</Text>
-				<Grid gutter={24}>
+				<Grid>
 					<Grid.Col xs={6}>
 						<TextInput
 							name="first_name"
@@ -54,7 +54,7 @@ const ModalEditBillingAddress = (props: ModalOpenedProps) => {
 					</Grid.Col>
 				</Grid>
 				<Text className="mb-3 mt-6 text-sm font-semibold">Billing address</Text>
-				<Grid gutter={24}>
+				<Grid>
 					<Grid.Col xs={12}>
 						<TextInput
 							name="address_1"

@@ -7,7 +7,6 @@ import { ROUTES } from '@/constants/routes'
 import { ORDER_TABS } from '@/constants/tabs'
 import { useActiveTab } from '@/hooks'
 import {
-	DraftActions,
 	DraftsTab,
 	OrderActions,
 	OrdersTab,
@@ -36,7 +35,6 @@ const Orders = () => {
 						<Tabs.Tab value={ORDERS}>Orders</Tabs.Tab>
 						<Tabs.Tab value={DRAFTS}>Drafts</Tabs.Tab>
 						{activeTab === ORDERS && <OrderActions />}
-						{activeTab === DRAFTS && <DraftActions />}
 					</Tabs.List>
 
 					<Tabs.Panel value={ORDERS}>

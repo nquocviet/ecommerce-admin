@@ -34,7 +34,7 @@ const Table = <T extends Record<string, unknown>>({
 				'& > div': {
 					flex: 'unset',
 				},
-				'& > div:first-child': {
+				'& > div:first-of-type': {
 					overflow: 'unset',
 				},
 				'& table': {

@@ -22,8 +22,7 @@ import Link from 'next/link'
 import { CONTAINER_WIDTH_XS, HEADER_HEIGHT } from '@/constants/layout'
 import { ROUTES } from '@/constants/routes'
 import { AppSearch } from '@/layouts/components'
-
-import HelperDialog from './helper-dialog'
+import { HelperDialog, NotificationDialog } from '@/layouts/components'
 
 interface HeaderProps {
 	opened: boolean
@@ -63,19 +62,32 @@ const Header = ({ opened, toggle }: HeaderProps) => {
 										<Question size={24} />
 									</ActionIcon>
 								</Menu.Target>
-								<Menu.Dropdown sx={{ maxHeight: '90vh', overflow: 'auto' }}>
+								<Menu.Dropdown
+									ml={-8}
+									sx={{ maxHeight: '90vh', overflow: 'auto' }}
+								>
 									<HelperDialog />
 								</Menu.Dropdown>
 							</Menu>
 						</MediaQuery>
-						<ActionIcon
-							variant="subtle"
-							color="gray"
-							size="lg"
-							aria-label="Notification"
-						>
-							<BellSimple size={24} />
-						</ActionIcon>
+						<Menu shadow="md" width={400}>
+							<Menu.Target>
+								<ActionIcon
+									variant="subtle"
+									color="gray"
+									size="lg"
+									aria-label="Notification"
+								>
+									<BellSimple size={24} />
+								</ActionIcon>
+							</Menu.Target>
+							<Menu.Dropdown
+								ml={-8}
+								sx={{ maxHeight: '90vh', overflow: 'auto' }}
+							>
+								<NotificationDialog />
+							</Menu.Dropdown>
+						</Menu>
 						<Menu shadow="md" width={240}>
 							<Menu.Target>
 								<ActionIcon variant="transparent" color="gray" size="lg">
@@ -84,7 +96,7 @@ const Header = ({ opened, toggle }: HeaderProps) => {
 									</Avatar>
 								</ActionIcon>
 							</Menu.Target>
-							<Menu.Dropdown>
+							<Menu.Dropdown ml={-8}>
 								<div className="truncate px-3 py-2">
 									<Text className="text-sm font-semibold">Username</Text>
 									<Text className="text-xs text-gray-500">

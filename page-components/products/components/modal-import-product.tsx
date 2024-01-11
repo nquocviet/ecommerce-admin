@@ -13,8 +13,8 @@ const ModalImportProduct = (props: ModalOpenedProps) => {
 			confirmText="Import list"
 			{...props}
 		>
-			<Text className="font-semibold">Import products list</Text>
-			<Text className="text-gray-500">
+			<Text className="text-sm font-semibold">Import products list</Text>
+			<Text className="text-sm text-gray-500">
 				Through imports you can add or update products. To update existing
 				products/variants you must set an existing id in the Product/Variant id
 				columns. If the value is unset a new record will be created. You will be
@@ -24,10 +24,10 @@ const ModalImportProduct = (props: ModalOpenedProps) => {
 				onDrop={(files) => console.log('accepted files', files)}
 				className="mt-6 mb-8"
 			/>
-			<Text className="font-semibold">
+			<Text className="text-sm font-semibold">
 				Unsure about how to arrange your list?
 			</Text>
-			<Text className="text-gray-500">
+			<Text className="text-sm text-gray-500">
 				Download the template below to ensure you are following the correct
 				format.
 			</Text>

@@ -14,7 +14,7 @@ import {
 const defaultValues = {
 	has_start_date: true,
 	start_date: new Date(),
-	start_time: null,
+	start_time: undefined,
 	has_expiry_date: false,
 	limit_redemptions: true,
 	number_redemptions: 10,

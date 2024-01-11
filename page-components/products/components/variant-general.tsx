@@ -29,7 +29,7 @@ const VariantGeneral = () => {
 					/>
 				</Grid.Col>
 			</Grid>
-			<Flex align="center" gap={6} className="mt-6">
+			<Flex align="center" gap={6} className="mt-4 mb-2">
 				<Text className="font-semibold text-black">Options</Text>
 				<Tooltip
 					width={240}
@@ -39,7 +39,7 @@ const VariantGeneral = () => {
 					<Info size={16} />
 				</Tooltip>
 			</Flex>
-			<Grid className="mt-2">
+			<Grid>
 				<Grid.Col xs={6}>
 					<Select
 						control={control}

@@ -132,11 +132,7 @@ const CustomerCheckbox = ({ id, index }: CustomerCheckboxProps) => {
 		})
 	}, [index, isChecked, data, reset])
 
-	return (
-		<form>
-			<Checkbox name={`customer-${index}`} control={control} />
-		</form>
-	)
+	return <Checkbox name={`customer-${index}`} control={control} />
 }
 
 export const CUSTOMERS_COLUMNS: MantineDataTableColumn<CustomerEntity> = [
