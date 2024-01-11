@@ -6,6 +6,7 @@ type TableProps<T extends Record<string, unknown>> = DataTableProps<T> & {
 	minWidth?: number | string
 	size?: 'sm' | 'md'
 	disableHead?: boolean
+	disablePagination?: boolean
 }
 
 const Table = <T extends Record<string, unknown>>({

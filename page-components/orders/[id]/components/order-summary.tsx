@@ -1,22 +1,12 @@
 import React from 'react'
-import { Button, Flex, Text } from '@mantine/core'
+import { Flex, Text } from '@mantine/core'
 
 import { PageTitle, Paper } from '@/components'
 
 const OrderSummary = () => {
 	return (
 		<Paper>
-			<PageTitle
-				order={2}
-				size="sm"
-				title="Summary"
-				action={
-					<Button size="xs" color="gray" variant="outline">
-						Edit order
-					</Button>
-				}
-				className="mb-8"
-			/>
+			<PageTitle order={2} size="sm" title="Summary" className="mb-8" />
 			<div>
 				<Flex justify="space-between" align="center" className="mb-4 last:mb-0">
 					<Text className="text-sm text-gray-500">Subtotal</Text>

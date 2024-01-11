@@ -1,9 +1,17 @@
 import React from 'react'
-import { Avatar, Flex, MANTINE_COLORS, Text } from '@mantine/core'
+import {
+	Avatar,
+	Checkbox,
+	Flex,
+	Image,
+	MANTINE_COLORS,
+	Text,
+} from '@mantine/core'
 
 import { Dots } from '@/components'
 import { MantineDataTableColumn } from '@/types/datatable'
 import { OrderEntity } from '@/types/order'
+import { ProductEntity } from '@/types/product'
 import { formatDate, formatMoney, getValue, toCapitalize } from '@/utils'
 
 const paymentStatuses = {
@@ -107,6 +115,47 @@ export const ORDER_COLUMNS: MantineDataTableColumn<OrderEntity> = [
 					</Text>
 				</Flex>
 			)
+		},
+	},
+]
+
+export const REQUEST_RETURN_COLUMNS: MantineDataTableColumn<ProductEntity> = [
+	{
+		accessor: 'no',
+		title: '',
+		width: '5%',
+		render: () => {
+			return (
+				<Flex justify="center">
+					<Checkbox />
+				</Flex>
+			)
+		},
+	},
+	{
+		accessor: 'title',
+		title: 'Product details',
+		width: '45%',
+		render: ({ title, thumbnail }) => {
+			return (
+				<Flex align="center" gap={12}>
+					<Image width={32} height={40} src={thumbnail} alt={title} />
+					<Text>{title}</Text>
+				</Flex>
+			)
+		},
+	},
+	{
+		accessor: 'quantity',
+		title: 'Quantity',
+		width: '25%',
+	},
+	{
+		accessor: 'refundable',
+		title: 'Refundable',
+		width: '25%',
+		render: ({ refundable }) => {
+			return formatMoney(refundable)
 		},
 	},
 ]

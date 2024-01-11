@@ -10,6 +10,7 @@ import {
 	Textarea,
 	TextInput,
 } from '@/components'
+import { STORE_NAME } from '@/constants/common'
 
 const defaultValues = {
 	region: 'eu',
@@ -70,10 +71,11 @@ const ModalCustomGiftCard = (props: ModalOpenedProps) => {
 					<Flex direction="column" align="stretch" gap={16}>
 						<Text className="font-semibold">Receiver</Text>
 						<TextInput
+							type="email"
 							name="receiver_email"
 							control={control}
 							label="Email"
-							placeholder="lebron@james.com"
+							placeholder={`example@${STORE_NAME.toLowerCase()}.com`}
 							required
 						/>
 						<Textarea

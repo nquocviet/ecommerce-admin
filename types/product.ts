@@ -60,6 +60,7 @@ export type ProductEntity = BaseEntity & {
 	type: string | null
 	images: ImageEntity[]
 	sales_channels: SaleChannelEntity[]
+	refundable: number
 }
 
 export type ProductCollectionEntity = BaseEntity &

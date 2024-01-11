@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { Flex, Grid, Text } from '@mantine/core'
 
 import { Modal, ModalOpenedProps, TextInput } from '@/components'
+import { STORE_NAME } from '@/constants/common'
 import { useCustomerDetails } from '@/lib/customer'
 
 const ModalEditCustomer = (props: ModalOpenedProps) => {
@@ -51,10 +52,11 @@ const ModalEditCustomer = (props: ModalOpenedProps) => {
 						<Grid>
 							<Grid.Col xs={6}>
 								<TextInput
+									type="email"
 									name="email"
 									control={control}
 									label="Email"
-									placeholder="example@domain.com"
+									placeholder={`example@${STORE_NAME.toLowerCase()}.com`}
 								/>
 							</Grid.Col>
 							<Grid.Col xs={6}>

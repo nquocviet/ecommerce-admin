@@ -41,10 +41,11 @@ const ModalEditUser = (props: ModalOpenedProps) => {
 						</Grid.Col>
 					</Grid>
 					<TextInput
+						type="email"
 						name="email"
 						control={control}
 						label="Email"
-						type="email"
+						placeholder={`example@${STORE_NAME.toLowerCase()}.com`}
 						readOnly
 					/>
 				</Flex>

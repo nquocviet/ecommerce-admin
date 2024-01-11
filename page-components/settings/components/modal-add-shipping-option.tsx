@@ -88,7 +88,7 @@ const ModalAddShippingOption = (props: ModalOpenedProps) => {
 								control={control}
 								label="Min. subtotal"
 								placeholder="0"
-								textIcon="€"
+								textIcon="$"
 							/>
 						</Grid.Col>
 						<Grid.Col xs={6}>
@@ -97,7 +97,7 @@ const ModalAddShippingOption = (props: ModalOpenedProps) => {
 								control={control}
 								label="Max. subtotal"
 								placeholder="0"
-								textIcon="€"
+								textIcon="$"
 							/>
 						</Grid.Col>
 					</Grid>
